@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { allConcepts, axisMetadata } from '@/content/index';
 import { DiagramSvg } from '@/components/diagram/DiagramSvg';
+import { ProgressDashboard } from '@/components/ProgressDashboard';
 
 export default function Home() {
   const axes = Object.keys(axisMetadata) as (keyof typeof axisMetadata)[];
@@ -9,7 +10,7 @@ export default function Home() {
     <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] transition-colors duration-200">
       <main className="mx-auto max-w-6xl px-6 py-12">
         {/* 히어로 섹션 */}
-        <section className="mb-14 text-center">
+        <section className="mb-8 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
             <span>✨</span> 실무 중심 프레임워크 상호 전환 가이드
           </div>
@@ -20,6 +21,9 @@ export default function Home() {
             React 개발자를 위한 Vue 3, Vue 2 레거시를 위한 Composition API, 그리고 Nuxt 3와 Next.js를 관통하는 핵심 아키텍처와 실전 포트폴리오 코드를 직접 비교하며 학습합니다.
           </p>
         </section>
+
+        {/* Phase 5: 학습 진도 & 즐겨찾기 대시보드 */}
+        <ProgressDashboard />
 
         {/* 3대 전환 학습 축 목록 */}
         <section className="mb-16">
