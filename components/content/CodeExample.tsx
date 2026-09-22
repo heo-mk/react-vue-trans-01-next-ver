@@ -38,7 +38,7 @@ function CodeBlock({
             {title}
           </span>
           {badge && (
-            <span className="rounded bg-[var(--border-subtle)] px-2 py-0.5 text-[10px] font-mono text-[var(--text-secondary)]">
+            <span className="rounded bg-[var(--border-subtle)] px-2 py-0.5 font-mono text-[10px] text-[var(--text-secondary)]">
               {badge}
             </span>
           )}
@@ -73,20 +73,20 @@ export function CodeExample({
           <span
             className={`rounded-full px-2.5 py-0.5 text-xs font-bold ${
               example.label === '실전 예제'
-                ? 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20'
-                : 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20'
+                ? 'border border-amber-500/20 bg-amber-500/10 text-amber-600 dark:text-amber-400'
+                : 'border border-blue-500/20 bg-blue-500/10 text-blue-600 dark:text-blue-400'
             }`}
           >
             {example.label}
           </span>
-          <span className="text-xs text-[var(--text-secondary)] font-mono">
+          <span className="font-mono text-xs text-[var(--text-secondary)]">
             버전: {example.version}
           </span>
         </div>
         {example.sourceProject && (
           <span className="text-xs text-[var(--text-secondary)]">
             실전 출처:{' '}
-            <strong className="text-[var(--text-primary)] font-medium">
+            <strong className="font-medium text-[var(--text-primary)]">
               {example.sourceProject}
             </strong>
           </span>

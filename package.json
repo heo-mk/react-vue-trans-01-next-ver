@@ -8,6 +8,7 @@
     "build": "pnpm run build:diagrams && next build",
     "start": "next start",
     "lint": "eslint",
+    "check:content": "tsx scripts/check-content-quality.ts",
     "format": "prettier --write ."
   },
   "dependencies": {

@@ -16,7 +16,8 @@ export function ProgressDashboard() {
   const totalCount = allConcepts.length;
   const completedCount = isMounted ? readConcepts.length : 0;
   const favoritesCount = isMounted ? favorites.length : 0;
-  const percentage = totalCount > 0 ? Math.round((completedCount / totalCount) * 100) : 0;
+  const percentage =
+    totalCount > 0 ? Math.round((completedCount / totalCount) * 100) : 0;
 
   const filteredConcepts = allConcepts.filter((c) => {
     if (!isMounted) return filter === 'all';
@@ -30,7 +31,7 @@ export function ProgressDashboard() {
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         {/* 학습 진도 통계 */}
         <div>
-          <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+          <span className="text-xs font-bold tracking-wider text-emerald-600 uppercase dark:text-emerald-400">
             학습 진도 현황 (Zustand Persist)
           </span>
           <h2 className="mt-1 text-xl font-bold tracking-tight text-[var(--text-primary)]">
@@ -100,22 +101,30 @@ export function ProgressDashboard() {
                 >
                   <div>
                     <div className="flex items-center justify-between text-xs">
-                      <span className="rounded bg-[var(--border-subtle)] px-2 py-0.5 text-[10px] font-mono text-[var(--text-secondary)]">
+                      <span className="rounded bg-[var(--border-subtle)] px-2 py-0.5 font-mono text-[10px] text-[var(--text-secondary)]">
                         {c.axis}
                       </span>
                       <div className="flex items-center gap-1.5 text-xs">
-                        {isRead && <span title="완료됨" className="text-emerald-500">✓</span>}
-                        {isFav && <span title="즐겨찾기" className="text-amber-500">★</span>}
+                        {isRead && (
+                          <span title="완료됨" className="text-emerald-500">
+                            ✓
+                          </span>
+                        )}
+                        {isFav && (
+                          <span title="즐겨찾기" className="text-amber-500">
+                            ★
+                          </span>
+                        )}
                       </div>
                     </div>
-                    <h3 className="mt-2 text-sm font-bold text-[var(--text-primary)] group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                    <h3 className="mt-2 text-sm font-bold text-[var(--text-primary)] transition-colors group-hover:text-emerald-600 dark:group-hover:text-emerald-400">
                       {c.title}
                     </h3>
                     <p className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-[var(--text-secondary)]">
                       {c.oneLineSummary}
                     </p>
                   </div>
-                  <span className="mt-3 text-right text-xs font-semibold text-emerald-600 dark:text-emerald-400 group-hover:translate-x-1 transition-transform inline-block">
+                  <span className="mt-3 inline-block text-right text-xs font-semibold text-emerald-600 transition-transform group-hover:translate-x-1 dark:text-emerald-400">
                     학습하기 →
                   </span>
                 </Link>
@@ -124,7 +133,8 @@ export function ProgressDashboard() {
           </div>
         ) : (
           <div className="py-8 text-center text-xs text-[var(--text-secondary)]">
-            해당하는 개념이 없습니다. 개념 상세 페이지에서 완료 또는 즐겨찾기를 눌러보세요!
+            해당하는 개념이 없습니다. 개념 상세 페이지에서 완료 또는 즐겨찾기를
+            눌러보세요!
           </div>
         )}
       </div>

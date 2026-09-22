@@ -41,7 +41,7 @@ export function ConceptView({ concept }: ConceptViewProps) {
       {/* 헤더 & 액션 바 */}
       <header className="border-b border-[var(--border-subtle)] pb-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-          <h1 className="text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-4xl text-[var(--text-primary)]">
+          <h1 className="text-2xl font-extrabold tracking-tight text-[var(--text-primary)] sm:text-3xl lg:text-4xl">
             {concept.title}
           </h1>
 
@@ -50,7 +50,7 @@ export function ConceptView({ concept }: ConceptViewProps) {
             <button
               onClick={() => toggleReadConcept(concept.slug)}
               type="button"
-              className={`cursor-pointer inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors ${
+              className={`inline-flex cursor-pointer items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors ${
                 isRead
                   ? 'bg-emerald-500 text-white shadow-xs'
                   : 'border border-[var(--border-subtle)] bg-[var(--bg-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-primary)] hover:text-[var(--text-primary)]'
@@ -61,7 +61,7 @@ export function ConceptView({ concept }: ConceptViewProps) {
             <button
               onClick={() => toggleFavorite(concept.slug)}
               type="button"
-              className={`cursor-pointer inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors ${
+              className={`inline-flex cursor-pointer items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors ${
                 isFav
                   ? 'bg-amber-500 text-white shadow-xs'
                   : 'border border-[var(--border-subtle)] bg-[var(--bg-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-primary)] hover:text-[var(--text-primary)]'
@@ -75,10 +75,10 @@ export function ConceptView({ concept }: ConceptViewProps) {
 
         {/* 파인만 테크닉 핵심 한줄 요약 */}
         <div className="mt-6 rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-5 dark:bg-emerald-950/20">
-          <div className="flex items-center gap-2 text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">
+          <div className="flex items-center gap-2 text-xs font-bold tracking-wider text-emerald-600 uppercase dark:text-emerald-400">
             <span>💡</span> 파인만 핵심 요약
           </div>
-          <p className="mt-2 text-base font-medium leading-relaxed text-[var(--text-primary)]">
+          <p className="mt-2 text-base leading-relaxed font-medium text-[var(--text-primary)]">
             {concept.oneLineSummary}
           </p>
         </div>
@@ -147,7 +147,7 @@ export function ConceptView({ concept }: ConceptViewProps) {
       {/* 5. 공식 출처 */}
       {concept.sources && concept.sources.length > 0 && (
         <footer className="mt-16 border-t border-[var(--border-subtle)] pt-8">
-          <h3 className="text-xs font-bold uppercase tracking-wider text-[var(--text-secondary)]">
+          <h3 className="text-xs font-bold tracking-wider text-[var(--text-secondary)] uppercase">
             참고 공식 문서 및 출처
           </h3>
           <ul className="mt-3 space-y-1.5 text-xs text-[var(--text-secondary)]">
@@ -159,7 +159,7 @@ export function ConceptView({ concept }: ConceptViewProps) {
                     href={src.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline hover:text-[var(--text-primary)] transition-colors"
+                    className="underline transition-colors hover:text-[var(--text-primary)]"
                   >
                     {src.label}
                   </a>

@@ -30,7 +30,7 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-[var(--border-subtle)] bg-[var(--bg-primary)]/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3.5">
         {/* 로고 */}
-        <Link href="/" className="flex items-center gap-2.5 shrink-0">
+        <Link href="/" className="flex shrink-0 items-center gap-2.5">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/10 font-mono text-base font-bold text-emerald-600 dark:text-emerald-400">
             ⇄
           </span>
@@ -42,7 +42,7 @@ export function Navbar() {
         </Link>
 
         {/* 중앙 빠른 검색창 */}
-        <div className="relative flex-1 max-w-md">
+        <div className="relative max-w-md flex-1">
           <div className="relative">
             <input
               type="text"
@@ -56,7 +56,7 @@ export function Navbar() {
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
-                className="absolute right-2.5 top-1/2 -translate-y-1/2 text-xs text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+                className="absolute top-1/2 right-2.5 -translate-y-1/2 text-xs text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
               >
                 ✕
               </button>
@@ -65,14 +65,14 @@ export function Navbar() {
 
           {/* 검색 결과 드롭다운 */}
           {isFocused && searchQuery.trim() && (
-            <div className="absolute left-0 right-0 top-full mt-1.5 max-h-72 overflow-y-auto rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-primary)] p-2 shadow-lg">
+            <div className="absolute top-full right-0 left-0 mt-1.5 max-h-72 overflow-y-auto rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-primary)] p-2 shadow-lg">
               {filteredConcepts.length > 0 ? (
                 <ul className="space-y-1">
                   {filteredConcepts.map((c) => (
                     <li key={c.slug}>
                       <button
                         onMouseDown={() => handleSelect(c.axis, c.slug)}
-                        className="w-full rounded-lg p-2.5 text-left transition-colors hover:bg-[var(--bg-secondary)] flex flex-col gap-0.5"
+                        className="flex w-full flex-col gap-0.5 rounded-lg p-2.5 text-left transition-colors hover:bg-[var(--bg-secondary)]"
                       >
                         <div className="flex items-center justify-between text-xs">
                           <span className="font-semibold text-[var(--text-primary)]">
@@ -99,7 +99,7 @@ export function Navbar() {
         </div>
 
         {/* 테마 토글 */}
-        <div className="flex items-center gap-2 shrink-0">
+        <div className="flex shrink-0 items-center gap-2">
           <ThemeToggle />
         </div>
       </div>

@@ -19,11 +19,11 @@ export function ComparisonTable({
       <div className="overflow-x-auto">
         <table className="w-full min-w-[640px] border-collapse text-left text-sm">
           <thead>
-            <tr className="border-b border-[var(--border-subtle)] bg-[var(--bg-secondary)]/50 text-xs font-semibold uppercase tracking-wider text-[var(--text-secondary)]">
-              <th className="w-1/4 px-6 py-3.5 border-r border-[var(--border-subtle)]">
+            <tr className="border-b border-[var(--border-subtle)] bg-[var(--bg-secondary)]/50 text-xs font-semibold tracking-wider text-[var(--text-secondary)] uppercase">
+              <th className="w-1/4 border-r border-[var(--border-subtle)] px-6 py-3.5">
                 비교 항목
               </th>
-              <th className="w-[37.5%] px-6 py-3.5 border-r border-[var(--border-subtle)]">
+              <th className="w-[37.5%] border-r border-[var(--border-subtle)] px-6 py-3.5">
                 <span className="inline-flex items-center gap-1.5 font-bold text-[var(--text-primary)]">
                   <span className="h-2 w-2 rounded-full bg-[var(--diagram-react-border)]" />
                   {leftTitle}
@@ -43,10 +43,10 @@ export function ComparisonTable({
                 key={index}
                 className="transition-colors hover:bg-[var(--bg-secondary)]/40"
               >
-                <td className="px-6 py-4 font-semibold text-[var(--text-primary)] border-r border-[var(--border-subtle)] bg-[var(--bg-secondary)]/20">
+                <td className="border-r border-[var(--border-subtle)] bg-[var(--bg-secondary)]/20 px-6 py-4 font-semibold text-[var(--text-primary)]">
                   {row.label}
                 </td>
-                <td className="px-6 py-4 leading-relaxed text-[var(--text-secondary)] border-r border-[var(--border-subtle)]">
+                <td className="border-r border-[var(--border-subtle)] px-6 py-4 leading-relaxed text-[var(--text-secondary)]">
                   {row.left}
                 </td>
                 <td className="px-6 py-4 leading-relaxed text-[var(--text-secondary)]">

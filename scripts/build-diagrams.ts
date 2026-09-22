@@ -67,7 +67,9 @@ async function buildDiagrams() {
   console.log('🚀 [Mermaid → SVG] 빌드 파이프라인 시작...');
 
   if (!fs.existsSync(DIAGRAMS_SRC_DIR)) {
-    console.error(`❌ 다이어그램 소스 디렉토리를 찾을 수 없습니다: ${DIAGRAMS_SRC_DIR}`);
+    console.error(
+      `❌ 다이어그램 소스 디렉토리를 찾을 수 없습니다: ${DIAGRAMS_SRC_DIR}`
+    );
     process.exit(1);
   }
 

@@ -8,7 +8,11 @@ interface DiagramSvgProps {
   title?: string;
 }
 
-export function DiagramSvg({ diagramId, className = '', title }: DiagramSvgProps) {
+export function DiagramSvg({
+  diagramId,
+  className = '',
+  title,
+}: DiagramSvgProps) {
   const svgContent = (manifest as Record<string, string>)[diagramId];
 
   if (!svgContent) {
@@ -22,12 +26,12 @@ export function DiagramSvg({ diagramId, className = '', title }: DiagramSvgProps
   return (
     <figure className={`my-6 flex flex-col items-center ${className}`}>
       {title && (
-        <figcaption className="mb-3 text-xs font-semibold uppercase tracking-wider text-[var(--text-secondary)]">
+        <figcaption className="mb-3 text-xs font-semibold tracking-wider text-[var(--text-secondary)] uppercase">
           {title}
         </figcaption>
       )}
       <div
-        className="w-full overflow-x-auto rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] p-6 shadow-xs flex justify-center transition-colors duration-200 [&_svg]:max-w-full [&_svg]:h-auto"
+        className="flex w-full justify-center overflow-x-auto rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] p-6 shadow-xs transition-colors duration-200 [&_svg]:h-auto [&_svg]:max-w-full"
         dangerouslySetInnerHTML={{ __html: svgContent }}
       />
     </figure>
