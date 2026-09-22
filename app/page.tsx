@@ -1,239 +1,107 @@
-import { ThemeToggle } from '@/components/ThemeToggle';
+import Link from 'next/link';
+import { allConcepts, axisMetadata } from '@/content/index';
 import { DiagramSvg } from '@/components/diagram/DiagramSvg';
 
 export default function Home() {
+  const axes = Object.keys(axisMetadata) as (keyof typeof axisMetadata)[];
+
   return (
     <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] transition-colors duration-200">
-      {/* 헤더 */}
-      <header className="sticky top-0 z-50 border-b border-[var(--border-subtle)] bg-[var(--bg-primary)]/80 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <div className="flex items-center gap-3">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-500/10 font-mono text-lg font-bold text-emerald-600 dark:text-emerald-400">
-              ⇄
-            </span>
-            <div>
-              <h1 className="text-lg font-bold tracking-tight">
-                React ↔ Vue 전환 학습 가이드
-              </h1>
-              <p className="text-xs text-[var(--text-secondary)]">
-                현대 프론트엔드 프레임워크 상호 전환 지식 허브
-              </p>
-            </div>
-          </div>
-          <ThemeToggle />
-        </div>
-      </header>
-
-      {/* 메인 히어로 */}
       <main className="mx-auto max-w-6xl px-6 py-12">
-        <section className="mb-16 text-center">
-          <div className="inline-flex items-center rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
-            Phase 1: 디자인 토큰 & 다크모드 체계 구축 완료
+        {/* 히어로 섹션 */}
+        <section className="mb-14 text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+            <span>✨</span> 실무 중심 프레임워크 상호 전환 가이드
           </div>
-          <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+          <h1 className="mt-5 text-3xl font-extrabold tracking-tight sm:text-5xl">
             하나의 개념, 두 가지 시각
-          </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-base text-[var(--text-secondary)]">
-            React 개발자를 위한 Vue, Vue2 레거시를 위한 Vue3, 그리고 Nuxt와
-            Next를 관통하는 핵심 아키텍처 비교 학습
+          </h1>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-[var(--text-secondary)]">
+            React 개발자를 위한 Vue 3, Vue 2 레거시를 위한 Composition API, 그리고 Nuxt 3와 Next.js를 관통하는 핵심 아키텍처와 실전 포트폴리오 코드를 직접 비교하며 학습합니다.
           </p>
         </section>
 
-        {/* 3대 학습 축 프리뷰 */}
+        {/* 3대 전환 학습 축 목록 */}
         <section className="mb-16">
-          <h3 className="mb-6 text-xl font-bold tracking-tight">
-            3대 전환 학습 축
-          </h3>
+          <div className="mb-8 flex items-center justify-between">
+            <div>
+              <h2 className="text-2xl font-bold tracking-tight">
+                3대 전환 학습 축
+              </h2>
+              <p className="text-sm text-[var(--text-secondary)]">
+                관심 있는 전환 경로를 선택하여 핵심 개념과 실전 예제를 학습하세요.
+              </p>
+            </div>
+          </div>
+
           <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] p-6 shadow-xs">
-              <div className="mb-3 inline-block rounded-md bg-[var(--diagram-react-bg)] px-2.5 py-1 text-xs font-semibold text-[var(--diagram-react-text)]">
-                축 1
-              </div>
-              <h4 className="text-lg font-semibold">React ↔ Vue</h4>
-              <p className="mt-2 text-sm text-[var(--text-secondary)]">
-                JSX와 템플릿, Hooks와 Composition API의 반응성 모델 멘탈 모델
-                매핑
-              </p>
-            </div>
+            {axes.map((axis) => {
+              const meta = axisMetadata[axis];
+              const concepts = allConcepts.filter((c) => c.axis === axis);
 
-            <div className="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] p-6 shadow-xs">
-              <div className="mb-3 inline-block rounded-md bg-[var(--diagram-vue-bg)] px-2.5 py-1 text-xs font-semibold text-[var(--diagram-vue-text)]">
-                축 2
-              </div>
-              <h4 className="text-lg font-semibold">Vue2 → Vue3</h4>
-              <p className="mt-2 text-sm text-[var(--text-secondary)]">
-                Options API에서 {'<script setup>'} 및 Composition API로의 안전한
-                마이그레이션
-              </p>
-            </div>
+              return (
+                <div
+                  key={axis}
+                  className="flex flex-col justify-between rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] p-6 shadow-xs transition-all hover:border-emerald-500/40 hover:shadow-md"
+                >
+                  <div>
+                    <div className="mb-3 flex items-center justify-between">
+                      <span className="rounded-md bg-emerald-500/10 px-2.5 py-0.5 text-xs font-bold text-emerald-600 dark:text-emerald-400">
+                        {meta.badge}
+                      </span>
+                      <span className="text-xs font-mono text-[var(--text-secondary)]">
+                        {concepts.length}개 개념
+                      </span>
+                    </div>
+                    <h3 className="text-lg font-bold tracking-tight text-[var(--text-primary)]">
+                      {meta.title}
+                    </h3>
+                    <p className="mt-1 text-xs font-medium text-emerald-600 dark:text-emerald-400">
+                      {meta.subtitle}
+                    </p>
+                    <p className="mt-3 text-xs leading-relaxed text-[var(--text-secondary)]">
+                      {meta.description}
+                    </p>
+                  </div>
 
-            <div className="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] p-6 shadow-xs">
-              <div className="mb-3 inline-block rounded-md bg-[var(--diagram-ok-bg)] px-2.5 py-1 text-xs font-semibold text-[var(--diagram-ok-text)]">
-                축 3
-              </div>
-              <h4 className="text-lg font-semibold">Nuxt3 ↔ Next.js</h4>
-              <p className="mt-2 text-sm text-[var(--text-secondary)]">
-                서버 컴포넌트(RSC)와 Nitro 서버 엔진의 SSR / SSG 하이브리드
-                아키텍처 비교
-              </p>
-            </div>
+                  <div className="mt-6 border-t border-[var(--border-subtle)] pt-4">
+                    <span className="mb-2 block text-[11px] font-semibold text-[var(--text-secondary)] uppercase tracking-wider">
+                      학습 가능한 개념
+                    </span>
+                    <ul className="space-y-2">
+                      {concepts.map((concept) => (
+                        <li key={concept.slug}>
+                          <Link
+                            href={`/${axis}/${concept.slug}`}
+                            className="group flex items-center justify-between rounded-lg p-2 text-xs font-semibold text-[var(--text-primary)] transition-colors hover:bg-[var(--bg-primary)]"
+                          >
+                            <span className="line-clamp-1 group-hover:text-emerald-500 transition-colors">
+                              {concept.title}
+                            </span>
+                            <span className="text-[var(--text-secondary)] group-hover:translate-x-0.5 transition-transform">
+                              →
+                            </span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </section>
 
-        {/* 다이어그램 토큰 색상 검증 섹션 */}
-        <section className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] p-8">
-          <div className="mb-6 flex flex-col justify-between gap-2 sm:flex-row sm:items-center">
-            <div>
-              <h3 className="text-xl font-bold">다이어그램 디자인 토큰 검증</h3>
-              <p className="text-sm text-[var(--text-secondary)]">
-                우측 상단 테마 버튼을 토글하여 라이트/다크 모드별 SVG 다이어그램
-                토큰 색상 전환을 실시간으로 확인하세요.
-              </p>
+        {/* Phase 3: Mermaid 빌드 파이프라인 실시간 렌더링 섹션 */}
+        <section className="mt-16 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] p-8">
+          <div className="mb-6 flex flex-col gap-1">
+            <div className="inline-flex items-center rounded-full border border-sky-500/20 bg-sky-500/10 px-3 py-1 text-xs font-semibold text-sky-600 dark:text-sky-400 self-start">
+              실행 모델 구조도
             </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-            {/* Vue Token */}
-            <div
-              className="flex flex-col items-center justify-center rounded-xl p-5 text-center transition-colors"
-              style={{
-                backgroundColor: 'var(--diagram-vue-bg)',
-                border: '1.5px solid var(--diagram-vue-border)',
-                color: 'var(--diagram-vue-text)',
-              }}
-            >
-              <span className="font-mono text-xs font-bold tracking-wider uppercase">
-                Vue Token
-              </span>
-              <span className="mt-1 text-base font-semibold">
-                --diagram-vue-*
-              </span>
-              <span className="mt-2 text-xs opacity-80">
-                반응성 / Composition
-              </span>
-            </div>
-
-            {/* React Token */}
-            <div
-              className="flex flex-col items-center justify-center rounded-xl p-5 text-center transition-colors"
-              style={{
-                backgroundColor: 'var(--diagram-react-bg)',
-                border: '1.5px solid var(--diagram-react-border)',
-                color: 'var(--diagram-react-text)',
-              }}
-            >
-              <span className="font-mono text-xs font-bold tracking-wider uppercase">
-                React Token
-              </span>
-              <span className="mt-1 text-base font-semibold">
-                --diagram-react-*
-              </span>
-              <span className="mt-2 text-xs opacity-80">Hooks / 불변성</span>
-            </div>
-
-            {/* Warn Token */}
-            <div
-              className="flex flex-col items-center justify-center rounded-xl p-5 text-center transition-colors"
-              style={{
-                backgroundColor: 'var(--diagram-warn-bg)',
-                border: '1.5px solid var(--diagram-warn-border)',
-                color: 'var(--diagram-warn-text)',
-              }}
-            >
-              <span className="font-mono text-xs font-bold tracking-wider uppercase">
-                Warn Token
-              </span>
-              <span className="mt-1 text-base font-semibold">
-                --diagram-warn-*
-              </span>
-              <span className="mt-2 text-xs opacity-80">
-                함정 질문 / 주의사항
-              </span>
-            </div>
-
-            {/* Ok Token */}
-            <div
-              className="flex flex-col items-center justify-center rounded-xl p-5 text-center transition-colors"
-              style={{
-                backgroundColor: 'var(--diagram-ok-bg)',
-                border: '1.5px solid var(--diagram-ok-border)',
-                color: 'var(--diagram-ok-text)',
-              }}
-            >
-              <span className="font-mono text-xs font-bold tracking-wider uppercase">
-                Ok Token
-              </span>
-              <span className="mt-1 text-base font-semibold">
-                --diagram-ok-*
-              </span>
-              <span className="mt-2 text-xs opacity-80">
-                해결책 / 모범 사례
-              </span>
-            </div>
-          </div>
-
-          {/* 중립(Neutral) 토큰 */}
-          <div className="mt-6">
-            <h4 className="mb-3 text-xs font-semibold tracking-wider text-[var(--text-secondary)] uppercase">
-              중립 단계 토큰 (--diagram-neutral-1 ~ 4)
-            </h4>
-            <div className="grid grid-cols-4 gap-3 text-center text-xs">
-              <div
-                className="rounded-lg p-3 font-mono font-medium"
-                style={{
-                  backgroundColor: 'var(--diagram-neutral-1)',
-                  border: '1px solid var(--border-subtle)',
-                  color: 'var(--diagram-text)',
-                }}
-              >
-                Neutral 1
-              </div>
-              <div
-                className="rounded-lg p-3 font-mono font-medium"
-                style={{
-                  backgroundColor: 'var(--diagram-neutral-2)',
-                  border: '1px solid var(--border-subtle)',
-                  color: 'var(--diagram-text)',
-                }}
-              >
-                Neutral 2
-              </div>
-              <div
-                className="rounded-lg p-3 font-mono font-medium"
-                style={{
-                  backgroundColor: 'var(--diagram-neutral-3)',
-                  border: '1px solid var(--border-subtle)',
-                  color: 'var(--diagram-text)',
-                }}
-              >
-                Neutral 3
-              </div>
-              <div
-                className="rounded-lg p-3 font-mono font-medium"
-                style={{
-                  backgroundColor: 'var(--diagram-neutral-4)',
-                  border: '1px solid var(--border-subtle)',
-                  color: 'var(--diagram-text)',
-                }}
-              >
-                Neutral 4
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Phase 3: Mermaid 빌드 파이프라인 실시간 렌더링 검증 */}
-        <section className="mt-16">
-          <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <div className="inline-flex items-center rounded-full border border-sky-500/20 bg-sky-500/10 px-3 py-1 text-xs font-semibold text-sky-600 dark:text-sky-400">
-                Phase 3: Mermaid → SVG 빌드 파이프라인 검증
-              </div>
-              <h3 className="mt-2 text-2xl font-bold">인라인 SVG 구조도 및 다크모드 연동</h3>
-              <p className="text-sm text-[var(--text-secondary)]">
-                빌드 시점에 생성된 무(Zero) 런타임 인라인 SVG 구조도입니다. 상단 테마 버튼 클릭 시 CSS 변수에 의해 도식 색상이 실시간으로 함께 전환됩니다.
-              </p>
-            </div>
+            <h3 className="mt-2 text-2xl font-bold">인라인 SVG 구조도 및 다크모드 실시간 연동</h3>
+            <p className="text-sm text-[var(--text-secondary)]">
+              Mermaid CLI로 빌드 시점 생성된 Zero-Runtime SVG입니다. 상단 테마 버튼 토글 시 CSS 변수로 도식 색상이 실시간 전환됩니다.
+            </p>
           </div>
 
           <div className="space-y-8">
