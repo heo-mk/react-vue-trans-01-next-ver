@@ -5,138 +5,140 @@ export const optionsToComposition: ConceptPage = {
   axis: 'vue2-vue3',
   title: 'Options API에서 Composition API (<script setup>)로의 전환',
   oneLineSummary:
-    'Options API가 서랍 종류(데이터 칸, 함수 칸, 감시자 칸)별로 코드를 나누어 담았다면, Composition API는 같은 일(기능)을 하는 물건들을 하나의 상자에 한 번에 모아 담는 방식입니다.',
+    'Vue2가 방마다 개별 CCTV(defineProperty)를 달아 새 방을 보지 못했다면, Vue3는 건물 입구에 경비원(Proxy)을 세워 모든 출입을 감시하며, 기능별로 코드를 한곳에 모읍니다.',
   analogy:
-    '요리 레시피를 쓸 때, 이전에는 재료 목록, 조리 도구 목록, 요리 순서를 서류 양식별로 따로 적어두어 왔다 갔다 읽어야 했다면, 새 방식은 "라면 끓이기", "김치 볶기" 단위로 재료와 조리법을 묶어 모듈화한 것입니다.',
+    'Vue2는 집사가 미리 정해진 방에만 CCTV를 달아두어 나중에 새로 생긴 방(새 속성)은 보지 못해 $set이 필요했던 방식이고, Vue3는 건물 전체 출입구에 경비원(Proxy)을 세워 어떤 방이든 나중에 생겨도 전부 감지하는 방식입니다.',
+  sourceNote:
+    '02_두번째 보고서 1.1 "핵심 차이: 속성별 감시에서 전체 감시로" 비유 인용',
   comparisonTable: [
     {
-      label: '코드 구성 방식',
-      left: '옵션 중심 (data, methods, computed, watch 속성으로 코드 분산)',
+      label: '반응성 엔진',
+      left: 'Object.defineProperty — 속성별 개별 감시 (새 속성 추가/배열 인덱스 수정 감지 불가, $set 필수)',
       right:
-        '논리적 관심사(Feature) 중심. 기능별 변수와 함수를 자유롭게 근접 배치',
+        'ES6 Proxy — 객체 전체 래핑 감시 (새 속성 추가, 삭제, 배열 조작 모두 자동 감지, $set 완전 제거)',
     },
     {
-      label: 'TypeScript 지원',
-      left: 'this 컨텍스트 추론의 한계로 인해 복잡한 타입 정의 및 데코레이터 필요',
+      label: '코드 구조',
+      left: '옵션 중심 (data, methods, computed, watch 속성별로 기능 코드가 파편화)',
       right:
-        '순수 함수와 변수 기반이므로 별도 설정 없이 완벽한 타입 추론과 제네릭 지원',
+        '논리적 관심사(Feature) 중심 — 같은 기능을 수행하는 상태와 로직을 한 블록에 근접 배치',
     },
     {
       label: '로직 재사용',
-      left: 'Mixins 사용 — 네임스페이스 충돌 위험, 속성 출처가 불분명한 암묵적 주입',
+      left: 'Mixins 사용 — 변수명 충돌 위험, 속성 출처가 불분명한 암묵적 주입 문제',
       right:
-        'Composables(useXxx) 사용 — 명시적 매개변수와 반환값으로 투명한 재사용',
+        'Composables (useXxx) 사용 — 매개변수와 반환값이 명시적인 함수 조합 패턴',
     },
     {
-      label: '인스턴스 this 사용',
-      left: '모든 상태와 메서드에 this.count, this.fetchData()로 접근 필수',
-      right: 'this가 완전히 제거됨. 클로저(Closure)와 스코프 변수로 직접 접근',
+      label: 'TypeScript 지원',
+      left: 'this 컨텍스트 추론 한계로 인해 추가적인 데코레이터 및 복잡한 타입 정의 필요',
+      right:
+        '순수 변수와 함수 스코프이므로 별도 설정 없이 완벽한 타입 추론 및 자동완성',
     },
   ],
   codeExamples: [
     {
       label: '기초 예제',
       version: 'Vue 2.7+ (Options API) → Vue 3.4+ (<script setup>)',
-      leftCode: `<!-- [Vue 2] Options API Counter.vue -->
+      leftCode: `<!-- [Vue 2] Options API: $set 필수 및 옵션 분산 -->
 <template>
   <div>
-    <p>카운트: {{ count }} (2배: {{ doubleCount }})</p>
-    <button @click="increment">+1 증가</button>
+    <p>{{ user.name }} (나이: {{ user.age }})</p>
+    <button @click="addAgeProperty">새 속성 추가</button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Counter',
   data() {
     return {
-      count: 0,
+      user: { name: '철수' } // age 속성이 선언 시점에 없음
     };
   },
-  computed: {
-    doubleCount() {
-      return this.count * 2;
-    },
-  },
   methods: {
-    increment() {
-      this.count++;
-    },
-  },
+    addAgeProperty() {
+      // Vue2에서는 직접 대입(this.user.age = 20)하면 화면 갱신 안 됨!
+      this.$set(this.user, 'age', 20);
+    }
+  }
 };
 </script>`,
-      rightCode: `<!-- [Vue 3] Composition API (<script setup>) Counter.vue -->
+      rightCode: `<!-- [Vue 3] Composition API (<script setup>): Proxy 자동 감지 -->
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { reactive } from 'vue';
 
-// 관련 상태와 계산된 속성, 메서드를 같은 위치에 선언
-const count = ref<number>(0);
-const doubleCount = computed(() => count.value * 2);
+interface User {
+  name: string;
+  age?: number;
+}
 
-const increment = () => {
-  count.value++;
+const user = reactive<User>({ name: '철수' });
+
+const addAgeProperty = () => {
+  // Vue3 Proxy는 새로운 속성 추가도 즉각 감지 ($set 불필요)
+  user.age = 20;
 };
 </script>
 
 <template>
   <div>
-    <p>카운트: {{ count }} (2배: {{ doubleCount }})</p>
-    <button @click="increment">+1 증가</button>
+    <p>{{ user.name }} (나이: {{ user.age }})</p>
+    <button @click="addAgeProperty">새 속성 추가</button>
   </div>
 </template>`,
     },
     {
       label: '실전 예제',
-      version: 'Vue 2.7+ Mixin → Vue 3.4+ Custom Composable',
-      sourceProject: 'Portfolio Admin Dashboard',
-      leftCode: `// [Vue 2] 페이지네이션 Mixin 패턴 (출처 추적 불가 문제)
-// mixins/pagination.js
+      version: 'Vue 2.7+ Mixin 패턴 → Vue 3.4+ Composable 패턴',
+      sourceProject: 'Portfolio Admin Dashboard & 퇴직금 회수 가이드',
+      leftCode: `// [Vue 2] Mixin의 치명적 단점: 암묵적 의존성과 이름 충돌
+// mixins/tablePagination.js
 export default {
   data() {
-    return { page: 1, pageSize: 10, total: 0 };
+    return { page: 1, limit: 10, total: 0 };
   },
   methods: {
     nextPage() {
       this.page++;
-      this.fetchList(); // 컴포넌트에 이 메서드가 있을 거라 암묵적 가정
-    },
-  },
+      this.fetchData(); // 컴포넌트에 fetchData가 있을 것이라 암묵적 가정
+    }
+  }
 };
 
 // Component.vue
 export default {
-  mixins: [paginationMixin, filterMixin], // 두 믹스인에서 같은 변수명을 쓰면 충돌!
+  mixins: [tablePagination, userFilterMixin], // 두 믹스인에 동일한 변수명이 있다면 덮어씌워짐!
   methods: {
-    fetchList() { /* ... */ }
+    fetchData() { /* ... */ }
   }
 };`,
-      rightCode: `// [Vue 3] usePagination Composable 패턴 (완전한 타입 안정성과 명시성)
-// composables/usePagination.ts
+      rightCode: `// [Vue 3] Composable: 명시적 매개변수와 반환값 보장
+// composables/useTablePagination.ts
 import { ref, readonly } from 'vue';
 
-export function usePagination(onPageChange: (page: number) => void) {
+export function useTablePagination(onFetch: (page: number) => void) {
   const page = ref(1);
-  const pageSize = ref(10);
+  const limit = ref(10);
   const total = ref(0);
 
   const nextPage = () => {
     page.value++;
-    onPageChange(page.value);
+    onFetch(page.value);
   };
 
   return {
     page: readonly(page),
-    pageSize,
+    limit,
     total,
-    nextPage,
+    nextPage
   };
 }
 
 // Component.vue (<script setup>)
-import { usePagination } from '@/composables/usePagination';
+import { useTablePagination } from '@/composables/useTablePagination';
 
-const { page, nextPage } = usePagination((next) => {
-  fetchItems(next);
+const { page, nextPage } = useTablePagination((newPage) => {
+  loadData(newPage);
 });`,
     },
   ],
@@ -144,25 +146,28 @@ const { page, nextPage } = usePagination((next) => {
   pitfalls: [
     {
       question:
-        'Vue3에서 reactive()로 선언한 객체를 const { user, token } = state 로 구조분해하면 왜 반응성이 끊어지나요?',
+        'Vue2에서는 왜 객체에 새 속성을 추가하거나 배열 인덱스로 값을 바꿀 때 화면이 갱신되지 않았나요?',
       answer:
-        'reactive()는 JavaScript의 ES6 Proxy로 객체를 감싸 속성 접근과 수정을 트래킹합니다. 객체를 단순 구조 분해 할당하면 Proxy 래퍼와의 연결이 끊긴 순수 원시값이나 일반 객체 참조만 복사되기 때문에 이후 값이 바뀌어도 Vue가 감지할 수 없습니다. 구조분해를 할 때는 반드시 toRefs(state) 또는 toRef()를 거쳐야 각 속성이 ref로 변환되어 반응성이 유지됩니다.',
+        'Vue2는 Object.defineProperty()를 사용해 컴포넌트 초기화 시점에 이미 존재하는 속성들에 대해서만 getter/setter를 구성했습니다. 초기화 이후에 추가된 새 속성이나 배열 인덱스(arr[0] = val)는 감시자가 달리지 않았기 때문에 변경을 감지하지 못했습니다. 이를 위해 Vue.set()이나 this.$set()이라는 특수 API를 강제해야 했습니다. Vue3는 객체 자체를 감싸는 Proxy를 도입하여 이 문제를 완전히 해결했습니다.',
     },
     {
       question:
-        'Vue2의 Options API는 Vue3에서 완전히 폐기(deprecated)되었나요?',
+        'Vue3에서 reactive()로 감싼 객체를 const { count } = state 로 구조분해하면 반응성이 끊어지는 이유는 무엇인가요?',
       answer:
-        '아닙니다. Vue3에서도 Options API는 100% 공식 지원됩니다. 내부적으로 Options API 또한 동일한 Composition API 반응성 엔진 위에서 동작하도록 재구현되었습니다. 기존 프로젝트를 점진적으로 마이그레이션할 수 있으며, 팀의 선호와 규모에 따라 두 방식을 혼용할 수도 있습니다.',
+        'reactive()는 JavaScript의 Proxy 객체를 반환합니다. 구조분해 할당을 수행하면 Proxy 래퍼와의 연결이 끊어지고 원시값(Primitive Value)만 별도 변수로 복사됩니다. 복사된 변수는 더 이상 Proxy의 get/set 트래킹을 거치지 않으므로 값이 바뀌어도 화면이 갱신되지 않습니다. 반응성을 유지하면서 구조분해를 하려면 반드시 toRefs(state) 유틸리티를 사용해야 합니다.',
     },
   ],
   sources: [
+    {
+      label: 'Vue 3 공식 문서 - Reactivity in Depth',
+      url: 'https://vuejs.org/guide/extras/reactivity-in-depth.html',
+    },
     {
       label: 'Vue 3 공식 문서 - Composition API FAQ',
       url: 'https://vuejs.org/guide/extras/composition-api-faq.html',
     },
     {
-      label: 'Vue 3 공식 문서 - Script Setup 문법 가이드',
-      url: 'https://vuejs.org/api/sfc-script-setup.html',
+      label: '02_두번째 보고서 1.1 & 2.1 (Mixin에서 Composable로)',
     },
   ],
 };

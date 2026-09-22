@@ -3,132 +3,144 @@ import { ConceptPage } from '../../schema';
 export const reactivityState: ConceptPage = {
   slug: 'reactivity-state',
   axis: 'react-vue',
-  title: '상태와 반응성 모델 (useState vs ref/reactive)',
+  title: '사고 전환의 출발점: 감시(Vue)와 알림(React)',
   oneLineSummary:
-    'React는 값이 바뀌면 컴포넌트 함수 전체를 다시 실행해 화면을 덮어쓰고, Vue는 값에 센서(Proxy)를 달아 변경된 부분만 콕 집어 스스로 업데이트합니다.',
+    'Vue는 값에 센서(Proxy)를 달아 스스로 지켜보다가 바뀌면 알아서 고치고, React는 개발자가 초인종(setter)을 눌러줄 때까지 집주인이 가만히 기다리는 방식입니다.',
   analogy:
-    'React는 방에 가구가 바뀌면 방 전체를 사진 찍어 이전 사진과 비교한 뒤 바뀐 곳을 고치는 방식이고, Vue는 각 가구에 벨을 달아두어 누군가 건드리면 즉시 담당 인부에게 알림이 가는 방식입니다.',
+    'Vue는 CCTV가 방 안을 계속 지켜보다가 무언가 움직이면 자동으로 반응하는 것과 같고, React는 누군가 초인종을 눌러야만 손님이 왔다는 사실을 아는 집주인과 같습니다.',
+  sourceNote: '01_통합보고서 1-1 "감시와 알림이라는 비유" 인용',
   comparisonTable: [
     {
-      label: '반응성 동작 원리',
-      left: '불변성(Immutability) 기반. 상태 변경 함수(setter) 호출 시 컴포넌트 함수 재실행 및 가상 DOM Diffing',
-      right:
-        '가변 프록시(Proxy) 기반. 의존성 추적(Dependency Tracking)을 통해 변경된 DOM 노드만 정밀 업데이트',
+      label: '근본 철학',
+      left: '알림(Notification) 방식 — 개발자가 setter 함수로 명시적 통보',
+      right: '감시(Observation) 방식 — Proxy가 값의 변화를 스스로 감지',
     },
     {
-      label: '값 읽기 및 쓰기',
+      label: '반응성 메커니즘',
+      left: '불변성(Immutability) 기반. 상태 변경 시 컴포넌트 함수 전체를 재실행하여 가상 DOM Diffing 수행',
+      right:
+        '가변성(Mutability) 기반. Getter/Setter 트래킹을 통해 변경된 DOM 노드만 정밀 타겟팅 갱신',
+    },
+    {
+      label: '값 접근 및 수정',
       left: 'getter/setter 분리 (`const [count, setCount] = useState(0)`)',
       right:
-        '단일 래퍼 객체 (`const count = ref(0)`). 스크립트에서는 `count.value`, 템플릿에서는 자동 언래핑',
+        '단일 ref 래퍼 (`const count = ref(0)`). 스크립트에서는 `.value`, 템플릿에서는 자동 언래핑',
     },
     {
-      label: '객체/배열 업데이트',
-      left: '항상 새로운 복사본 객체를 생성해 전달 (`setObj({ ...obj, key: val })`)',
+      label: '자식 컴포넌트 갱신',
+      left: '부모가 리렌더링되면 props 변경 여부와 무관하게 모든 자식이 기본적으로 함께 다시 그려짐 (React.memo 필요)',
       right:
-        '직접 속성 변경 허용 (`obj.key = val`). 깊은 반응성(Deep Reactivity) 자동 지원',
+        '실제로 변경된 props를 전달받은 자식 컴포넌트만 정밀하게 갱신됨 (컴파일러 최적화)',
     },
     {
-      label: '구조 분해 할당',
-      left: '상태 값 자체는 일반 원시값/객체이므로 자유롭게 구조 분해 가능',
+      label: '객체/배열 조작',
+      left: '항상 새로운 참조 객체를 복사해서 반환해야 함 (`setList([...list, newItem])`)',
       right:
-        '`reactive` 객체를 단순 구조 분해하면 반응성이 유실됨 (`toRefs` 필수)',
+        '기존 배열/객체에 직접 push나 속성 할당 허용 (`list.value.push(newItem)`)',
     },
   ],
   codeExamples: [
     {
       label: '기초 예제',
       version: 'React 18+ vs Vue 3.4+',
-      leftCode: `// [React] Counter.tsx (React 18+)
-import { useState } from 'react';
+      leftCode: `// [React] React 18+ — 알림(setter) 방식
+import { useState, useEffect } from 'react';
 
 export function Counter() {
-  const [count, setCount] = useState<number>(0);
+  const [count, setCount] = useState(0);
 
-  const increment = () => {
-    // 반드시 setter 함수를 통해 새로운 값 전달
-    setCount((prev) => prev + 1);
-  };
+  // 감시 대상을 개발자가 의존성 배열에 직접 명시해야 함
+  useEffect(() => {
+    document.title = \`클릭: \${count}\`;
+  }, [count]);
 
   return (
-    <button onClick={increment}>
-      클릭 횟수: {count}
+    <button onClick={() => setCount((prev) => prev + 1)}>
+      {count}
     </button>
   );
 }`,
-      rightCode: `<!-- [Vue] Counter.vue (Vue 3.4+) -->
+      rightCode: `<!-- [Vue] Vue 3.4+ — 감시(Proxy) 방식 -->
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, watchEffect } from 'vue';
 
-// ref를 통해 반응형 상태 정의
-const count = ref<number>(0);
+const count = ref(0);
 
-const increment = () => {
-  // 스크립트 내부에서는 .value로 직접 수정
-  count.value++;
-};
+// Proxy가 참조된 count.value를 자동으로 감시하여 실행
+watchEffect(() => {
+  document.title = \`클릭: \${count.value}\`;
+});
 </script>
 
 <template>
-  <!-- 템플릿에서는 .value 없이 직접 접근 (자동 언래핑) -->
-  <button @click="increment">
-    클릭 횟수: {{ count }}
+  <button @click="count++">
+    {{ count }}
   </button>
 </template>`,
     },
     {
       label: '실전 예제',
-      version: 'React 18+ vs Vue 3.4+',
-      sourceProject: 'E-Commerce Cart Management',
-      leftCode: `// [React] 실전 장바구니 수량 변경 (불변성 유지 패턴)
-interface CartItem {
-  id: string;
-  name: string;
-  quantity: number;
-}
-
-const updateQuantity = (id: string, delta: number) => {
-  setCartItems((prevItems) =>
-    prevItems.map((item) => {
-      if (item.id === id) {
-        const nextQty = Math.max(1, item.quantity + delta);
-        // 새로운 객체 참조를 반환해야만 리렌더링 발생
-        return { ...item, quantity: nextQty };
-      }
-      return item;
-    })
-  );
-};`,
-      rightCode: `// [Vue] 실전 장바구니 수량 변경 (Proxy 직접 변이 패턴)
-interface CartItem {
-  id: string;
-  name: string;
-  quantity: number;
-}
-
-const cartItems = ref<CartItem[]>([]);
-
-const updateQuantity = (id: string, delta: number) => {
-  const target = cartItems.value.find((item) => item.id === id);
-  if (target) {
-    // Proxy가 속성 쓰기(set)를 가로채어 해당 항목만 정밀 업데이트
-    target.quantity = Math.max(1, target.quantity + delta);
+      version: 'React 18+ (TanStack Query + Zustand) vs Vue 3.4+ (Pinia)',
+      sourceProject: 'smartstore-item-finder & GitFind Dashboard',
+      leftCode: `// [React] 포트폴리오 실전: 불변성을 활용한 Optimistic Update & 스냅샷 롤백
+// GitFind Dashboard / src/hooks/useRepoMutations.ts
+onMutate: async (repo) => {
+  // 이전 상태 스냅샷 복사 (불변성 보장)
+  const previousBookmarks = [...bookmarks];
+  // 낙관적 UI 즉각 업데이트
+  toggleBookmark(repo);
+  return { previousBookmarks };
+},
+onError: (_error, _repo, context) => {
+  // 에러 발생 시 백업 스냅샷으로 롤백
+  if (context) {
+    setBookmarks(context.previousBookmarks);
   }
 };`,
+      rightCode: `// [Vue] 동일 로직의 Vue/Pinia 구현 패턴
+// stores/useRepoStore.ts
+export const useRepoStore = defineStore('repo', () => {
+  const bookmarks = ref<Repo[]>([]);
+
+  const toggleWithRollback = async (repo: Repo) => {
+    // 롤백을 위해 현재 상태 스냅샷 저장
+    const rollback = [...bookmarks.value];
+    // 프록시 배열 직접 조작 (즉시 반응)
+    const idx = bookmarks.value.findIndex((b) => b.id === repo.id);
+    if (idx >= 0) bookmarks.value.splice(idx, 1);
+    else bookmarks.value.push(repo);
+
+    try {
+      await api.toggleBookmark(repo.id);
+    } catch (err) {
+      // 에러 발생 시 이전 스냅샷 복원
+      bookmarks.value = rollback;
+    }
+  };
+  return { bookmarks, toggleWithRollback };
+});`,
     },
   ],
   diagramId: 'reactivity-diagram',
   pitfalls: [
     {
       question:
-        'Vue에서 ref로 선언한 상태를 스크립트에서 count = count + 1 로 쓰면 왜 화면이 갱신되지 않나요?',
+        'React의 useState는 왜 Vue의 data()처럼 자동으로 반응하지 않나요? React가 기술적으로 뒤떨어진 건가요?',
       answer:
-        'ref는 원시값을 Proxy로 감싸기 위해 { value: T } 형태의 참조 객체를 반환합니다. count에 직접 할당하면 Proxy 래퍼 자체가 덮어씌워져 의존성 추적 연결고리가 끊어집니다. 반드시 count.value로 내부 값을 조작해야 반응성 트리거가 작동합니다.',
+        '기술 수준의 문제가 아니라 설계 철학의 문제입니다. Vue는 Proxy로 자동 추적하는 대신, 어떤 값이 어디서 쓰이는지 내부적으로 계속 계산하고 추적하는 런타임 비용을 집니다. 반면 React는 그 비용 대신, 상태 변경 시점을 개발자가 명시하게 하여 데이터 흐름과 렌더링 시점을 예측하기 쉽게 만드는 쪽을 택했습니다. 두 방식 모두 정당한 트레이드오프이며 우열의 문제가 아닙니다.',
     },
     {
       question:
-        'React에서 객체 내부 속성만 변경하고(obj.title = "new") setState(obj)를 호출하면 화면이 안 바뀌는 이유는 무엇인가요?',
+        'React에서 컴포넌트가 다시 그려지는(Re-rendering) 경우는 언제 발생하나요?',
       answer:
-        'React는 Object.is()를 사용한 얕은 비교(Shallow Comparison)로 이전 상태와 새 상태의 참조값(Reference)이 같은지 검사합니다. 객체 내부 속성만 바꾸면 메모리 주소(참조)가 동일하므로 React는 상태가 바뀌지 않았다고 판단하여 리렌더링을 건너뜁니다. 반드시 새 객체({...obj, title: "new"})를 생성해 넘겨야 합니다.',
+        '크게 세 가지입니다. 첫째, useState의 setter 함수가 호출되어 상태가 변경될 때. 둘째, 부모 컴포넌트가 리렌더링될 때(자식은 props가 안 바뀌어도 React.memo가 없으면 기본적으로 함께 다시 그려집니다). 셋째, 구독 중인 Context 값이 바뀔 때입니다.',
+    },
+    {
+      question:
+        'Vue에서 ref로 선언한 상태를 count = count + 1 처럼 직접 재할당하면 왜 반응성이 끊어지나요?',
+      answer:
+        'ref()는 원시값을 Proxy 객체({ value: T })로 감싸서 반환합니다. count에 직접 값을 재할당하면 Proxy 래퍼 자체가 일반 숫자로 덮어씌워져 Vue의 반응성 추적 체계에서 완전히 이탈합니다. 스크립트에서는 반드시 count.value로 내부 프로퍼티를 조작해야 반응성 트래킹이 정상 동작합니다.',
     },
   ],
   sources: [
@@ -139,6 +151,9 @@ const updateQuantity = (id: string, delta: number) => {
     {
       label: 'Vue 3 공식 문서 - Reactivity Fundamentals',
       url: 'https://vuejs.org/guide/essentials/reactivity-fundamentals.html',
+    },
+    {
+      label: '01_통합보고서 & 3_학습노트 (GitFind Dashboard)',
     },
   ],
 };

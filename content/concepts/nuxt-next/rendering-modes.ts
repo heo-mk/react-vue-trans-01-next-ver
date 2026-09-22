@@ -3,35 +3,42 @@ import { ConceptPage } from '../../schema';
 export const renderingModes: ConceptPage = {
   slug: 'rendering-modes',
   axis: 'nuxt-next',
-  title: '서버 렌더링 모델 (Next.js RSC vs Nuxt 3 Universal)',
+  title: '풀스택 메타 프레임워크 아키텍처 (Next.js vs Nuxt 3)',
   oneLineSummary:
-    'Next.js는 컴포넌트 단위로 서버에서만 실행할 부품과 브라우저에서 실행할 부품을 세밀하게 쪼개고, Nuxt 3는 페이지 전체를 서버에서 먼저 그린 뒤 브라우저에 배달해 생명력을 불어넣는(Hydration) 방식을 기본으로 채택합니다.',
+    'Next.js는 컴포넌트 단위로 서버와 브라우저 부품을 세밀하게 분리하고, Nuxt 3는 강력한 Nitro 엔진과 직관적인 설정(routeRules)으로 어디서든 유연하게 동작하는 풀스택 환경을 제공합니다.',
   analogy:
-    'Next.js RSC는 완성된 프라모델 완제품(서버 컴포넌트) 사이에 사용자가 직접 조작할 움직이는 모터(클라이언트 컴포넌트)만 부분 결합해 납품하는 방식이고, Nuxt Universal은 전체 조립 키트를 먼저 서버에서 사진 찍어 보여준 후 브라우저에서 전체 부품을 한꺼번에 조립해 작동시키는 방식입니다.',
+    'Next.js RSC는 완제품 로봇 사이에 사용자가 누를 버튼(클라이언트 컴포넌트)만 콕 집어 끼워 넣는 정밀 조립 라인이고, Nuxt 3는 전 세계 모든 콘센트 규격(Node, Cloudflare, Vercel)에 자동으로 맞춰지는 만능 여행용 변환 어댑터(Nitro)를 장착한 여행 키트입니다.',
+  sourceNote: '02_두번째 보고서 7장 "Nuxt3 ↔ Next.js 전환 가이드" 인용',
   comparisonTable: [
     {
-      label: '기본 컴포넌트 성격',
-      left: "서버 컴포넌트(Server Component) 기본. 클라이언트 동작이 필요할 때만 최상단에 'use client' 명시",
+      label: '기본 렌더링 모델',
+      left: "React 서버 컴포넌트(RSC) 기본 — 서버 컴포넌트는 자바스크립트 번들 0바이트, 상호작용 필요 시 'use client' 명시",
       right:
-        '유니버설 컴포넌트(Universal) 기본. 동일한 컴포넌트 코드가 서버(SSR)와 브라우저(Hydration) 양쪽에서 모두 실행',
+        '유니버설 렌더링(Universal) 기본 — 서버(SSR)에서 생성된 HTML이 브라우저에서 하이드레이션(Hydration)되어 인터랙션 활성화',
     },
     {
-      label: '클라이언트 번들 크기',
-      left: '서버 전용 컴포넌트의 자바스크립트 코드와 무거운 라이브러리는 브라우저 번들에 아예 포함되지 않음 (Zero-Bundle-Size)',
+      label: '서버 런타임 엔진',
+      left: 'Next.js 독자 서버 환경 (Node.js 또는 Edge Runtime 지정)',
       right:
-        '컴포넌트 템플릿과 런타임 코드가 브라우저로 전송되어 하이드레이션됨 (Island Architecture 또는 .client 컴포넌트로 분리 가능)',
+        'Nitro 서버 엔진 내장 — 설정 하나로 Node, Cloudflare Workers, AWS Lambda, Vercel 등 20+ 배포 환경 크로스 컴파일',
     },
     {
-      label: '비동기 데이터 페칭',
-      left: 'async/await를 컴포넌트 본문에서 직접 호출 (`async function Page() { const data = await db.query(); }`)',
+      label: '데이터 페칭 및 직렬화',
+      left: '서버 컴포넌트 본문에서 async/await fetch 직접 호출 (별도 훅 불필요)',
       right:
-        "컴포저블 사용 (`const { data } = await useFetch('/api/posts')`). 서버와 클라이언트 간 자동 캐시 직렬화(Payload)",
+        'useFetch, useAsyncData 컴포저블 사용 — 서버 응답을 페이로드로 자동 직렬화하여 하이드레이션 시 중복 호출 방지',
     },
     {
-      label: '서버 엔진 아키텍처',
-      left: 'Next.js 독자 서버 런타임 (Node.js 또는 Edge Runtime 환경 명시)',
+      label: '컴포넌트 가져오기',
+      left: '명시적 import 필수 (React 생태계 관례 준수)',
       right:
-        'Nitro 엔진 기반 — 설정 한 줄로 Cloudflare Workers, AWS Lambda, Vercel, Node 등 20+ 플랫폼 크로스 배포',
+        'components/, composables/ 폴더 내 파일 자동 임포트(Auto-import) 기본 지원',
+    },
+    {
+      label: '렌더링 규칙 지정',
+      left: '각 페이지/컴포넌트 파일 단위로 분산 지정 (revalidate, dynamic)',
+      right:
+        'nuxt.config.ts의 routeRules 설정 하나로 라우트별 SSR, SSG, SWR, SPA를 중앙 집중 선언',
     },
   ],
   codeExamples: [
@@ -39,7 +46,7 @@ export const renderingModes: ConceptPage = {
       label: '기초 예제',
       version: 'Next.js 15+ (App Router) vs Nuxt 3.14+ (Nitro)',
       leftCode: `// [Next.js App Router] app/posts/page.tsx (기본 Server Component)
-// 서버 전용 데이터베이스를 직접 쿼리 가능 (클라이언트로 코드 유출 없음)
+// 서버 전용 DB 쿼리 직접 실행 (클라이언트 번들로 코드 유출 없음)
 import db from '@/lib/db';
 
 export default async function PostsPage() {
@@ -58,7 +65,7 @@ export default async function PostsPage() {
 }`,
       rightCode: `<!-- [Nuxt 3] pages/posts.vue (Universal Component) -->
 <script setup lang="ts">
-// useFetch는 서버에서 실행 후 결과를 직렬화하여 클라이언트 Hydration 시 중복 호출 방지
+// useFetch는 서버 실행 결과를 직렬화(Payload)하여 클라이언트 Hydration 시 중복 호출 방지
 const { data: posts, status } = await useFetch('/api/posts', {
   lazy: false,
 });
@@ -77,8 +84,8 @@ const { data: posts, status } = await useFetch('/api/posts', {
     {
       label: '실전 예제',
       version: 'Next.js 15+ Server Action vs Nuxt 3 Nitro Server Route',
-      sourceProject: 'Global Tech Blog Platform',
-      leftCode: `// [Next.js] 실전 Server Action을 통한 양방향 서버 통신
+      sourceProject: 'Global Tech Blog Platform & 퇴직금 회수 가이드',
+      leftCode: `// [Next.js] 실전 Server Action을 통한 안전한 서버 연동
 // app/actions/createPost.ts
 'use server';
 
@@ -87,10 +94,10 @@ import { revalidatePath } from 'next/cache';
 export async function createPost(formData: FormData) {
   const title = formData.get('title') as string;
   await db.post.create({ data: { title } });
-  // 태그 또는 경로 기반 정적 캐시 즉각 재검증
+  // 경로 기반 정적 캐시 즉각 재검증
   revalidatePath('/posts');
 }`,
-      rightCode: `// [Nuxt 3] Nitro 독립 서버 핸들러 + 클라이언트 $fetch 통신
+      rightCode: `// [Nuxt 3] Nitro 독립 서버 핸들러 + 클라이언트 통신
 // server/api/posts.post.ts (Nitro Server Route)
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);
@@ -101,7 +108,7 @@ export default defineEventHandler(async (event) => {
 // pages/posts/create.vue
 const submit = async () => {
   await $fetch('/api/posts', { method: 'POST', body: { title: title.value } });
-  await refreshNuxtData('posts'); // 캐시 재검증 트리거
+  await refreshNuxtData('posts'); // 특정 키 캐시 무효화
 };`,
     },
   ],
@@ -111,13 +118,13 @@ const submit = async () => {
       question:
         "Next.js App Router에서 컴포넌트 상단에 'use client'를 선언하면, 이 컴포넌트는 서버에서 전혀 실행되지 않고 브라우저에서만 렌더링되나요?",
       answer:
-        '흔히 하는 착각입니다. \'use client\'는 "브라우저 전용 렌더링(CSR)"을 뜻하는 것이 아니라, "클라이언트 번들에 포함되어 리액트 훅(useState, useEffect)과 이벤트 리스너를 사용할 수 있는 클라이언트 컴포넌트 경계(Boundary)"를 선언하는 것입니다. 초기 페이지 요청 시 \'use client\' 컴포넌트 역시 서버에서 HTML로 사전 렌더링(SSR)된 후 브라우저로 전송되어 하이드레이션됩니다. 따라서 window나 document 등 브라우저 전용 객체에 렌더 본문에서 직접 접근하면 서버 에러가 발생합니다.',
+        '흔히 하는 대표적인 착각입니다. \'use client\'는 "클라이언트 전용 렌더링(CSR)"을 뜻하는 것이 아니라, "클라이언트 번들에 포함되어 브라우저 API와 리액트 훅(useState, useEffect)을 사용할 수 있는 경계(Boundary)"를 지정하는 것입니다. 초기 페이지 요청 시 \'use client\' 컴포넌트 역시 서버에서 HTML로 사전 렌더링(SSR)된 후 브라우저로 전송되어 하이드레이션됩니다. 따라서 window나 localStorage 같은 브라우저 전용 객체에 렌더 본문에서 직접 접근하면 서버에서 ReferenceError가 발생합니다.',
     },
     {
       question:
-        'Nuxt 3에서 useAsyncData나 useFetch 없이 일반 axios/fetch를 컴포넌트 <script setup> 본문에서 직접 호출하면 어떤 문제가 생기나요?',
+        'Nuxt 3에서 useAsyncData나 useFetch 없이 일반 axios/fetch를 컴포넌트 본문에서 직접 호출하면 어떤 문제가 생기나요?',
       answer:
-        '일반 fetch를 쓰면 서버에서 초기 HTML을 만들 때 한 번 호출되고, 브라우저가 HTML을 받아 Hydration을 수행할 때 클라이언트에서 또 한 번 호출되는 "이중 네트워크 요청(Double Fetching)" 현상이 발생합니다. 또한 서버가 가져온 응답과 클라이언트가 다시 가져온 응답의 시점이 달라 상태 불일치(Hydration Mismatch) 경고가 발생할 수 있습니다. Nuxt의 useFetch는 서버 응답을 페이로드에 직렬화하여 클라이언트가 그대로 재사용하므로 중복 요청과 불일치를 완벽히 방지합니다.',
+        '서버에서 초기 HTML을 렌더링할 때 한 번 호출되고, 브라우저가 HTML을 받아 Hydration을 수행할 때 클라이언트에서 또 한 번 호출되는 "이중 네트워크 요청(Double Fetching)" 현상이 발생합니다. 또한 서버 응답과 클라이언트 재요청 시점의 데이터가 미세하게 다를 경우 상태 불일치(Hydration Mismatch) 경고가 발생합니다. Nuxt의 useFetch는 서버 응답을 페이로드에 직렬화하여 클라이언트가 그대로 재사용하므로 중복 요청과 불일치를 완벽히 방지합니다.',
     },
   ],
   sources: [
@@ -128,6 +135,9 @@ const submit = async () => {
     {
       label: 'Nuxt 3 공식 문서 - Rendering Modes & Nitro',
       url: 'https://nuxt.com/docs/guide/concepts/rendering',
+    },
+    {
+      label: '02_두번째 보고서 7장 "Nuxt3 ↔ Next.js 전환 가이드"',
     },
   ],
 };

@@ -36,3 +36,7 @@ next-env.d.ts
 # agents
 .agents/
 .agent/
+
+# private docs / raw reports
+docs/
+
