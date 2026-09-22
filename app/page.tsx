@@ -1,4 +1,5 @@
 import { ThemeToggle } from '@/components/ThemeToggle';
+import { DiagramSvg } from '@/components/diagram/DiagramSvg';
 
 export default function Home() {
   return (
@@ -218,6 +219,36 @@ export default function Home() {
                 Neutral 4
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Phase 3: Mermaid 빌드 파이프라인 실시간 렌더링 검증 */}
+        <section className="mt-16">
+          <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <div className="inline-flex items-center rounded-full border border-sky-500/20 bg-sky-500/10 px-3 py-1 text-xs font-semibold text-sky-600 dark:text-sky-400">
+                Phase 3: Mermaid → SVG 빌드 파이프라인 검증
+              </div>
+              <h3 className="mt-2 text-2xl font-bold">인라인 SVG 구조도 및 다크모드 연동</h3>
+              <p className="text-sm text-[var(--text-secondary)]">
+                빌드 시점에 생성된 무(Zero) 런타임 인라인 SVG 구조도입니다. 상단 테마 버튼 클릭 시 CSS 변수에 의해 도식 색상이 실시간으로 함께 전환됩니다.
+              </p>
+            </div>
+          </div>
+
+          <div className="space-y-8">
+            <DiagramSvg
+              diagramId="reactivity-diagram"
+              title="축 1: Vue 감시(Proxy) vs React 알림(setter) 흐름도"
+            />
+            <DiagramSvg
+              diagramId="composition-migration-diagram"
+              title="축 2: Options API 파편화 → Composition API 응집 마이그레이션"
+            />
+            <DiagramSvg
+              diagramId="rendering-modes-diagram"
+              title="축 3: Nuxt 3 (Universal/Nitro) vs Next.js (App Router/RSC)"
+            />
           </div>
         </section>
       </main>

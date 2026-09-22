@@ -1,0 +1,16 @@
+flowchart TB
+    subgraph NX["Nuxt 3 아키텍처"]
+        N1["Vue SFC 기반"] --> N2["Nitro 다중 플랫폼 엔진"]
+        N2 --> N3["useFetch 자동 직렬화"]
+        N3 --> N4["유니버설 하이드레이션"]
+    end
+    subgraph NJ["Next.js App Router"]
+        J1["React 기반"] --> J2["서버 컴포넌트 (RSC 기본)"]
+        J2 --> J3["번들 0바이트 최적화"]
+        J3 --> J4["use client 부분 하이드레이션"]
+    end
+    NX ~~~ NJ
+    classDef vueStyle fill:#ecfdf5,stroke:#10b981,color:#065f46;
+    classDef reactStyle fill:#f0f9ff,stroke:#0ea5e9,color:#0369a1;
+    class N1,N2,N3,N4 vueStyle;
+    class J1,J2,J3,J4 reactStyle;

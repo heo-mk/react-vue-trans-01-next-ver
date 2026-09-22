@@ -1,0 +1,16 @@
+flowchart TB
+    subgraph VUE["Vue의 감시 방식"]
+        V1["data / ref 선언"] --> V2["Proxy가<br/>자동 감시"]
+        V2 --> V3["값 변경<br/>즉시 감지"]
+        V3 --> V4["해당 노드만<br/>정밀 갱신"]
+    end
+    subgraph REACT["React의 알림 방식"]
+        R1["useState<br/>선언"] --> R2["setter<br/>직접 호출"]
+        R2 --> R3["React에<br/>변경 알림"]
+        R3 --> R4["컴포넌트 전체<br/>리렌더링"]
+    end
+    VUE ~~~ REACT
+    classDef vueStyle fill:#ecfdf5,stroke:#10b981,color:#065f46;
+    classDef reactStyle fill:#f0f9ff,stroke:#0ea5e9,color:#0369a1;
+    class V1,V2,V3,V4 vueStyle;
+    class R1,R2,R3,R4 reactStyle;

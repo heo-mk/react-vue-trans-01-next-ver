@@ -1,0 +1,17 @@
+flowchart LR
+    subgraph V2["Vue2 Options API"]
+        O1["data() 속성 분산"]
+        O2["methods() 로직 분산"]
+        O3["computed / watch 분산"]
+        O4["Mixin 이름 충돌 위험"]
+    end
+    subgraph V3["Vue3 Composition API"]
+        C1["기능 A (상태 + 함수)"]
+        C2["기능 B (상태 + 함수)"]
+        C3["타입 세이프 Composable"]
+    end
+    V2 -->|"논리적 관심사 묶음"| V3
+    classDef warnStyle fill:#fffbeb,stroke:#f59e0b,color:#b45309;
+    classDef okStyle fill:#f0fdf4,stroke:#22c55e,color:#15803d;
+    class O1,O2,O3,O4 warnStyle;
+    class C1,C2,C3 okStyle;
