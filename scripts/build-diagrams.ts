@@ -43,6 +43,10 @@ const MANIFEST_OUTPUT_PATH = path.resolve(
   process.cwd(),
   'content/diagrams-manifest.json'
 );
+const PUPPETEER_CONFIG_PATH = path.resolve(
+  process.cwd(),
+  'puppeteer-config.json'
+);
 
 function postProcessSvg(svgContent: string): string {
   let processed = svgContent;
@@ -96,9 +100,13 @@ async function buildDiagrams() {
     console.log(`🔨 변환 중: ${file} → ${diagramId}.svg`);
 
     try {
+      const puppeteerFlag = fs.existsSync(PUPPETEER_CONFIG_PATH)
+        ? `-p "${PUPPETEER_CONFIG_PATH}"`
+        : '';
+
       // mermaid-cli (mmdc) 실행
       execSync(
-        `pnpm exec mmdc -i "${inputPath}" -o "${outputPath}" -b transparent`,
+        `pnpm exec mmdc ${puppeteerFlag} -i "${inputPath}" -o "${outputPath}" -b transparent`,
         {
           stdio: 'pipe',
         }
