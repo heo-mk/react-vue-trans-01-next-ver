@@ -1,0 +1,17 @@
+flowchart TB
+    subgraph RE["React 상태 분업 표준"]
+        RC["클라이언트 전역 상태"] --> RZ["Zustand<br/>(클로저 · Selector 기반)"]
+        RS["서버 원격 데이터"] --> RT["TanStack Query<br/>(캐시 머신 · 재검증)"]
+    end
+    subgraph VE["Vue 상태 분업 표준"]
+        VC["클라이언트 전역 상태"] --> VP["Pinia<br/>(반응형 스토어 · Action 직결)"]
+        VS["서버 원격 데이터"] --> VT["TanStack Vue Query<br/>(Composable 캐시)"]
+        VX["과거 레거시: Vuex"] -->|"Mutation 제거로 대체"| VP
+    end
+    RE ~~~ VE
+    classDef vueStyle fill:#ecfdf5,stroke:#10b981,color:#065f46;
+    classDef reactStyle fill:#f0f9ff,stroke:#0ea5e9,color:#0369a1;
+    classDef warnStyle fill:#fffbeb,stroke:#f59e0b,color:#b45309;
+    class VC,VP,VS,VT vueStyle;
+    class RC,RZ,RS,RT reactStyle;
+    class VX warnStyle;

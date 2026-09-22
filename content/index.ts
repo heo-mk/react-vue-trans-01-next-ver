@@ -1,10 +1,14 @@
 import { Axis, ConceptPage } from './schema';
 import { reactivityState } from './concepts/react-vue/reactivity-state';
+import { globalState } from './concepts/react-vue/global-state';
+import { serverState } from './concepts/react-vue/server-state';
 import { optionsToComposition } from './concepts/vue2-vue3/options-to-composition';
 import { renderingModes } from './concepts/nuxt-next/rendering-modes';
 
 export const allConcepts: ConceptPage[] = [
   reactivityState,
+  globalState,
+  serverState,
   optionsToComposition,
   renderingModes,
 ];
