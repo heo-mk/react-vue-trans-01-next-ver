@@ -50,22 +50,20 @@ export function ConceptView({ concept }: ConceptViewProps) {
             <button
               onClick={() => toggleReadConcept(concept.slug)}
               type="button"
-              className={`inline-flex cursor-pointer items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors ${
-                isRead
+              className={`inline-flex cursor-pointer items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors ${isRead
                   ? 'bg-emerald-500 text-white shadow-xs'
                   : 'border border-[var(--border-subtle)] bg-[var(--bg-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-primary)] hover:text-[var(--text-primary)]'
-              }`}
+                }`}
             >
               {isRead ? '✓ 학습 완료' : '○ 미완료'}
             </button>
             <button
               onClick={() => toggleFavorite(concept.slug)}
               type="button"
-              className={`inline-flex cursor-pointer items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors ${
-                isFav
+              className={`inline-flex cursor-pointer items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors ${isFav
                   ? 'bg-amber-500 text-white shadow-xs'
                   : 'border border-[var(--border-subtle)] bg-[var(--bg-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-primary)] hover:text-[var(--text-primary)]'
-              }`}
+                }`}
               aria-label="즐겨찾기 토글"
             >
               {isFav ? '★ 즐겨찾기' : '☆ 북마크'}
@@ -107,7 +105,7 @@ export function ConceptView({ concept }: ConceptViewProps) {
       {concept.diagramId && (
         <section className="my-10">
           <h2 className="text-lg font-bold tracking-tight text-[var(--text-primary)]">
-            구조적 실행 모델 (Mermaid SVG)
+            구조적 실행 모델
           </h2>
           <DiagramSvg diagramId={concept.diagramId} />
         </section>
