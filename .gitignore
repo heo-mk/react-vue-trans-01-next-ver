@@ -41,5 +41,6 @@ next-env.d.ts
 docs/
 content-source/
 
-# markdown files
+# markdown files (keep README.md only)
 *.md
+!README.md
