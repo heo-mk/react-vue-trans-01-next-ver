@@ -19,7 +19,7 @@ export default function Home() {
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-[var(--text-secondary)]">
             React 개발자를 위한 Vue 3, Vue 2 레거시를 위한 Composition API,
-            그리고 Nuxt 3와 Next.js를 관통하는 핵심 아키텍처와 실전 포트폴리오
+            그리고 Nuxt 3와 Next.js를 관통하는 핵심 아키텍처와 실무 프로덕션
             코드를 직접 비교하며 학습합니다.
           </p>
         </section>

@@ -168,8 +168,8 @@ export const legacyStore = createStore({
       label: '실전 예제',
       version:
         'React 18+ (Zustand 4.x + persist) vs Vue 3.4+ (Pinia 2.x + pinia-plugin-persistedstate)',
-      sourceProject: 'smartstore-item-finder',
-      leftCode: `// [React] 포트폴리오 실전: smartstore-item-finder / frontend/src/store/favoriteStore.ts
+      sourceProject: '이커머스 상품 관리 및 분석 서비스',
+      leftCode: `// [React] 실무 예시: 이커머스 관심 상품 관리 (favoriteStore.ts)
 // 서버 상태(트렌드/추천 점수)와 완전히 분리하여 클라이언트 고유의 '찜 목록'만 Zustand persist로 관리
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
@@ -211,11 +211,12 @@ export const useFavoriteStore = create<FavoriteStore>()(
         return get().favorites.some((fav) => fav.keyword === keyword);
       },
     }),
-    { name: 'favorite-store' } // 브라우저 localStorage 키 이름으로 영속화
+    {
+      name: 'item-favorites-storage', // localStorage key
+    }
   )
 );`,
-      rightCode: `<!-- [Vue] Vue 3.4+ Pinia — pinia-plugin-persistedstate를 통한 1:1 대응 -->
-<script setup lang="ts">
+      rightCode: `// [Vue] Vue 3.4+ Pinia + pinia-plugin-persistedstate 동일 구현
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
 
@@ -225,13 +226,15 @@ export interface FavoriteItem {
 }
 
 export const useFavoriteStore = defineStore(
-  'favorite',
+  'favorites',
   () => {
     const favorites = ref<FavoriteItem[]>([]);
 
     function addFavorite(item: FavoriteItem) {
-      if (favorites.value.some((fav) => fav.keyword === item.keyword)) return;
-      // Vue의 반응형 시스템은 불변성 복사 없이 직접 push해도 Proxy가 감지
+      if (favorites.value.some((fav) => fav.keyword === item.keyword)) {
+        return;
+      }
+      // Vue 반응성: 직접 push 가능
       favorites.value.push(item);
     }
 
@@ -254,8 +257,8 @@ export const useFavoriteStore = defineStore(
     {
       label: '실전 예제',
       version: 'React 18+ (Zustand + useMemo) vs Vue 3.4+ (Pinia getters / computed)',
-      sourceProject: '퇴직금 회수 가이드',
-      leftCode: `// [React] 포트폴리오 실전: 퇴직금 회수 가이드
+      sourceProject: '노무·법률 진단 및 정산 서비스',
+      leftCode: `// [React] 실무 예시: 노무·법률 진단 및 정산 서비스
 // 스토어에는 순수 직렬화 가능한 데이터만 저장하고, 파생 계산 로직은 별도 훅(useMemo)으로 분리
 // 1. stores/progressStore.ts: JSON.stringify 제약으로 순수 데이터만 보존
 export const useProgressStore = create<ProgressState>()(
@@ -321,15 +324,15 @@ export const useProgressStore = defineStore('progress', {
     },
     {
       question:
-        'smartstore-item-finder 프로젝트에서 왜 Context API 하나로 끝내지 않고 Zustand와 React Query를 둘 다 썼나요? 과설계 아닌가요?',
+        '이커머스 상품 검색·분석 같은 실무 대시보드에서 왜 Context API 하나로 끝내지 않고 Zustand와 React Query를 둘 다 쓰나요? 과설계 아닌가요?',
       answer:
-        'Context API에 서버 데이터와 클라이언트 UI 상태를 한 번에 몰아넣으면, 찜 버튼 하나를 눌렀을 뿐인데 서버 트렌드 차트를 그리는 무거운 컴포넌트까지 통째로 불필요하게 재렌더링되는 성능 문제가 발생합니다. React Query와 Zustand는 구독 단위가 극도로 세밀하여 실제로 값이 바뀐 컴포넌트만 정밀 리렌더링됩니다. 프로젝트 규모 관점에서는 단순 useState로도 동작할 수 있었으나, 본 프로젝트의 핵심 목적 자체가 "서버 상태와 클라이언트 상태의 관심사 분리 아키텍처"를 실전 검증하는 것이었으므로 의도된 설계 선택이었습니다.',
+        'Context API에 서버 데이터와 클라이언트 UI 상태를 한 번에 몰아넣으면, 찜 버튼 하나를 눌렀을 뿐인데 서버 트렌드 차트를 그리는 무거운 컴포넌트까지 통째로 불필요하게 재렌더링되는 성능 문제가 발생합니다. React Query와 Zustand는 구독 단위가 극도로 세밀하여 실제로 값이 바뀐 컴포넌트만 정밀 리렌더링됩니다. 소규모 앱에서는 단순 useState로도 동작할 수 있으나, 서비스 확장 시 "서버 캐시 데이터와 클라이언트 전용 UI 상태의 명확한 관심사 분리 아키텍처"를 확립하고 불필요한 렌더링을 차단하기 위한 필수적인 설계 선택입니다.',
     },
     {
       question:
-        '퇴직금 회수 가이드에서 추천 액션 계산 로직을 스토어에 두지 않고 useMemo 기반 훅으로 분리한 이유는 무엇인가요?',
+        '법률·노무 진단 서비스처럼 상태에 따라 결과가 동적으로 바뀌는 화면에서, 추천 액션 계산 로직을 스토어 내부에 두지 않고 useMemo 기반 훅으로 분리하는 이유는 무엇인가요?',
       answer:
-        '첫째, Zustand의 persist 미들웨어는 localStorage 저장 시 `JSON.stringify`를 거치기 때문에 자바스크립트 함수(계산 로직)는 직렬화되지 못하고 새로고침 시 증발합니다. 둘째, 계산된 결과값을 스토어에 중복 저장하면 원본 케이스 데이터가 바뀔 때마다 계산 결과도 함께 갱신해야 하는 "동기화 유지 부담"이 생깁니다. 만약 동기화를 깜빡하면 화면에 낡은 추천 결과가 표시되는 치명적 버그가 발생합니다. 따라서 스토어에는 순수 원천 데이터만 남기고, 파생 로직은 `useMemo` 훅으로 빼내어 항상 최신 상태를 보장했습니다. Vue의 Pinia라면 `getter`가 이 역할을 기본 내장 문법으로 훨씬 우아하게 해결합니다.',
+        '첫째, Zustand의 persist 미들웨어는 localStorage 저장 시 `JSON.stringify`를 거치기 때문에 자바스크립트 함수(계산 로직)는 직렬화되지 못하고 새로고침 시 증발합니다. 둘째, 계산된 결과값을 스토어에 중복 저장하면 원본 케이스 데이터가 바뀔 때마다 계산 결과도 함께 갱신해야 하는 "동기화 유지 부담"이 생깁니다. 만약 동기화를 깜빡하면 화면에 낡은 추천 결과가 표시되는 치명적 버그가 발생합니다. 따라서 스토어에는 순수 원천 데이터만 남기고, 파생 로직은 `useMemo` 훅으로 분리하여 항상 최신 상태를 보장하는 것이 안전합니다. Vue의 Pinia라면 `getter`가 이 역할을 기본 내장 문법으로 훨씬 우아하게 해결합니다.',
     },
     {
       question:

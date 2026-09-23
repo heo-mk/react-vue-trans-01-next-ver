@@ -11,7 +11,7 @@ export interface CodeExample {
   version: string; // 'React 18+', 'Vue 3.4+' 등 — 4-6 규칙 강제
   leftCode: string; // Before / React / Vue2
   rightCode: string; // After / Vue / Vue3
-  sourceProject?: string; // 실전 예제일 경우 포트폴리오 프로젝트명
+  sourceProject?: string; // 실전 예제일 경우 적용 도메인/시나리오 예시
 }
 
 export interface Pitfall {

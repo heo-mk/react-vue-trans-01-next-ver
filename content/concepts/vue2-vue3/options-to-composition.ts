@@ -90,7 +90,7 @@ const addAgeProperty = () => {
     {
       label: '실전 예제',
       version: 'Vue 2.7+ Mixin 패턴 → Vue 3.4+ Composable 패턴',
-      sourceProject: 'Portfolio Admin Dashboard & 퇴직금 회수 가이드',
+      sourceProject: '관리자 대시보드 테이블 페이징 & 필터',
       leftCode: `// [Vue 2] Mixin의 치명적 단점: 암묵적 의존성과 이름 충돌
 // mixins/tablePagination.js
 export default {

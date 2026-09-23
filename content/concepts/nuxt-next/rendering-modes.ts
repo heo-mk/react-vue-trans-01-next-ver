@@ -84,7 +84,7 @@ const { data: posts, status } = await useFetch('/api/posts', {
     {
       label: '실전 예제',
       version: 'Next.js 15+ Server Action vs Nuxt 3 Nitro Server Route',
-      sourceProject: 'Global Tech Blog Platform & 퇴직금 회수 가이드',
+      sourceProject: '콘텐츠 블로그 & 양식 제출 서비스',
       leftCode: `// [Next.js] 실전 Server Action을 통한 안전한 서버 연동
 // app/actions/createPost.ts
 'use server';

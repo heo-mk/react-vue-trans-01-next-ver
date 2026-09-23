@@ -82,9 +82,9 @@ watchEffect(() => {
     {
       label: '실전 예제',
       version: 'React 18+ (TanStack Query + Zustand) vs Vue 3.4+ (Pinia)',
-      sourceProject: 'smartstore-item-finder & GitFind Dashboard',
-      leftCode: `// [React] 포트폴리오 실전: 불변성을 활용한 Optimistic Update & 스냅샷 롤백
-// GitFind Dashboard / src/hooks/useRepoMutations.ts
+      sourceProject: '이커머스 & 리포지토리 대시보드',
+      leftCode: `// [React] 실무 예시: 불변성을 활용한 Optimistic Update & 스냅샷 롤백
+// hooks/useRepoMutations.ts
 onMutate: async (repo) => {
   // 이전 상태 스냅샷 복사 (불변성 보장)
   const previousBookmarks = [...bookmarks];
@@ -153,7 +153,7 @@ export const useRepoStore = defineStore('repo', () => {
       url: 'https://vuejs.org/guide/essentials/reactivity-fundamentals.html',
     },
     {
-      label: '01_통합보고서 & 3_학습노트 (GitFind Dashboard)',
+      label: '01_통합보고서 및 실무 낙관적 업데이트 아키텍처 정리',
     },
   ],
 };

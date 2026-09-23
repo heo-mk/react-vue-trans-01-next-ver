@@ -85,7 +85,7 @@ export function CodeExample({
         </div>
         {example.sourceProject && (
           <span className="text-xs text-[var(--text-secondary)]">
-            실전 출처:{' '}
+            실무 적용 시나리오:{' '}
             <strong className="font-medium text-[var(--text-primary)]">
               {example.sourceProject}
             </strong>

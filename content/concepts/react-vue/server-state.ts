@@ -172,8 +172,8 @@ export function useUpdateTodo() {
       label: '실전 예제',
       version:
         'React 18+ (TanStack Query + Zustand) vs Vue 3.4+ (Vue Query + Pinia)',
-      sourceProject: 'GitFind Dashboard',
-      leftCode: `// [React] 포트폴리오 실전: GitFind Dashboard / src/hooks/useRepoMutations.ts
+      sourceProject: '오픈소스 리포지토리 대시보드',
+      leftCode: `// [React] 실무 예시: 리포지토리 북마크 토글 및 낙관적 업데이트 (useRepoMutations.ts)
 // 즐겨찾기 토글 시 낙관적 업데이트와 실패 시 스냅샷 복원
 export function useToggleBookmarkMutation(bookmarks: Repo[], setBookmarks: (repos: Repo[]) => void) {
   const queryClient = useQueryClient();
@@ -232,8 +232,8 @@ export function useToggleBookmarkMutation(bookmarkStore: ReturnType<typeof useBo
       label: '실전 예제',
       version:
         'React 18+ (TanStack Query useInfiniteQuery) vs Vue 3.4+ (Vue Query useInfiniteQuery)',
-      sourceProject: 'GitFind Dashboard',
-      leftCode: `// [React] 포트폴리오 실전: GitFind Dashboard / src/hooks/useRepoSearch.ts
+      sourceProject: '오픈소스 리포지토리 대시보드',
+      leftCode: `// [React] 실무 예시: 리포지토리 검색 무한 스크롤 방어 로직 (useRepoSearch.ts)
 // 외부 API의 total_count 부정확성에 대비한 무한 스크롤 이중 종료 방어 조건
 export function useRepoSearch(query: string) {
   return useInfiniteQuery({
@@ -274,8 +274,8 @@ export function useRepoSearch(query: Ref<string>) {
     {
       label: '실전 예제',
       version: 'React 18+ (TanStack Query) vs Vue 3.4+ (Vue Query / Composable)',
-      sourceProject: 'smartstore-item-finder',
-      leftCode: `// [React] 포트폴리오 실전: smartstore-item-finder
+      sourceProject: '이커머스 상품 관리 및 분석 서비스',
+      leftCode: `// [React] 실무 예시: 동일 키워드 재검색 캐시 우회 (SearchSection.tsx)
 // 동일 키워드 재검색 시 queryKey 캐시 우회 및 refetch 강제 트리거
 export function SearchSection() {
   const searchResultRef = useRef<{ refetch: () => void }>(null);
@@ -312,8 +312,8 @@ function handleSearch(keyword: string) {
     {
       label: '실전 예제',
       version: 'React 18+ (TanStack Query) vs Vue 3.4+ (Vue Query / useFetch)',
-      sourceProject: '퇴직금 회수 가이드',
-      leftCode: `// [React] 포트폴리오 실전: 퇴직금 회수 가이드 / frontend/src/api/legalQueries.ts
+      sourceProject: '노무·법률 진단 및 정산 서비스',
+      leftCode: `// [React] 실무 예시: 법령·판례 쿼리 캐시 정책 (legalQueries.ts)
 // 법령·판례 데이터의 도메인 특성(국회 심의·개정 주기)을 고려한 1시간 staleTime 정책
 export function useStatutesQuery(keyword: string) {
   return useQuery({
@@ -359,9 +359,9 @@ export function useStatutesQuery(keyword: Ref<string>) {
     },
     {
       question:
-        '퇴직금 회수 가이드에서 법령 데이터의 staleTime을 1시간으로 설정한 명확한 기술적·도메인적 근거는 무엇인가요?',
+        '법령·약관 조회 서비스에서 법률 데이터의 staleTime을 1시간으로 설정한 명확한 기술적·도메인적 근거는 무엇인가요?',
       answer:
-        'staleTime 기본값(0초)을 무지성으로 사용하지 않고 데이터의 실세계 도메인 라이프사이클을 분석했습니다. 법령 및 판례 데이터는 국회 심의와 공포 절차를 거치므로 주식 시세처럼 분/초 단위로 바뀌지 않으며 변경 주기가 수개월 단위입니다. 1시간은 불필요한 공공 API 트래픽을 원천 차단하면서도, 당일 발생한 법률 개정을 신속히 반영할 수 있는 가장 안전한 실용적 값입니다. 향후 개선한다면 공공 API 응답의 최종 수정일(Last-Modified) 메타데이터를 기반으로 한 조건부 캐시 무효화가 최선의 대안입니다.',
+        'staleTime 기본값(0초)을 기계적으로 사용하지 않고 데이터의 실세계 도메인 라이프사이클을 분석했습니다. 법령 및 판례 데이터는 국회 심의와 공포 절차를 거치므로 주식 시세처럼 분/초 단위로 바뀌지 않으며 변경 주기가 수개월 단위입니다. 1시간은 불필요한 공공 API 트래픽을 원천 차단하면서도, 당일 발생한 법률 개정을 신속히 반영할 수 있는 가장 안전한 실용적 값입니다. 향후 개선한다면 공공 API 응답의 최종 수정일(Last-Modified) 메타데이터를 기반으로 한 조건부 캐시 무효화가 최선의 대안입니다.',
     },
     {
       question:
