@@ -40,3 +40,6 @@ next-env.d.ts
 # private docs / raw reports
 docs/
 content-source/
+
+# markdown files
+*.md
