@@ -82,7 +82,7 @@ export function DiagramSvg({
   return (
     <figure className={`my-6 flex flex-col items-center ${className}`}>
       {title && (
-        <figcaption className="mb-3 text-sm font-semibold tracking-wide text-[var(--text-secondary)]">
+        <figcaption className="mb-3 w-full text-center text-sm font-semibold tracking-wide text-[var(--text-secondary)] [text-wrap:balance]">
           {title}
         </figcaption>
       )}

@@ -17,28 +17,40 @@ export default function Home() {
           <h1 className="mt-5 text-3xl font-extrabold tracking-tight sm:text-5xl">
             하나의 개념, 두 가지 시각
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-[var(--text-secondary)]">
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-[var(--text-secondary)] [text-wrap:balance]">
             <span className="inline-block">이미 아는 프레임워크에서</span>{' '}
             <span className="inline-block">낯선 프레임워크로 넘어갈 때,</span>{' '}
             <span className="inline-block">같은 개념이 어떻게 대응되는지</span>{' '}
             <span className="inline-block">코드 예제로 나란히 비교합니다.</span>
           </p>
 
-          <ul className="mx-auto mt-5 flex max-w-2xl flex-col items-center gap-1.5 text-xs leading-relaxed text-[var(--text-secondary)] sm:text-sm">
-            <li className="text-center">
-              <span className="font-semibold text-[var(--text-primary)]">React ↔ Vue:</span>{' '}
-              <span className="inline-block">상태 관리, 서버 상태 같은</span>{' '}
-              <span className="inline-block">핵심 개념을 양쪽 코드로 비교</span>
+          <ul className="mx-auto mt-5 flex max-w-[640px] flex-col gap-2 text-xs leading-relaxed text-[var(--text-secondary)] sm:text-sm text-left">
+            <li className="flex flex-col sm:flex-row sm:items-baseline sm:gap-3 text-left">
+              <span className="font-semibold text-[var(--text-primary)] shrink-0 sm:w-36">
+                React ↔ Vue:
+              </span>
+              <span>
+                <span className="inline-block">상태 관리, 서버 상태 같은</span>{' '}
+                <span className="inline-block">핵심 개념을 양쪽 코드로 비교</span>
+              </span>
             </li>
-            <li className="text-center">
-              <span className="font-semibold text-[var(--text-primary)]">Vue 2 → Vue 3:</span>{' '}
-              <span className="inline-block">Options API를</span>{' '}
-              <span className="inline-block">Composition API로 옮기는 방법</span>
+            <li className="flex flex-col sm:flex-row sm:items-baseline sm:gap-3 text-left">
+              <span className="font-semibold text-[var(--text-primary)] shrink-0 sm:w-36">
+                Vue 2 → Vue 3:
+              </span>
+              <span>
+                <span className="inline-block">Options API를</span>{' '}
+                <span className="inline-block">Composition API로 옮기는 방법</span>
+              </span>
             </li>
-            <li className="text-center">
-              <span className="font-semibold text-[var(--text-primary)]">Nuxt 3 ↔ Next.js:</span>{' '}
-              <span className="inline-block">렌더링 방식과</span>{' '}
-              <span className="inline-block">서버 기능의 차이</span>
+            <li className="flex flex-col sm:flex-row sm:items-baseline sm:gap-3 text-left">
+              <span className="font-semibold text-[var(--text-primary)] shrink-0 sm:w-36">
+                Nuxt 3 ↔ Next.js:
+              </span>
+              <span>
+                <span className="inline-block">렌더링 방식과</span>{' '}
+                <span className="inline-block">서버 기능의 차이</span>
+              </span>
             </li>
           </ul>
         </section>

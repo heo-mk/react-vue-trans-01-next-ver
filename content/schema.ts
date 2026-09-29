@@ -2,8 +2,9 @@ export type Axis = 'react-vue' | 'vue2-vue3' | 'nuxt-next';
 
 export interface ComparisonRow {
   label: string;
-  left: string; // React 또는 Vue2 또는 Nuxt3
-  right: string; // Vue 또는 Vue3 또는 Next
+  left?: string; // React 또는 Vue2 또는 Nuxt3
+  right?: string; // Vue 또는 Vue3 또는 Next
+  common?: string; // React·Vue 공통 내용 (colspan=2)
 }
 
 export interface CodeExample {
@@ -29,6 +30,7 @@ export interface ConceptPage {
   oneLineSummary: string; // 파인만 테크닉 — 어린아이도 이해할 요약
   keywords: string[]; // 검색 및 색인용 키워드 목록
   analogy?: string; // 비유 (출처가 있으면 sourceNote에 명시)
+  comparisonNote?: string; // 비교표 상단 참고 문구
   comparisonTable: ComparisonRow[];
   codeExamples: CodeExample[];
   diagramId?: string; // /scripts/build-diagrams.ts가 생성하는 svg id

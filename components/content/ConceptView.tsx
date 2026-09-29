@@ -114,6 +114,7 @@ export function ConceptView({ concept }: ConceptViewProps) {
       {/* 2. 핵심 비교표 */}
       <section className="my-10">
         <ComparisonTable
+          note={concept.comparisonNote}
           rows={concept.comparisonTable}
           leftTitle={meta.leftFramework}
           rightTitle={meta.rightFramework}

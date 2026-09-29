@@ -82,7 +82,7 @@ function checkConceptQuality(): QualityReport {
       );
     } else {
       concept.comparisonTable.forEach((row, i) => {
-        if (!row.label || !row.left || !row.right) {
+        if (!row.label || (!row.common && (!row.left || !row.right))) {
           errors.push(`${id} 비교표 ${i + 1}번째 행에 빈 필드가 있습니다.`);
         }
       });
