@@ -32,7 +32,7 @@ export function ProgressDashboard() {
         {/* 학습 진도 통계 */}
         <div>
           <span className="text-xs font-bold tracking-wider text-emerald-600 uppercase dark:text-emerald-400">
-            학습 진도 현황 (Zustand Persist)
+            학습 진도 현황
           </span>
           <h2 className="mt-1 text-xl font-bold tracking-tight text-[var(--text-primary)]">
             {completedCount} / {totalCount}개 개념 완료 ({percentage}%)
@@ -44,33 +44,30 @@ export function ProgressDashboard() {
           <button
             onClick={() => setFilter('all')}
             type="button"
-            className={`cursor-pointer rounded-lg px-3 py-1.5 transition-colors ${
-              filter === 'all'
+            className={`cursor-pointer rounded-lg px-3 py-1.5 transition-colors ${filter === 'all'
                 ? 'bg-emerald-500 text-white shadow-xs'
                 : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
-            }`}
+              }`}
           >
             전체 ({totalCount})
           </button>
           <button
             onClick={() => setFilter('completed')}
             type="button"
-            className={`cursor-pointer rounded-lg px-3 py-1.5 transition-colors ${
-              filter === 'completed'
+            className={`cursor-pointer rounded-lg px-3 py-1.5 transition-colors ${filter === 'completed'
                 ? 'bg-emerald-500 text-white shadow-xs'
                 : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
-            }`}
+              }`}
           >
             완료 ({completedCount})
           </button>
           <button
             onClick={() => setFilter('favorites')}
             type="button"
-            className={`cursor-pointer rounded-lg px-3 py-1.5 transition-colors ${
-              filter === 'favorites'
+            className={`cursor-pointer rounded-lg px-3 py-1.5 transition-colors ${filter === 'favorites'
                 ? 'bg-amber-500 text-white shadow-xs'
                 : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
-            }`}
+              }`}
           >
             즐겨찾기 ({favoritesCount})
           </button>
