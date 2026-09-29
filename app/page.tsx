@@ -24,32 +24,29 @@ export default function Home() {
             <span className="inline-block">코드 예제로 나란히 비교합니다.</span>
           </p>
 
-          <ul className="mx-auto mt-5 flex max-w-[640px] flex-col gap-2 text-xs leading-relaxed text-[var(--text-secondary)] sm:text-sm text-left">
-            <li className="flex flex-col sm:flex-row sm:items-baseline sm:gap-3 text-left">
-              <span className="font-semibold text-[var(--text-primary)] shrink-0 sm:w-36">
-                React ↔ Vue:
+          <ul className="mx-auto mt-6 grid max-w-[880px] grid-cols-1 gap-3 text-xs leading-relaxed text-[var(--text-secondary)] sm:text-sm min-[640px]:grid-cols-3">
+            <li className="rounded-xl border border-[var(--border-subtle)] px-4 py-3 text-center [text-wrap:balance] [word-break:keep-all]">
+              <span className="block font-semibold text-[var(--text-primary)]">
+                React ↔ Vue
               </span>
-              <span>
-                <span className="inline-block">상태 관리, 서버 상태 같은</span>{' '}
-                <span className="inline-block">핵심 개념을 양쪽 코드로 비교</span>
-              </span>
-            </li>
-            <li className="flex flex-col sm:flex-row sm:items-baseline sm:gap-3 text-left">
-              <span className="font-semibold text-[var(--text-primary)] shrink-0 sm:w-36">
-                Vue 2 → Vue 3:
-              </span>
-              <span>
-                <span className="inline-block">Options API를</span>{' '}
-                <span className="inline-block">Composition API로 옮기는 방법</span>
+              <span className="mt-1 block">
+                상태 관리, 서버 상태 같은 핵심 개념을 양쪽 코드로 비교
               </span>
             </li>
-            <li className="flex flex-col sm:flex-row sm:items-baseline sm:gap-3 text-left">
-              <span className="font-semibold text-[var(--text-primary)] shrink-0 sm:w-36">
-                Nuxt 3 ↔ Next.js:
+            <li className="rounded-xl border border-[var(--border-subtle)] px-4 py-3 text-center [text-wrap:balance] [word-break:keep-all]">
+              <span className="block font-semibold text-[var(--text-primary)]">
+                Vue 2 → Vue 3
               </span>
-              <span>
-                <span className="inline-block">렌더링 방식과</span>{' '}
-                <span className="inline-block">서버 기능의 차이</span>
+              <span className="mt-1 block">
+                Options API를 Composition API로 옮기는 방법
+              </span>
+            </li>
+            <li className="rounded-xl border border-[var(--border-subtle)] px-4 py-3 text-center [text-wrap:balance] [word-break:keep-all]">
+              <span className="block font-semibold text-[var(--text-primary)]">
+                Nuxt 3 ↔ Next.js
+              </span>
+              <span className="mt-1 block">
+                렌더링 방식과 서버 기능의 차이
               </span>
             </li>
           </ul>
