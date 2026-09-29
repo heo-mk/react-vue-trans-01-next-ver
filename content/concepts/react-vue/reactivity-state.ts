@@ -4,6 +4,8 @@ export const reactivityState: ConceptPage = {
   slug: 'reactivity-state',
   axis: 'react-vue',
   title: '사고 전환의 출발점: 감시(Vue)와 알림(React)',
+  cardTitle: '사고 전환의 출발점',
+  cardSubtitle: '감시(Vue) ↔ 알림(React)',
   oneLineSummary:
     'Vue는 값에 센서(Proxy)를 달아 스스로 지켜보다가 바뀌면 알아서 고치고, React는 개발자가 초인종(setter)을 눌러줄 때까지 집주인이 가만히 기다리는 방식입니다.',
   keywords: [

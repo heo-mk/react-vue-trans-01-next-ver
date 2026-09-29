@@ -114,9 +114,28 @@ export function ProgressDashboard() {
                         )}
                       </div>
                     </div>
-                    <h3 className="mt-2 text-sm font-bold text-[var(--text-primary)] transition-colors group-hover:text-emerald-600 dark:group-hover:text-emerald-400">
-                      {c.title}
-                    </h3>
+                    {c.cardTitle ? (
+                      <div className="mt-2">
+                        <h3
+                          style={{ textWrap: 'balance' }}
+                          className="line-clamp-1 text-sm font-bold text-[var(--text-primary)] transition-colors group-hover:text-emerald-600 dark:group-hover:text-emerald-400"
+                        >
+                          {c.cardTitle}
+                        </h3>
+                        {c.cardSubtitle && (
+                          <p className="mt-0.5 line-clamp-1 text-[11px] text-[var(--text-secondary)]">
+                            {c.cardSubtitle}
+                          </p>
+                        )}
+                      </div>
+                    ) : (
+                      <h3
+                        style={{ textWrap: 'balance' }}
+                        className="mt-2 line-clamp-2 text-sm font-bold text-[var(--text-primary)] transition-colors group-hover:text-emerald-600 dark:group-hover:text-emerald-400"
+                      >
+                        {c.title}
+                      </h3>
+                    )}
                     <p className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-[var(--text-secondary)]">
                       {c.oneLineSummary}
                     </p>

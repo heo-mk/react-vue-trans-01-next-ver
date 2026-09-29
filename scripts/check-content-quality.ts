@@ -42,6 +42,20 @@ function checkConceptQuality(): QualityReport {
       );
     }
 
+    // 규칙 1-2: 카드 제목(cardTitle) 필수 및 20자 이내 검증 (영문/기호 시각적 너비 고려)
+    if (!concept.cardTitle || concept.cardTitle.trim().length === 0) {
+      errors.push(`${id} 카드 제목(cardTitle)이 비어 있습니다.`);
+    } else {
+      const visualLength = concept.cardTitle
+        .split('')
+        .reduce((acc, char) => acc + (char.charCodeAt(0) > 127 ? 1 : 0.6), 0);
+      if (concept.cardTitle.length > 25 || visualLength > 20) {
+        errors.push(
+          `${id} 카드 제목(cardTitle: "${concept.cardTitle}")은 20자 이내여야 합니다. (현재 ${concept.cardTitle.length}자)`
+        );
+      }
+    }
+
     // 규칙 2: 비교표 구분선 및 데이터 행 (4-4)
     if (!concept.comparisonTable || concept.comparisonTable.length < 3) {
       errors.push(
@@ -144,6 +158,8 @@ function checkConceptQuality(): QualityReport {
         const matched = allConcepts.filter(
           (c) =>
             c.title.toLowerCase().includes(query) ||
+            (c.cardTitle && c.cardTitle.toLowerCase().includes(query)) ||
+            (c.cardSubtitle && c.cardSubtitle.toLowerCase().includes(query)) ||
             c.oneLineSummary.toLowerCase().includes(query) ||
             c.slug.toLowerCase().includes(query) ||
             (c.keywords &&

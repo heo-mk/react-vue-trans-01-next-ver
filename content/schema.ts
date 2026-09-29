@@ -23,6 +23,8 @@ export interface ConceptPage {
   slug: string;
   axis: Axis;
   title: string;
+  cardTitle: string; // 카드 그리드용 핵심 타이틀 (20자 이내)
+  cardSubtitle?: string; // 카드 그리드용 보조 설명
   oneLineSummary: string; // 파인만 테크닉 — 어린아이도 이해할 요약
   keywords: string[]; // 검색 및 색인용 키워드 목록
   analogy?: string; // 비유 (출처가 있으면 sourceNote에 명시)

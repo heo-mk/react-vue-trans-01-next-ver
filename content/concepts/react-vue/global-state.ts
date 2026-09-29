@@ -4,6 +4,8 @@ export const globalState: ConceptPage = {
   slug: 'global-state',
   axis: 'react-vue',
   title: '전역 상태 관리 생태계 (Zustand · Redux · Context API ↔ Pinia · Vuex)',
+  cardTitle: '전역 상태 관리',
+  cardSubtitle: 'Zustand · Redux · Context ↔ Pinia · Vuex',
   oneLineSummary:
     'React는 어디서든 가져다 쓸 수 있는 컴포넌트 밖 비밀 금고(Zustand 클로저)를 열어 필요한 동전만 쏙 꺼내는 방식이고, Vue는 가족 전체가 함께 보고 고치는 거실 화이트보드(Pinia 반응형 스토어) 방식입니다.',
   keywords: [

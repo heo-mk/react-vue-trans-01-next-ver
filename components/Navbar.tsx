@@ -17,6 +17,8 @@ export function Navbar() {
     ? allConcepts.filter(
         (c) =>
           c.title.toLowerCase().includes(query) ||
+          (c.cardTitle && c.cardTitle.toLowerCase().includes(query)) ||
+          (c.cardSubtitle && c.cardSubtitle.toLowerCase().includes(query)) ||
           c.oneLineSummary.toLowerCase().includes(query) ||
           c.slug.toLowerCase().includes(query) ||
           (c.keywords &&
