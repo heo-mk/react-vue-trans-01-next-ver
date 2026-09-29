@@ -18,10 +18,29 @@ export default function Home() {
             하나의 개념, 두 가지 시각
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-[var(--text-secondary)]">
-            React 개발자를 위한 Vue 3, Vue 2 레거시를 위한 Composition API,
-            그리고 Nuxt 3와 Next.js를 관통하는 핵심 아키텍처와 실무 프로덕션
-            코드를 직접 비교하며 학습합니다.
+            <span className="inline-block">이미 아는 프레임워크에서</span>{' '}
+            <span className="inline-block">낯선 프레임워크로 넘어갈 때,</span>{' '}
+            <span className="inline-block">같은 개념이 어떻게 대응되는지</span>{' '}
+            <span className="inline-block">코드 예제로 나란히 비교합니다.</span>
           </p>
+
+          <ul className="mx-auto mt-5 flex max-w-2xl flex-col items-center gap-1.5 text-xs leading-relaxed text-[var(--text-secondary)] sm:text-sm">
+            <li className="text-center">
+              <span className="font-semibold text-[var(--text-primary)]">React ↔ Vue:</span>{' '}
+              <span className="inline-block">상태 관리, 서버 상태 같은</span>{' '}
+              <span className="inline-block">핵심 개념을 양쪽 코드로 비교</span>
+            </li>
+            <li className="text-center">
+              <span className="font-semibold text-[var(--text-primary)]">Vue 2 → Vue 3:</span>{' '}
+              <span className="inline-block">Options API를</span>{' '}
+              <span className="inline-block">Composition API로 옮기는 방법</span>
+            </li>
+            <li className="text-center">
+              <span className="font-semibold text-[var(--text-primary)]">Nuxt 3 ↔ Next.js:</span>{' '}
+              <span className="inline-block">렌더링 방식과</span>{' '}
+              <span className="inline-block">서버 기능의 차이</span>
+            </li>
+          </ul>
         </section>
 
         {/* Phase 5: 학습 진도 & 즐겨찾기 대시보드 */}
