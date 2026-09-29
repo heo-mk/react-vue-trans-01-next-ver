@@ -102,7 +102,7 @@ export function DiagramSvg({
         aria-haspopup="dialog"
         aria-expanded={isOpen}
         aria-label={`${title || '구조도'} 크게 보기 (클릭 또는 Enter 키)`}
-        className="group relative flex w-full cursor-zoom-in justify-center overflow-hidden rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] p-4 sm:p-6 shadow-xs transition-all duration-200 hover:border-sky-500/40 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
+        className="group relative flex w-full cursor-zoom-in justify-center overflow-x-hidden rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] p-4 sm:p-6 shadow-xs transition-all duration-200 hover:border-sky-500/40 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
       >
         {/* 상단 안내 힌트 배지 */}
         <div className="absolute top-3 right-3 z-10 flex items-center gap-1.5 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-primary)]/90 px-2.5 py-1 text-xs font-medium text-[var(--text-secondary)] shadow-sm backdrop-blur-xs transition-all duration-200 group-hover:border-sky-500/40 group-hover:text-sky-600 dark:group-hover:text-sky-400 group-hover:scale-105 pointer-events-none">
@@ -126,8 +126,9 @@ export function DiagramSvg({
         {/* 1. 세로 버전 (화면 폭 640px 미만에서만 표시) */}
         {verticalSvg ? (
           <>
+            {/* 세로 버전: overflow-x-auto + min-width auto → SVG가 자체 max-width를 유지, 넓으면 가로 스크롤 */}
             <div
-              className="block sm:hidden w-full [&_svg]:h-auto [&_svg]:w-full [&_svg]:max-w-full"
+              className="block sm:hidden w-full overflow-x-auto [&_svg]:h-auto [&_svg]:w-auto [&_svg]:max-w-none"
               dangerouslySetInnerHTML={{ __html: verticalSvg }}
             />
             {/* 2. 가로 버전 (화면 폭 640px 이상에서만 표시) */}
@@ -202,9 +203,9 @@ export function DiagramSvg({
               >
                 {verticalSvg ? (
                   <>
-                    {/* 모바일 화면에서는 세로 버전이 크게 표시 */}
+                    {/* 모바일 화면에서는 세로 버전이 크게 표시 (overflow-x-auto로 넓은 SVG 스크롤 지원) */}
                     <div
-                      className="block sm:hidden w-full max-w-md [&_svg]:h-auto [&_svg]:w-full"
+                      className="block sm:hidden w-full overflow-x-auto [&_svg]:h-auto [&_svg]:w-auto [&_svg]:max-w-none"
                       dangerouslySetInnerHTML={{ __html: verticalSvg }}
                     />
                     {/* 데스크톱 화면에서는 가로 버전이 크게 표시 */}

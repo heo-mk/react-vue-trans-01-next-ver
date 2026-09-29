@@ -56,8 +56,12 @@ export const DIAGRAM_ALT_TEXTS: Record<string, string> = {
     'Nuxt 3 유니버설 하이드레이션과 Next.js App Router RSC 렌더링 모델 비교도 (모바일 세로형)',
   'global-state-diagram':
     'React와 Vue의 클라이언트/서버 전역 상태 분업 아키텍처 비교도',
+  'global-state-diagram-vertical':
+    'React와 Vue의 클라이언트/서버 전역 상태 분업 아키텍처 비교도 (모바일 세로형)',
   'server-state-diagram':
     'TanStack Query 낙관적 갱신 및 롤백 실행 흐름도',
+  'server-state-diagram-vertical':
+    'TanStack Query 낙관적 갱신 및 롤백 실행 흐름도 (모바일 세로형)',
 };
 
 const DIAGRAMS_SRC_DIR = path.resolve(process.cwd(), 'content/diagrams');

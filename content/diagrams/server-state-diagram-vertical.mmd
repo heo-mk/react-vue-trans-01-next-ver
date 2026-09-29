@@ -1,0 +1,24 @@
+flowchart TB
+    A["API 변이 요청
+(useMutation)"]
+    B["이전 캐시 스냅샷
+백업 보관"]
+    C["UI 캐시 먼저
+낙관적 갱신"]
+    D{"서버 응답 결과"}
+    E["저장된 백업 스냅샷으로
+즉시 롤백 복원"]
+    F["invalidateQueries로
+서버 진실값과 최종 재동기화"]
+    A -->|"onMutate"| B
+    B --> C
+    C --> D
+    D -->|"실패 (onError)"| E
+    D -->|"성공/종결 (onSettled)"| F
+    E --> F
+    classDef reactStyle fill:#f0f9ff,stroke:#0ea5e9,color:#0369a1;
+    classDef warnStyle fill:#fffbeb,stroke:#f59e0b,color:#b45309;
+    classDef okStyle fill:#f0fdf4,stroke:#22c55e,color:#15803d;
+    class A,B,C reactStyle;
+    class D,F okStyle;
+    class E warnStyle;
