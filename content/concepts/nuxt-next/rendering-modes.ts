@@ -6,6 +6,7 @@ export const renderingModes: ConceptPage = {
   title: '풀스택 메타 프레임워크 아키텍처 (Next.js vs Nuxt 3)',
   cardTitle: '풀스택 메타 프레임워크',
   cardSubtitle: 'Next.js vs Nuxt 3',
+  cardSummary: 'Next.js는 서버·브라우저 부품을 나누고, Nuxt 3는 Nitro를 씁니다.',
   oneLineSummary:
     'Next.js는 컴포넌트 단위로 서버와 브라우저 부품을 세밀하게 분리하고, Nuxt 3는 강력한 Nitro 엔진과 직관적인 설정(routeRules)으로 어디서든 유연하게 동작하는 풀스택 환경을 제공합니다.',
   keywords: [

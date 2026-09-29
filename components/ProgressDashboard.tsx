@@ -117,28 +117,62 @@ export function ProgressDashboard() {
                     {c.cardTitle ? (
                       <div className="mt-2">
                         <h3
-                          style={{ textWrap: 'balance' }}
-                          className="line-clamp-1 text-sm font-bold text-[var(--text-primary)] transition-colors group-hover:text-emerald-600 dark:group-hover:text-emerald-400"
+                          style={{
+                            wordBreak: 'keep-all',
+                            overflowWrap: 'anywhere',
+                            textWrap: 'balance',
+                          }}
+                          className="text-sm font-bold text-[var(--text-primary)] transition-colors group-hover:text-emerald-600 dark:group-hover:text-emerald-400"
                         >
                           {c.cardTitle}
                         </h3>
                         {c.cardSubtitle && (
-                          <p className="mt-0.5 line-clamp-1 text-[11px] text-[var(--text-secondary)]">
+                          <p
+                            style={{
+                              wordBreak: 'keep-all',
+                              overflowWrap: 'anywhere',
+                            }}
+                            className="mt-0.5 text-[11px] text-[var(--text-secondary)]"
+                          >
                             {c.cardSubtitle}
                           </p>
                         )}
                       </div>
                     ) : (
                       <h3
-                        style={{ textWrap: 'balance' }}
-                        className="mt-2 line-clamp-2 text-sm font-bold text-[var(--text-primary)] transition-colors group-hover:text-emerald-600 dark:group-hover:text-emerald-400"
+                        style={{
+                          wordBreak: 'keep-all',
+                          overflowWrap: 'anywhere',
+                          textWrap: 'balance',
+                        }}
+                        className="mt-2 text-sm font-bold text-[var(--text-primary)] transition-colors group-hover:text-emerald-600 dark:group-hover:text-emerald-400"
                       >
                         {c.title}
                       </h3>
                     )}
-                    <p className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-[var(--text-secondary)]">
-                      {c.oneLineSummary}
-                    </p>
+                    {c.cardSummary ? (
+                      <p
+                        style={{
+                          wordBreak: 'keep-all',
+                          overflowWrap: 'anywhere',
+                          textWrap: 'balance',
+                        }}
+                        className="mt-1.5 text-xs leading-relaxed text-[var(--text-secondary)]"
+                      >
+                        {c.cardSummary}
+                      </p>
+                    ) : (
+                      <p
+                        style={{
+                          wordBreak: 'keep-all',
+                          overflowWrap: 'anywhere',
+                          textWrap: 'balance',
+                        }}
+                        className="mt-1.5 line-clamp-3 text-xs leading-relaxed text-[var(--text-secondary)]"
+                      >
+                        {c.oneLineSummary}
+                      </p>
+                    )}
                   </div>
                   <span className="mt-3 inline-block text-right text-xs font-semibold text-emerald-600 transition-transform group-hover:translate-x-1 dark:text-emerald-400">
                     학습하기 →
