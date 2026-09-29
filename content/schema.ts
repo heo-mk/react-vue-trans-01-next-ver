@@ -24,6 +24,7 @@ export interface ConceptPage {
   axis: Axis;
   title: string;
   oneLineSummary: string; // 파인만 테크닉 — 어린아이도 이해할 요약
+  keywords: string[]; // 검색 및 색인용 키워드 목록
   analogy?: string; // 비유 (출처가 있으면 sourceNote에 명시)
   comparisonTable: ComparisonRow[];
   codeExamples: CodeExample[];

@@ -1,3 +1,5 @@
+import fs from 'fs';
+import path from 'path';
 import { allConcepts } from '../content/index';
 
 interface QualityReport {
@@ -109,6 +111,64 @@ function checkConceptQuality(): QualityReport {
     if (!concept.sources || concept.sources.length === 0) {
       warnings.push(`${id} 참고 출처(sources) 목록이 비어 있습니다.`);
     }
+
+    // 규칙 8: 검색 키워드(keywords) 1개 이상 등록 여부
+    if (!concept.keywords || concept.keywords.length === 0) {
+      errors.push(`${id} 검색 키워드(keywords)가 1개 이상 등록되어야 합니다.`);
+    } else {
+      concept.keywords.forEach((kw, i) => {
+        if (!kw || kw.trim() === '') {
+          errors.push(
+            `${id} 검색 키워드 ${i + 1}번째 항목이 빈 문자열입니다.`
+          );
+        }
+      });
+    }
+  }
+
+  // 규칙 9: Navbar placeholder에 쓰인 모든 예시 단어의 검색 결과 1건 이상 반환 검증
+  const navbarPath = path.resolve(__dirname, '../components/Navbar.tsx');
+  if (fs.existsSync(navbarPath)) {
+    const navbarContent = fs.readFileSync(navbarPath, 'utf-8');
+    const placeholderMatch = navbarContent.match(
+      /placeholder="[^"]*\(예:\s*([^)]+)\)/
+    );
+    if (placeholderMatch && placeholderMatch[1]) {
+      const exampleWords = placeholderMatch[1]
+        .split(',')
+        .map((w) => w.trim())
+        .filter(Boolean);
+
+      for (const word of exampleWords) {
+        const query = word.toLowerCase();
+        const matched = allConcepts.filter(
+          (c) =>
+            c.title.toLowerCase().includes(query) ||
+            c.oneLineSummary.toLowerCase().includes(query) ||
+            c.slug.toLowerCase().includes(query) ||
+            (c.keywords &&
+              c.keywords.some((k) => k.toLowerCase().includes(query)))
+        );
+
+        if (matched.length === 0) {
+          errors.push(
+            `❌ [placeholder 예시 단어 위반] Navbar 예시 단어 '${word}'의 검색 결과가 0건입니다.`
+          );
+        } else {
+          console.log(
+            `✓ [검색 예시 단어 확인] '${word}' -> ${matched.length}건 매칭 (${matched.map((m) => m.slug).join(', ')})`
+          );
+        }
+      }
+    } else {
+      warnings.push(
+        'Navbar.tsx에서 placeholder 예시 단어 패턴을 파싱할 수 없습니다.'
+      );
+    }
+  } else {
+    warnings.push(
+      'Navbar.tsx 파일을 찾을 수 없어 placeholder 예시 단어 검증을 건너뜁니다.'
+    );
   }
 
   const passed = errors.length === 0;

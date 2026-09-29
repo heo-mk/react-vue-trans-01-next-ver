@@ -6,6 +6,21 @@ export const renderingModes: ConceptPage = {
   title: '풀스택 메타 프레임워크 아키텍처 (Next.js vs Nuxt 3)',
   oneLineSummary:
     'Next.js는 컴포넌트 단위로 서버와 브라우저 부품을 세밀하게 분리하고, Nuxt 3는 강력한 Nitro 엔진과 직관적인 설정(routeRules)으로 어디서든 유연하게 동작하는 풀스택 환경을 제공합니다.',
+  keywords: [
+    'Next.js',
+    'Nuxt 3',
+    'RSC',
+    'Nitro',
+    'use client',
+    'Server Action',
+    'routeRules',
+    'Hydration',
+    'SSR',
+    'SSG',
+    'SWR',
+    'useFetch',
+    'useAsyncData',
+  ],
   analogy:
     'Next.js RSC는 완제품 로봇 사이에 사용자가 누를 버튼(클라이언트 컴포넌트)만 콕 집어 끼워 넣는 정밀 조립 라인이고, Nuxt 3는 전 세계 모든 콘센트 규격(Node, Cloudflare, Vercel)에 자동으로 맞춰지는 만능 여행용 변환 어댑터(Nitro)를 장착한 여행 키트입니다.',
   sourceNote: '02_두번째 보고서 7장 "Nuxt3 ↔ Next.js 전환 가이드" 인용',

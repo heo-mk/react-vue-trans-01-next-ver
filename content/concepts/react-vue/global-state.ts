@@ -6,6 +6,22 @@ export const globalState: ConceptPage = {
   title: '전역 상태 관리 생태계 (Zustand · Redux · Context API ↔ Pinia · Vuex)',
   oneLineSummary:
     'React는 어디서든 가져다 쓸 수 있는 컴포넌트 밖 비밀 금고(Zustand 클로저)를 열어 필요한 동전만 쏙 꺼내는 방식이고, Vue는 가족 전체가 함께 보고 고치는 거실 화이트보드(Pinia 반응형 스토어) 방식입니다.',
+  keywords: [
+    'Zustand',
+    'Pinia',
+    'Redux',
+    'Redux Toolkit',
+    'RTK',
+    'Vuex',
+    'Context API',
+    'Provide/Inject',
+    'storeToRefs',
+    'Selector',
+    'createSlice',
+    'Immer',
+    'useSyncExternalStore',
+    'persist',
+  ],
   analogy:
     'Pinia는 거실에 걸린 공용 화이트보드와 같아서 누구나 메모를 적거나 지우면 그 방에 있는 가족 모두에게 즉시 보입니다. 반면 Zustand는 은행의 개인 금고 시스템과 같아서, 컴포넌트 바깥 독립된 금고(클로저)에 값을 보관하고 각 컴포넌트가 자신이 필요한 통장 내역(Selector)만 선택적으로 확인합니다.',
   sourceNote:

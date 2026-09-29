@@ -6,6 +6,19 @@ export const optionsToComposition: ConceptPage = {
   title: 'Options API에서 Composition API (<script setup>)로의 전환',
   oneLineSummary:
     'Vue2가 방마다 개별 CCTV(defineProperty)를 달아 새 방을 보지 못했다면, Vue3는 건물 입구에 경비원(Proxy)을 세워 모든 출입을 감시하며, 기능별로 코드를 한곳에 모읍니다.',
+  keywords: [
+    'Options API',
+    'Composition API',
+    '<script setup>',
+    'Object.defineProperty',
+    'Proxy',
+    '$set',
+    'Mixins',
+    'Composables',
+    'reactive',
+    'ref',
+    'toRefs',
+  ],
   analogy:
     'Vue2는 집사가 미리 정해진 방에만 CCTV를 달아두어 나중에 새로 생긴 방(새 속성)은 보지 못해 $set이 필요했던 방식이고, Vue3는 건물 전체 출입구에 경비원(Proxy)을 세워 어떤 방이든 나중에 생겨도 전부 감지하는 방식입니다.',
   sourceNote:

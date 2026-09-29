@@ -6,6 +6,21 @@ export const serverState: ConceptPage = {
   title: '서버 상태 관리 (TanStack Query ↔ Vue Query / Composable)',
   oneLineSummary:
     '서버 데이터는 내 컴퓨터의 물건이 아니라 원격 도서관의 책이므로, 언제든 바뀔 수 있는 책의 복사본을 유효기간(staleTime) 동안만 읽고 제때 반납·갱신(재검증)해 주는 전담 사서가 바로 서버 상태 관리 도구입니다.',
+  keywords: [
+    'TanStack Query',
+    'Vue Query',
+    'useQuery',
+    'useMutation',
+    'staleTime',
+    'gcTime',
+    'invalidateQueries',
+    'useInfiniteQuery',
+    '낙관적 업데이트',
+    'useFetch',
+    'useAsyncData',
+    'SSOT',
+    '캐싱',
+  ],
   analogy:
     'Promise는 출처를 묻지 않는 밀봉된 배송 봉투와 같고, TanStack Query는 그 봉투의 내용물이 아니라 겉면의 배송 상태(기다리는 중·성공·실패 상태 기계)를 전문적으로 관리하는 관제 센터입니다.',
   sourceNote:

@@ -11,12 +11,16 @@ export function Navbar() {
   const [isFocused, setIsFocused] = useState(false);
   const router = useRouter();
 
-  const filteredConcepts = searchQuery.trim()
+  const query = searchQuery.trim().toLowerCase();
+
+  const filteredConcepts = query
     ? allConcepts.filter(
         (c) =>
-          c.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          c.oneLineSummary.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          c.slug.toLowerCase().includes(searchQuery.toLowerCase())
+          c.title.toLowerCase().includes(query) ||
+          c.oneLineSummary.toLowerCase().includes(query) ||
+          c.slug.toLowerCase().includes(query) ||
+          (c.keywords &&
+            c.keywords.some((k) => k.toLowerCase().includes(query)))
       )
     : [];
 
@@ -50,7 +54,7 @@ export function Navbar() {
               onChange={(e) => setSearchQuery(e.target.value)}
               onFocus={() => setIsFocused(true)}
               onBlur={() => setTimeout(() => setIsFocused(false), 200)}
-              placeholder="개념 검색 (예: useState, proxy, RSC, ref)..."
+              placeholder="개념 검색 (예: useState, ref, RSC, Zustand)..."
               className="w-full rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-secondary)] px-3.5 py-1.5 text-xs text-[var(--text-primary)] placeholder-[var(--text-secondary)] transition-colors focus:border-emerald-500 focus:outline-hidden"
             />
             {searchQuery && (
@@ -91,7 +95,42 @@ export function Navbar() {
                 </ul>
               ) : (
                 <div className="py-4 text-center text-xs text-[var(--text-secondary)]">
-                  일치하는 개념이 없습니다.
+                  <div>일치하는 개념이 없습니다.</div>
+                  <div className="mt-1.5 text-[11px] text-[var(--text-secondary)]/80">
+                    추천 검색어:{' '}
+                    <button
+                      type="button"
+                      onMouseDown={(e) => {
+                        e.preventDefault();
+                        setSearchQuery('useState');
+                      }}
+                      className="text-emerald-600 hover:underline dark:text-emerald-400"
+                    >
+                      useState
+                    </button>
+                    {', '}
+                    <button
+                      type="button"
+                      onMouseDown={(e) => {
+                        e.preventDefault();
+                        setSearchQuery('ref');
+                      }}
+                      className="text-emerald-600 hover:underline dark:text-emerald-400"
+                    >
+                      ref
+                    </button>
+                    {', '}
+                    <button
+                      type="button"
+                      onMouseDown={(e) => {
+                        e.preventDefault();
+                        setSearchQuery('RSC');
+                      }}
+                      className="text-emerald-600 hover:underline dark:text-emerald-400"
+                    >
+                      RSC
+                    </button>
+                  </div>
                 </div>
               )}
             </div>
