@@ -35,6 +35,29 @@ export const HEX_TO_CSS_VAR_MAP: Record<string, string> = {
   '#f0fdf4': 'var(--diagram-ok-bg)',
   '#22c55e': 'var(--diagram-ok-border)',
   '#15803d': 'var(--diagram-ok-text)',
+
+  // Subgraph & Cluster defaults
+  '#ffffde': 'var(--diagram-neutral-1)',
+  '#aaaa33': 'var(--diagram-neutral-3)',
+};
+
+export const DIAGRAM_ALT_TEXTS: Record<string, string> = {
+  'reactivity-diagram':
+    'Vue는 Proxy가 자동으로 감시하고, React는 setter 호출로 변경을 알린다.',
+  'reactivity-diagram-vertical':
+    'Vue는 Proxy가 자동으로 감시하고, React는 setter 호출로 변경을 알린다. (모바일 세로형)',
+  'composition-migration-diagram':
+    'Vue 2 Options API 분산 구조에서 Vue 3 Composition API 관심사 응집 구조로의 마이그레이션 흐름도',
+  'composition-migration-diagram-vertical':
+    'Vue 2 Options API 분산 구조에서 Vue 3 Composition API 관심사 응집 구조로의 마이그레이션 흐름도 (모바일 세로형)',
+  'rendering-modes-diagram':
+    'Nuxt 3 유니버설 하이드레이션과 Next.js App Router RSC 렌더링 모델 비교도',
+  'rendering-modes-diagram-vertical':
+    'Nuxt 3 유니버설 하이드레이션과 Next.js App Router RSC 렌더링 모델 비교도 (모바일 세로형)',
+  'global-state-diagram':
+    'React와 Vue의 클라이언트/서버 전역 상태 분업 아키텍처 비교도',
+  'server-state-diagram':
+    'TanStack Query 낙관적 갱신 및 롤백 실행 흐름도',
 };
 
 const DIAGRAMS_SRC_DIR = path.resolve(process.cwd(), 'content/diagrams');
@@ -48,7 +71,7 @@ const PUPPETEER_CONFIG_PATH = path.resolve(
   'puppeteer-config.json'
 );
 
-function postProcessSvg(svgContent: string): string {
+function postProcessSvg(svgContent: string, diagramId: string): string {
   let processed = svgContent;
 
   // Hex 색상을 CSS 변수로 치환 (대소문자 무관)
@@ -62,6 +85,26 @@ function postProcessSvg(svgContent: string): string {
   processed = processed.replace(
     /class="label" style="([^"]*)"/g,
     'class="label" style="$1; color: var(--diagram-text);"'
+  );
+
+  // 클러스터(subgraph) 및 엣지 라벨, 화살표 다크모드/라이트모드 CSS 변수 완벽 연동
+  const clusterOverrides = `
+    .cluster rect { fill: var(--diagram-neutral-1) !important; stroke: var(--diagram-neutral-3) !important; }
+    .cluster text, .cluster span, .cluster .nodeLabel { fill: var(--diagram-text) !important; color: var(--diagram-text) !important; }
+    .cluster-label span p { color: var(--diagram-text) !important; }
+    .edgeLabel { background-color: var(--diagram-neutral-1) !important; color: var(--diagram-text) !important; }
+    .edgeLabel p, .edgeLabel span { color: var(--diagram-text) !important; background-color: transparent !important; }
+    .labelBkg { background-color: var(--diagram-neutral-1) !important; }
+    .edgePaths .path, .flowchart-link { stroke: var(--diagram-line) !important; }
+    .marker, .arrowMarkerPath, .arrowheadPath { fill: var(--diagram-line) !important; stroke: var(--diagram-line) !important; }
+  </style>`;
+  processed = processed.replace('</style>', `${clusterOverrides}`);
+
+  // 접근성 (role="img", aria-label, <title>) 주입
+  const altText = DIAGRAM_ALT_TEXTS[diagramId] || '실행 모델 구조도';
+  processed = processed.replace(
+    /<svg\b([^>]*)>/,
+    `<svg$1 role="img" aria-label="${altText}"><title>${altText}</title>`
   );
 
   return processed;
@@ -114,7 +157,7 @@ async function buildDiagrams() {
 
       // 생성된 SVG 읽기 및 색상 CSS 변수 치환 후처리
       const rawSvg = fs.readFileSync(outputPath, 'utf-8');
-      const processedSvg = postProcessSvg(rawSvg);
+      const processedSvg = postProcessSvg(rawSvg, diagramId);
 
       // 후처리된 SVG 덮어쓰기
       fs.writeFileSync(outputPath, processedSvg, 'utf-8');

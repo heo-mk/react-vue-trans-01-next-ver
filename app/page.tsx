@@ -122,14 +122,13 @@ export default function Home() {
         <section className="mt-16 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] p-8">
           <div className="mb-6 flex flex-col gap-1">
             <div className="inline-flex items-center self-start rounded-full border border-sky-500/20 bg-sky-500/10 px-3 py-1 text-xs font-semibold text-sky-600 dark:text-sky-400">
-              실행 모델 구조도
+              구조 한눈에 보기
             </div>
             <h3 className="mt-2 text-2xl font-bold">
-              인라인 SVG 구조도 및 다크모드 실시간 연동
+              세 가지 전환, 한 장으로 보기
             </h3>
             <p className="text-sm text-[var(--text-secondary)]">
-              Mermaid CLI로 빌드 시점 생성된 Zero-Runtime SVG입니다. 상단 테마
-              버튼 토글 시 CSS 변수로 도식 색상이 실시간 전환됩니다.
+              세 전환 축의 핵심 차이를 그림으로 요약했습니다. 자세한 설명은 각 개념 카드에서 볼 수 있습니다.
             </p>
           </div>
 
