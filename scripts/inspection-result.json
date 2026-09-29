@@ -1,0 +1,6763 @@
+{
+  "allHeadings": [
+    {
+      "page": "홈 화면",
+      "tag": "h1",
+      "text": "하나의 개념, 두 가지 시각",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "하나의 개념, 두 가지 시각"
+      ],
+      "breaks768": [
+        "하나의 개념, 두 가지 시각"
+      ],
+      "breaks375": [
+        "하나의 개념, 두 가지 시각"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "홈 화면",
+      "tag": "h2",
+      "text": "0 / 5개 개념 완료 (0%)",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "0 / 5개 개념 완료 (0%)"
+      ],
+      "breaks768": [
+        "0 / 5개 개념 완료 (0%)"
+      ],
+      "breaks375": [
+        "0 / 5개 개념 완료 (0%)"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "홈 화면",
+      "tag": "h3",
+      "text": "사고 전환의 출발점",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "사고 전환의 출발점"
+      ],
+      "breaks768": [
+        "사고 전환의 출발점"
+      ],
+      "breaks375": [
+        "사고 전환의 출발점"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "홈 화면",
+      "tag": "h3",
+      "text": "전역 상태 관리",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "전역 상태 관리"
+      ],
+      "breaks768": [
+        "전역 상태 관리"
+      ],
+      "breaks375": [
+        "전역 상태 관리"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "홈 화면",
+      "tag": "h3",
+      "text": "서버 상태 관리",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "서버 상태 관리"
+      ],
+      "breaks768": [
+        "서버 상태 관리"
+      ],
+      "breaks375": [
+        "서버 상태 관리"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "홈 화면",
+      "tag": "h3",
+      "text": "Options → Composition API",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "Options → Composition API"
+      ],
+      "breaks768": [
+        "Options → Composition API"
+      ],
+      "breaks375": [
+        "Options → Composition API"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "홈 화면",
+      "tag": "h3",
+      "text": "풀스택 메타 프레임워크",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "풀스택 메타 프레임워크"
+      ],
+      "breaks768": [
+        "풀스택 메타 프레임워크"
+      ],
+      "breaks375": [
+        "풀스택 메타 프레임워크"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "홈 화면",
+      "tag": "h2",
+      "text": "3대 전환 학습 축",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "3대 전환 학습 축"
+      ],
+      "breaks768": [
+        "3대 전환 학습 축"
+      ],
+      "breaks375": [
+        "3대 전환 학습 축"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "홈 화면",
+      "tag": "h3",
+      "text": "React ↔ Vue",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "React ↔ Vue"
+      ],
+      "breaks768": [
+        "React ↔ Vue"
+      ],
+      "breaks375": [
+        "React ↔ Vue"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "홈 화면",
+      "tag": "h3",
+      "text": "Vue2 → Vue3",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "Vue2 → Vue3"
+      ],
+      "breaks768": [
+        "Vue2 → Vue3"
+      ],
+      "breaks375": [
+        "Vue2 → Vue3"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "홈 화면",
+      "tag": "h3",
+      "text": "Nuxt3 ↔ Next.js",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "Nuxt3 ↔ Next.js"
+      ],
+      "breaks768": [
+        "Nuxt3 ↔ Next.js"
+      ],
+      "breaks375": [
+        "Nuxt3 ↔ Next.js"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "홈 화면",
+      "tag": "h3",
+      "text": "세 가지 전환, 한 장으로 보기",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 2,
+      "breaks1280": [
+        "세 가지 전환, 한 장으로 보기"
+      ],
+      "breaks768": [
+        "세 가지 전환, 한 장으로 보기"
+      ],
+      "breaks375": [
+        "세 가지 전환, 한 장으로 보",
+        "기"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": true
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "tag": "h1",
+      "text": "사고 전환의 출발점: 감시(Vue)와 알림(React)",
+      "lines1280": 1,
+      "lines768": 2,
+      "lines375": 2,
+      "breaks1280": [
+        "사고 전환의 출발점: 감시(Vue)와 알림(React)"
+      ],
+      "breaks768": [
+        "사고 전환의 출발점: 감시(Vue)와 알림",
+        "(React)"
+      ],
+      "breaks375": [
+        "사고 전환의 출발점: 감시(Vue)와",
+        "알림(React)"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": true,
+      "splitsWord375": false
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "tag": "h2",
+      "text": "구조적 실행 모델",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "구조적 실행 모델"
+      ],
+      "breaks768": [
+        "구조적 실행 모델"
+      ],
+      "breaks375": [
+        "구조적 실행 모델"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "tag": "h3",
+      "text": "핵심 차이 비교표",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "핵심 차이 비교표"
+      ],
+      "breaks768": [
+        "핵심 차이 비교표"
+      ],
+      "breaks375": [
+        "핵심 차이 비교표"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "tag": "h2",
+      "text": "코드 레벨 직접 비교",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "코드 레벨 직접 비교"
+      ],
+      "breaks768": [
+        "코드 레벨 직접 비교"
+      ],
+      "breaks375": [
+        "코드 레벨 직접 비교"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "tag": "h3",
+      "text": "학습 & 실전 면접 함정 Q&A",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "학습 & 실전 면접 함정 Q&A"
+      ],
+      "breaks768": [
+        "학습 & 실전 면접 함정 Q&A"
+      ],
+      "breaks375": [
+        "학습 & 실전 면접 함정 Q&A"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "tag": "h4",
+      "text": "React의 useState는 왜 Vue의 data()처럼 자동으로 반응하지 않나요? React가 기술적으로 뒤떨어진 건가요?",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 3,
+      "breaks1280": [
+        "React의 useState는 왜 Vue의 data()처럼 자동으로 반응하지 않나요? React가 기술적으로 뒤떨어진 건가요?"
+      ],
+      "breaks768": [
+        "React의 useState는 왜 Vue의 data()처럼 자동으로 반응하지 않나요? React가 기술적으로 뒤떨어진 건가요?"
+      ],
+      "breaks375": [
+        "React의 useState는 왜 Vue의 data()처",
+        "럼 자동으로 반응하지 않나요? React가 기",
+        "술적으로 뒤떨어진 건가요?"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": true
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "tag": "h4",
+      "text": "React에서 컴포넌트가 다시 그려지는(Re-rendering) 경우는 언제 발생하나요?",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 2,
+      "breaks1280": [
+        "React에서 컴포넌트가 다시 그려지는(Re-rendering) 경우는 언제 발생하나요?"
+      ],
+      "breaks768": [
+        "React에서 컴포넌트가 다시 그려지는(Re-rendering) 경우는 언제 발생하나요?"
+      ],
+      "breaks375": [
+        "React에서 컴포넌트가 다시 그려지는(Re-",
+        "rendering) 경우는 언제 발생하나요?"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": true
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "tag": "h4",
+      "text": "Vue에서 ref로 선언한 상태를 count = count + 1 처럼 직접 재할당하면 왜 반응성이 끊어지나요?",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 3,
+      "breaks1280": [
+        "Vue에서 ref로 선언한 상태를 count = count + 1 처럼 직접 재할당하면 왜 반응성이 끊어지나요?"
+      ],
+      "breaks768": [
+        "Vue에서 ref로 선언한 상태를 count = count + 1 처럼 직접 재할당하면 왜 반응성이 끊어지나요?"
+      ],
+      "breaks375": [
+        "Vue에서 ref로 선언한 상태를 count =",
+        "count + 1 처럼 직접 재할당하면 왜 반응",
+        "성이 끊어지나요?"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": true
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "tag": "h3",
+      "text": "참고 공식 문서 및 출처",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "참고 공식 문서 및 출처"
+      ],
+      "breaks768": [
+        "참고 공식 문서 및 출처"
+      ],
+      "breaks375": [
+        "참고 공식 문서 및 출처"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "tag": "h1",
+      "text": "전역 상태 관리 생태계 (Zustand · Redux · Context API ↔ Pinia · Vuex)",
+      "lines1280": 2,
+      "lines768": 2,
+      "lines375": 3,
+      "breaks1280": [
+        "전역 상태 관리 생태계 (Zustand · Redux · Context",
+        "API ↔ Pinia · Vuex)"
+      ],
+      "breaks768": [
+        "전역 상태 관리 생태계 (Zustand · Redux ·",
+        "Context API ↔ Pinia · Vuex)"
+      ],
+      "breaks375": [
+        "전역 상태 관리 생태계 (Zustand",
+        "· Redux · Context API ↔",
+        "Pinia · Vuex)"
+      ],
+      "splitsWord1280": true,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "tag": "h2",
+      "text": "구조적 실행 모델",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "구조적 실행 모델"
+      ],
+      "breaks768": [
+        "구조적 실행 모델"
+      ],
+      "breaks375": [
+        "구조적 실행 모델"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "tag": "h3",
+      "text": "핵심 차이 비교표",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "핵심 차이 비교표"
+      ],
+      "breaks768": [
+        "핵심 차이 비교표"
+      ],
+      "breaks375": [
+        "핵심 차이 비교표"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "tag": "h2",
+      "text": "코드 레벨 직접 비교",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "코드 레벨 직접 비교"
+      ],
+      "breaks768": [
+        "코드 레벨 직접 비교"
+      ],
+      "breaks375": [
+        "코드 레벨 직접 비교"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "tag": "h3",
+      "text": "학습 & 실전 면접 함정 Q&A",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "학습 & 실전 면접 함정 Q&A"
+      ],
+      "breaks768": [
+        "학습 & 실전 면접 함정 Q&A"
+      ],
+      "breaks375": [
+        "학습 & 실전 면접 함정 Q&A"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "tag": "h4",
+      "text": "Context API가 있는데 왜 굳이 Zustand나 Redux 같은 전역 상태 라이브러리를 추가로 도입하나요?",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 3,
+      "breaks1280": [
+        "Context API가 있는데 왜 굳이 Zustand나 Redux 같은 전역 상태 라이브러리를 추가로 도입하나요?"
+      ],
+      "breaks768": [
+        "Context API가 있는데 왜 굳이 Zustand나 Redux 같은 전역 상태 라이브러리를 추가로 도입하나요?"
+      ],
+      "breaks375": [
+        "Context API가 있는데 왜 굳이 Zustand",
+        "나 Redux 같은 전역 상태 라이브러리를 추",
+        "가로 도입하나요?"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": true
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "tag": "h4",
+      "text": "이커머스 상품 검색·분석 같은 실무 대시보드에서 왜 Context API 하나로 끝내지 않고 Zustand와 React Query를 둘 다 쓰나요? 과설계 아닌가요?",
+      "lines1280": 1,
+      "lines768": 2,
+      "lines375": 4,
+      "breaks1280": [
+        "이커머스 상품 검색·분석 같은 실무 대시보드에서 왜 Context API 하나로 끝내지 않고 Zustand와 React Query를 둘 다 쓰나요? 과설계 아닌가요?"
+      ],
+      "breaks768": [
+        "이커머스 상품 검색·분석 같은 실무 대시보드에서 왜 Context API 하나로 끝내지 않고 Zustand와 React",
+        "Query를 둘 다 쓰나요? 과설계 아닌가요?"
+      ],
+      "breaks375": [
+        "이커머스 상품 검색·분석 같은 실무 대시보",
+        "드에서 왜 Context API 하나로 끝내지 않",
+        "고 Zustand와 React Query를 둘 다 쓰나",
+        "요? 과설계 아닌가요?"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": true
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "tag": "h4",
+      "text": "법률·노무 진단 서비스처럼 상태에 따라 결과가 동적으로 바뀌는 화면에서, 추천 액션 계산 로직을 스토어 내부에 두지 않고 useMemo 기반 훅으로 분리하는 이유는 무엇인가요?",
+      "lines1280": 2,
+      "lines768": 2,
+      "lines375": 5,
+      "breaks1280": [
+        "법률·노무 진단 서비스처럼 상태에 따라 결과가 동적으로 바뀌는 화면에서, 추천 액션 계산 로직을 스토어 내부에 두지 않고 useMemo 기반 훅으로 분리하는",
+        "이유는 무엇인가요?"
+      ],
+      "breaks768": [
+        "법률·노무 진단 서비스처럼 상태에 따라 결과가 동적으로 바뀌는 화면에서, 추천 액션 계산 로직을 스토어 내부에",
+        "두지 않고 useMemo 기반 훅으로 분리하는 이유는 무엇인가요?"
+      ],
+      "breaks375": [
+        "법률·노무 진단 서비스처럼 상태에 따라 결",
+        "과가 동적으로 바뀌는 화면에서, 추천 액션",
+        "계산 로직을 스토어 내부에 두지 않고",
+        "useMemo 기반 훅으로 분리하는 이유는",
+        "무엇인가요?"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": true
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "tag": "h4",
+      "text": "Zustand 스토어의 데이터는 React 컴포넌트 안에 저장되나요? 컴포넌트가 언마운트되면 상태가 사라지나요?",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 3,
+      "breaks1280": [
+        "Zustand 스토어의 데이터는 React 컴포넌트 안에 저장되나요? 컴포넌트가 언마운트되면 상태가 사라지나요?"
+      ],
+      "breaks768": [
+        "Zustand 스토어의 데이터는 React 컴포넌트 안에 저장되나요? 컴포넌트가 언마운트되면 상태가 사라지나요?"
+      ],
+      "breaks375": [
+        "Zustand 스토어의 데이터는 React 컴포넌",
+        "트 안에 저장되나요? 컴포넌트가 언마운트",
+        "되면 상태가 사라지나요?"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": true
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "tag": "h4",
+      "text": "Pinia 스토어에서 상태값을 구조분해 할당(`const { count } = useStore()`)하면 왜 반응성이 깨지나요?",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 3,
+      "breaks1280": [
+        "Pinia 스토어에서 상태값을 구조분해 할당(`const { count } = useStore()`)하면 왜 반응성이 깨지나요?"
+      ],
+      "breaks768": [
+        "Pinia 스토어에서 상태값을 구조분해 할당(`const { count } = useStore()`)하면 왜 반응성이 깨지나요?"
+      ],
+      "breaks375": [
+        "Pinia 스토어에서 상태값을 구조분해 할당",
+        "(`const { count } = useStore()`)하면 왜",
+        "반응성이 깨지나요?"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": true
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "tag": "h4",
+      "text": "Zustand를 TypeScript와 함께 쓸 때 `create<T>()((set) => ...)` 처럼 소괄호를 두 번 쓰는 커링 문법을 쓰는 이유는 무엇인가요?",
+      "lines1280": 1,
+      "lines768": 2,
+      "lines375": 4,
+      "breaks1280": [
+        "Zustand를 TypeScript와 함께 쓸 때 `create<T>()((set) => ...)` 처럼 소괄호를 두 번 쓰는 커링 문법을 쓰는 이유는 무엇인가요?"
+      ],
+      "breaks768": [
+        "Zustand를 TypeScript와 함께 쓸 때 `create<T>()((set) => ...)` 처럼 소괄호를 두 번 쓰는 커링 문법을 쓰는",
+        "이유는 무엇인가요?"
+      ],
+      "breaks375": [
+        "Zustand를 TypeScript와 함께 쓸 때",
+        "`create<T>()((set) => ...)` 처럼 소괄호",
+        "를 두 번 쓰는 커링 문법을 쓰는 이유는 무",
+        "엇인가요?"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": true
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "tag": "h4",
+      "text": "Redux Toolkit(RTK)의 리듀서 안에서는 `state.value += 1`처럼 직접 상태를 수정해도 정말 괜찮나요?",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 3,
+      "breaks1280": [
+        "Redux Toolkit(RTK)의 리듀서 안에서는 `state.value += 1`처럼 직접 상태를 수정해도 정말 괜찮나요?"
+      ],
+      "breaks768": [
+        "Redux Toolkit(RTK)의 리듀서 안에서는 `state.value += 1`처럼 직접 상태를 수정해도 정말 괜찮나요?"
+      ],
+      "breaks375": [
+        "Redux Toolkit(RTK)의 리듀서 안에서는",
+        "`state.value += 1`처럼 직접 상태를 수정",
+        "해도 정말 괜찮나요?"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": true
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "tag": "h3",
+      "text": "참고 공식 문서 및 출처",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "참고 공식 문서 및 출처"
+      ],
+      "breaks768": [
+        "참고 공식 문서 및 출처"
+      ],
+      "breaks375": [
+        "참고 공식 문서 및 출처"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "tag": "h1",
+      "text": "서버 상태 관리 (TanStack Query ↔ Vue Query / Composable)",
+      "lines1280": 2,
+      "lines768": 2,
+      "lines375": 3,
+      "breaks1280": [
+        "서버 상태 관리 (TanStack Query ↔ Vue Query /",
+        "Composable)"
+      ],
+      "breaks768": [
+        "서버 상태 관리 (TanStack Query ↔ Vue",
+        "Query / Composable)"
+      ],
+      "breaks375": [
+        "서버 상태 관리 (TanStack",
+        "Query ↔ Vue Query /",
+        "Composable)"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": true,
+      "splitsWord375": true
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "tag": "h2",
+      "text": "구조적 실행 모델",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "구조적 실행 모델"
+      ],
+      "breaks768": [
+        "구조적 실행 모델"
+      ],
+      "breaks375": [
+        "구조적 실행 모델"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "tag": "h3",
+      "text": "핵심 차이 비교표",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "핵심 차이 비교표"
+      ],
+      "breaks768": [
+        "핵심 차이 비교표"
+      ],
+      "breaks375": [
+        "핵심 차이 비교표"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "tag": "h2",
+      "text": "코드 레벨 직접 비교",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "코드 레벨 직접 비교"
+      ],
+      "breaks768": [
+        "코드 레벨 직접 비교"
+      ],
+      "breaks375": [
+        "코드 레벨 직접 비교"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "tag": "h3",
+      "text": "학습 & 실전 면접 함정 Q&A",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "학습 & 실전 면접 함정 Q&A"
+      ],
+      "breaks768": [
+        "학습 & 실전 면접 함정 Q&A"
+      ],
+      "breaks375": [
+        "학습 & 실전 면접 함정 Q&A"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "tag": "h4",
+      "text": "queryFn에는 서버 요청만 넣을 수 있나요? 서버 상태 라이브러리라면서요.",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 2,
+      "breaks1280": [
+        "queryFn에는 서버 요청만 넣을 수 있나요? 서버 상태 라이브러리라면서요."
+      ],
+      "breaks768": [
+        "queryFn에는 서버 요청만 넣을 수 있나요? 서버 상태 라이브러리라면서요."
+      ],
+      "breaks375": [
+        "queryFn에는 서버 요청만 넣을 수 있나요?",
+        "서버 상태 라이브러리라면서요."
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "tag": "h4",
+      "text": "낙관적 업데이트(Optimistic Update)는 비동기 처리 확정 전인데 성공한 것처럼 보여줘 사용자를 속이는 것 아닌가요? 연속 클릭 시 스냅샷이 꼬이지 않나요?",
+      "lines1280": 2,
+      "lines768": 2,
+      "lines375": 4,
+      "breaks1280": [
+        "낙관적 업데이트(Optimistic Update)는 비동기 처리 확정 전인데 성공한 것처럼 보여줘 사용자를 속이는 것 아닌가요? 연속 클릭 시 스냅샷이 꼬이지 않나",
+        "요?"
+      ],
+      "breaks768": [
+        "낙관적 업데이트(Optimistic Update)는 비동기 처리 확정 전인데 성공한 것처럼 보여줘 사용자를 속이는 것 아",
+        "닌가요? 연속 클릭 시 스냅샷이 꼬이지 않나요?"
+      ],
+      "breaks375": [
+        "낙관적 업데이트(Optimistic Update)는",
+        "비동기 처리 확정 전인데 성공한 것처럼 보",
+        "여줘 사용자를 속이는 것 아닌가요? 연속 클",
+        "릭 시 스냅샷이 꼬이지 않나요?"
+      ],
+      "splitsWord1280": true,
+      "splitsWord768": true,
+      "splitsWord375": true
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "tag": "h4",
+      "text": "무한 스크롤 getNextPageParam에서 그냥 total_count만 확인하면 되는데 왜 굳이 페이지 아이템 수(< 10)까지 이중으로 체크했나요?",
+      "lines1280": 1,
+      "lines768": 2,
+      "lines375": 4,
+      "breaks1280": [
+        "무한 스크롤 getNextPageParam에서 그냥 total_count만 확인하면 되는데 왜 굳이 페이지 아이템 수(< 10)까지 이중으로 체크했나요?"
+      ],
+      "breaks768": [
+        "무한 스크롤 getNextPageParam에서 그냥 total_count만 확인하면 되는데 왜 굳이 페이지 아이템 수(< 10)",
+        "까지 이중으로 체크했나요?"
+      ],
+      "breaks375": [
+        "무한 스크롤 getNextPageParam에서 그",
+        "냥 total_count만 확인하면 되는데 왜 굳이",
+        "페이지 아이템 수(< 10)까지 이중으로 체",
+        "크했나요?"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": true,
+      "splitsWord375": true
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "tag": "h4",
+      "text": "동일 키워드 재검색을 위해 부모가 ref로 자식의 refetch 함수를 직접 호출하는 것은 React의 단방향 데이터 흐름을 깨뜨리는 안티패턴 아닌가요?",
+      "lines1280": 1,
+      "lines768": 2,
+      "lines375": 4,
+      "breaks1280": [
+        "동일 키워드 재검색을 위해 부모가 ref로 자식의 refetch 함수를 직접 호출하는 것은 React의 단방향 데이터 흐름을 깨뜨리는 안티패턴 아닌가요?"
+      ],
+      "breaks768": [
+        "동일 키워드 재검색을 위해 부모가 ref로 자식의 refetch 함수를 직접 호출하는 것은 React의 단방향 데이터 흐",
+        "름을 깨뜨리는 안티패턴 아닌가요?"
+      ],
+      "breaks375": [
+        "동일 키워드 재검색을 위해 부모가 ref로 자",
+        "식의 refetch 함수를 직접 호출하는 것은",
+        "React의 단방향 데이터 흐름을 깨뜨리는",
+        "안티패턴 아닌가요?"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": true,
+      "splitsWord375": true
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "tag": "h4",
+      "text": "법령·약관 조회 서비스에서 법률 데이터의 staleTime을 1시간으로 설정한 명확한 기술적·도메인적 근거는 무엇인가요?",
+      "lines1280": 1,
+      "lines768": 2,
+      "lines375": 3,
+      "breaks1280": [
+        "법령·약관 조회 서비스에서 법률 데이터의 staleTime을 1시간으로 설정한 명확한 기술적·도메인적 근거는 무엇인가요?"
+      ],
+      "breaks768": [
+        "법령·약관 조회 서비스에서 법률 데이터의 staleTime을 1시간으로 설정한 명확한 기술적·도메인적 근거는 무엇",
+        "인가요?"
+      ],
+      "breaks375": [
+        "법령·약관 조회 서비스에서 법률 데이터의",
+        "staleTime을 1시간으로 설정한 명확한 기",
+        "술적·도메인적 근거는 무엇인가요?"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": true,
+      "splitsWord375": true
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "tag": "h4",
+      "text": "TanStack Query가 서버 상태 관리용 라이브러리라면, 왜 queryFn에 로컬스토리지나 Mock 함수를 넣어도 정상 동작하나요?",
+      "lines1280": 1,
+      "lines768": 2,
+      "lines375": 3,
+      "breaks1280": [
+        "TanStack Query가 서버 상태 관리용 라이브러리라면, 왜 queryFn에 로컬스토리지나 Mock 함수를 넣어도 정상 동작하나요?"
+      ],
+      "breaks768": [
+        "TanStack Query가 서버 상태 관리용 라이브러리라면, 왜 queryFn에 로컬스토리지나 Mock 함수를 넣어도 정",
+        "상 동작하나요?"
+      ],
+      "breaks375": [
+        "TanStack Query가 서버 상태 관리용 라이",
+        "브러리라면, 왜 queryFn에 로컬스토리지",
+        "나 Mock 함수를 넣어도 정상 동작하나요?"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": true,
+      "splitsWord375": true
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "tag": "h4",
+      "text": "staleTime과 gcTime(구 cacheTime)의 차이를 설명하고, staleTime의 기본값이 0초인 이유는 무엇인가요?",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 3,
+      "breaks1280": [
+        "staleTime과 gcTime(구 cacheTime)의 차이를 설명하고, staleTime의 기본값이 0초인 이유는 무엇인가요?"
+      ],
+      "breaks768": [
+        "staleTime과 gcTime(구 cacheTime)의 차이를 설명하고, staleTime의 기본값이 0초인 이유는 무엇인가요?"
+      ],
+      "breaks375": [
+        "staleTime과 gcTime(구 cacheTime)의",
+        "차이를 설명하고, staleTime의 기본값이 0",
+        "초인 이유는 무엇인가요?"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": true
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "tag": "h4",
+      "text": "queryClient.invalidateQueries()를 실행하면 캐시된 모든 데이터가 그 즉시 서버로 재호출되나요?",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 3,
+      "breaks1280": [
+        "queryClient.invalidateQueries()를 실행하면 캐시된 모든 데이터가 그 즉시 서버로 재호출되나요?"
+      ],
+      "breaks768": [
+        "queryClient.invalidateQueries()를 실행하면 캐시된 모든 데이터가 그 즉시 서버로 재호출되나요?"
+      ],
+      "breaks375": [
+        "queryClient.invalidateQueries()를 실행",
+        "하면 캐시된 모든 데이터가 그 즉시 서버로",
+        "재호출되나요?"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": true
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "tag": "h4",
+      "text": "API로 받아온 서버 데이터를 Zustand나 Pinia 같은 전역 스토어에 다시 복사해서 저장하는 것은 왜 안티패턴인가요?",
+      "lines1280": 1,
+      "lines768": 2,
+      "lines375": 3,
+      "breaks1280": [
+        "API로 받아온 서버 데이터를 Zustand나 Pinia 같은 전역 스토어에 다시 복사해서 저장하는 것은 왜 안티패턴인가요?"
+      ],
+      "breaks768": [
+        "API로 받아온 서버 데이터를 Zustand나 Pinia 같은 전역 스토어에 다시 복사해서 저장하는 것은 왜 안티패턴인",
+        "가요?"
+      ],
+      "breaks375": [
+        "API로 받아온 서버 데이터를 Zustand나",
+        "Pinia 같은 전역 스토어에 다시 복사해서",
+        "저장하는 것은 왜 안티패턴인가요?"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": true,
+      "splitsWord375": false
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "tag": "h3",
+      "text": "참고 공식 문서 및 출처",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "참고 공식 문서 및 출처"
+      ],
+      "breaks768": [
+        "참고 공식 문서 및 출처"
+      ],
+      "breaks375": [
+        "참고 공식 문서 및 출처"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "tag": "h1",
+      "text": "Options API에서 Composition API (<script setup>)로의 전환",
+      "lines1280": 2,
+      "lines768": 2,
+      "lines375": 3,
+      "breaks1280": [
+        "Options API에서 Composition API (<script",
+        "setup>)로의 전환"
+      ],
+      "breaks768": [
+        "Options API에서 Composition API",
+        "(<script setup>)로의 전환"
+      ],
+      "breaks375": [
+        "Options API에서",
+        "Composition API (<script",
+        "setup>)로의 전환"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "tag": "h2",
+      "text": "구조적 실행 모델",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "구조적 실행 모델"
+      ],
+      "breaks768": [
+        "구조적 실행 모델"
+      ],
+      "breaks375": [
+        "구조적 실행 모델"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "tag": "h3",
+      "text": "핵심 차이 비교표",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "핵심 차이 비교표"
+      ],
+      "breaks768": [
+        "핵심 차이 비교표"
+      ],
+      "breaks375": [
+        "핵심 차이 비교표"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "tag": "h2",
+      "text": "코드 레벨 직접 비교",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "코드 레벨 직접 비교"
+      ],
+      "breaks768": [
+        "코드 레벨 직접 비교"
+      ],
+      "breaks375": [
+        "코드 레벨 직접 비교"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "tag": "h3",
+      "text": "학습 & 실전 면접 함정 Q&A",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "학습 & 실전 면접 함정 Q&A"
+      ],
+      "breaks768": [
+        "학습 & 실전 면접 함정 Q&A"
+      ],
+      "breaks375": [
+        "학습 & 실전 면접 함정 Q&A"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "tag": "h4",
+      "text": "Vue2에서는 왜 객체에 새 속성을 추가하거나 배열 인덱스로 값을 바꿀 때 화면이 갱신되지 않았나요?",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 3,
+      "breaks1280": [
+        "Vue2에서는 왜 객체에 새 속성을 추가하거나 배열 인덱스로 값을 바꿀 때 화면이 갱신되지 않았나요?"
+      ],
+      "breaks768": [
+        "Vue2에서는 왜 객체에 새 속성을 추가하거나 배열 인덱스로 값을 바꿀 때 화면이 갱신되지 않았나요?"
+      ],
+      "breaks375": [
+        "Vue2에서는 왜 객체에 새 속성을 추가하거",
+        "나 배열 인덱스로 값을 바꿀 때 화면이 갱신",
+        "되지 않았나요?"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": true
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "tag": "h4",
+      "text": "Vue3에서 reactive()로 감싼 객체를 const { count } = state 로 구조분해하면 반응성이 끊어지는 이유는 무엇인가요?",
+      "lines1280": 1,
+      "lines768": 2,
+      "lines375": 3,
+      "breaks1280": [
+        "Vue3에서 reactive()로 감싼 객체를 const { count } = state 로 구조분해하면 반응성이 끊어지는 이유는 무엇인가요?"
+      ],
+      "breaks768": [
+        "Vue3에서 reactive()로 감싼 객체를 const { count } = state 로 구조분해하면 반응성이 끊어지는 이유는 무엇",
+        "인가요?"
+      ],
+      "breaks375": [
+        "Vue3에서 reactive()로 감싼 객체를",
+        "const { count } = state 로 구조분해하면",
+        "반응성이 끊어지는 이유는 무엇인가요?"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": true,
+      "splitsWord375": false
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "tag": "h3",
+      "text": "참고 공식 문서 및 출처",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "참고 공식 문서 및 출처"
+      ],
+      "breaks768": [
+        "참고 공식 문서 및 출처"
+      ],
+      "breaks375": [
+        "참고 공식 문서 및 출처"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "tag": "h1",
+      "text": "풀스택 메타 프레임워크 아키텍처 (Next.js vs Nuxt 3)",
+      "lines1280": 2,
+      "lines768": 2,
+      "lines375": 2,
+      "breaks1280": [
+        "풀스택 메타 프레임워크 아키텍처 (Next.js vs Nuxt",
+        "3)"
+      ],
+      "breaks768": [
+        "풀스택 메타 프레임워크 아키텍처 (Next.js",
+        "vs Nuxt 3)"
+      ],
+      "breaks375": [
+        "풀스택 메타 프레임워크 아키텍처",
+        "(Next.js vs Nuxt 3)"
+      ],
+      "splitsWord1280": true,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "tag": "h2",
+      "text": "구조적 실행 모델",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "구조적 실행 모델"
+      ],
+      "breaks768": [
+        "구조적 실행 모델"
+      ],
+      "breaks375": [
+        "구조적 실행 모델"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "tag": "h3",
+      "text": "핵심 차이 비교표",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "핵심 차이 비교표"
+      ],
+      "breaks768": [
+        "핵심 차이 비교표"
+      ],
+      "breaks375": [
+        "핵심 차이 비교표"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "tag": "h2",
+      "text": "코드 레벨 직접 비교",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "코드 레벨 직접 비교"
+      ],
+      "breaks768": [
+        "코드 레벨 직접 비교"
+      ],
+      "breaks375": [
+        "코드 레벨 직접 비교"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "tag": "h3",
+      "text": "학습 & 실전 면접 함정 Q&A",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "학습 & 실전 면접 함정 Q&A"
+      ],
+      "breaks768": [
+        "학습 & 실전 면접 함정 Q&A"
+      ],
+      "breaks375": [
+        "학습 & 실전 면접 함정 Q&A"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "tag": "h4",
+      "text": "Next.js App Router에서 컴포넌트 상단에 'use client'를 선언하면, 이 컴포넌트는 서버에서 전혀 실행되지 않고 브라우저에서만 렌더링되나요?",
+      "lines1280": 1,
+      "lines768": 2,
+      "lines375": 4,
+      "breaks1280": [
+        "Next.js App Router에서 컴포넌트 상단에 'use client'를 선언하면, 이 컴포넌트는 서버에서 전혀 실행되지 않고 브라우저에서만 렌더링되나요?"
+      ],
+      "breaks768": [
+        "Next.js App Router에서 컴포넌트 상단에 'use client'를 선언하면, 이 컴포넌트는 서버에서 전혀 실행되지 않",
+        "고 브라우저에서만 렌더링되나요?"
+      ],
+      "breaks375": [
+        "Next.js App Router에서 컴포넌트 상단",
+        "에 'use client'를 선언하면, 이 컴포넌트는",
+        "서버에서 전혀 실행되지 않고 브라우저에서",
+        "만 렌더링되나요?"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": true,
+      "splitsWord375": true
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "tag": "h4",
+      "text": "Nuxt 3에서 useAsyncData나 useFetch 없이 일반 axios/fetch를 컴포넌트 본문에서 직접 호출하면 어떤 문제가 생기나요?",
+      "lines1280": 1,
+      "lines768": 2,
+      "lines375": 3,
+      "breaks1280": [
+        "Nuxt 3에서 useAsyncData나 useFetch 없이 일반 axios/fetch를 컴포넌트 본문에서 직접 호출하면 어떤 문제가 생기나요?"
+      ],
+      "breaks768": [
+        "Nuxt 3에서 useAsyncData나 useFetch 없이 일반 axios/fetch를 컴포넌트 본문에서 직접 호출하면 어떤 문",
+        "제가 생기나요?"
+      ],
+      "breaks375": [
+        "Nuxt 3에서 useAsyncData나 useFetch",
+        "없이 일반 axios/fetch를 컴포넌트 본문에",
+        "서 직접 호출하면 어떤 문제가 생기나요?"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": true,
+      "splitsWord375": true
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "tag": "h3",
+      "text": "참고 공식 문서 및 출처",
+      "lines1280": 1,
+      "lines768": 1,
+      "lines375": 1,
+      "breaks1280": [
+        "참고 공식 문서 및 출처"
+      ],
+      "breaks768": [
+        "참고 공식 문서 및 출처"
+      ],
+      "breaks375": [
+        "참고 공식 문서 및 출처"
+      ],
+      "splitsWord1280": false,
+      "splitsWord768": false,
+      "splitsWord375": false
+    }
+  ],
+  "allSplitDetails": [
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 1280,
+      "brokenWord": "Vue상태",
+      "lineEnd": "Vue",
+      "lineStart": "상태",
+      "fullSnippet": "...React ↔ Vue / 상태 관리, 서버 상태 같은..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 1280,
+      "brokenWord": "3Options",
+      "lineEnd": "3",
+      "lineStart": "Options",
+      "fullSnippet": "...Vue 2 → Vue 3 / Options API를 Co..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 1280,
+      "brokenWord": "Composition API",
+      "lineEnd": "Composition",
+      "lineStart": "API",
+      "fullSnippet": "...PI를 Composition / API로 옮기는 방법..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 1280,
+      "brokenWord": "Composition API",
+      "lineEnd": "Composition",
+      "lineStart": "API",
+      "fullSnippet": "...PI를 Composition / API로 옮기는 방법..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 1280,
+      "brokenWord": "Next.js렌더링",
+      "lineEnd": "Next.js",
+      "lineStart": "렌더링",
+      "fullSnippet": "...uxt 3 ↔ Next.js / 렌더링 방식과 서버 기능의 ..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 1280,
+      "brokenWord": "Context API",
+      "lineEnd": "Context",
+      "lineStart": "API",
+      "fullSnippet": "...Redux · Context / API ↔ Pinia · V..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 1280,
+      "brokenWord": "Context API",
+      "lineEnd": "Context",
+      "lineStart": "API",
+      "fullSnippet": "...Redux · Context / API ↔ Pinia · V..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 1280,
+      "brokenWord": "Vuex)→",
+      "lineEnd": "Vuex)",
+      "lineStart": "→",
+      "fullSnippet": "...↔ Pinia · Vuex) / →..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 1280,
+      "brokenWord": "Composable)→",
+      "lineEnd": "Composable)",
+      "lineStart": "→",
+      "fullSnippet": "...Composable) / →..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 1280,
+      "brokenWord": "setup>)로의",
+      "lineEnd": "setup>)",
+      "lineStart": "로의",
+      "fullSnippet": "...<script setup>) / 로의 전환..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 1280,
+      "brokenWord": "전환→",
+      "lineEnd": "전환",
+      "lineStart": "→",
+      "fullSnippet": "...로의 전환 / →..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 1280,
+      "brokenWord": "Nuxt 3",
+      "lineEnd": "Nuxt",
+      "lineStart": "3",
+      "fullSnippet": "...RSC) 아키텍처와 Nuxt / 3의 Universal / ..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 1280,
+      "brokenWord": "Nuxt 3",
+      "lineEnd": "Nuxt",
+      "lineStart": "3",
+      "fullSnippet": "...RSC) 아키텍처와 Nuxt / 3의 Universal / ..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 768,
+      "brokenWord": "Vue상태",
+      "lineEnd": "Vue",
+      "lineStart": "상태",
+      "fullSnippet": "...React ↔ Vue / 상태 관리, 서버 상태 같은..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 768,
+      "brokenWord": "3Options",
+      "lineEnd": "3",
+      "lineStart": "Options",
+      "fullSnippet": "...Vue 2 → Vue 3 / Options API를 Co..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 768,
+      "brokenWord": "Composition API",
+      "lineEnd": "Composition",
+      "lineStart": "API",
+      "fullSnippet": "...PI를 Composition / API로 옮기는 방법..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 768,
+      "brokenWord": "Composition API",
+      "lineEnd": "Composition",
+      "lineStart": "API",
+      "fullSnippet": "...PI를 Composition / API로 옮기는 방법..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 768,
+      "brokenWord": "Next.js렌더링",
+      "lineEnd": "Next.js",
+      "lineStart": "렌더링",
+      "fullSnippet": "...uxt 3 ↔ Next.js / 렌더링 방식과 서버 기능의 ..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 768,
+      "brokenWord": "기반의",
+      "lineEnd": "기반",
+      "lineStart": "의",
+      "fullSnippet": "...plate과 Proxy 기반 / 의 반응성 세계로 오가는 실..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 768,
+      "brokenWord": "기반의",
+      "lineEnd": "기반",
+      "lineStart": "의",
+      "fullSnippet": "...plate과 Proxy 기반 / 의 반응성 세계로 오가는 실..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 768,
+      "brokenWord": "아키텍처",
+      "lineEnd": "아키",
+      "lineStart": "텍처",
+      "fullSnippet": "...성 세계로 오가는 실무 아키 / 텍처 비교..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 768,
+      "brokenWord": "감시(Vue)와",
+      "lineEnd": "감시",
+      "lineStart": "(Vue)와",
+      "fullSnippet": "...사고 전환의 출발점: 감시 / (Vue)와 알림(React..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 768,
+      "brokenWord": "알림(React)→",
+      "lineEnd": "알림(React)",
+      "lineStart": "→",
+      "fullSnippet": "...Vue)와 알림(React) / →..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 768,
+      "brokenWord": "Context API",
+      "lineEnd": "Context",
+      "lineStart": "API",
+      "fullSnippet": "...Redux · Context / API ↔ Pinia · V..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 768,
+      "brokenWord": "Context API",
+      "lineEnd": "Context",
+      "lineStart": "API",
+      "fullSnippet": "...Redux · Context / API ↔ Pinia · V..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 768,
+      "brokenWord": "Vuex)→",
+      "lineEnd": "Vuex)",
+      "lineStart": "→",
+      "fullSnippet": "...↔ Pinia · Vuex) / →..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 768,
+      "brokenWord": "TanStack Query",
+      "lineEnd": "TanStack",
+      "lineStart": "Query",
+      "fullSnippet": "...상태 관리 (TanStack / Query ↔ Vue Que..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 768,
+      "brokenWord": "TanStack Query",
+      "lineEnd": "TanStack",
+      "lineStart": "Query",
+      "fullSnippet": "...상태 관리 (TanStack / Query ↔ Vue Que..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 768,
+      "brokenWord": "Composable)→",
+      "lineEnd": "Composable)",
+      "lineStart": "→",
+      "fullSnippet": "...Composable) / →..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 768,
+      "brokenWord": "극복하고,",
+      "lineEnd": "극",
+      "lineStart": "복하고,",
+      "fullSnippet": "...와 Mixins의 한계를 극 / 복하고, <script se..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 768,
+      "brokenWord": "마이그레이션하는",
+      "lineEnd": "마이",
+      "lineStart": "그레이션하는",
+      "fullSnippet": "...on API로 안전하게 마이 / 그레이션하는 실전 지침..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 768,
+      "brokenWord": "전환→",
+      "lineEnd": "전환",
+      "lineStart": "→",
+      "fullSnippet": "...setup>)로의 전환 / →..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 768,
+      "brokenWord": "아키텍처",
+      "lineEnd": "아키",
+      "lineStart": "텍처",
+      "fullSnippet": "...풀스택 메타 프레임워크 아키 / 텍처 (Next.js vs ..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 768,
+      "brokenWord": "3)→",
+      "lineEnd": "3)",
+      "lineStart": "→",
+      "fullSnippet": "...t.js vs Nuxt 3) / →..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 375,
+      "brokenWord": "Vue상태",
+      "lineEnd": "Vue",
+      "lineStart": "상태",
+      "fullSnippet": "...React ↔ Vue / 상태 관리, 서버 상태 같은..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 375,
+      "brokenWord": "3Options",
+      "lineEnd": "3",
+      "lineStart": "Options",
+      "fullSnippet": "...Vue 2 → Vue 3 / Options API를 Co..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 375,
+      "brokenWord": "Next.js렌더링",
+      "lineEnd": "Next.js",
+      "lineStart": "렌더링",
+      "fullSnippet": "...uxt 3 ↔ Next.js / 렌더링 방식과 서버 기능의 ..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 375,
+      "brokenWord": "Template과",
+      "lineEnd": "Template",
+      "lineStart": "과",
+      "fullSnippet": "... 세계에서, Template / 과 Proxy 기반의 반응성..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 375,
+      "brokenWord": "비교",
+      "lineEnd": "비",
+      "lineStart": "교",
+      "fullSnippet": "...로 오가는 실무 아키텍처 비 / 교..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 375,
+      "brokenWord": "Vuex)→",
+      "lineEnd": "Vuex)",
+      "lineStart": "→",
+      "fullSnippet": "...↔ Pinia · Vuex) / →..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 375,
+      "brokenWord": "Composable)→",
+      "lineEnd": "Composable)",
+      "lineStart": "→",
+      "fullSnippet": "...Composable) / →..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 375,
+      "brokenWord": "마이그레이션하는",
+      "lineEnd": "마이그레이션",
+      "lineStart": "하는",
+      "fullSnippet": "...PI로 안전하게 마이그레이션 / 하는 실전 지침..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 375,
+      "brokenWord": "전환→",
+      "lineEnd": "전환",
+      "lineStart": "→",
+      "fullSnippet": "...setup>)로의 전환 / →..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 375,
+      "brokenWord": "3)→",
+      "lineEnd": "3)",
+      "lineStart": "→",
+      "fullSnippet": "...Nuxt 3) / →..."
+    },
+    {
+      "page": "홈 화면",
+      "section": "목록 / 카드 / 기타 본문",
+      "width": 375,
+      "brokenWord": "요약했습니다.",
+      "lineEnd": "요약했습",
+      "lineStart": "니다.",
+      "fullSnippet": "...심 차이를 그림으로 요약했습 / 니다. 자세한 설명은 각 개..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "파인만 핵심 요약",
+      "width": 1280,
+      "brokenWord": "같습니다.",
+      "lineEnd": "같",
+      "lineStart": "습니다.",
+      "fullSnippet": "...는 사실을 아는 집주인과 같 / 습니다...."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "직관적 비유",
+      "width": 1280,
+      "brokenWord": "같습니다.",
+      "lineEnd": "같",
+      "lineStart": "습니다.",
+      "fullSnippet": "...는 사실을 아는 집주인과 같 / 습니다...."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "명시적",
+      "lineEnd": "명",
+      "lineStart": "시적",
+      "fullSnippet": "...자가 setter 함수로 명 / 시적 통보..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "스스로",
+      "lineEnd": "스스",
+      "lineStart": "로",
+      "fullSnippet": "...roxy가 값의 변화를 스스 / 로 감지..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "함수",
+      "lineEnd": "함",
+      "lineStart": "수",
+      "fullSnippet": "... 상태 변경 시 컴포넌트 함 / 수 전체를 재실행하여 가상 ..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "필요)",
+      "lineEnd": "필",
+      "lineStart": "요)",
+      "fullSnippet": "...짐 (React.memo 필 / 요)..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "정밀하게",
+      "lineEnd": "정밀",
+      "lineStart": "하게",
+      "fullSnippet": "...달받은 자식 컴포넌트만 정밀 / 하게 갱신됨 (컴파일러 최적..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "런타임",
+      "lineEnd": "런",
+      "lineStart": "타임",
+      "fullSnippet": "... 계속 계산하고 추적하는 런 / 타임 비용을 집니다. 반면 ..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "택했습니다.",
+      "lineEnd": "택했습니",
+      "lineStart": "다.",
+      "fullSnippet": "... 쉽게 만드는 쪽을 택했습니 / 다. 두 방식 모두 정당한 ..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "추적",
+      "lineEnd": "추",
+      "lineStart": "적",
+      "fullSnippet": "...어씌워져 Vue의 반응성 추 / 적 체계에서 완전히 이탈합니..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "파인만 핵심 요약",
+      "width": 768,
+      "brokenWord": "초인종(setter)을",
+      "lineEnd": "초인종",
+      "lineStart": "(setter)을",
+      "fullSnippet": "...React는 개발자가 초인종 / (setter)을 눌러줄 때..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "파인만 핵심 요약",
+      "width": 768,
+      "brokenWord": "초인종(setter)을",
+      "lineEnd": "초인종",
+      "lineStart": "(setter)을",
+      "fullSnippet": "...React는 개발자가 초인종 / (setter)을 눌러줄 때..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "파인만 핵심 요약",
+      "width": 768,
+      "brokenWord": "초인종(setter)을",
+      "lineEnd": "초인종",
+      "lineStart": "(setter)을",
+      "fullSnippet": "...React는 개발자가 초인종 / (setter)을 눌러줄 때..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "파인만 핵심 요약",
+      "width": 768,
+      "brokenWord": "눌러야만",
+      "lineEnd": "눌",
+      "lineStart": "러야만",
+      "fullSnippet": "...act는 누군가 초인종을 눌 / 러야만 손님이 왔다는 사실을..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "직관적 비유",
+      "width": 768,
+      "brokenWord": "눌러야만",
+      "lineEnd": "눌",
+      "lineStart": "러야만",
+      "fullSnippet": "...act는 누군가 초인종을 눌 / 러야만 손님이 왔다는 사실을..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "템플릿에서는",
+      "lineEnd": "템플",
+      "lineStart": "릿에서는",
+      "fullSnippet": "...서는 `.value`, 템플 / 릿에서는 자동 언래핑..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "여부와",
+      "lineEnd": "여부",
+      "lineStart": "와",
+      "fullSnippet": "...링되면 props 변경 여부 / 와 무관하게 모든 자식이 기..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "(컴파일러",
+      "lineEnd": "(컴파일",
+      "lineStart": "러",
+      "fullSnippet": "...만 정밀하게 갱신됨 (컴파일 / 러 최적화)..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "반환해야",
+      "lineEnd": "반",
+      "lineStart": "환해야",
+      "fullSnippet": "...운 참조 객체를 복사해서 반 / 환해야 함 (`setList..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "쓰이는지",
+      "lineEnd": "쓰이",
+      "lineStart": "는지",
+      "fullSnippet": "...신, 어떤 값이 어디서 쓰이 / 는지 내부적으로 계속 계산하..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "정당한",
+      "lineEnd": "정당",
+      "lineStart": "한",
+      "fullSnippet": "...습니다. 두 방식 모두 정당 / 한 트레이드오프이며 우열의 ..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "리렌더링될",
+      "lineEnd": "리렌더",
+      "lineStart": "링될",
+      "fullSnippet": "...째, 부모 컴포넌트가 리렌더 / 링될 때(자식은 props가..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "자체가",
+      "lineEnd": "자체",
+      "lineStart": "가",
+      "fullSnippet": "...당하면 Proxy 래퍼 자체 / 가 일반 숫자로 덮어씌워져 ..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "지켜보다가",
+      "lineEnd": "지",
+      "lineStart": "켜보다가",
+      "fullSnippet": "...roxy)를 달아 스스로 지 / 켜보다가 바뀌면 알아서 고치..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "지켜보다가",
+      "lineEnd": "지",
+      "lineStart": "켜보다가",
+      "fullSnippet": "...roxy)를 달아 스스로 지 / 켜보다가 바뀌면 알아서 고치..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "지켜보다가",
+      "lineEnd": "지",
+      "lineStart": "켜보다가",
+      "fullSnippet": "...roxy)를 달아 스스로 지 / 켜보다가 바뀌면 알아서 고치..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "개발자가",
+      "lineEnd": "개발",
+      "lineStart": "자가",
+      "fullSnippet": "...cation) 방식 — 개발 / 자가 setter 함수로 명..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "재실행하여",
+      "lineEnd": "재",
+      "lineStart": "실행하여",
+      "fullSnippet": "...시 컴포넌트 함수 전체를 재 / 실행하여 가상 DOM Dif..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "수행",
+      "lineEnd": "수",
+      "lineStart": "행",
+      "fullSnippet": "...상 DOM Diffing 수 / 행..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "변경된",
+      "lineEnd": "변",
+      "lineStart": "경된",
+      "fullSnippet": "...etter 트래킹을 통해 변 / 경된 DOM 노드만 정밀 타..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "기본적으로",
+      "lineEnd": "기",
+      "lineStart": "본적으로",
+      "fullSnippet": "...와 무관하게 모든 자식이 기 / 본적으로 함께 다시 그려짐..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "갱신됨",
+      "lineEnd": "갱신",
+      "lineStart": "됨",
+      "fullSnippet": "...식 컴포넌트만 정밀하게 갱신 / 됨 (컴파일러 최적화)..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "복사해서",
+      "lineEnd": "복사해",
+      "lineStart": "서",
+      "fullSnippet": "... 새로운 참조 객체를 복사해 / 서 반환해야 함 (`setL..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "data()처럼",
+      "lineEnd": "data()처",
+      "lineStart": "럼",
+      "fullSnippet": "... 왜 Vue의 data()처 / 럼 자동으로 반응하지 않나요..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "기술적으로",
+      "lineEnd": "기",
+      "lineStart": "술적으로",
+      "fullSnippet": "...지 않나요? React가 기 / 술적으로 뒤떨어진 건가요?..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "문제입니다.",
+      "lineEnd": "문",
+      "lineStart": "제입니다.",
+      "fullSnippet": "...제가 아니라 설계 철학의 문 / 제입니다. Vue는 Prox..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "대신,",
+      "lineEnd": "대",
+      "lineStart": "신,",
+      "fullSnippet": "...roxy로 자동 추적하는 대 / 신, 어떤 값이 어디서 쓰이..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "대신,",
+      "lineEnd": "대",
+      "lineStart": "신,",
+      "fullSnippet": "...roxy로 자동 추적하는 대 / 신, 어떤 값이 어디서 쓰이..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "집니다.",
+      "lineEnd": "집",
+      "lineStart": "니다.",
+      "fullSnippet": "... 추적하는 런타임 비용을 집 / 니다. 반면 React는 그..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "흐름과",
+      "lineEnd": "흐",
+      "lineStart": "름과",
+      "fullSnippet": "...가 명시하게 하여 데이터 흐 / 름과 렌더링 시점을 예측하기..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "트레이드오프이며",
+      "lineEnd": "트레",
+      "lineStart": "이드오프이며",
+      "fullSnippet": "... 두 방식 모두 정당한 트레 / 이드오프이며 우열의 문제가 ..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "그려지는(Re-rendering)",
+      "lineEnd": "그려지는(Re-",
+      "lineStart": "rendering)",
+      "fullSnippet": "...넌트가 다시 그려지는(Re- / rendering) 경우는 ..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "때(자식은",
+      "lineEnd": "때(자식",
+      "lineStart": "은",
+      "fullSnippet": "...포넌트가 리렌더링될 때(자식 / 은 props가 안 바뀌어도..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "없으면",
+      "lineEnd": "없",
+      "lineStart": "으면",
+      "fullSnippet": "...도 React.memo가 없 / 으면 기본적으로 함께 다시 ..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "셋째,",
+      "lineEnd": "셋",
+      "lineStart": "째,",
+      "fullSnippet": "...함께 다시 그려집니다). 셋 / 째, 구독 중인 Contex..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "반응성이",
+      "lineEnd": "반응",
+      "lineStart": "성이",
+      "fullSnippet": "...럼 직접 재할당하면 왜 반응 / 성이 끊어지나요?..."
+    },
+    {
+      "page": "사고 전환의 출발점 (reactivity-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "재할당하면",
+      "lineEnd": "재",
+      "lineStart": "할당하면",
+      "fullSnippet": "... count에 직접 값을 재 / 할당하면 Proxy 래퍼 자..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "파인만 핵심 요약",
+      "width": 1280,
+      "brokenWord": "시스템과",
+      "lineEnd": "시스템",
+      "lineStart": "과",
+      "fullSnippet": "...는 은행의 개인 금고 시스템 / 과 같아서, 컴포넌트 바깥 ..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "직관적 비유",
+      "width": 1280,
+      "brokenWord": "시스템과",
+      "lineEnd": "시스템",
+      "lineStart": "과",
+      "fullSnippet": "...는 은행의 개인 금고 시스템 / 과 같아서, 컴포넌트 바깥 ..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "구독(Selector)으로",
+      "lineEnd": "구독(Selector)으",
+      "lineStart": "로",
+      "fullSnippet": "...적 구독(Selector)으 / 로 필요한 상태 변경 시에만..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "레거시)",
+      "lineEnd": "레거",
+      "lineStart": "시)",
+      "fullSnippet": "...↔ Vuex (Flux 레거 / 시)..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "거치는",
+      "lineEnd": "거",
+      "lineStart": "치는",
+      "fullSnippet": "...패치 → Reducer를 거 / 치는 엄격한 단방향 흐름. ..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "관리를",
+      "lineEnd": "관리",
+      "lineStart": "를",
+      "fullSnippet": "...mer 내장으로 불변성 관리 / 를 추상화하나 보일러플레이트..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "구독하는",
+      "lineEnd": "구독하",
+      "lineStart": "는",
+      "fullSnippet": "...t 값이 바뀌면 이를 구독하 / 는 하위 트리가 전부 재렌더..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "도구.",
+      "lineEnd": "도",
+      "lineStart": "구.",
+      "fullSnippet": "...트 계층 간 의존성 주입 도 / 구. 반응형 객체(ref, ..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "템플릿",
+      "lineEnd": "템플",
+      "lineStart": "릿",
+      "fullSnippet": "...e)를 주입하면 필요한 템플 / 릿 슬롯만 정밀 갱신됨...."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "쓰는가)",
+      "lineEnd": "쓰는",
+      "lineStart": "가)",
+      "fullSnippet": "...택 기준 (언제 무엇을 쓰는 / 가)..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "업데이트와",
+      "lineEnd": "업",
+      "lineStart": "데이트와",
+      "fullSnippet": "...I로 충분. 빈번한 UI 업 / 데이트와 미세 렌더링 최적화..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "구독하는",
+      "lineEnd": "구독",
+      "lineStart": "하는",
+      "fullSnippet": "...lue가 변경되면 이를 구독 / 하는 하위의 모든 컴포넌트가..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "통째로",
+      "lineEnd": "통",
+      "lineStart": "째로",
+      "fullSnippet": "...리는 무거운 컴포넌트까지 통 / 째로 불필요하게 재렌더링되는..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "리렌더링됩니다.",
+      "lineEnd": "리렌더",
+      "lineStart": "링됩니다.",
+      "fullSnippet": "...바뀐 컴포넌트만 정밀 리렌더 / 링됩니다. 소규모 앱에서는 ..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "아키텍처\"를",
+      "lineEnd": "아키텍",
+      "lineStart": "처\"를",
+      "fullSnippet": "... 명확한 관심사 분리 아키텍 / 처\"를 확립하고 불필요한 렌..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "생깁니다.",
+      "lineEnd": "생깁",
+      "lineStart": "니다.",
+      "fullSnippet": "...\"동기화 유지 부담\"이 생깁 / 니다. 만약 동기화를 깜빡하..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "해결합니다.",
+      "lineEnd": "해결합",
+      "lineStart": "니다.",
+      "fullSnippet": "...법으로 훨씬 우아하게 해결합 / 니다...."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "전부",
+      "lineEnd": "전",
+      "lineStart": "부",
+      "fullSnippet": "... 특정 화면의 컴포넌트가 전 / 부 언마운트되어 사라져도 스..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "값(Primitive",
+      "lineEnd": "값",
+      "lineStart": "(Primitive",
+      "fullSnippet": "... 거치지 않고 원시 원형 값 / (Primitive Valu..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "매개변수의",
+      "lineEnd": "매",
+      "lineStart": "개변수의",
+      "fullSnippet": "...`T`를 반환하는 동시에 매 / 개변수의 콜백 반환값으로도 ..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "소괄호",
+      "lineEnd": "소괄",
+      "lineStart": "호",
+      "fullSnippet": "...니다. 따라서 첫 번째 소괄 / 호 `create<T>()`..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "코드처럼",
+      "lineEnd": "코드",
+      "lineStart": "처럼",
+      "fullSnippet": "...가변(Mutating) 코드 / 처럼 작성하더라도, Imme..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "파인만 핵심 요약",
+      "width": 768,
+      "brokenWord": "방식입니다.",
+      "lineEnd": "방식입니",
+      "lineStart": "다.",
+      "fullSnippet": "...a 반응형 스토어) 방식입니 / 다...."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "파인만 핵심 요약",
+      "width": 768,
+      "brokenWord": "방식입니다.",
+      "lineEnd": "방식입니",
+      "lineStart": "다.",
+      "fullSnippet": "...a 반응형 스토어) 방식입니 / 다...."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "파인만 핵심 요약",
+      "width": 768,
+      "brokenWord": "방식입니다.",
+      "lineEnd": "방식입니",
+      "lineStart": "다.",
+      "fullSnippet": "...a 반응형 스토어) 방식입니 / 다...."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "파인만 핵심 요약",
+      "width": 768,
+      "brokenWord": "보입니다.",
+      "lineEnd": "보입니",
+      "lineStart": "다.",
+      "fullSnippet": "... 가족 모두에게 즉시 보입니 / 다. 반면 Zustand는 ..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "파인만 핵심 요약",
+      "width": 768,
+      "brokenWord": "컴포넌트",
+      "lineEnd": "컴포넌",
+      "lineStart": "트",
+      "fullSnippet": "...에 값을 보관하고 각 컴포넌 / 트가 자신이 필요한 통장 내..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "파인만 핵심 요약",
+      "width": 768,
+      "brokenWord": "컴포넌트가",
+      "lineEnd": "컴포넌",
+      "lineStart": "트가",
+      "fullSnippet": "...에 값을 보관하고 각 컴포넌 / 트가 자신이 필요한 통장 내..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "직관적 비유",
+      "width": 768,
+      "brokenWord": "보입니다.",
+      "lineEnd": "보입니",
+      "lineStart": "다.",
+      "fullSnippet": "... 가족 모두에게 즉시 보입니 / 다. 반면 Zustand는 ..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "직관적 비유",
+      "width": 768,
+      "brokenWord": "컴포넌트",
+      "lineEnd": "컴포넌",
+      "lineStart": "트",
+      "fullSnippet": "...에 값을 보관하고 각 컴포넌 / 트가 자신이 필요한 통장 내..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "직관적 비유",
+      "width": 768,
+      "brokenWord": "컴포넌트가",
+      "lineEnd": "컴포넌",
+      "lineStart": "트가",
+      "fullSnippet": "...에 값을 보관하고 각 컴포넌 / 트가 자신이 필요한 통장 내..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "(현대",
+      "lineEnd": "(현",
+      "lineStart": "대",
+      "fullSnippet": "...tand ↔ Pinia (현 / 대 표준)..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "클로저에",
+      "lineEnd": "클로저",
+      "lineStart": "에",
+      "fullSnippet": "... 컴포넌트 트리 외부 클로저 / 에 상태 저장. `useSy..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "필요한",
+      "lineEnd": "필요",
+      "lineStart": "한",
+      "fullSnippet": "...(Selector)으로 필요 / 한 상태 변경 시에만 리렌더..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "기반",
+      "lineEnd": "기",
+      "lineStart": "반",
+      "fullSnippet": "...응형 시스템(Proxy) 기 / 반 단일 스토어. Actio..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "(의존성",
+      "lineEnd": "(의존",
+      "lineStart": "성",
+      "fullSnippet": "...vide/Inject (의존 / 성 주입)..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "도구\"이지",
+      "lineEnd": "도",
+      "lineStart": "구\"이지",
+      "fullSnippet": "...xt: \"상태 주입/전파 도 / 구\"이지 상태 관리 라이브러..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "라이프사이클",
+      "lineEnd": "라이프",
+      "lineStart": "사이클",
+      "fullSnippet": "...스토어 위치 및 라이프 / 사이클..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "스코프",
+      "lineEnd": "스코",
+      "lineStart": "프",
+      "fullSnippet": "...포넌트 트리 외부(모듈 스코 / 프 클로저). 화면의 모든 ..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "언마운트되어도",
+      "lineEnd": "언",
+      "lineStart": "마운트되어도",
+      "fullSnippet": "... 화면의 모든 컴포넌트가 언 / 마운트되어도 메모리에 스토어..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "어디서든",
+      "lineEnd": "어",
+      "lineStart": "디서든",
+      "fullSnippet": "...한 독립 스토어 구조이며 어 / 디서든 호출 가능...."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "충분.",
+      "lineEnd": "충",
+      "lineStart": "분.",
+      "fullSnippet": "... Context API로 충 / 분. 빈번한 UI 업데이트와..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "엄격한",
+      "lineEnd": "엄격",
+      "lineStart": "한",
+      "fullSnippet": "...tand, 대규모 팀의 엄격 / 한 규약은 Redux Too..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "전역",
+      "lineEnd": "전",
+      "lineStart": "역",
+      "fullSnippet": "...규 프로젝트의 클라이언트 전 / 역 상태는 무조건 Pinia..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "치명적인",
+      "lineEnd": "치명적",
+      "lineStart": "인",
+      "fullSnippet": "...필요하게 리렌더링되는 치명적 / 인 성능 한계가 있습니다. ..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "없습니다.",
+      "lineEnd": "없습",
+      "lineStart": "니다.",
+      "fullSnippet": "...도 렌더링 낭비가 전혀 없습 / 니다...."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "트렌드",
+      "lineEnd": "트",
+      "lineStart": "렌드",
+      "fullSnippet": "...나를 눌렀을 뿐인데 서버 트 / 렌드 차트를 그리는 무거운 ..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "함수(계산",
+      "lineEnd": "함수",
+      "lineStart": "(계산",
+      "fullSnippet": "...기 때문에 자바스크립트 함수 / (계산 로직)는 직렬화되지 ..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "깜빡하면",
+      "lineEnd": "깜",
+      "lineStart": "빡하면",
+      "fullSnippet": "...생깁니다. 만약 동기화를 깜 / 빡하면 화면에 낡은 추천 결..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "남기고,",
+      "lineEnd": "남",
+      "lineStart": "기고,",
+      "fullSnippet": "...에는 순수 원천 데이터만 남 / 기고, 파생 로직은 `use..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "유지됩니다.",
+      "lineEnd": "유",
+      "lineStart": "지됩니다.",
+      "fullSnippet": "... 값은 메모리에 안전하게 유 / 지됩니다. React 18의..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "프리미티브인",
+      "lineEnd": "프리",
+      "lineStart": "미티브인",
+      "fullSnippet": "...상은 React의 공식 프리 / 미티브인 `useSyncEx..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "수행하면",
+      "lineEnd": "수행하",
+      "lineStart": "면",
+      "fullSnippet": "...객체 구조분해 할당을 수행하 / 면 Proxy 통로를 거치지..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "않는",
+      "lineEnd": "않",
+      "lineStart": "는",
+      "fullSnippet": "...경되어도 화면이 갱신되지 않 / 는 반응성 소실이 발생합니다..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "사용하여",
+      "lineEnd": "사용하",
+      "lineStart": "여",
+      "fullSnippet": "...re)` 헬퍼 함수를 사용하 / 여 각 속성을 `ref` 포..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "생성",
+      "lineEnd": "생",
+      "lineStart": "성",
+      "fullSnippet": "... Zustand의 스토어 생 / 성 함수는 상태 타입 `T`..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "들어오는",
+      "lineEnd": "들어오",
+      "lineStart": "는",
+      "fullSnippet": "...때문에, 타입 인자가 들어오 / 는 자리와 나가는 자리에 동..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "상태",
+      "lineEnd": "상",
+      "lineStart": "태",
+      "fullSnippet": "...create<T>()`로 상 / 태 타입을 먼저 고정하고, ..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "상태",
+      "lineEnd": "상",
+      "lineStart": "태",
+      "fullSnippet": "...create<T>()`로 상 / 태 타입을 먼저 고정하고, ..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "상태",
+      "lineEnd": "상",
+      "lineStart": "태",
+      "fullSnippet": "...create<T>()`로 상 / 태 타입을 먼저 고정하고, ..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "내장되어",
+      "lineEnd": "내장",
+      "lineStart": "되어",
+      "fullSnippet": "...리인 Immer가 기본 내장 / 되어 있습니다. 개발자가 가..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "컴포넌트",
+      "lineEnd": "컴포",
+      "lineStart": "넌트",
+      "fullSnippet": "...든 가져다 쓸 수 있는 컴포 / 넌트 밖 비밀 금고(Zust..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "화이트보드(Pinia",
+      "lineEnd": "화이트",
+      "lineStart": "보드(Pinia",
+      "fullSnippet": "...께 보고 고치는 거실 화이트 / 보드(Pinia 반응형 스토..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "컴포넌트",
+      "lineEnd": "컴포",
+      "lineStart": "넌트",
+      "fullSnippet": "...든 가져다 쓸 수 있는 컴포 / 넌트 밖 비밀 금고(Zust..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "화이트보드(Pinia",
+      "lineEnd": "화이트",
+      "lineStart": "보드(Pinia",
+      "fullSnippet": "...께 보고 고치는 거실 화이트 / 보드(Pinia 반응형 스토..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "컴포넌트",
+      "lineEnd": "컴포",
+      "lineStart": "넌트",
+      "fullSnippet": "...든 가져다 쓸 수 있는 컴포 / 넌트 밖 비밀 금고(Zust..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "화이트보드(Pinia",
+      "lineEnd": "화이트",
+      "lineStart": "보드(Pinia",
+      "fullSnippet": "...께 보고 고치는 거실 화이트 / 보드(Pinia 반응형 스토..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "누구나",
+      "lineEnd": "누",
+      "lineStart": "구나",
+      "fullSnippet": "...공용 화이트보드와 같아서 누 / 구나 메모를 적거나 지우면 ..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "모두에게",
+      "lineEnd": "모",
+      "lineStart": "두에게",
+      "fullSnippet": "...우면 그 방에 있는 가족 모 / 두에게 즉시 보입니다. 반면..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "개인",
+      "lineEnd": "개",
+      "lineStart": "인",
+      "fullSnippet": "... Zustand는 은행의 개 / 인 금고 시스템과 같아서, ..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "자신이",
+      "lineEnd": "자",
+      "lineStart": "신이",
+      "fullSnippet": "... 보관하고 각 컴포넌트가 자 / 신이 필요한 통장 내역(Se..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "확인합니다.",
+      "lineEnd": "확",
+      "lineStart": "인합니다.",
+      "fullSnippet": "...ector)만 선택적으로 확 / 인합니다...."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "직관적 비유",
+      "width": 375,
+      "brokenWord": "누구나",
+      "lineEnd": "누",
+      "lineStart": "구나",
+      "fullSnippet": "...공용 화이트보드와 같아서 누 / 구나 메모를 적거나 지우면 ..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "직관적 비유",
+      "width": 375,
+      "brokenWord": "모두에게",
+      "lineEnd": "모",
+      "lineStart": "두에게",
+      "fullSnippet": "...우면 그 방에 있는 가족 모 / 두에게 즉시 보입니다. 반면..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "직관적 비유",
+      "width": 375,
+      "brokenWord": "개인",
+      "lineEnd": "개",
+      "lineStart": "인",
+      "fullSnippet": "... Zustand는 은행의 개 / 인 금고 시스템과 같아서, ..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "직관적 비유",
+      "width": 375,
+      "brokenWord": "자신이",
+      "lineEnd": "자",
+      "lineStart": "신이",
+      "fullSnippet": "... 보관하고 각 컴포넌트가 자 / 신이 필요한 통장 내역(Se..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "직관적 비유",
+      "width": 375,
+      "brokenWord": "확인합니다.",
+      "lineEnd": "확",
+      "lineStart": "인합니다.",
+      "fullSnippet": "...ector)만 선택적으로 확 / 인합니다...."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "클로저에",
+      "lineEnd": "클",
+      "lineStart": "로저에",
+      "fullSnippet": "...d: 컴포넌트 트리 외부 클 / 로저에 상태 저장...."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "선택적",
+      "lineEnd": "선",
+      "lineStart": "택적",
+      "fullSnippet": "...rnalStore` 기반 선 / 택적 구독(Selector)..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "시스템(Proxy)",
+      "lineEnd": "시스템",
+      "lineStart": "(Proxy)",
+      "fullSnippet": "...: Vue 3 반응형 시스템 / (Proxy) 기반 단일 스..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "Action이",
+      "lineEnd": "Action",
+      "lineStart": "이",
+      "fullSnippet": "... 단일 스토어. Action / 이 state를 직접 수정하..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "구조분해",
+      "lineEnd": "구조분",
+      "lineStart": "해",
+      "fullSnippet": "...e를 직접 수정하며, 구조분 / 해 시 반응성 유지를 위해..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "레거시)",
+      "lineEnd": "레거",
+      "lineStart": "시)",
+      "fullSnippet": "...Vuex (Flux 레거 / 시)..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "디스패치",
+      "lineEnd": "디스",
+      "lineStart": "패치",
+      "fullSnippet": "...t: Action 객체 디스 / 패치 → Reducer를 거..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "엄격한",
+      "lineEnd": "엄격",
+      "lineStart": "한",
+      "fullSnippet": "...Reducer를 거치는 엄격 / 한 단방향 흐름. Immer..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "보일러플레이트",
+      "lineEnd": "보일",
+      "lineStart": "러플레이트",
+      "fullSnippet": "...변성 관리를 추상화하나 보일 / 러플레이트 잔존...."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "대체되어",
+      "lineEnd": "대체",
+      "lineStart": "되어",
+      "fullSnippet": "...서는 Pinia로 공식 대체 / 되어 유지보수 상태...."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "(의존성",
+      "lineEnd": "(의",
+      "lineStart": "존성",
+      "fullSnippet": "...ovide/Inject (의 / 존성 주입)..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "라이브러리가",
+      "lineEnd": "라이브러리",
+      "lineStart": "가",
+      "fullSnippet": "...\"이지 상태 관리 라이브러리 / 가 아님. Context 값..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "이를",
+      "lineEnd": "이",
+      "lineStart": "를",
+      "fullSnippet": "...ontext 값이 바뀌면 이 / 를 구독하는 하위 트리가 전..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "재렌더링됨.",
+      "lineEnd": "재",
+      "lineStart": "렌더링됨.",
+      "fullSnippet": "...독하는 하위 트리가 전부 재 / 렌더링됨...."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "계층",
+      "lineEnd": "계",
+      "lineStart": "층",
+      "fullSnippet": ".../Inject: 컴포넌트 계 / 층 간 의존성 주입 도구. ..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "필요한",
+      "lineEnd": "필",
+      "lineStart": "요한",
+      "fullSnippet": "...active)를 주입하면 필 / 요한 템플릿 슬롯만 정밀 갱..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "라이프사이클",
+      "lineEnd": "라",
+      "lineStart": "이프사이클",
+      "fullSnippet": "...스토어 위치 및 라 / 이프사이클..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "컴포넌트",
+      "lineEnd": "컴포",
+      "lineStart": "넌트",
+      "fullSnippet": "...클로저). 화면의 모든 컴포 / 넌트가 언마운트되어도 메모리..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "컴포넌트가",
+      "lineEnd": "컴포",
+      "lineStart": "넌트가",
+      "fullSnippet": "...클로저). 화면의 모든 컴포 / 넌트가 언마운트되어도 메모리..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "바인딩.",
+      "lineEnd": "바",
+      "lineStart": "인딩.",
+      "fullSnippet": "... 인스턴스/앱 컨텍스트에 바 / 인딩. 플랫(Flat)한 독..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "구조이며",
+      "lineEnd": "구",
+      "lineStart": "조이며",
+      "fullSnippet": "...Flat)한 독립 스토어 구 / 조이며 어디서든 호출 가능...."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "(언제",
+      "lineEnd": "(언",
+      "lineStart": "제",
+      "fullSnippet": "...도구 선택 기준 (언 / 제 무엇을 쓰는가)..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "API로",
+      "lineEnd": "API",
+      "lineStart": "로",
+      "fullSnippet": "...케일은 Context API / 로 충분. 빈번한 UI 업데..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "미세",
+      "lineEnd": "미",
+      "lineStart": "세",
+      "fullSnippet": "... 빈번한 UI 업데이트와 미 / 세 렌더링 최적화는 Zust..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "대규모",
+      "lineEnd": "대",
+      "lineStart": "규모",
+      "fullSnippet": "...최적화는 Zustand, 대 / 규모 팀의 엄격한 규약은 R..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "Redux Toolkit",
+      "lineEnd": "Redux",
+      "lineStart": "Toolkit",
+      "fullSnippet": "...의 엄격한 규약은 Redux / Toolkit...."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "Redux Toolkit",
+      "lineEnd": "Redux",
+      "lineStart": "Toolkit",
+      "fullSnippet": "...의 엄격한 규약은 Redux / Toolkit...."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "클라이언트",
+      "lineEnd": "클라이언",
+      "lineStart": "트",
+      "fullSnippet": "...3 신규 프로젝트의 클라이언 / 트 전역 상태는 무조건 Pi..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "표준.",
+      "lineEnd": "표",
+      "lineStart": "준.",
+      "fullSnippet": "...태는 무조건 Pinia가 표 / 준. 단순 부모-자손 깊은 ..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "Zustand나",
+      "lineEnd": "Zustand",
+      "lineStart": "나",
+      "fullSnippet": "...는데 왜 굳이 Zustand / 나 Redux 같은 전역 상..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "추가로",
+      "lineEnd": "추",
+      "lineStart": "가로",
+      "fullSnippet": "... 전역 상태 라이브러리를 추 / 가로 도입하나요?..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "전파",
+      "lineEnd": "전",
+      "lineStart": "파",
+      "fullSnippet": "... Drilling 해결) 전 / 파 메커니즘\"입니다. Con..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "모든",
+      "lineEnd": "모",
+      "lineStart": "든",
+      "fullSnippet": "...면 이를 구독하는 하위의 모 / 든 컴포넌트가 불필요하게 리..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "치명적인",
+      "lineEnd": "치",
+      "lineStart": "명적인",
+      "fullSnippet": "... 불필요하게 리렌더링되는 치 / 명적인 성능 한계가 있습니다..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "사용하는",
+      "lineEnd": "사용",
+      "lineStart": "하는",
+      "fullSnippet": "...ctor를 통해 실제로 사용 / 하는 속성이 변경되었을 때만..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "리렌더링하므로",
+      "lineEnd": "리",
+      "lineStart": "렌더링하므로",
+      "fullSnippet": "...변경되었을 때만 정밀하게 리 / 렌더링하므로 고빈도 UI 업..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "렌더링",
+      "lineEnd": "렌",
+      "lineStart": "더링",
+      "fullSnippet": "...빈도 UI 업데이트에서도 렌 / 더링 낭비가 전혀 없습니다...."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "대시보드에서",
+      "lineEnd": "대시보",
+      "lineStart": "드에서",
+      "fullSnippet": "...검색·분석 같은 실무 대시보 / 드에서 왜 Context A..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "않고",
+      "lineEnd": "않",
+      "lineStart": "고",
+      "fullSnippet": "...t API 하나로 끝내지 않 / 고 Zustand와 Reac..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "쓰나요?",
+      "lineEnd": "쓰나",
+      "lineStart": "요?",
+      "fullSnippet": "...t Query를 둘 다 쓰나 / 요? 과설계 아닌가요?..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "하나를",
+      "lineEnd": "하",
+      "lineStart": "나를",
+      "fullSnippet": "...에 몰아넣으면, 찜 버튼 하 / 나를 눌렀을 뿐인데 서버 트..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "그리는",
+      "lineEnd": "그",
+      "lineStart": "리는",
+      "fullSnippet": "...인데 서버 트렌드 차트를 그 / 리는 무거운 컴포넌트까지 통..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "불필요하게",
+      "lineEnd": "불필요하",
+      "lineStart": "게",
+      "fullSnippet": "...컴포넌트까지 통째로 불필요하 / 게 재렌더링되는 성능 문제가..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "극도로",
+      "lineEnd": "극",
+      "lineStart": "도로",
+      "fullSnippet": "...stand는 구독 단위가 극 / 도로 세밀하여 실제로 값이 ..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "컴포넌트만",
+      "lineEnd": "컴포넌트",
+      "lineStart": "만",
+      "fullSnippet": "... 실제로 값이 바뀐 컴포넌트 / 만 정밀 리렌더링됩니다. 소..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "서비스",
+      "lineEnd": "서비",
+      "lineStart": "스",
+      "fullSnippet": "...도 동작할 수 있으나, 서비 / 스 확장 시 \"서버 캐시 데..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "아키텍처\"를",
+      "lineEnd": "아키텍",
+      "lineStart": "처\"를",
+      "fullSnippet": "... 명확한 관심사 분리 아키텍 / 처\"를 확립하고 불필요한 렌..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "차단하기",
+      "lineEnd": "차단하",
+      "lineStart": "기",
+      "fullSnippet": "...고 불필요한 렌더링을 차단하 / 기 위한 필수적인 설계 선택..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "결과가",
+      "lineEnd": "결",
+      "lineStart": "과가",
+      "fullSnippet": "... 서비스처럼 상태에 따라 결 / 과가 동적으로 바뀌는 화면에..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "로직)는",
+      "lineEnd": "로",
+      "lineStart": "직)는",
+      "fullSnippet": "... 자바스크립트 함수(계산 로 / 직)는 직렬화되지 못하고 새..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "증발합니다.",
+      "lineEnd": "증발",
+      "lineStart": "합니다.",
+      "fullSnippet": "...지 못하고 새로고침 시 증발 / 합니다. 둘째, 계산된 결과..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "중복",
+      "lineEnd": "중",
+      "lineStart": "복",
+      "fullSnippet": "...계산된 결과값을 스토어에 중 / 복 저장하면 원본 케이스 데..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "때마다",
+      "lineEnd": "때",
+      "lineStart": "마다",
+      "fullSnippet": "...본 케이스 데이터가 바뀔 때 / 마다 계산 결과도 함께 갱신..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "\"동기화",
+      "lineEnd": "\"동기",
+      "lineStart": "화",
+      "fullSnippet": "... 함께 갱신해야 하는 \"동기 / 화 유지 부담\"이 생깁니다...."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "표시되는",
+      "lineEnd": "표시되",
+      "lineStart": "는",
+      "fullSnippet": "...에 낡은 추천 결과가 표시되 / 는 치명적 버그가 발생합니다..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "스토어에",
+      "lineEnd": "스토",
+      "lineStart": "어에",
+      "fullSnippet": "...가 발생합니다. 따라서 스토 / 어에는 순수 원천 데이터만 ..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "스토어에는",
+      "lineEnd": "스토",
+      "lineStart": "어에는",
+      "fullSnippet": "...가 발생합니다. 따라서 스토 / 어에는 순수 원천 데이터만 ..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "로직은",
+      "lineEnd": "로",
+      "lineStart": "직은",
+      "fullSnippet": "... 데이터만 남기고, 파생 로 / 직은 `useMemo` 훅으..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "최신",
+      "lineEnd": "최",
+      "lineStart": "신",
+      "fullSnippet": "...` 훅으로 분리하여 항상 최 / 신 상태를 보장하는 것이 안..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "Vue의",
+      "lineEnd": "Vue",
+      "lineStart": "의",
+      "fullSnippet": "...는 것이 안전합니다. Vue / 의 Pinia라면 `gett..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "내장",
+      "lineEnd": "내",
+      "lineStart": "장",
+      "fullSnippet": "...er`가 이 역할을 기본 내 / 장 문법으로 훨씬 우아하게 ..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "컴포넌트",
+      "lineEnd": "컴포넌",
+      "lineStart": "트",
+      "fullSnippet": "... 데이터는 React 컴포넌 / 트 안에 저장되나요? 컴포넌..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "언마운트되면",
+      "lineEnd": "언마운트",
+      "lineStart": "되면",
+      "fullSnippet": "...되나요? 컴포넌트가 언마운트 / 되면 상태가 사라지나요?..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "트리",
+      "lineEnd": "트",
+      "lineStart": "리",
+      "fullSnippet": "...and의 상태는 컴포넌트 트 / 리 내부가 아닌 자바스크립트..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "스코프의",
+      "lineEnd": "스코프",
+      "lineStart": "의",
+      "fullSnippet": "...닌 자바스크립트 모듈 스코프 / 의 클로저(Closure) ..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "따라서",
+      "lineEnd": "따",
+      "lineStart": "라서",
+      "fullSnippet": "...e) 변수에 저장됩니다. 따 / 라서 특정 화면의 컴포넌트가..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "언마운트되어",
+      "lineEnd": "언마운",
+      "lineStart": "트되어",
+      "fullSnippet": "...면의 컴포넌트가 전부 언마운 / 트되어 사라져도 스토어의 값..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "찢어짐(Tearing)",
+      "lineEnd": "찢어",
+      "lineStart": "짐(Tearing)",
+      "fullSnippet": "... 발생할 수 있는 상태 찢어 / 짐(Tearing) 현상은 ..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "프리미티브인",
+      "lineEnd": "프리미티",
+      "lineStart": "브인",
+      "fullSnippet": "... React의 공식 프리미티 / 브인 `useSyncExte..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "완벽히",
+      "lineEnd": "완벽",
+      "lineStart": "히",
+      "fullSnippet": "...alStore`를 통해 완벽 / 히 방지됩니다...."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "할당(`const",
+      "lineEnd": "할당",
+      "lineStart": "(`const",
+      "fullSnippet": "...에서 상태값을 구조분해 할당 / (`const { count..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "화면이",
+      "lineEnd": "화",
+      "lineStart": "면이",
+      "fullSnippet": "...되므로, 값이 변경되어도 화 / 면이 갱신되지 않는 반응성 ..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "발생합니다.",
+      "lineEnd": "발생합",
+      "lineStart": "니다.",
+      "fullSnippet": "... 않는 반응성 소실이 발생합 / 니다. 이를 방지하려면 Pi..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "합니다.",
+      "lineEnd": "합",
+      "lineStart": "니다.",
+      "fullSnippet": "... 않는 반응성 소실이 발생합 / 니다. 이를 방지하려면 Pi..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "제공하는",
+      "lineEnd": "제공하",
+      "lineStart": "는",
+      "fullSnippet": "...면 Pinia가 공식 제공하 / 는 `storeToRefs(..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "사용하여",
+      "lineEnd": "사용",
+      "lineStart": "하여",
+      "fullSnippet": "...ore)` 헬퍼 함수를 사용 / 하여 각 속성을 `ref` ..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "추출해야",
+      "lineEnd": "추",
+      "lineStart": "출해야",
+      "fullSnippet": "...f` 포장 상자로 감싸서 추 / 출해야 합니다...."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "소괄호를",
+      "lineEnd": "소괄호",
+      "lineStart": "를",
+      "fullSnippet": "...=> ...)` 처럼 소괄호 / 를 두 번 쓰는 커링 문법을..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "무엇인가요?",
+      "lineEnd": "무",
+      "lineStart": "엇인가요?",
+      "fullSnippet": "...커링 문법을 쓰는 이유는 무 / 엇인가요?..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "때문입니다.",
+      "lineEnd": "때문입",
+      "lineStart": "니다.",
+      "fullSnippet": "...추론하지 못하는 한계 때문입 / 니다. Zustand의 스토..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "콜백",
+      "lineEnd": "콜",
+      "lineStart": "백",
+      "fullSnippet": "...환하는 동시에 매개변수의 콜 / 백 반환값으로도 전달받기 때..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "인자가",
+      "lineEnd": "인",
+      "lineStart": "자가",
+      "fullSnippet": "... 전달받기 때문에, 타입 인 / 자가 들어오는 자리와 나가는..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "동시에",
+      "lineEnd": "동시",
+      "lineStart": "에",
+      "fullSnippet": "... 자리와 나가는 자리에 동시 / 에 존재하여 자동 추론이 불..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "동시에",
+      "lineEnd": "동시",
+      "lineStart": "에",
+      "fullSnippet": "... 자리와 나가는 자리에 동시 / 에 존재하여 자동 추론이 불..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "따라서",
+      "lineEnd": "따",
+      "lineStart": "라서",
+      "fullSnippet": "...동 추론이 불가능합니다. 따 / 라서 첫 번째 소괄호 `cr..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "구현체를",
+      "lineEnd": "구",
+      "lineStart": "현체를",
+      "fullSnippet": "...하고, 두 번째 소괄호에 구 / 현체를 넘겨주는 커링(Cur..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "수정해도",
+      "lineEnd": "수정",
+      "lineStart": "해도",
+      "fullSnippet": "... 1`처럼 직접 상태를 수정 / 해도 정말 괜찮나요?..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "라이브러리인",
+      "lineEnd": "라이브",
+      "lineStart": "러리인",
+      "fullSnippet": "...내부에는 불변성 관리 라이브 / 러리인 Immer가 기본 내..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "작성하더라도,",
+      "lineEnd": "작성하",
+      "lineStart": "더라도,",
+      "fullSnippet": "...ating) 코드처럼 작성하 / 더라도, Immer의 Pro..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "사항을",
+      "lineEnd": "사항",
+      "lineStart": "을",
+      "fullSnippet": "...Proxy 트랩이 변경 사항 / 을 추적하여 내부적으로는 완..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "불변성이",
+      "lineEnd": "불변성",
+      "lineStart": "이",
+      "fullSnippet": "...내부적으로는 완벽하게 불변성 / 이 보장된 새로운 불변 상태..."
+    },
+    {
+      "page": "전역 상태 관리 생태계 (global-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "생성해",
+      "lineEnd": "생성",
+      "lineStart": "해",
+      "fullSnippet": "...운 불변 상태 복사본을 생성 / 해 반환합니다...."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "파인만 핵심 요약",
+      "width": 1280,
+      "brokenWord": "전문적으로",
+      "lineEnd": "전문적",
+      "lineStart": "으로",
+      "fullSnippet": "...·실패 상태 기계)를 전문적 / 으로 관리하는 관제 센터입니..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "직관적 비유",
+      "width": 1280,
+      "brokenWord": "전문적으로",
+      "lineEnd": "전문적",
+      "lineStart": "으로",
+      "fullSnippet": "...·실패 상태 기계)를 전문적 / 으로 관리하는 관제 센터입니..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "열림,",
+      "lineEnd": "열",
+      "lineStart": "림,",
+      "fullSnippet": "...면 클라이언트 상태(모달 열 / 림, 다크모드, 폼 입력 등..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "사용하여",
+      "lineEnd": "사",
+      "lineStart": "용하여",
+      "fullSnippet": "...ck Query(v5)를 사 / 용하여 `useQuery`,..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "전담",
+      "lineEnd": "전",
+      "lineStart": "담",
+      "fullSnippet": "...ion`으로 서버 상태를 전 / 담 분리...."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "쿼리를",
+      "lineEnd": "쿼리",
+      "lineStart": "를",
+      "fullSnippet": "... 값이 바뀌면 새 키의 쿼리 / 를 조회합니다...."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "바뀌면",
+      "lineEnd": "바",
+      "lineStart": "뀌면",
+      "fullSnippet": "... 자동으로 추적해, 값이 바 / 뀌면 다시 조회합니다. 단,..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "재사용되는",
+      "lineEnd": "재사",
+      "lineStart": "용되는",
+      "fullSnippet": "...되어 재요청 없이 바로 재사 / 용되는 유효기간이며, gcT..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "언마운트되어",
+      "lineEnd": "언마운",
+      "lineStart": "트되어",
+      "fullSnippet": "... 화면에서 컴포넌트가 언마운 / 트되어 구독자가 0명이 된 ..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "마킹한",
+      "lineEnd": "마킹",
+      "lineStart": "한",
+      "fullSnippet": "...래됨(Stale)\"으로 마킹 / 한 뒤 현재 화면에 마운트된..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "쿼리는",
+      "lineEnd": "쿼",
+      "lineStart": "리는",
+      "fullSnippet": "...면에 보이지 않는 비활성 쿼 / 리는 나중에 화면에 다시 진..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "동기화합니다.",
+      "lineEnd": "동기화합니",
+      "lineStart": "다.",
+      "fullSnippet": "...데이터를 자동으로 동기화합니 / 다...."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "안티패턴",
+      "lineEnd": "안티패",
+      "lineStart": "턴",
+      "fullSnippet": "...실 원천(SSOT)과 안티패 / 턴..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "TanStack Query",
+      "lineEnd": "TanStack",
+      "lineStart": "Query",
+      "fullSnippet": "...기 데이터는 TanStack / Query 캐시 자체를 단일..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "TanStack Query",
+      "lineEnd": "TanStack",
+      "lineStart": "Query",
+      "fullSnippet": "...기 데이터는 TanStack / Query 캐시 자체를 단일..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "격리",
+      "lineEnd": "격",
+      "lineStart": "리",
+      "fullSnippet": "...순수 UI 제어 플래그만 격 / 리 유지해야 합니다...."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "맞습니다.",
+      "lineEnd": "맞",
+      "lineStart": "습니다.",
+      "fullSnippet": "... 클라이언트 상태 도구가 맞 / 습니다...."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "않나요?",
+      "lineEnd": "않나",
+      "lineStart": "요?",
+      "fullSnippet": "...릭 시 스냅샷이 꼬이지 않나 / 요?..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "인터랙션에서는",
+      "lineEnd": "인터랙션에서",
+      "lineStart": "는",
+      "fullSnippet": "...백 비용이 적은 인터랙션에서 / 는 즉각적인 피드백의 가치가..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "기계(Pending",
+      "lineEnd": "기",
+      "lineStart": "계(Pending",
+      "fullSnippet": "...ack Query의 상태 기 / 계(Pending → Suc..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "지칭하는",
+      "lineEnd": "지칭",
+      "lineStart": "하는",
+      "fullSnippet": "... 핵심 활용 시나리오를 지칭 / 하는 표현입니다...."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "않는(언마운트된)",
+      "lineEnd": "않는(언마",
+      "lineStart": "운트된)",
+      "fullSnippet": "...화면에서 사용되지 않는(언마 / 운트된) 데이터를 가비지 컬..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "있는데,",
+      "lineEnd": "있는",
+      "lineStart": "데,",
+      "fullSnippet": "...me이 0초로 설정되어 있는 / 데, 이는 \"화면에 캐시 데..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "재검증(Stale-While-Revalidate)하여",
+      "lineEnd": "재검증(Stale-",
+      "lineStart": "While-Revalidate)하여",
+      "fullSnippet": "... 조용히 재검증(Stale- / While-Revalidat..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "\"현재",
+      "lineEnd": "\"현",
+      "lineStart": "재",
+      "fullSnippet": "...태로 마킹한 뒤, 오직 \"현 / 재 화면에 마운트되어 활발히..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "현재",
+      "lineEnd": "현",
+      "lineStart": "재",
+      "fullSnippet": "...태로 마킹한 뒤, 오직 \"현 / 재 화면에 마운트되어 활발히..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "않고",
+      "lineEnd": "않",
+      "lineStart": "고",
+      "fullSnippet": "...ve) 쿼리는 재요청하지 않 / 고 마킹만 남겨두며, 사용자..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "발생합니다.",
+      "lineEnd": "발생합니",
+      "lineStart": "다.",
+      "fullSnippet": "...nization)가 발생합니 / 다. 따라서 비동기 데이터는..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "합니다.",
+      "lineEnd": "합니",
+      "lineStart": "다.",
+      "fullSnippet": "...nization)가 발생합니 / 다. 따라서 비동기 데이터는..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "보관해야",
+      "lineEnd": "보관해",
+      "lineStart": "야",
+      "fullSnippet": "...은 순수 UI 상태만 보관해 / 야 합니다...."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "파인만 핵심 요약",
+      "width": 768,
+      "brokenWord": "도구입니다.",
+      "lineEnd": "도구",
+      "lineStart": "입니다.",
+      "fullSnippet": "... 바로 서버 상태 관리 도구 / 입니다...."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "파인만 핵심 요약",
+      "width": 768,
+      "brokenWord": "도구입니다.",
+      "lineEnd": "도구",
+      "lineStart": "입니다.",
+      "fullSnippet": "... 바로 서버 상태 관리 도구 / 입니다...."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "파인만 핵심 요약",
+      "width": 768,
+      "brokenWord": "도구입니다.",
+      "lineEnd": "도구",
+      "lineStart": "입니다.",
+      "fullSnippet": "... 바로 서버 상태 관리 도구 / 입니다...."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "파인만 핵심 요약",
+      "width": 768,
+      "brokenWord": "상태(기다리는",
+      "lineEnd": "상",
+      "lineStart": "태(기다리는",
+      "fullSnippet": "...물이 아니라 겉면의 배송 상 / 태(기다리는 중·성공·실패 ..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "파인만 핵심 요약",
+      "width": 768,
+      "brokenWord": "상태",
+      "lineEnd": "상",
+      "lineStart": "태",
+      "fullSnippet": "...물이 아니라 겉면의 배송 상 / 태(기다리는 중·성공·실패 ..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "직관적 비유",
+      "width": 768,
+      "brokenWord": "상태(기다리는",
+      "lineEnd": "상",
+      "lineStart": "태(기다리는",
+      "fullSnippet": "...물이 아니라 겉면의 배송 상 / 태(기다리는 중·성공·실패 ..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "직관적 비유",
+      "width": 768,
+      "brokenWord": "상태",
+      "lineEnd": "상",
+      "lineStart": "태",
+      "fullSnippet": "...물이 아니라 겉면의 배송 상 / 태(기다리는 중·성공·실패 ..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "클라이언트",
+      "lineEnd": "클라이언",
+      "lineStart": "트",
+      "fullSnippet": "...서버 상태 vs 클라이언 / 트 상태..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "캐싱,",
+      "lineEnd": "캐",
+      "lineStart": "싱,",
+      "fullSnippet": "...이 외부에 있는 데이터로 캐 / 싱, 백그라운드 재검증(Re..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "캐싱",
+      "lineEnd": "캐",
+      "lineStart": "싱",
+      "fullSnippet": "...이 외부에 있는 데이터로 캐 / 싱, 백그라운드 재검증(Re..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "에러/로딩",
+      "lineEnd": "에러/로",
+      "lineStart": "딩",
+      "fullSnippet": "... 중복 요청 제거, 에러/로 / 딩 상태 기계 관리가 필수적..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "상태",
+      "lineEnd": "상",
+      "lineStart": "태",
+      "fullSnippet": "...입니다. 반면 클라이언트 상 / 태(모달 열림, 다크모드, ..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "상태(모달",
+      "lineEnd": "상",
+      "lineStart": "태(모달",
+      "fullSnippet": "...입니다. 반면 클라이언트 상 / 태(모달 열림, 다크모드, ..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "없습니다.",
+      "lineEnd": "없",
+      "lineStart": "습니다.",
+      "fullSnippet": "...이터로 캐싱 만료 개념이 없 / 습니다...."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "도구",
+      "lineEnd": "도",
+      "lineStart": "구",
+      "fullSnippet": "...act vs Vue 표준 도 / 구 생태계..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "Nuxt 3",
+      "lineEnd": "Nuxt",
+      "lineStart": "3",
+      "fullSnippet": "...uery`가 정착. Nuxt / 3 환경에서는 내장된 `us..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "Nuxt 3",
+      "lineEnd": "Nuxt",
+      "lineStart": "3",
+      "fullSnippet": "...uery`가 정착. Nuxt / 3 환경에서는 내장된 `us..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "재조회",
+      "lineEnd": "재",
+      "lineStart": "조회",
+      "fullSnippet": "...쿼리 키가 바뀔 때 재 / 조회..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "바뀌면",
+      "lineEnd": "바뀌",
+      "lineStart": "면",
+      "fullSnippet": "...ryKey에 넘긴 값이 바뀌 / 면 새 키의 쿼리를 조회합니..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "상태\"로",
+      "lineEnd": "상",
+      "lineStart": "태\"로",
+      "fullSnippet": "... 캐시 데이터가 \"신선한 상 / 태\"로 유지되어 재요청 없이..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "유효기간이며,",
+      "lineEnd": "유효기간이",
+      "lineStart": "며,",
+      "fullSnippet": "... 바로 재사용되는 유효기간이 / 며, gcTime(구 cac..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "컴포넌트가",
+      "lineEnd": "컴",
+      "lineStart": "포넌트가",
+      "fullSnippet": "...본값: 5분)은 화면에서 컴 / 포넌트가 언마운트되어 구독자..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "메모리에서",
+      "lineEnd": "메모리에",
+      "lineStart": "서",
+      "fullSnippet": "...자가 0명이 된 후 메모리에 / 서 폐기되기 전까지 보관되는..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "해당",
+      "lineEnd": "해",
+      "lineStart": "당",
+      "fullSnippet": "...재호출하는 것이 아니라, 해 / 당 캐시를 \"오래됨(Stal..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "마운트된",
+      "lineEnd": "마",
+      "lineStart": "운트된",
+      "fullSnippet": "... 마킹한 뒤 현재 화면에 마 / 운트된 활성 쿼리만 선별 리..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "백그라운드에서",
+      "lineEnd": "백그",
+      "lineStart": "라운드에서",
+      "fullSnippet": "...화면에 다시 진입할 때 백그 / 라운드에서 신선한 데이터를 ..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "원천(SSOT)과",
+      "lineEnd": "원천(SSOT)",
+      "lineStart": "과",
+      "fullSnippet": "...단일 진실 원천(SSOT) / 과 안티패턴..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "삼고,",
+      "lineEnd": "삼",
+      "lineStart": "고,",
+      "fullSnippet": "...를 단일 진실 공급원으로 삼 / 고, 전역 스토어에는 순수 ..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "유지해야",
+      "lineEnd": "유지해",
+      "lineStart": "야",
+      "fullSnippet": "... 제어 플래그만 격리 유지해 / 야 합니다...."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "상태'는",
+      "lineEnd": "상",
+      "lineStart": "태'는",
+      "fullSnippet": "... 않습니다. 다만 '서버 상 / 태'는 원격에 있고 시간이 ..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "상태",
+      "lineEnd": "상",
+      "lineStart": "태",
+      "fullSnippet": "... 않습니다. 다만 '서버 상 / 태'는 원격에 있고 시간이 ..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "아닌가요?",
+      "lineEnd": "아",
+      "lineStart": "닌가요?",
+      "fullSnippet": "...여줘 사용자를 속이는 것 아 / 닌가요? 연속 클릭 시 스냅..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "10)까지",
+      "lineEnd": "10)",
+      "lineStart": "까지",
+      "fullSnippet": "...페이지 아이템 수(< 10) / 까지 이중으로 체크했나요?..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "맹신하면",
+      "lineEnd": "맹신하",
+      "lineStart": "면",
+      "fullSnippet": "...tal_count`만 맹신하 / 면 이미 더 이상 데이터가 ..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "따라서",
+      "lineEnd": "따",
+      "lineStart": "라서",
+      "fullSnippet": "...그가 생길 수 있습니다. 따 / 라서 클라이언트가 직접 수신..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "프로그래밍(Defensive",
+      "lineEnd": "프로그래밍",
+      "lineStart": "(Defensive",
+      "fullSnippet": "... 검증하는 방어적 프로그래밍 / (Defensive Prog..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "흐름을",
+      "lineEnd": "흐",
+      "lineStart": "름을",
+      "fullSnippet": "...eact의 단방향 데이터 흐 / 름을 깨뜨리는 안티패턴 아닌..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "전달하는",
+      "lineEnd": "전달하",
+      "lineStart": "는",
+      "fullSnippet": "...하지만 이것은 상태를 전달하 / 는 것이 아니라 일회성 \"명..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "전달하는",
+      "lineEnd": "전달하",
+      "lineStart": "는",
+      "fullSnippet": "...하지만 이것은 상태를 전달하 / 는 것이 아니라 일회성 \"명..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "맥락의",
+      "lineEnd": "맥락",
+      "lineStart": "의",
+      "fullSnippet": "...eHandle`과 같은 맥락 / 의 실용적 탈출구로 활용되었..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "끌어올리거나,",
+      "lineEnd": "끌어",
+      "lineStart": "올리거나,",
+      "fullSnippet": "... 자체를 부모로 완전히 끌어 / 올리거나, 동일 키워드라도 ..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "무엇인가요?",
+      "lineEnd": "무엇",
+      "lineStart": "인가요?",
+      "fullSnippet": "...기술적·도메인적 근거는 무엇 / 인가요?..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "법령",
+      "lineEnd": "법",
+      "lineStart": "령",
+      "fullSnippet": "...프사이클을 분석했습니다. 법 / 령 및 판례 데이터는 국회 ..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "메타데이터를",
+      "lineEnd": "메",
+      "lineStart": "타데이터를",
+      "fullSnippet": "...ast-Modified) 메 / 타데이터를 기반으로 한 조건..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "정상",
+      "lineEnd": "정",
+      "lineStart": "상",
+      "fullSnippet": "... Mock 함수를 넣어도 정 / 상 동작하나요?..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "\"Promise를",
+      "lineEnd": "\"Promise",
+      "lineStart": "를",
+      "fullSnippet": "...아니라 오직 \"Promise / 를 반환하는 함수\"이기 때문..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "발하는",
+      "lineEnd": "발하",
+      "lineStart": "는",
+      "fullSnippet": "...라이브러리가 가장 빛을 발하 / 는 핵심 활용 시나리오를 지..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "유효기간\"이고,",
+      "lineEnd": "유효기간\"이",
+      "lineStart": "고,",
+      "fullSnippet": "...지 않아도 되는 유효기간\"이 / 고, gcTime은 \"화면에..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "유지하는",
+      "lineEnd": "유지",
+      "lineStart": "하는",
+      "fullSnippet": "...모리에서 지우기 전까지 유지 / 하는 보관 기간\"입니다. T..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "조용히",
+      "lineEnd": "조용",
+      "lineStart": "히",
+      "fullSnippet": "...로 항상 백그라운드에서 조용 / 히 재검증(Stale-Whi..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "사용자가",
+      "lineEnd": "사용",
+      "lineStart": "자가",
+      "fullSnippet": "...않고 마킹만 남겨두며, 사용 / 자가 나중에 해당 화면으로 ..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "안티패턴인가요?",
+      "lineEnd": "안티패턴인",
+      "lineStart": "가요?",
+      "fullSnippet": "...저장하는 것은 왜 안티패턴인 / 가요?..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "스토어에",
+      "lineEnd": "스토",
+      "lineStart": "어에",
+      "fullSnippet": "...이터를 클라이언트 전역 스토 / 어에 복제하면, TanSta..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "데이터",
+      "lineEnd": "데이",
+      "lineStart": "터",
+      "fullSnippet": "...합니다. 따라서 비동기 데이 / 터는 TanStack Que..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "데이터는",
+      "lineEnd": "데이",
+      "lineStart": "터는",
+      "fullSnippet": "...합니다. 따라서 비동기 데이 / 터는 TanStack Que..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "있는",
+      "lineEnd": "있",
+      "lineStart": "는",
+      "fullSnippet": "...이므로, 언제든 바뀔 수 있 / 는 책의 복사본을 유효기간(..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "동안만",
+      "lineEnd": "동",
+      "lineStart": "안만",
+      "fullSnippet": "...기간(staleTime) 동 / 안만 읽고 제때 반납·갱신(..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "도구입니다.",
+      "lineEnd": "도구입니",
+      "lineStart": "다.",
+      "fullSnippet": "...로 서버 상태 관리 도구입니 / 다...."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "있는",
+      "lineEnd": "있",
+      "lineStart": "는",
+      "fullSnippet": "...이므로, 언제든 바뀔 수 있 / 는 책의 복사본을 유효기간(..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "동안만",
+      "lineEnd": "동",
+      "lineStart": "안만",
+      "fullSnippet": "...기간(staleTime) 동 / 안만 읽고 제때 반납·갱신(..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "도구입니다.",
+      "lineEnd": "도구입니",
+      "lineStart": "다.",
+      "fullSnippet": "...로 서버 상태 관리 도구입니 / 다...."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "있는",
+      "lineEnd": "있",
+      "lineStart": "는",
+      "fullSnippet": "...이므로, 언제든 바뀔 수 있 / 는 책의 복사본을 유효기간(..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "동안만",
+      "lineEnd": "동",
+      "lineStart": "안만",
+      "fullSnippet": "...기간(staleTime) 동 / 안만 읽고 제때 반납·갱신(..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "도구입니다.",
+      "lineEnd": "도구입니",
+      "lineStart": "다.",
+      "fullSnippet": "...로 서버 상태 관리 도구입니 / 다...."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "아니라",
+      "lineEnd": "아니",
+      "lineStart": "라",
+      "fullSnippet": "...는 그 봉투의 내용물이 아니 / 라 겉면의 배송 상태(기다리..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "직관적 비유",
+      "width": 375,
+      "brokenWord": "아니라",
+      "lineEnd": "아니",
+      "lineStart": "라",
+      "fullSnippet": "...는 그 봉투의 내용물이 아니 / 라 겉면의 배송 상태(기다리..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "클라이언트",
+      "lineEnd": "클라이",
+      "lineStart": "언트",
+      "fullSnippet": "...서버 상태 vs 클라이 / 언트 상태..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "열림,",
+      "lineEnd": "열",
+      "lineStart": "림,",
+      "fullSnippet": "...면 클라이언트 상태(모달 열 / 림, 다크모드, 폼 입력 등..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "재조회",
+      "lineEnd": "재",
+      "lineStart": "조회",
+      "fullSnippet": "...쿼리 키가 바뀔 때 재 / 조회..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "값이",
+      "lineEnd": "값",
+      "lineStart": "이",
+      "fullSnippet": "... queryKey에 넘긴 값 / 이 바뀌면 새 키의 쿼리를 ..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "조회합니다.",
+      "lineEnd": "조회합",
+      "lineStart": "니다.",
+      "fullSnippet": "...뀌면 새 키의 쿼리를 조회합 / 니다...."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "자동으로",
+      "lineEnd": "자",
+      "lineStart": "동으로",
+      "fullSnippet": "...의 ref·getter를 자 / 동으로 추적해, 값이 바뀌면..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "끊깁니다.",
+      "lineEnd": "끊깁니",
+      "lineStart": "다.",
+      "fullSnippet": "... 꺼내 넣으면 추적이 끊깁니 / 다...."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "\"신선한",
+      "lineEnd": "\"신",
+      "lineStart": "선한",
+      "fullSnippet": "...0초)은 캐시 데이터가 \"신 / 선한 상태\"로 유지되어 재요..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "재사용되는",
+      "lineEnd": "재",
+      "lineStart": "사용되는",
+      "fullSnippet": "...지되어 재요청 없이 바로 재 / 사용되는 유효기간이며, gc..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "컴포넌트가",
+      "lineEnd": "컴포넌",
+      "lineStart": "트가",
+      "fullSnippet": "...: 5분)은 화면에서 컴포넌 / 트가 언마운트되어 구독자가 ..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "메모리에서",
+      "lineEnd": "메",
+      "lineStart": "모리에서",
+      "fullSnippet": "... 구독자가 0명이 된 후 메 / 모리에서 폐기되기 전까지 보..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "유예기간입니다.",
+      "lineEnd": "유예기",
+      "lineStart": "간입니다.",
+      "fullSnippet": "...되기 전까지 보관되는 유예기 / 간입니다...."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "마킹한",
+      "lineEnd": "마",
+      "lineStart": "킹한",
+      "fullSnippet": "...오래됨(Stale)\"으로 마 / 킹한 뒤 현재 화면에 마운트..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "선별",
+      "lineEnd": "선",
+      "lineStart": "별",
+      "fullSnippet": "...에 마운트된 활성 쿼리만 선 / 별 리패치합니다. 화면에 보..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "백그라운드에서",
+      "lineEnd": "백그라",
+      "lineStart": "운드에서",
+      "fullSnippet": "...면에 다시 진입할 때 백그라 / 운드에서 신선한 데이터를 자..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "동기화합니다.",
+      "lineEnd": "동기화",
+      "lineStart": "합니다.",
+      "fullSnippet": "...한 데이터를 자동으로 동기화 / 합니다...."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "원천(SSOT)과",
+      "lineEnd": "원천",
+      "lineStart": "(SSOT)과",
+      "fullSnippet": "...단일 진실 원천 / (SSOT)과 안티패턴..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "반(反)패턴입니다.",
+      "lineEnd": "반",
+      "lineStart": "(反)패턴입니다.",
+      "fullSnippet": "... 상태를 양산하는 대표적 반 / (反)패턴입니다. 비동기 데..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "TanStack Query",
+      "lineEnd": "TanStack",
+      "lineStart": "Query",
+      "fullSnippet": "...기 데이터는 TanStack / Query 캐시 자체를 단일..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "TanStack Query",
+      "lineEnd": "TanStack",
+      "lineStart": "Query",
+      "fullSnippet": "...기 데이터는 TanStack / Query 캐시 자체를 단일..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "삼고,",
+      "lineEnd": "삼",
+      "lineStart": "고,",
+      "fullSnippet": "...를 단일 진실 공급원으로 삼 / 고, 전역 스토어에는 순수 ..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "데이터라는",
+      "lineEnd": "데이터",
+      "lineStart": "라는",
+      "fullSnippet": "...낡을 수 있는 비동기 데이터 / 라는 성격을 부르는 이름입니..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "성격이",
+      "lineEnd": "성격",
+      "lineStart": "이",
+      "fullSnippet": "...르는 이름입니다. 그런 성격 / 이 없는 값(예: 모달 열림..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "보여줘",
+      "lineEnd": "보",
+      "lineStart": "여줘",
+      "fullSnippet": "...정 전인데 성공한 것처럼 보 / 여줘 사용자를 속이는 것 아..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "클릭",
+      "lineEnd": "클",
+      "lineStart": "릭",
+      "fullSnippet": "...이는 것 아닌가요? 연속 클 / 릭 시 스냅샷이 꼬이지 않나..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "극대화하기",
+      "lineEnd": "극대",
+      "lineStart": "화하기",
+      "fullSnippet": "... 사용자 경험(UX)을 극대 / 화하기 위한 의도된 트레이드..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "롤백",
+      "lineEnd": "롤",
+      "lineStart": "백",
+      "fullSnippet": "...요처럼 실패 확률이 낮고 롤 / 백 비용이 적은 인터랙션에서..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "취약점이",
+      "lineEnd": "취약",
+      "lineStart": "점이",
+      "fullSnippet": "...이 꼬이는 문제는 실제 취약 / 점이 맞습니다. A, B 요..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "경우",
+      "lineEnd": "경",
+      "lineStart": "우",
+      "fullSnippet": "... B 요청이 빠르게 겹칠 경 / 우 나중에 실패한 롤백이 중..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "덮어쓸",
+      "lineEnd": "덮어",
+      "lineStart": "쓸",
+      "fullSnippet": "...한 롤백이 중간 변경을 덮어 / 쓸 수 있습니다. 실무에서는..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "`mutationKey`를",
+      "lineEnd": "`mutationKey`",
+      "lineStart": "를",
+      "fullSnippet": "...는 `mutationKey` / 를 통한 쿼리 직렬화나 낙관..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "그냥",
+      "lineEnd": "그",
+      "lineStart": "냥",
+      "fullSnippet": "...xtPageParam에서 그 / 냥 total_count만 ..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "체크했나요?",
+      "lineEnd": "체",
+      "lineStart": "크했나요?",
+      "fullSnippet": "...(< 10)까지 이중으로 체 / 크했나요?..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "응답하는",
+      "lineEnd": "응답하",
+      "lineStart": "는",
+      "fullSnippet": "... REST API)가 응답하 / 는 `total_count`..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "발생하는",
+      "lineEnd": "발생하",
+      "lineStart": "는",
+      "fullSnippet": "... 불일치하거나 오차가 발생하 / 는 경우가 빈번합니다. 만약..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "`total_count`만",
+      "lineEnd": "`total_count`",
+      "lineStart": "만",
+      "fullSnippet": "...약 `total_count` / 만 맹신하면 이미 더 이상 ..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "없음에도",
+      "lineEnd": "없음에",
+      "lineStart": "도",
+      "fullSnippet": "...미 더 이상 데이터가 없음에 / 도 다음 페이지를 끊임없이 ..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "무한",
+      "lineEnd": "무",
+      "lineStart": "한",
+      "fullSnippet": "...지를 끊임없이 헛요청하는 무 / 한 루프 버그가 생길 수 있..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "자식의",
+      "lineEnd": "자",
+      "lineStart": "식의",
+      "fullSnippet": "...을 위해 부모가 ref로 자 / 식의 refetch 함수를 ..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "하지만",
+      "lineEnd": "하지",
+      "lineStart": "만",
+      "fullSnippet": "...이 아님을 인정합니다. 하지 / 만 이것은 상태를 전달하는 ..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "일회성",
+      "lineEnd": "일",
+      "lineStart": "회성",
+      "fullSnippet": "...를 전달하는 것이 아니라 일 / 회성 \"명령(Imperati..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "트리거하는",
+      "lineEnd": "트리거",
+      "lineStart": "하는",
+      "fullSnippet": "...e Action)\"을 트리거 / 하는 것이므로, `useIm..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "활용되었습니다.",
+      "lineEnd": "활용되었습니",
+      "lineStart": "다.",
+      "fullSnippet": "...실용적 탈출구로 활용되었습니 / 다. 더 원칙적이고 이상적인..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "쿼리",
+      "lineEnd": "쿼",
+      "lineStart": "리",
+      "fullSnippet": "...고 이상적인 대안은 검색 쿼 / 리 상태 자체를 부모로 완전..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "쿼리",
+      "lineEnd": "쿼",
+      "lineStart": "리",
+      "fullSnippet": "...고 이상적인 대안은 검색 쿼 / 리 상태 자체를 부모로 완전..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "끌어올리거나,",
+      "lineEnd": "끌어올리거",
+      "lineStart": "나,",
+      "fullSnippet": "...를 부모로 완전히 끌어올리거 / 나, 동일 키워드라도 검색 ..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "타임스탬프를",
+      "lineEnd": "타임",
+      "lineStart": "스탬프를",
+      "fullSnippet": "...라도 검색 클릭 시점의 타임 / 스탬프를 쿼리 키에 포함시켜..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "기술적·도메인적",
+      "lineEnd": "기",
+      "lineStart": "술적·도메인적",
+      "fullSnippet": "...1시간으로 설정한 명확한 기 / 술적·도메인적 근거는 무엇인..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "사용하지",
+      "lineEnd": "사용",
+      "lineStart": "하지",
+      "fullSnippet": "...값(0초)을 기계적으로 사용 / 하지 않고 데이터의 실세계 ..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "라이프사이클을",
+      "lineEnd": "라이프",
+      "lineStart": "사이클을",
+      "fullSnippet": "...이터의 실세계 도메인 라이프 / 사이클을 분석했습니다. 법령..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "데이터는",
+      "lineEnd": "데이",
+      "lineStart": "터는",
+      "fullSnippet": "...습니다. 법령 및 판례 데이 / 터는 국회 심의와 공포 절차..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "주식",
+      "lineEnd": "주",
+      "lineStart": "식",
+      "fullSnippet": "...와 공포 절차를 거치므로 주 / 식 시세처럼 분/초 단위로 ..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "변경",
+      "lineEnd": "변",
+      "lineStart": "경",
+      "fullSnippet": "...초 단위로 바뀌지 않으며 변 / 경 주기가 수개월 단위입니다..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "불필요한",
+      "lineEnd": "불",
+      "lineStart": "필요한",
+      "fullSnippet": "...월 단위입니다. 1시간은 불 / 필요한 공공 API 트래픽을..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "차단하면서도,",
+      "lineEnd": "차단하면서",
+      "lineStart": "도,",
+      "fullSnippet": "...I 트래픽을 원천 차단하면서 / 도, 당일 발생한 법률 개정..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "수정일(Last-Modified)",
+      "lineEnd": "수정일",
+      "lineStart": "(Last-Modified)",
+      "fullSnippet": "... API 응답의 최종 수정일 / (Last-Modified)..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "라이브러리라면,",
+      "lineEnd": "라이",
+      "lineStart": "브러리라면,",
+      "fullSnippet": "...y가 서버 상태 관리용 라이 / 브러리라면, 왜 queryF..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "로컬스토리지나",
+      "lineEnd": "로컬스토리지",
+      "lineStart": "나",
+      "fullSnippet": "...queryFn에 로컬스토리지 / 나 Mock 함수를 넣어도 ..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "함수\"가",
+      "lineEnd": "함",
+      "lineStart": "수\"가",
+      "fullSnippet": "...HTTP 서버를 호출하는 함 / 수\"가 아니라 오직 \"Pro..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "함수\"이기",
+      "lineEnd": "함",
+      "lineStart": "수\"이기",
+      "fullSnippet": "...Promise를 반환하는 함 / 수\"이기 때문입니다. Pro..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "묻지",
+      "lineEnd": "묻",
+      "lineStart": "지",
+      "fullSnippet": "... Promise는 출처를 묻 / 지 않는 포장 봉투와 같아서..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "스토리지",
+      "lineEnd": "스토",
+      "lineStart": "리지",
+      "fullSnippet": "...투와 같아서, 브라우저 스토 / 리지 읽기든 타이머 기반 가..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "비동기",
+      "lineEnd": "비",
+      "lineStart": "동기",
+      "fullSnippet": "...이머 기반 가짜 데이터든 비 / 동기 Promise 형태로만..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "TanStack Query",
+      "lineEnd": "TanStack",
+      "lineStart": "Query",
+      "fullSnippet": "...만 반환되면 TanStack / Query의 상태 기계(Pe..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "TanStack Query",
+      "lineEnd": "TanStack",
+      "lineStart": "Query",
+      "fullSnippet": "...만 반환되면 TanStack / Query의 상태 기계(Pe..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "동일하게",
+      "lineEnd": "동일하",
+      "lineStart": "게",
+      "fullSnippet": "...)는 출처와 상관없이 동일하 / 게 동작합니다. \"서버 상태..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "라이브러리가",
+      "lineEnd": "라",
+      "lineStart": "이브러리가",
+      "fullSnippet": "...\"서버 상태\"라는 단어는 라 / 이브러리가 가장 빛을 발하는..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "시나리오를",
+      "lineEnd": "시",
+      "lineStart": "나리오를",
+      "fullSnippet": "... 빛을 발하는 핵심 활용 시 / 나리오를 지칭하는 표현입니다..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "0초인",
+      "lineEnd": "0",
+      "lineStart": "초인",
+      "fullSnippet": "...aleTime의 기본값이 0 / 초인 이유는 무엇인가요?..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "신선하여",
+      "lineEnd": "신선",
+      "lineStart": "하여",
+      "fullSnippet": "...캐시된 데이터가 여전히 신선 / 하여 원천(서버·비동기 출처..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "\"화면에서",
+      "lineEnd": "\"화",
+      "lineStart": "면에서",
+      "fullSnippet": "...\"이고, gcTime은 \"화 / 면에서 사용되지 않는(언마운..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "\"화면에",
+      "lineEnd": "\"화",
+      "lineStart": "면에",
+      "fullSnippet": "...\"이고, gcTime은 \"화 / 면에서 사용되지 않는(언마운..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "데이터를",
+      "lineEnd": "데이터",
+      "lineStart": "를",
+      "fullSnippet": "...지 않는(언마운트된) 데이터 / 를 가비지 컬렉터가 메모리에..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "데이터를",
+      "lineEnd": "데이터",
+      "lineStart": "를",
+      "fullSnippet": "...지 않는(언마운트된) 데이터 / 를 가비지 컬렉터가 메모리에..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "전까지",
+      "lineEnd": "전",
+      "lineStart": "까지",
+      "fullSnippet": "...렉터가 메모리에서 지우기 전 / 까지 유지하는 보관 기간\"입..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "TanStack Query",
+      "lineEnd": "TanStack",
+      "lineStart": "Query",
+      "fullSnippet": "...간\"입니다. TanStack / Query는 기본적으로 st..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "TanStack Query",
+      "lineEnd": "TanStack",
+      "lineStart": "Query",
+      "fullSnippet": "...간\"입니다. TanStack / Query는 기본적으로 st..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "설정되어",
+      "lineEnd": "설",
+      "lineStart": "정되어",
+      "fullSnippet": "...taleTime이 0초로 설 / 정되어 있는데, 이는 \"화면..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "백그라운드에서",
+      "lineEnd": "백",
+      "lineStart": "그라운드에서",
+      "fullSnippet": "... 바뀔 수 있으므로 항상 백 / 그라운드에서 조용히 재검증(..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "재검증(Stale-While-Revalidate)하여",
+      "lineEnd": "재검증(Stale-While-",
+      "lineStart": "Revalidate)하여",
+      "fullSnippet": "...검증(Stale-While- / Revalidate)하여 최..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "기본",
+      "lineEnd": "기",
+      "lineStart": "본",
+      "fullSnippet": "...여 최신성을 보장한다\"는 기 / 본 철학을 반영한 설계입니다..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "실행하면",
+      "lineEnd": "실행",
+      "lineStart": "하면",
+      "fullSnippet": "...teQueries()를 실행 / 하면 캐시된 모든 데이터가 ..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "마운트되어",
+      "lineEnd": "마운",
+      "lineStart": "트되어",
+      "fullSnippet": "..., 오직 \"현재 화면에 마운 / 트되어 활발히 사용 중인 쿼..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "백그라운드에서",
+      "lineEnd": "백그",
+      "lineStart": "라운드에서",
+      "fullSnippet": "...용 중인 쿼리\"만 즉시 백그 / 라운드에서 다시 가져옵니다...."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "사용자가",
+      "lineEnd": "사용자",
+      "lineStart": "가",
+      "fullSnippet": "...고 마킹만 남겨두며, 사용자 / 가 나중에 해당 화면으로 다..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "비로소",
+      "lineEnd": "비",
+      "lineStart": "로소",
+      "fullSnippet": "...화면으로 다시 진입할 때 비 / 로소 최신 데이터를 패치합니..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "원칙이",
+      "lineEnd": "원",
+      "lineStart": "칙이",
+      "fullSnippet": "...rce of Truth) 원 / 칙이 깨지기 때문입니다. 비..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "데이터를",
+      "lineEnd": "데이",
+      "lineStart": "터를",
+      "fullSnippet": "...문입니다. 비동기 서버 데이 / 터를 클라이언트 전역 스토어..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "데이터",
+      "lineEnd": "데이",
+      "lineStart": "터",
+      "fullSnippet": "...문입니다. 비동기 서버 데이 / 터를 클라이언트 전역 스토어..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "갱신,",
+      "lineEnd": "갱",
+      "lineStart": "신,",
+      "fullSnippet": "...y가 수행하는 자동 캐시 갱 / 신, 백그라운드 리패칭, 낙..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "화면",
+      "lineEnd": "화",
+      "lineStart": "면",
+      "fullSnippet": "...스토어에는 반영되지 않아 화 / 면 간 데이터 불일치(Dat..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "자체를",
+      "lineEnd": "자",
+      "lineStart": "체를",
+      "fullSnippet": "...tack Query 캐시 자 / 체를 단일 원천으로 바라보고..."
+    },
+    {
+      "page": "서버 상태 관리 (server-state)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "필터",
+      "lineEnd": "필",
+      "lineStart": "터",
+      "fullSnippet": "...에는 모달 상태나 선택된 필 / 터 같은 순수 UI 상태만 ..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "파인만 핵심 요약",
+      "width": 1280,
+      "brokenWord": "감시하며,",
+      "lineEnd": "감시하",
+      "lineStart": "며,",
+      "fullSnippet": "...을 세워 모든 출입을 감시하 / 며, 기능별로 코드를 한곳에..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "파인만 핵심 요약",
+      "width": 1280,
+      "brokenWord": "감시하며,",
+      "lineEnd": "감시하",
+      "lineStart": "며,",
+      "fullSnippet": "...을 세워 모든 출입을 감시하 / 며, 기능별로 코드를 한곳에..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "파인만 핵심 요약",
+      "width": 1280,
+      "brokenWord": "감시하며,",
+      "lineEnd": "감시하",
+      "lineStart": "며,",
+      "fullSnippet": "...을 세워 모든 출입을 감시하 / 며, 기능별로 코드를 한곳에..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "파인만 핵심 요약",
+      "width": 1280,
+      "brokenWord": "경비원(Proxy)을",
+      "lineEnd": "경비원",
+      "lineStart": "(Proxy)을",
+      "fullSnippet": "... 건물 전체 출입구에 경비원 / (Proxy)을 세워 어떤 ..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "직관적 비유",
+      "width": 1280,
+      "brokenWord": "경비원(Proxy)을",
+      "lineEnd": "경비원",
+      "lineStart": "(Proxy)을",
+      "fullSnippet": "... 건물 전체 출입구에 경비원 / (Proxy)을 세워 어떤 ..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "속성별로",
+      "lineEnd": "속성별",
+      "lineStart": "로",
+      "fullSnippet": "...uted, watch 속성별 / 로 기능 코드가 파편화)..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "불분명한",
+      "lineEnd": "불분명",
+      "lineStart": "한",
+      "fullSnippet": "... 위험, 속성 출처가 불분명 / 한 암묵적 주입 문제..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "복사됩니다.",
+      "lineEnd": "복",
+      "lineStart": "사됩니다.",
+      "fullSnippet": "...alue)만 별도 변수로 복 / 사됩니다. 복사된 변수는 더..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "하려면",
+      "lineEnd": "하",
+      "lineStart": "려면",
+      "fullSnippet": "...을 유지하면서 구조분해를 하 / 려면 반드시 toRefs(s..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "파인만 핵심 요약",
+      "width": 768,
+      "brokenWord": "경비원(Proxy)을",
+      "lineEnd": "경비",
+      "lineStart": "원(Proxy)을",
+      "fullSnippet": "...Vue3는 건물 입구에 경비 / 원(Proxy)을 세워 모든..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "파인만 핵심 요약",
+      "width": 768,
+      "brokenWord": "경비원(Proxy)을",
+      "lineEnd": "경비",
+      "lineStart": "원(Proxy)을",
+      "fullSnippet": "...Vue3는 건물 입구에 경비 / 원(Proxy)을 세워 모든..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "파인만 핵심 요약",
+      "width": 768,
+      "brokenWord": "경비원(Proxy)을",
+      "lineEnd": "경비",
+      "lineStart": "원(Proxy)을",
+      "fullSnippet": "...Vue3는 건물 입구에 경비 / 원(Proxy)을 세워 모든..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "파인만 핵심 요약",
+      "width": 768,
+      "brokenWord": "방식이고,",
+      "lineEnd": "방식",
+      "lineStart": "이고,",
+      "fullSnippet": "...해 $set이 필요했던 방식 / 이고, Vue3는 건물 전체..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "직관적 비유",
+      "width": 768,
+      "brokenWord": "방식이고,",
+      "lineEnd": "방식",
+      "lineStart": "이고,",
+      "fullSnippet": "...해 $set이 필요했던 방식 / 이고, Vue3는 건물 전체..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "개별",
+      "lineEnd": "개",
+      "lineStart": "별",
+      "fullSnippet": "...roperty — 속성별 개 / 별 감시 (새 속성 추가/배..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "수정",
+      "lineEnd": "수",
+      "lineStart": "정",
+      "fullSnippet": "... 속성 추가/배열 인덱스 수 / 정 감지 불가, $set 필..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "코드가",
+      "lineEnd": "코",
+      "lineStart": "드가",
+      "fullSnippet": "...watch 속성별로 기능 코 / 드가 파편화)..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "블록에",
+      "lineEnd": "블",
+      "lineStart": "록에",
+      "fullSnippet": "...행하는 상태와 로직을 한 블 / 록에 근접 배치..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "속성",
+      "lineEnd": "속",
+      "lineStart": "성",
+      "fullSnippet": "... — 변수명 충돌 위험, 속 / 성 출처가 불분명한 암묵적 ..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "매개변수와",
+      "lineEnd": "매개",
+      "lineStart": "변수와",
+      "fullSnippet": "...useXxx) 사용 — 매개 / 변수와 반환값이 명시적인 함..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "추가적인",
+      "lineEnd": "추가",
+      "lineStart": "적인",
+      "fullSnippet": "...스트 추론 한계로 인해 추가 / 적인 데코레이터 및 복잡한 ..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "자동완성",
+      "lineEnd": "자동완",
+      "lineStart": "성",
+      "fullSnippet": "...완벽한 타입 추론 및 자동완 / 성..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "했습니다.",
+      "lineEnd": "했",
+      "lineStart": "습니다.",
+      "fullSnippet": "... 특수 API를 강제해야 했 / 습니다. Vue3는 객체 자..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "무엇인가요?",
+      "lineEnd": "무엇",
+      "lineStart": "인가요?",
+      "fullSnippet": "...응성이 끊어지는 이유는 무엇 / 인가요?..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "끊어지고",
+      "lineEnd": "끊어지",
+      "lineStart": "고",
+      "fullSnippet": "...xy 래퍼와의 연결이 끊어지 / 고 원시값(Primitive..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "보지",
+      "lineEnd": "보",
+      "lineStart": "지",
+      "fullSnippet": "...rty)를 달아 새 방을 보 / 지 못했다면, Vue3는 건..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "경비원(Proxy)을",
+      "lineEnd": "경비원",
+      "lineStart": "(Proxy)을",
+      "fullSnippet": "...ue3는 건물 입구에 경비원 / (Proxy)을 세워 모든 ..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "기능별로",
+      "lineEnd": "기능",
+      "lineStart": "별로",
+      "fullSnippet": "...모든 출입을 감시하며, 기능 / 별로 코드를 한곳에 모읍니다..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "보지",
+      "lineEnd": "보",
+      "lineStart": "지",
+      "fullSnippet": "...rty)를 달아 새 방을 보 / 지 못했다면, Vue3는 건..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "경비원(Proxy)을",
+      "lineEnd": "경비원",
+      "lineStart": "(Proxy)을",
+      "fullSnippet": "...ue3는 건물 입구에 경비원 / (Proxy)을 세워 모든 ..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "기능별로",
+      "lineEnd": "기능",
+      "lineStart": "별로",
+      "fullSnippet": "...모든 출입을 감시하며, 기능 / 별로 코드를 한곳에 모읍니다..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "보지",
+      "lineEnd": "보",
+      "lineStart": "지",
+      "fullSnippet": "...rty)를 달아 새 방을 보 / 지 못했다면, Vue3는 건..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "경비원(Proxy)을",
+      "lineEnd": "경비원",
+      "lineStart": "(Proxy)을",
+      "fullSnippet": "...ue3는 건물 입구에 경비원 / (Proxy)을 세워 모든 ..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "기능별로",
+      "lineEnd": "기능",
+      "lineStart": "별로",
+      "fullSnippet": "...모든 출입을 감시하며, 기능 / 별로 코드를 한곳에 모읍니다..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "달아두어",
+      "lineEnd": "달아",
+      "lineStart": "두어",
+      "fullSnippet": "...해진 방에만 CCTV를 달아 / 두어 나중에 새로 생긴 방(..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "출입구에",
+      "lineEnd": "출",
+      "lineStart": "입구에",
+      "fullSnippet": "..., Vue3는 건물 전체 출 / 입구에 경비원(Proxy)을..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "직관적 비유",
+      "width": 375,
+      "brokenWord": "달아두어",
+      "lineEnd": "달아",
+      "lineStart": "두어",
+      "fullSnippet": "...해진 방에만 CCTV를 달아 / 두어 나중에 새로 생긴 방(..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "직관적 비유",
+      "width": 375,
+      "brokenWord": "출입구에",
+      "lineEnd": "출",
+      "lineStart": "입구에",
+      "fullSnippet": "..., Vue3는 건물 전체 출 / 입구에 경비원(Proxy)을..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "속성별",
+      "lineEnd": "속성",
+      "lineStart": "별",
+      "fullSnippet": "...neProperty — 속성 / 별 개별 감시 (새 속성 추..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "필수)",
+      "lineEnd": "필",
+      "lineStart": "수)",
+      "fullSnippet": "...정 감지 불가, $set 필 / 수)..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "감시",
+      "lineEnd": "감",
+      "lineStart": "시",
+      "fullSnippet": "...xy — 객체 전체 래핑 감 / 시 (새 속성 추가, 삭제,..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "기능",
+      "lineEnd": "기",
+      "lineStart": "능",
+      "fullSnippet": "...d, watch 속성별로 기 / 능 코드가 파편화)..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "로직을",
+      "lineEnd": "로",
+      "lineStart": "직을",
+      "fullSnippet": "... 기능을 수행하는 상태와 로 / 직을 한 블록에 근접 배치..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "위험,",
+      "lineEnd": "위",
+      "lineStart": "험,",
+      "fullSnippet": "...s 사용 — 변수명 충돌 위 / 험, 속성 출처가 불분명한 ..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "추가하거나",
+      "lineEnd": "추가하거",
+      "lineStart": "나",
+      "fullSnippet": "... 객체에 새 속성을 추가하거 / 나 배열 인덱스로 값을 바꿀..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "갱신되지",
+      "lineEnd": "갱신",
+      "lineStart": "되지",
+      "fullSnippet": "... 값을 바꿀 때 화면이 갱신 / 되지 않았나요?..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "속성들에",
+      "lineEnd": "속",
+      "lineStart": "성들에",
+      "fullSnippet": "...화 시점에 이미 존재하는 속 / 성들에 대해서만 getter..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "구성했습니다.",
+      "lineEnd": "구성했습",
+      "lineStart": "니다.",
+      "fullSnippet": "...er/setter를 구성했습 / 니다. 초기화 이후에 추가된..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "했습니다.",
+      "lineEnd": "했습",
+      "lineStart": "니다.",
+      "fullSnippet": "...er/setter를 구성했습 / 니다. 초기화 이후에 추가된..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "배열",
+      "lineEnd": "배",
+      "lineStart": "열",
+      "fullSnippet": "...후에 추가된 새 속성이나 배 / 열 인덱스(arr[0] = ..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "못했습니다.",
+      "lineEnd": "못했습니",
+      "lineStart": "다.",
+      "fullSnippet": "...에 변경을 감지하지 못했습니 / 다. 이를 위해 Vue.se..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "했습니다.",
+      "lineEnd": "했습니",
+      "lineStart": "다.",
+      "fullSnippet": "...에 변경을 감지하지 못했습니 / 다. 이를 위해 Vue.se..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "this.$set()이라는",
+      "lineEnd": "this.$set()이라",
+      "lineStart": "는",
+      "fullSnippet": "...나 this.$set()이라 / 는 특수 API를 강제해야 ..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "반환합니다.",
+      "lineEnd": "반",
+      "lineStart": "환합니다.",
+      "fullSnippet": "...pt의 Proxy 객체를 반 / 환합니다. 구조분해 할당을 ..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "원시값(Primitive",
+      "lineEnd": "원시값",
+      "lineStart": "(Primitive",
+      "fullSnippet": "...와의 연결이 끊어지고 원시값 / (Primitive Valu..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "복사됩니다.",
+      "lineEnd": "복사됩니",
+      "lineStart": "다.",
+      "fullSnippet": "...e)만 별도 변수로 복사됩니 / 다. 복사된 변수는 더 이상..."
+    },
+    {
+      "page": "Options → Composition API (options-to-composition)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "유지하면서",
+      "lineEnd": "유지",
+      "lineStart": "하면서",
+      "fullSnippet": "...지 않습니다. 반응성을 유지 / 하면서 구조분해를 하려면 반..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "파인만 핵심 요약",
+      "width": 1280,
+      "brokenWord": "어디서든",
+      "lineEnd": "어디",
+      "lineStart": "서든",
+      "fullSnippet": "...outeRules)으로 어디 / 서든 유연하게 동작하는 풀스..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "파인만 핵심 요약",
+      "width": 1280,
+      "brokenWord": "어디서든",
+      "lineEnd": "어디",
+      "lineStart": "서든",
+      "fullSnippet": "...outeRules)으로 어디 / 서든 유연하게 동작하는 풀스..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "파인만 핵심 요약",
+      "width": 1280,
+      "brokenWord": "어디서든",
+      "lineEnd": "어디",
+      "lineStart": "서든",
+      "fullSnippet": "...outeRules)으로 어디 / 서든 유연하게 동작하는 풀스..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "자바스크립트",
+      "lineEnd": "자",
+      "lineStart": "바스크립트",
+      "fullSnippet": "...기본 — 서버 컴포넌트는 자 / 바스크립트 번들 0바이트, ..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "생성된",
+      "lineEnd": "생",
+      "lineStart": "성된",
+      "fullSnippet": "...본 — 서버(SSR)에서 생 / 성된 HTML이 브라우저에서..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "하이드레이션(Hydration)되어",
+      "lineEnd": "하이드레이션(Hydration)",
+      "lineStart": "되어",
+      "fullSnippet": "...드레이션(Hydration) / 되어 인터랙션 활성화..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "배포",
+      "lineEnd": "배",
+      "lineStart": "포",
+      "fullSnippet": "... Vercel 등 20+ 배 / 포 환경 크로스 컴파일..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "응답을",
+      "lineEnd": "응답",
+      "lineStart": "을",
+      "fullSnippet": "...컴포저블 사용 — 서버 응답 / 을 페이로드로 자동 직렬화하..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 1280,
+      "brokenWord": "임포트(Auto-import)",
+      "lineEnd": "임포",
+      "lineStart": "트(Auto-import)",
+      "fullSnippet": ".../ 폴더 내 파일 자동 임포 / 트(Auto-import) ..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "렌더링(SSR)된",
+      "lineEnd": "렌",
+      "lineStart": "더링(SSR)된",
+      "fullSnippet": "...서버에서 HTML로 사전 렌 / 더링(SSR)된 후 브라우저..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "렌더",
+      "lineEnd": "렌",
+      "lineStart": "더",
+      "fullSnippet": "...서버에서 HTML로 사전 렌 / 더링(SSR)된 후 브라우저..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "서버에서",
+      "lineEnd": "서버에",
+      "lineStart": "서",
+      "fullSnippet": "...문에서 직접 접근하면 서버에 / 서 ReferenceErro..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "서버에서",
+      "lineEnd": "서버에",
+      "lineStart": "서",
+      "fullSnippet": "...문에서 직접 접근하면 서버에 / 서 ReferenceErro..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "요청(Double",
+      "lineEnd": "요",
+      "lineStart": "청(Double",
+      "fullSnippet": "...호출되는 \"이중 네트워크 요 / 청(Double Fetchi..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 1280,
+      "brokenWord": "경고가",
+      "lineEnd": "경",
+      "lineStart": "고가",
+      "fullSnippet": "...ion Mismatch) 경 / 고가 발생합니다. Nuxt의..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "파인만 핵심 요약",
+      "width": 768,
+      "brokenWord": "어댑터(Nitro)를",
+      "lineEnd": "어댑터(Nitro)",
+      "lineStart": "를",
+      "fullSnippet": "...용 변환 어댑터(Nitro) / 를 장착한 여행 키트입니다...."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "직관적 비유",
+      "width": 768,
+      "brokenWord": "어댑터(Nitro)를",
+      "lineEnd": "어댑터(Nitro)",
+      "lineStart": "를",
+      "fullSnippet": "...용 변환 어댑터(Nitro) / 를 장착한 여행 키트입니다...."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "서버",
+      "lineEnd": "서",
+      "lineStart": "버",
+      "fullSnippet": "...포넌트(RSC) 기본 — 서 / 버 컴포넌트는 자바스크립트 ..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "서버",
+      "lineEnd": "서",
+      "lineStart": "버",
+      "fullSnippet": "...포넌트(RSC) 기본 — 서 / 버 컴포넌트는 자바스크립트 ..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "0바이트,",
+      "lineEnd": "0바",
+      "lineStart": "이트,",
+      "fullSnippet": "...트는 자바스크립트 번들 0바 / 이트, 상호작용 필요 시 '..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "명시",
+      "lineEnd": "명",
+      "lineStart": "시",
+      "fullSnippet": "... 'use client' 명 / 시..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "브라우저에서",
+      "lineEnd": "브라",
+      "lineStart": "우저에서",
+      "fullSnippet": "...에서 생성된 HTML이 브라 / 우저에서 하이드레이션(Hyd..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "하이드레이션(Hydration)되어",
+      "lineEnd": "하이드레이션(Hydration)되",
+      "lineStart": "어",
+      "fullSnippet": "...레이션(Hydration)되 / 어 인터랙션 활성화..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "크로스",
+      "lineEnd": "크",
+      "lineStart": "로스",
+      "fullSnippet": "...l 등 20+ 배포 환경 크 / 로스 컴파일..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "사용",
+      "lineEnd": "사",
+      "lineStart": "용",
+      "fullSnippet": "...syncData 컴포저블 사 / 용 — 서버 응답을 페이로드..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "직렬화하여",
+      "lineEnd": "직",
+      "lineStart": "렬화하여",
+      "fullSnippet": "... 응답을 페이로드로 자동 직 / 렬화하여 하이드레이션 시 중..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "관례",
+      "lineEnd": "관",
+      "lineStart": "례",
+      "fullSnippet": "...필수 (React 생태계 관 / 례 준수)..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "기본",
+      "lineEnd": "기",
+      "lineStart": "본",
+      "fullSnippet": "...(Auto-import) 기 / 본 지원..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 768,
+      "brokenWord": "하나로",
+      "lineEnd": "하",
+      "lineStart": "나로",
+      "fullSnippet": "...routeRules 설정 하 / 나로 라우트별 SSR, SS..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "않고",
+      "lineEnd": "않",
+      "lineStart": "고",
+      "fullSnippet": "... 서버에서 전혀 실행되지 않 / 고 브라우저에서만 렌더링되나..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "\"클라이언트",
+      "lineEnd": "\"클라이언",
+      "lineStart": "트",
+      "fullSnippet": "...는 것이 아니라, \"클라이언 / 트 번들에 포함되어 브라우저..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "\"클라이언트",
+      "lineEnd": "\"클라이언",
+      "lineStart": "트",
+      "fullSnippet": "...는 것이 아니라, \"클라이언 / 트 번들에 포함되어 브라우저..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "지정하는",
+      "lineEnd": "지정",
+      "lineStart": "하는",
+      "fullSnippet": "...(Boundary)\"를 지정 / 하는 것입니다. 초기 페이지..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "브라우저",
+      "lineEnd": "브라우",
+      "lineStart": "저",
+      "fullSnippet": "...렌더링(SSR)된 후 브라우 / 저로 전송되어 하이드레이션됩..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "브라우저로",
+      "lineEnd": "브라우",
+      "lineStart": "저로",
+      "fullSnippet": "...렌더링(SSR)된 후 브라우 / 저로 전송되어 하이드레이션됩..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "브라우저",
+      "lineEnd": "브라우",
+      "lineStart": "저",
+      "fullSnippet": "...렌더링(SSR)된 후 브라우 / 저로 전송되어 하이드레이션됩..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "문제가",
+      "lineEnd": "문",
+      "lineStart": "제가",
+      "fullSnippet": "...에서 직접 호출하면 어떤 문 / 제가 생기나요?..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "클라이언트에서",
+      "lineEnd": "클라이",
+      "lineStart": "언트에서",
+      "fullSnippet": "...tion을 수행할 때 클라이 / 언트에서 또 한 번 호출되는..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "클라이언트",
+      "lineEnd": "클라이",
+      "lineStart": "언트",
+      "fullSnippet": "...tion을 수행할 때 클라이 / 언트에서 또 한 번 호출되는..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "클라이언트",
+      "lineEnd": "클라",
+      "lineStart": "이언트",
+      "fullSnippet": "...다. 또한 서버 응답과 클라 / 이언트 재요청 시점의 데이터..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 768,
+      "brokenWord": "불일치를",
+      "lineEnd": "불일",
+      "lineStart": "치를",
+      "fullSnippet": "...사용하므로 중복 요청과 불일 / 치를 완벽히 방지합니다...."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "브라우저",
+      "lineEnd": "브라우",
+      "lineStart": "저",
+      "fullSnippet": "...포넌트 단위로 서버와 브라우 / 저 부품을 세밀하게 분리하고..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "강력한",
+      "lineEnd": "강",
+      "lineStart": "력한",
+      "fullSnippet": "...분리하고, Nuxt 3는 강 / 력한 Nitro 엔진과 직관..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "설정(routeRules)으로",
+      "lineEnd": "설정",
+      "lineStart": "(routeRules)으로",
+      "fullSnippet": "...tro 엔진과 직관적인 설정 / (routeRules)으로 ..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "동작하는",
+      "lineEnd": "동작",
+      "lineStart": "하는",
+      "fullSnippet": "...으로 어디서든 유연하게 동작 / 하는 풀스택 환경을 제공합니..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "브라우저",
+      "lineEnd": "브라우",
+      "lineStart": "저",
+      "fullSnippet": "...포넌트 단위로 서버와 브라우 / 저 부품을 세밀하게 분리하고..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "강력한",
+      "lineEnd": "강",
+      "lineStart": "력한",
+      "fullSnippet": "...분리하고, Nuxt 3는 강 / 력한 Nitro 엔진과 직관..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "설정(routeRules)으로",
+      "lineEnd": "설정",
+      "lineStart": "(routeRules)으로",
+      "fullSnippet": "...tro 엔진과 직관적인 설정 / (routeRules)으로 ..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "동작하는",
+      "lineEnd": "동작",
+      "lineStart": "하는",
+      "fullSnippet": "...으로 어디서든 유연하게 동작 / 하는 풀스택 환경을 제공합니..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "브라우저",
+      "lineEnd": "브라우",
+      "lineStart": "저",
+      "fullSnippet": "...포넌트 단위로 서버와 브라우 / 저 부품을 세밀하게 분리하고..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "강력한",
+      "lineEnd": "강",
+      "lineStart": "력한",
+      "fullSnippet": "...분리하고, Nuxt 3는 강 / 력한 Nitro 엔진과 직관..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "설정(routeRules)으로",
+      "lineEnd": "설정",
+      "lineStart": "(routeRules)으로",
+      "fullSnippet": "...tro 엔진과 직관적인 설정 / (routeRules)으로 ..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "동작하는",
+      "lineEnd": "동작",
+      "lineStart": "하는",
+      "fullSnippet": "...으로 어디서든 유연하게 동작 / 하는 풀스택 환경을 제공합니..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "콘센트",
+      "lineEnd": "콘센",
+      "lineStart": "트",
+      "fullSnippet": "...t 3는 전 세계 모든 콘센 / 트 규격(Node, Clou..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "파인만 핵심 요약",
+      "width": 375,
+      "brokenWord": "맞춰지는",
+      "lineEnd": "맞",
+      "lineStart": "춰지는",
+      "fullSnippet": "...Vercel)에 자동으로 맞 / 춰지는 만능 여행용 변환 어..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "직관적 비유",
+      "width": 375,
+      "brokenWord": "콘센트",
+      "lineEnd": "콘센",
+      "lineStart": "트",
+      "fullSnippet": "...t 3는 전 세계 모든 콘센 / 트 규격(Node, Clou..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "직관적 비유",
+      "width": 375,
+      "brokenWord": "맞춰지는",
+      "lineEnd": "맞",
+      "lineStart": "춰지는",
+      "fullSnippet": "...Vercel)에 자동으로 맞 / 춰지는 만능 여행용 변환 어..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "자바스크립트",
+      "lineEnd": "자바스크립",
+      "lineStart": "트",
+      "fullSnippet": "... 서버 컴포넌트는 자바스크립 / 트 번들 0바이트, 상호작용..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "HTML이",
+      "lineEnd": "HTML",
+      "lineStart": "이",
+      "fullSnippet": "...SSR)에서 생성된 HTML / 이 브라우저에서 하이드레이션..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "하이드레이션(Hydration)되어",
+      "lineEnd": "하이드레이션",
+      "lineStart": "(Hydration)되어",
+      "fullSnippet": "...이 브라우저에서 하이드레이션 / (Hydration)되어 인..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "활성화",
+      "lineEnd": "활성",
+      "lineStart": "화",
+      "fullSnippet": "...tion)되어 인터랙션 활성 / 화..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "하나로",
+      "lineEnd": "하",
+      "lineStart": "나로",
+      "fullSnippet": "...서버 엔진 내장 — 설정 하 / 나로 Node, Cloudf..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "직렬화",
+      "lineEnd": "직",
+      "lineStart": "렬화",
+      "fullSnippet": "...데이터 페칭 및 직 / 렬화..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "(별도",
+      "lineEnd": "(별",
+      "lineStart": "도",
+      "fullSnippet": "... fetch 직접 호출 (별 / 도 훅 불필요)..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "컴포저블",
+      "lineEnd": "컴포저",
+      "lineStart": "블",
+      "fullSnippet": "...seAsyncData 컴포저 / 블 사용 — 서버 응답을 페..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "페이로드로",
+      "lineEnd": "페이로드",
+      "lineStart": "로",
+      "fullSnippet": "...용 — 서버 응답을 페이로드 / 로 자동 직렬화하여 하이드레..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "하이드레이션",
+      "lineEnd": "하이드레이",
+      "lineStart": "션",
+      "fullSnippet": "... 자동 직렬화하여 하이드레이 / 션 시 중복 호출 방지..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "생태계",
+      "lineEnd": "생태",
+      "lineStart": "계",
+      "fullSnippet": "...rt 필수 (React 생태 / 계 관례 준수)..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "임포트(Auto-import)",
+      "lineEnd": "임포트(Auto-",
+      "lineStart": "import)",
+      "fullSnippet": "...파일 자동 임포트(Auto- / import) 기본 지원..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "핵심 비교표 (셀)",
+      "width": 375,
+      "brokenWord": "설정",
+      "lineEnd": "설",
+      "lineStart": "정",
+      "fullSnippet": "...s의 routeRules 설 / 정 하나로 라우트별 SSR,..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "상단에",
+      "lineEnd": "상단",
+      "lineStart": "에",
+      "fullSnippet": "...outer에서 컴포넌트 상단 / 에 'use client'를..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "브라우저에서만",
+      "lineEnd": "브라우저에서",
+      "lineStart": "만",
+      "fullSnippet": "... 실행되지 않고 브라우저에서 / 만 렌더링되나요?..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "포함되어",
+      "lineEnd": "포",
+      "lineStart": "함되어",
+      "fullSnippet": "...라, \"클라이언트 번들에 포 / 함되어 브라우저 API와 리..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "훅(useState,",
+      "lineEnd": "훅",
+      "lineStart": "(useState,",
+      "fullSnippet": "...브라우저 API와 리액트 훅 / (useState, useE..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "경계(Boundary)\"를",
+      "lineEnd": "경",
+      "lineStart": "계(Boundary)\"를",
+      "fullSnippet": "...ct)을 사용할 수 있는 경 / 계(Boundary)\"를 지..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "브라우저",
+      "lineEnd": "브라",
+      "lineStart": "우저",
+      "fullSnippet": "...alStorage 같은 브라 / 우저 전용 객체에 렌더 본문..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "브라우저",
+      "lineEnd": "브라",
+      "lineStart": "우저",
+      "fullSnippet": "...alStorage 같은 브라 / 우저 전용 객체에 렌더 본문..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "접근하면",
+      "lineEnd": "접근",
+      "lineStart": "하면",
+      "fullSnippet": "...에 렌더 본문에서 직접 접근 / 하면 서버에서 Referen..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "발생합니다.",
+      "lineEnd": "발생합니",
+      "lineStart": "다.",
+      "fullSnippet": "...enceError가 발생합니 / 다...."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "본문에서",
+      "lineEnd": "본문에",
+      "lineStart": "서",
+      "fullSnippet": "...fetch를 컴포넌트 본문에 / 서 직접 호출하면 어떤 문제..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "또한",
+      "lineEnd": "또",
+      "lineStart": "한",
+      "fullSnippet": "...수행할 때 클라이언트에서 또 / 한 번 호출되는 \"이중 네트..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "요청(Double",
+      "lineEnd": "요청",
+      "lineStart": "(Double",
+      "fullSnippet": "...출되는 \"이중 네트워크 요청 / (Double Fetchin..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "또한",
+      "lineEnd": "또",
+      "lineStart": "한",
+      "fullSnippet": "...)\" 현상이 발생합니다. 또 / 한 서버 응답과 클라이언트 ..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "불일치(Hydration",
+      "lineEnd": "불일치",
+      "lineStart": "(Hydration",
+      "fullSnippet": "...하게 다를 경우 상태 불일치 / (Hydration Mism..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "페이로드에",
+      "lineEnd": "페이로드",
+      "lineStart": "에",
+      "fullSnippet": "...ch는 서버 응답을 페이로드 / 에 직렬화하여 클라이언트가 ..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "재사용하므로",
+      "lineEnd": "재사용",
+      "lineStart": "하므로",
+      "fullSnippet": "... 클라이언트가 그대로 재사용 / 하므로 중복 요청과 불일치를..."
+    },
+    {
+      "page": "풀스택 메타 프레임워크 (rendering-modes)",
+      "section": "함정 문답 (Q&A)",
+      "width": 375,
+      "brokenWord": "방지합니다.",
+      "lineEnd": "방지",
+      "lineStart": "합니다.",
+      "fullSnippet": "...요청과 불일치를 완벽히 방지 / 합니다...."
+    }
+  ],
+  "sectionSplitCounts": {
+    "파인만 핵심 요약": {
+      "375": 49,
+      "768": 20,
+      "1280": 10
+    },
+    "직관적 비유": {
+      "375": 10,
+      "768": 8,
+      "1280": 4
+    },
+    "핵심 비교표 (셀)": {
+      "375": 76,
+      "768": 59,
+      "1280": 36
+    },
+    "함정 문답 (Q&A)": {
+      "375": 179,
+      "768": 62,
+      "1280": 36
+    },
+    "목록 / 카드 / 기타 본문": {
+      "375": 11,
+      "768": 21,
+      "1280": 13
+    }
+  }
+}
