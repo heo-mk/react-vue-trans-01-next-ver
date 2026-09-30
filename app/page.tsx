@@ -53,7 +53,7 @@ export default function Home() {
           </ul>
         </section>
 
-        {/* Phase 5: 학습 진도 & 즐겨찾기 대시보드 */}
+        {/* Phase 5: 학습 진도 & 북마크 대시보드 */}
         <ProgressDashboard />
 
         {/* 3대 전환 학습 축 목록 */}

@@ -85,7 +85,7 @@ export function ProgressDashboard() {
                 : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
               }`}
           >
-            즐겨찾기 ({favoritesCount})
+            북마크 ({favoritesCount})
           </button>
         </div>
       </div>
@@ -124,7 +124,7 @@ export function ProgressDashboard() {
                           </span>
                         )}
                         {isFav && (
-                          <span title="즐겨찾기" className="text-amber-500">
+                          <span title="북마크" className="text-amber-500">
                             ★
                           </span>
                         )}
@@ -199,7 +199,7 @@ export function ProgressDashboard() {
           </div>
         ) : (
           <div className="py-8 text-center text-xs text-[var(--text-secondary)]">
-            해당하는 개념이 없습니다. 개념 상세 페이지에서 완료 또는 즐겨찾기를
+            해당하는 개념이 없습니다. 개념 상세 페이지에서 완료 또는 북마크를
             눌러보세요!
           </div>
         )}

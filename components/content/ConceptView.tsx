@@ -54,28 +54,27 @@ export function ConceptView({ concept }: ConceptViewProps) {
             )}
           </div>
 
-          {/* 읽음 및 즐겨찾기 인터랙션 */}
-          <div className="flex shrink-0 items-center gap-2">
+          {/* 읽음 및 북마크 인터랙션 */}
+          <div className="flex flex-wrap items-center gap-2 shrink-0">
             <button
               onClick={() => toggleReadConcept(concept.slug)}
               type="button"
-              className={`inline-flex cursor-pointer items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors ${isRead
+              className={`inline-flex cursor-pointer items-center justify-center gap-1.5 whitespace-nowrap rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors ${isRead
                   ? 'bg-emerald-500 text-white shadow-xs'
                   : 'border border-[var(--border-subtle)] bg-[var(--bg-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-primary)] hover:text-[var(--text-primary)]'
                 }`}
             >
-              {isRead ? '✓ 학습 완료' : '○ 미완료'}
+              {isRead ? '✓ 완료 취소' : '○ 학습 완료로 표시'}
             </button>
             <button
               onClick={() => toggleFavorite(concept.slug)}
               type="button"
-              className={`inline-flex cursor-pointer items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors ${isFav
+              className={`inline-flex cursor-pointer items-center justify-center gap-1.5 whitespace-nowrap rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors ${isFav
                   ? 'bg-amber-500 text-white shadow-xs'
                   : 'border border-[var(--border-subtle)] bg-[var(--bg-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-primary)] hover:text-[var(--text-primary)]'
                 }`}
-              aria-label="즐겨찾기 토글"
             >
-              {isFav ? '★ 즐겨찾기' : '☆ 북마크'}
+              {isFav ? '★ 북마크 해제' : '☆ 북마크에 추가'}
             </button>
           </div>
         </div>
