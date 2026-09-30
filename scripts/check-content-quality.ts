@@ -198,6 +198,81 @@ function checkConceptQuality(): QualityReport {
         }
       });
     }
+
+    // 규칙 10: 특정 개인 프로젝트 및 특정 업종 금지어 전수 검증 (일반화 품질 규칙)
+    const FORBIDDEN_TERMS = [
+      // 프로젝트 이름
+      'GitFind',
+      'smartstore-item-finder',
+      '퇴직금 회수 가이드',
+      'SFlash',
+      // 특정 서비스 및 업종 표현
+      '이커머스',
+      '스마트스토어',
+      '법률·노무',
+      '노무·법률',
+      '퇴직금',
+      '소멸시효',
+      '법령·약관',
+      '법령 및 판례',
+      // 개인 경험/프로젝트 전제 표현
+      '우리 서비스',
+      '제 프로젝트',
+      '실무 예시',
+      '실무 대시보드',
+      '찜 버튼',
+      // 특정 프로젝트 도메인 식별자
+      'useRepoMutations',
+      'useRepoSearch',
+      'useRepoStore',
+      'useStatutesQuery',
+    ];
+
+    const checkTextForForbidden = (
+      text: string | undefined,
+      location: string
+    ) => {
+      if (!text) return;
+      for (const term of FORBIDDEN_TERMS) {
+        if (text.includes(term)) {
+          errors.push(
+            `❌ ${id} [금지어 위반] ${location}에 금지된 특정 프로젝트/업종 표현 '${term}'이(가) 포함되어 있습니다.`
+          );
+        }
+      }
+    };
+
+    checkTextForForbidden(concept.title, '제목(title)');
+    checkTextForForbidden(concept.cardTitle, '카드 제목(cardTitle)');
+    checkTextForForbidden(concept.cardSubtitle, '카드 부제(cardSubtitle)');
+    checkTextForForbidden(concept.cardSummary, '카드 요약(cardSummary)');
+    checkTextForForbidden(concept.oneLineSummary, '한줄 요약(oneLineSummary)');
+    checkTextForForbidden(concept.analogy, '비유(analogy)');
+    concept.comparisonTable?.forEach((row, i) => {
+      checkTextForForbidden(row.label, `비교표 ${i + 1}행 라벨`);
+      checkTextForForbidden(row.left, `비교표 ${i + 1}행 좌측`);
+      checkTextForForbidden(row.right, `비교표 ${i + 1}행 우측`);
+      checkTextForForbidden(row.common, `비교표 ${i + 1}행 공통`);
+    });
+    concept.codeExamples?.forEach((ex, i) => {
+      checkTextForForbidden(ex.label, `코드 예제 ${i + 1} 라벨`);
+      checkTextForForbidden(
+        ex.sourceProject,
+        `코드 예제 ${i + 1} 출처 프로젝트(sourceProject)`
+      );
+      checkTextForForbidden(ex.leftCode, `코드 예제 ${i + 1} 좌측 코드`);
+      checkTextForForbidden(ex.rightCode, `코드 예제 ${i + 1} 우측 코드`);
+    });
+    concept.pitfalls?.forEach((pf, i) => {
+      checkTextForForbidden(pf.question, `함정 문답 ${i + 1} 질문`);
+      checkTextForForbidden(pf.answer, `함정 문답 ${i + 1} 답변`);
+    });
+    concept.keywords?.forEach((kw, i) => {
+      checkTextForForbidden(kw, `키워드 ${i + 1}번째`);
+    });
+    concept.sources?.forEach((src, i) => {
+      checkTextForForbidden(src.label, `참고 출처 ${i + 1}번째 라벨`);
+    });
   }
 
   // 규칙 9: Navbar placeholder에 쓰인 모든 예시 단어의 검색 결과 1건 이상 반환 검증

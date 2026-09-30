@@ -187,9 +187,9 @@ export const legacyStore = createStore({
       label: '실전 예제',
       version:
         'React 18+ (Zustand 4.x + persist) vs Vue 3.4+ (Pinia 2.x + pinia-plugin-persistedstate)',
-      sourceProject: '이커머스 상품 관리 및 분석 서비스',
-      leftCode: `// [React] 실무 예시: 이커머스 관심 상품 관리 (favoriteStore.ts)
-// 서버 상태(트렌드/추천 점수)와 완전히 분리하여 클라이언트 고유의 '찜 목록'만 Zustand persist로 관리
+      sourceProject: '목록 및 필터 관리 화면',
+      leftCode: `// [React] 관심 항목 관리 (favoriteStore.ts)
+// 서버 상태와 완전히 분리하여 클라이언트 고유의 '관심 목록'만 Zustand persist로 관리
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
@@ -276,36 +276,36 @@ export const useFavoriteStore = defineStore(
     {
       label: '실전 예제',
       version: 'React 18+ (Zustand + useMemo) vs Vue 3.4+ (Pinia getters / computed)',
-      sourceProject: '노무·법률 진단 및 정산 서비스',
-      leftCode: `// [React] 실무 예시: 노무·법률 진단 및 정산 서비스
+      sourceProject: '입력 단계 및 계산 결과 화면',
+      leftCode: `// [React] 입력 단계 및 계산 결과 분리
 // 스토어에는 순수 직렬화 가능한 데이터만 저장하고, 파생 계산 로직은 별도 훅(useMemo)으로 분리
 // 1. stores/progressStore.ts: JSON.stringify 제약으로 순수 데이터만 보존
 export const useProgressStore = create<ProgressState>()(
   persist(
     (set) => ({
-      currentStage: 1,
-      caseDetails: { monthsElapsed: null, agreementStatus: 'none' },
-      setStage: (stage) => set({ currentStage: stage }),
+      currentStep: 1,
+      inputValues: { usageMonths: null, planType: 'basic' },
+      setStep: (step) => set({ currentStep: step }),
     }),
     { name: 'progress-storage' }
   )
 );
 
-// 2. features/diagnosis/useRecommendedActions.ts: 파생 계산 로직은 useMemo 훅에서 전담
-export function useRecommendedActions() {
-  const currentStage = useProgressStore((s) => s.currentStage);
-  const caseDetails = useProgressStore((s) => s.caseDetails);
+// 2. features/calculator/useCalculationResult.ts: 파생 계산 로직은 useMemo 훅에서 전담
+export function useCalculationResult() {
+  const currentStep = useProgressStore((s) => s.currentStep);
+  const inputValues = useProgressStore((s) => s.inputValues);
 
   return useMemo(() => {
-    const actions = [];
-    if (caseDetails.monthsElapsed !== null && caseDetails.monthsElapsed >= 33) {
-      actions.push({ id: 'statute-warning', text: '소멸시효 만료 임박', isUrgent: true });
+    const results = [];
+    if (inputValues.usageMonths !== null && inputValues.usageMonths >= 36) {
+      results.push({ id: 'long-term-discount', text: '장기 이용 할인 적용', isHighlight: true });
     }
-    if (caseDetails.agreementStatus === 'pre_retirement') {
-      actions.push({ id: 'pre-agreement-invalid', text: '퇴직 전 합의는 무효', isUrgent: true });
+    if (inputValues.planType === 'premium') {
+      results.push({ id: 'premium-benefit', text: '우대 혜택 포함', isHighlight: true });
     }
-    return actions;
-  }, [currentStage, caseDetails]); // 의존성 배열 명시 필요
+    return results;
+  }, [currentStep, inputValues]); // 의존성 배열 명시 필요
 }`,
       rightCode: `// [Vue] Vue 3.4+ Pinia — getter와 computed를 활용한 자연스러운 파생 상태 분리
 import { defineStore } from 'pinia';
@@ -313,21 +313,21 @@ import { computed } from 'vue';
 
 export const useProgressStore = defineStore('progress', {
   state: () => ({
-    currentStage: 1,
-    caseDetails: { monthsElapsed: null as number | null, agreementStatus: 'none' },
+    currentStep: 1,
+    inputValues: { usageMonths: null as number | null, planType: 'basic' },
   }),
   getters: {
     // Pinia의 getter는 함수가 아니라 '계산된 값'으로 취급되므로 직렬화 대상 밖에 위치
-    // Vue의 computed처럼 의존하는 상태(monthsElapsed, agreementStatus)를 자동 추적!
-    recommendedActions(state) {
-      const actions = [];
-      if (state.caseDetails.monthsElapsed !== null && state.caseDetails.monthsElapsed >= 33) {
-        actions.push({ id: 'statute-warning', text: '소멸시효 만료 임박', isUrgent: true });
+    // Vue의 computed처럼 의존하는 상태(usageMonths, planType)를 자동 추적!
+    calculationResults(state) {
+      const results = [];
+      if (state.inputValues.usageMonths !== null && state.inputValues.usageMonths >= 36) {
+        results.push({ id: 'long-term-discount', text: '장기 이용 할인 적용', isHighlight: true });
       }
-      if (state.caseDetails.agreementStatus === 'pre_retirement') {
-        actions.push({ id: 'pre-agreement-invalid', text: '퇴직 전 합의는 무효', isUrgent: true });
+      if (state.inputValues.planType === 'premium') {
+        results.push({ id: 'premium-benefit', text: '우대 혜택 포함', isHighlight: true });
       }
-      return actions;
+      return results;
     },
   },
   persist: true, // pinia-plugin-persistedstate는 state만 저장하고 getter는 자동 배제
@@ -339,19 +339,19 @@ export const useProgressStore = defineStore('progress', {
       question:
         'Context API가 있는데 왜 굳이 Zustand나 Redux 같은 전역 상태 라이브러리를 추가로 도입하나요?',
       answer:
-        'Context API는 "상태 관리 도구"가 아니라 단순한 "의존성 주입(Prop Drilling 해결) 전파 메커니즘"입니다. Context의 Provider value가 변경되면 이를 구독하는 하위의 모든 컴포넌트가 불필요하게 리렌더링되는 치명적인 성능 한계가 있습니다. 반면 Zustand는 컴포넌트 트리 외부의 클로저에 상태를 두고, Selector를 통해 실제로 사용하는 속성이 변경되었을 때만 정밀하게 리렌더링하므로 고빈도 UI 업데이트에서도 렌더링 낭비가 전혀 없습니다.',
+        'Context API는 "상태 관리 도구"가 아니라 단순한 "의존성 주입(Prop Drilling 해결) 전파 메커니즘"입니다. Context의 Provider value가 변경되면 이를 구독하는 하위의 모든 컴포넌트가 불필요하게 리렌더링되는 불필요한 리렌더링이 생길 수 있는 한계가 있습니다. 반면 Zustand는 컴포넌트 트리 외부의 클로저에 상태를 두고, Selector를 통해 실제로 사용하는 속성이 변경되었을 때만 정밀하게 리렌더링하므로 고빈도 UI 업데이트에서도 렌더링 낭비가 전혀 없습니다.',
     },
     {
       question:
-        '이커머스 상품 검색·분석 같은 실무 대시보드에서 왜 Context API 하나로 끝내지 않고 Zustand와 React Query를 둘 다 쓰나요? 과설계 아닌가요?',
+        '목록·필터·차트가 함께 있는 대시보드처럼 서버 데이터와 화면 상태가 섞인 화면에서, 왜 Context API 하나로 끝내지 않고 Zustand와 React Query를 둘 다 쓰나요? 과설계 아닌가요?',
       answer:
-        'Context API에 서버 데이터와 클라이언트 UI 상태를 한 번에 몰아넣으면, 찜 버튼 하나를 눌렀을 뿐인데 서버 트렌드 차트를 그리는 무거운 컴포넌트까지 통째로 불필요하게 재렌더링되는 성능 문제가 발생합니다. React Query와 Zustand는 구독 단위가 극도로 세밀하여 실제로 값이 바뀐 컴포넌트만 정밀 리렌더링됩니다. 소규모 앱에서는 단순 useState로도 동작할 수 있으나, 서비스 확장 시 "서버 캐시 데이터와 클라이언트 전용 UI 상태의 명확한 관심사 분리 아키텍처"를 확립하고 불필요한 렌더링을 차단하기 위한 필수적인 설계 선택입니다.',
+        'Context API에 서버 데이터와 화면 상태를 한꺼번에 담으면, 필터 버튼 하나를 눌렀을 뿐인데 무거운 차트까지 통째로 다시 그려지는 성능 문제가 생길 수 있습니다. React Query와 Zustand는 구독 단위가 세밀해서 실제로 값이 바뀐 컴포넌트만 다시 그립니다. 규모가 작은 앱에서는 useState만으로도 충분히 동작할 수 있습니다. 하지만 서비스가 커질수록 "서버에서 가져온 데이터"와 "화면 안에서만 쓰는 상태"를 나눠 두는 편이 불필요한 렌더링을 줄이고 유지보수하기 쉽습니다.',
     },
     {
       question:
-        '법률·노무 진단 서비스처럼 상태에 따라 결과가 동적으로 바뀌는 화면에서, 추천 액션 계산 로직을 스토어 내부에 두지 않고 useMemo 기반 훅으로 분리하는 이유는 무엇인가요?',
+        '입력값에 따라 결과가 계산되어 나오는 화면(진단, 계산기, 추천 등)에서, 계산 결과를 스토어에 저장하지 않고 useMemo 기반 훅으로 분리하는 이유는 무엇인가요?',
       answer:
-        '첫째, Zustand의 persist 미들웨어는 localStorage 저장 시 `JSON.stringify`를 거치기 때문에 자바스크립트 함수(계산 로직)는 직렬화되지 못하고 새로고침 시 증발합니다. 둘째, 계산된 결과값을 스토어에 중복 저장하면 원본 케이스 데이터가 바뀔 때마다 계산 결과도 함께 갱신해야 하는 "동기화 유지 부담"이 생깁니다. 만약 동기화를 깜빡하면 화면에 낡은 추천 결과가 표시되는 치명적 버그가 발생합니다. 따라서 스토어에는 순수 원천 데이터만 남기고, 파생 로직은 `useMemo` 훅으로 분리하여 항상 최신 상태를 보장하는 것이 안전합니다. Vue의 Pinia라면 `getter`가 이 역할을 기본 내장 문법으로 훨씬 우아하게 해결합니다.',
+        '첫째, 계산된 결과값을 스토어에 따로 저장하면 원본 데이터가 바뀔 때마다 결과도 함께 갱신해야 하는 "동기화 부담"이 생깁니다. 둘째, 갱신을 빠뜨리면 원본과 다른 낡은 결과가 화면에 표시되는 버그가 생깁니다. 셋째, persist 미들웨어로 저장하면 낡은 계산 결과까지 그대로 저장돼서, 계산 규칙이 바뀐 뒤에도 옛 결과가 남을 수 있습니다. 그래서 스토어에는 원본 데이터만 두고, 계산 결과는 useMemo 기반 훅에서 그때그때 만드는 것이 안전합니다. Vue의 Pinia라면 getter가 이 역할을 기본 문법으로 해결합니다.',
     },
     {
       question:

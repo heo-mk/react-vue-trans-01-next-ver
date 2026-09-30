@@ -97,43 +97,43 @@ watchEffect(() => {
     {
       label: '실전 예제',
       version: 'React 18+ (TanStack Query + Zustand) vs Vue 3.4+ (Pinia)',
-      sourceProject: '이커머스 & 리포지토리 대시보드',
-      leftCode: `// [React] 실무 예시: 불변성을 활용한 Optimistic Update & 스냅샷 롤백
-// hooks/useRepoMutations.ts
-onMutate: async (repo) => {
+      sourceProject: '아이템 목록 대시보드',
+      leftCode: `// [React] 불변성을 활용한 낙관적 업데이트(Optimistic Update) & 스냅샷 롤백
+// hooks/useItemMutations.ts
+onMutate: async (item) => {
   // 이전 상태 스냅샷 복사 (불변성 보장)
-  const previousBookmarks = [...bookmarks];
+  const previousItems = [...items];
   // 낙관적 UI 즉각 업데이트
-  toggleBookmark(repo);
-  return { previousBookmarks };
+  toggleItem(item);
+  return { previousItems };
 },
-onError: (_error, _repo, context) => {
+onError: (_error, _item, context) => {
   // 에러 발생 시 백업 스냅샷으로 롤백
   if (context) {
-    setBookmarks(context.previousBookmarks);
+    setItems(context.previousItems);
   }
 };`,
       rightCode: `// [Vue] 동일 로직의 Vue/Pinia 구현 패턴
-// stores/useRepoStore.ts
-export const useRepoStore = defineStore('repo', () => {
-  const bookmarks = ref<Repo[]>([]);
+// stores/useItemStore.ts
+export const useItemStore = defineStore('item', () => {
+  const items = ref<Item[]>([]);
 
-  const toggleWithRollback = async (repo: Repo) => {
+  const toggleWithRollback = async (item: Item) => {
     // 롤백을 위해 현재 상태 스냅샷 저장
-    const rollback = [...bookmarks.value];
+    const rollback = [...items.value];
     // 프록시 배열 직접 조작 (즉시 반응)
-    const idx = bookmarks.value.findIndex((b) => b.id === repo.id);
-    if (idx >= 0) bookmarks.value.splice(idx, 1);
-    else bookmarks.value.push(repo);
+    const idx = items.value.findIndex((b) => b.id === item.id);
+    if (idx >= 0) items.value.splice(idx, 1);
+    else items.value.push(item);
 
     try {
-      await api.toggleBookmark(repo.id);
+      await api.toggleItem(item.id);
     } catch (err) {
       // 에러 발생 시 이전 스냅샷 복원
-      bookmarks.value = rollback;
+      items.value = rollback;
     }
   };
-  return { bookmarks, toggleWithRollback };
+  return { items, toggleWithRollback };
 });`,
     },
   ],

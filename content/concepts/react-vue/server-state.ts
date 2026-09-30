@@ -194,58 +194,58 @@ export function useUpdateTodo() {
       label: '실전 예제',
       version:
         'React 18+ (TanStack Query + Zustand) vs Vue 3.4+ (Vue Query + Pinia)',
-      sourceProject: '오픈소스 리포지토리 대시보드',
-      leftCode: `// [React] 실무 예시: 리포지토리 북마크 토글 및 낙관적 업데이트 (useRepoMutations.ts)
+      sourceProject: '아이템 목록 대시보드',
+      leftCode: `// [React] 아이템 즐겨찾기 토글 및 낙관적 업데이트 (useItemMutations.ts)
 // 즐겨찾기 토글 시 낙관적 업데이트와 실패 시 스냅샷 복원
-export function useToggleBookmarkMutation(bookmarks: Repo[], setBookmarks: (repos: Repo[]) => void) {
+export function useToggleFavoriteMutation(favorites: Item[], setFavorites: (items: Item[]) => void) {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: async (repo: Repo) => toggleBookmarkApi(repo.id),
-    onMutate: async (repo) => {
+    mutationFn: async (item: Item) => toggleFavoriteApi(item.id),
+    onMutate: async (item) => {
       // 1. 진행 중인 리패치 취소하여 낙관적 업데이트 덮어쓰기 방지
-      await queryClient.cancelQueries({ queryKey: ['bookmarks'] });
+      await queryClient.cancelQueries({ queryKey: ['favorites'] });
       // 2. 롤백을 위한 이전 상태 스냅샷 복사 (불변성 보장)
-      const previousBookmarks = [...bookmarks];
+      const previousFavorites = [...favorites];
       // 3. UI 즉시 낙관적 업데이트
-      const exists = bookmarks.some((b) => b.id === repo.id);
-      const next = exists ? bookmarks.filter((b) => b.id !== repo.id) : [...bookmarks, repo];
-      setBookmarks(next);
-      return { previousBookmarks };
+      const exists = favorites.some((b) => b.id === item.id);
+      const next = exists ? favorites.filter((b) => b.id !== item.id) : [...favorites, item];
+      setFavorites(next);
+      return { previousFavorites };
     },
-    onError: (_error, _repo, context) => {
+    onError: (_error, _item, context) => {
       // 4. 에러 발생 시 백업 스냅샷으로 즉시 롤백
-      if (context?.previousBookmarks) {
-        setBookmarks(context.previousBookmarks);
+      if (context?.previousFavorites) {
+        setFavorites(context.previousFavorites);
       }
     },
     onSettled: () => {
       // 5. 서버 진실값과 최종 재동기화
-      queryClient.invalidateQueries({ queryKey: ['bookmarks'] });
+      queryClient.invalidateQueries({ queryKey: ['favorites'] });
     },
   });
 }`,
       rightCode: `// [Vue] Vue 3.4+ Vue Query — useMutation을 통한 동일 로직 이식
 import { useMutation, useQueryClient } from '@tanstack/vue-query';
 
-export function useToggleBookmarkMutation(bookmarkStore: ReturnType<typeof useBookmarkStore>) {
+export function useToggleFavoriteMutation(favoriteStore: ReturnType<typeof useFavoriteStore>) {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: async (repo: Repo) => toggleBookmarkApi(repo.id),
-    onMutate: async (repo) => {
-      await queryClient.cancelQueries({ queryKey: ['bookmarks'] });
-      const previousBookmarks = [...bookmarkStore.bookmarks];
-      bookmarkStore.toggle(repo);
-      return { previousBookmarks };
+    mutationFn: async (item: Item) => toggleFavoriteApi(item.id),
+    onMutate: async (item) => {
+      await queryClient.cancelQueries({ queryKey: ['favorites'] });
+      const previousFavorites = [...favoriteStore.favorites];
+      favoriteStore.toggle(item);
+      return { previousFavorites };
     },
-    onError: (_err, _repo, context) => {
-      if (context?.previousBookmarks) {
-        bookmarkStore.bookmarks = context.previousBookmarks;
+    onError: (_err, _item, context) => {
+      if (context?.previousFavorites) {
+        favoriteStore.favorites = context.previousFavorites;
       }
     },
     onSettled: () => {
-      queryClient.invalidateQueries({ queryKey: ['bookmarks'] });
+      queryClient.invalidateQueries({ queryKey: ['favorites'] });
     },
   });
 }`,
@@ -254,13 +254,13 @@ export function useToggleBookmarkMutation(bookmarkStore: ReturnType<typeof useBo
       label: '실전 예제',
       version:
         'React 18+ (TanStack Query useInfiniteQuery) vs Vue 3.4+ (Vue Query useInfiniteQuery)',
-      sourceProject: '오픈소스 리포지토리 대시보드',
-      leftCode: `// [React] 실무 예시: 리포지토리 검색 무한 스크롤 방어 로직 (useRepoSearch.ts)
+      sourceProject: '무한 스크롤 목록 화면',
+      leftCode: `// [React] 검색 무한 스크롤 방어 로직 (useSearchInfinite.ts)
 // 외부 API의 total_count 부정확성에 대비한 무한 스크롤 이중 종료 방어 조건
-export function useRepoSearch(query: string) {
+export function useSearchInfinite(query: string) {
   return useInfiniteQuery({
-    queryKey: ['repos', 'search', query],
-    queryFn: ({ pageParam = 1 }) => fetchReposApi(query, pageParam),
+    queryKey: ['items', 'search', query],
+    queryFn: ({ pageParam = 1 }) => fetchItemsApi(query, pageParam),
     initialPageParam: 1,
     getNextPageParam: (lastPage, allPages) => {
       const fetchedCount = allPages.reduce((sum, p) => sum + p.items.length, 0);
@@ -277,10 +277,10 @@ export function useRepoSearch(query: string) {
       rightCode: `// [Vue] Vue 3.4+ Vue Query — 동일한 getNextPageParam 방어 로직 공유
 import { useInfiniteQuery } from '@tanstack/vue-query';
 
-export function useRepoSearch(query: Ref<string>) {
+export function useSearchInfinite(query: Ref<string>) {
   return useInfiniteQuery({
-    queryKey: () => ['repos', 'search', query.value],
-    queryFn: ({ pageParam = 1 }) => fetchReposApi(query.value, pageParam),
+    queryKey: () => ['items', 'search', query.value],
+    queryFn: ({ pageParam = 1 }) => fetchItemsApi(query.value, pageParam),
     initialPageParam: 1,
     getNextPageParam: (lastPage, allPages) => {
       const fetchedCount = allPages.reduce((sum, p) => sum + p.items.length, 0);
@@ -296,8 +296,8 @@ export function useRepoSearch(query: Ref<string>) {
     {
       label: '실전 예제',
       version: 'React 18+ (TanStack Query) vs Vue 3.4+ (Vue Query / Composable)',
-      sourceProject: '이커머스 상품 관리 및 분석 서비스',
-      leftCode: `// [React] 실무 예시: 동일 키워드 재검색 캐시 우회 (SearchSection.tsx)
+      sourceProject: '검색 화면',
+      leftCode: `// [React] 동일 키워드 재검색 캐시 우회 (SearchSection.tsx)
 // 동일 키워드 재검색 시 queryKey 캐시 우회 및 refetch 강제 트리거
 export function SearchSection() {
   const searchResultRef = useRef<{ refetch: () => void }>(null);
@@ -334,13 +334,13 @@ function handleSearch(keyword: string) {
     {
       label: '실전 예제',
       version: 'React 18+ (TanStack Query) vs Vue 3.4+ (Vue Query / useFetch)',
-      sourceProject: '노무·법률 진단 및 정산 서비스',
-      leftCode: `// [React] 실무 예시: 법령·판례 쿼리 캐시 정책 (legalQueries.ts)
-// 법령·판례 데이터의 도메인 특성(국회 심의·개정 주기)을 고려한 1시간 staleTime 정책
-export function useStatutesQuery(keyword: string) {
+      sourceProject: '자주 바뀌지 않는 정책·약관 조회 화면',
+      leftCode: `// [React] 정책·약관 쿼리 캐시 정책 (policyQueries.ts)
+// 변경 주기가 길고 안정적인 정책 데이터의 특성을 고려한 1시간 staleTime 정책
+export function usePolicyQuery(keyword: string) {
   return useQuery({
-    queryKey: ['statutes', keyword],
-    queryFn: () => fetchStatutes(keyword),
+    queryKey: ['policies', keyword],
+    queryFn: () => fetchPolicy(keyword),
     enabled: keyword.length > 0,
     staleTime: 1000 * 60 * 60, // 1시간 동안 신선한 데이터로 간주 (캐시 재사용)
     gcTime: 1000 * 60 * 60 * 2,  // 2시간 동안 메모리에 캐시 유지
@@ -349,12 +349,12 @@ export function useStatutesQuery(keyword: string) {
       rightCode: `// [Vue] Vue 3.4+ Vue Query — 동일한 도메인 기반 staleTime 적용
 import { useQuery } from '@tanstack/vue-query';
 
-export function useStatutesQuery(keyword: Ref<string>) {
+export function usePolicyQuery(keyword: Ref<string>) {
   return useQuery({
-    queryKey: () => ['statutes', keyword.value],
-    queryFn: () => fetchStatutes(keyword.value),
+    queryKey: () => ['policies', keyword.value],
+    queryFn: () => fetchPolicy(keyword.value),
     enabled: () => keyword.value.length > 0,
-    staleTime: 1000 * 60 * 60, // 1시간 (도메인 분석 기반 결정)
+    staleTime: 1000 * 60 * 60, // 1시간 (변경 주기 분석 기반 결정)
     gcTime: 1000 * 60 * 60 * 2,
   });
 }`,
@@ -371,25 +371,25 @@ export function useStatutesQuery(keyword: Ref<string>) {
       question:
         '낙관적 업데이트(Optimistic Update)는 비동기 처리 확정 전인데 성공한 것처럼 보여줘 사용자를 속이는 것 아닌가요? 연속 클릭 시 스냅샷이 꼬이지 않나요?',
       answer:
-        '낙관적 업데이트는 사용자 경험(UX)을 극대화하기 위한 의도된 트레이드오프입니다. 북마크나 좋아요처럼 실패 확률이 낮고 롤백 비용이 적은 인터랙션에서는 즉각적인 피드백의 가치가 큽니다(단, 금융 결제처럼 실패 비용이 큰 작업에는 절대 금기). 연속 클릭 시 스냅샷이 꼬이는 문제는 실제 취약점이 맞습니다. A, B 요청이 빠르게 겹칠 경우 나중에 실패한 롤백이 중간 변경을 덮어쓸 수 있습니다. 실무에서는 `mutationKey`를 통한 쿼리 직렬화나 낙관적 상태에 임시 ID/버전 번호를 부여하여 충돌을 방지하는 방향으로 고도화할 수 있습니다.',
+        '낙관적 업데이트는 사용자 경험(UX)을 극대화하기 위한 의도된 트레이드오프입니다. 북마크나 좋아요처럼 실패 확률이 낮고 롤백 비용이 적은 인터랙션에서는 즉각적인 피드백의 가치가 큽니다(단, 금융 결제처럼 실패 비용이 큰 작업에는 절대 금기). 연속 클릭 시 스냅샷이 꼬이는 문제는 실제 취약점이 맞습니다. A, B 요청이 빠르게 겹칠 경우 나중에 실패한 롤백이 중간 변경을 덮어쓸 수 있습니다. 현업이나 복잡한 환경에서는 `mutationKey`를 통한 쿼리 직렬화나 낙관적 상태에 임시 ID/버전 번호를 부여하여 충돌을 방지하는 방향으로 고도화할 수 있습니다.',
     },
     {
       question:
         '무한 스크롤 getNextPageParam에서 그냥 total_count만 확인하면 되는데 왜 굳이 페이지 아이템 수(< 10)까지 이중으로 체크했나요?',
       answer:
-        '외부 API(예: GitHub REST API)가 응답하는 `total_count`는 실시간 인덱싱 지연이나 권한 필터링 등으로 인해 실제 조회 가능한 데이터 개수와 불일치하거나 오차가 발생하는 경우가 빈번합니다. 만약 `total_count`만 맹신하면 이미 더 이상 데이터가 없음에도 다음 페이지를 끊임없이 헛요청하는 무한 루프 버그가 생길 수 있습니다. 따라서 클라이언트가 직접 수신한 "아이템 개수"로 1차 검증하고, total_count로 2차 검증하는 방어적 프로그래밍(Defensive Programming)을 적용했습니다.',
+        '외부 API(예: 외부 REST API)가 응답하는 `total_count`는 실시간 인덱싱 지연이나 권한 필터링 등으로 인해 실제 조회 가능한 데이터 개수와 불일치하거나 오차가 발생하는 경우가 빈번합니다. 만약 `total_count`만 맹신하면 이미 더 이상 데이터가 없음에도 다음 페이지를 끊임없이 헛요청하는 무한 루프 버그가 생길 수 있습니다. 따라서 클라이언트가 직접 수신한 "아이템 개수"로 1차 검증하고, total_count로 2차 검증하는 방어적 프로그래밍(Defensive Programming)을 적용했습니다.',
     },
     {
       question:
         '동일 키워드 재검색을 위해 부모가 ref로 자식의 refetch 함수를 직접 호출하는 것은 React의 단방향 데이터 흐름을 깨뜨리는 안티패턴 아닌가요?',
       answer:
-        '데이터를 아래로 전달하는 흐름 관점에서는 일반적인 패턴이 아님을 인정합니다. 하지만 이것은 상태를 전달하는 것이 아니라 일회성 "명령(Imperative Action)"을 트리거하는 것이므로, `useImperativeHandle`과 같은 맥락의 실용적 탈출구로 활용되었습니다. 더 원칙적이고 이상적인 대안은 검색 쿼리 상태 자체를 부모로 완전히 끌어올리거나, 동일 키워드라도 검색 클릭 시점의 타임스탬프를 쿼리 키에 포함시켜 자연스럽게 재요청을 유도하는 설계이며, 리팩터링 시 1순위로 고려할 부분입니다.',
+        '데이터를 아래로 전달하는 흐름 관점에서는 일반적인 패턴이 아닙니다. 하지만 이것은 상태를 전달하는 것이 아니라 일회성 "명령(Imperative Action)"을 트리거하는 것이므로, `useImperativeHandle`과 같은 맥락의 실용적 탈출구로 쓰이기도 합니다. 더 원칙적이고 이상적인 대안은 검색 쿼리 상태 자체를 부모로 완전히 끌어올리거나, 동일 키워드라도 검색 클릭 시점의 타임스탬프를 쿼리 키에 포함시켜 자연스럽게 재요청을 유도하는 설계입니다.',
     },
     {
       question:
-        '법령·약관 조회 서비스에서 법률 데이터의 staleTime을 1시간으로 설정한 명확한 기술적·도메인적 근거는 무엇인가요?',
+        '자주 바뀌지 않는 정책·약관 조회 화면에서 데이터의 staleTime을 1시간으로 설정한 명확한 기술적·상황적 근거는 무엇인가요?',
       answer:
-        'staleTime 기본값(0초)을 기계적으로 사용하지 않고 데이터의 실세계 도메인 라이프사이클을 분석했습니다. 법령 및 판례 데이터는 국회 심의와 공포 절차를 거치므로 주식 시세처럼 분/초 단위로 바뀌지 않으며 변경 주기가 수개월 단위입니다. 1시간은 불필요한 공공 API 트래픽을 원천 차단하면서도, 당일 발생한 법률 개정을 신속히 반영할 수 있는 가장 안전한 실용적 값입니다. 향후 개선한다면 공공 API 응답의 최종 수정일(Last-Modified) 메타데이터를 기반으로 한 조건부 캐시 무효화가 최선의 대안입니다.',
+        'staleTime 기본값(0초)을 기계적으로 쓰지 않고 데이터의 실제 변경 주기를 분석했기 때문입니다. 정책 기준이나 약관, 공지성 데이터는 주식 시세나 채팅처럼 분·초 단위로 바뀌지 않고 변경 주기가 매우 깁니다. 1시간은 불필요한 서버 트래픽을 차단하면서도, 당일 변경된 내용을 적절히 반영할 수 있는 실용적인 타협점입니다. 더 정밀하게 다룬다면 서버 응답의 최종 수정일(Last-Modified) 헤더를 활용한 조건부 캐시 무효화가 좋은 대안입니다.',
     },
     {
       question:
