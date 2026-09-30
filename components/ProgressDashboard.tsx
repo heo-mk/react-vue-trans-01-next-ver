@@ -1,10 +1,26 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
 import Link from 'next/link';
 import { useUiStore } from '@/store/useUiStore';
 import { useIsMounted } from '@/components/useIsMounted';
 import { allConcepts } from '@/content/index';
+
+function formatCardSummary(summary: string) {
+  if (!summary.includes(',')) {
+    return summary;
+  }
+  const parts = summary.split(',').map((part) => part.trim());
+  return parts.map((part, index) => {
+    const text = index < parts.length - 1 ? `${part},` : part;
+    return (
+      <Fragment key={index}>
+        {index > 0 ? ' ' : null}
+        <span style={{ display: 'inline-block' }}>{text}</span>
+      </Fragment>
+    );
+  });
+}
 
 type FilterType = 'all' | 'completed' | 'favorites';
 
@@ -155,11 +171,11 @@ export function ProgressDashboard() {
                         style={{
                           wordBreak: 'keep-all',
                           overflowWrap: 'anywhere',
-                          textWrap: 'balance',
+                          textWrap: 'pretty',
                         }}
                         className="mt-1.5 text-xs leading-relaxed text-[var(--text-secondary)]"
                       >
-                        {c.cardSummary}
+                        {formatCardSummary(c.cardSummary)}
                       </p>
                     ) : (
                       <p
