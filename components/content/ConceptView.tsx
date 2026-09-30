@@ -92,15 +92,9 @@ export function ConceptView({ concept }: ConceptViewProps) {
         {/* 직관적 비유 */}
         {concept.analogy && (
           <div className="mt-4 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] p-5">
-            <div className="flex items-center justify-between text-xs font-semibold text-[var(--text-secondary)]">
-              <span className="flex items-center gap-1.5">
-                <span>🎭</span> 직관적 비유
-              </span>
-              {concept.sourceNote && (
-                <span className="text-[11px] opacity-75">
-                  출처: {concept.sourceNote}
-                </span>
-              )}
+            <div className="flex items-center gap-1.5 text-xs font-semibold text-[var(--text-secondary)]">
+              <span>🎭</span>
+              <span>직관적 비유</span>
             </div>
             <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">
               {concept.analogy}

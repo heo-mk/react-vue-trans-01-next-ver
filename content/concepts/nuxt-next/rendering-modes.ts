@@ -26,7 +26,6 @@ export const renderingModes: ConceptPage = {
   ],
   analogy:
     'Next.js RSC는 완제품 로봇 사이에 사용자가 누를 버튼(클라이언트 컴포넌트)만 콕 집어 끼워 넣는 정밀 조립 라인이고, Nuxt 3는 전 세계 모든 콘센트 규격(Node, Cloudflare, Vercel)에 자동으로 맞춰지는 만능 여행용 변환 어댑터(Nitro)를 장착한 여행 키트입니다.',
-  sourceNote: '02_두번째 보고서 7장 "Nuxt3 ↔ Next.js 전환 가이드" 인용',
   comparisonTable: [
     {
       label: '기본 렌더링 모델',

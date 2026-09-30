@@ -74,7 +74,7 @@ async function inspectTypography() {
       await page.setViewport({ width, height: 1000, deviceScaleFactor: 1 });
       await new Promise((r) => setTimeout(r, 200));
 
-      const analysis = await page.evaluate((currWidth) => {
+      const analysis = await page.evaluate((currWidth: number) => {
         // Function to extract text lines rendered inside an element using Range
         function getRenderedLines(element: HTMLElement) {
           const textNodes: Node[] = [];

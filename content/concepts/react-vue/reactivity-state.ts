@@ -23,7 +23,6 @@ export const reactivityState: ConceptPage = {
   ],
   analogy:
     'Vue는 CCTV가 방 안을 계속 지켜보다가 무언가 움직이면 자동으로 반응하는 것과 같고, React는 누군가 초인종을 눌러야만 손님이 왔다는 사실을 아는 집주인과 같습니다.',
-  sourceNote: '01_통합보고서 1-1 "감시와 알림이라는 비유" 인용',
   comparisonTable: [
     {
       label: '근본 철학',

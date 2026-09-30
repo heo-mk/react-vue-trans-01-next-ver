@@ -24,8 +24,6 @@ export const optionsToComposition: ConceptPage = {
   ],
   analogy:
     'Vue2는 집사가 미리 정해진 방에만 CCTV를 달아두어 나중에 새로 생긴 방(새 속성)은 보지 못해 $set이 필요했던 방식이고, Vue3는 건물 전체 출입구에 경비원(Proxy)을 세워 어떤 방이든 나중에 생겨도 전부 감지하는 방식입니다.',
-  sourceNote:
-    '02_두번째 보고서 1.1 "핵심 차이: 속성별 감시에서 전체 감시로" 비유 인용',
   comparisonTable: [
     {
       label: '반응성 엔진',

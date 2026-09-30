@@ -26,8 +26,6 @@ export const serverState: ConceptPage = {
   ],
   analogy:
     'Promise는 출처를 묻지 않는 밀봉된 배송 봉투와 같고, TanStack Query는 그 봉투의 내용물이 아니라 겉면의 배송 상태(기다리는 중·성공·실패 상태 기계)를 전문적으로 관리하는 관제 센터입니다.',
-  sourceNote:
-    '01_통합보고서 3-3 "TanStack Query의 내부 원리" 및 TkDodo 블로그 철학 인용',
   comparisonNote:
     "이름에 '서버'가 붙어 있지만, TanStack Query가 실제로 요구하는 건 결과(또는 에러)를 담은 Promise를 돌려주는 함수뿐입니다. 데이터의 출처가 서버인지는 라이브러리가 따지지 않습니다. '서버 상태'는 기술 제한이 아니라, 내가 주인이 아니고 시간이 지나면 낡을 수 있는 비동기 데이터라는 성격을 부르는 이름입니다.",
   diagramId: 'server-state-diagram',

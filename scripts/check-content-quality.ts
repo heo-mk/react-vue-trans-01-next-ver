@@ -140,10 +140,10 @@ function checkConceptQuality(): QualityReport {
       });
     }
 
-    // 규칙 5: 인용 표현 출처 명시 (3-6)
-    if (concept.analogy && !concept.sourceNote) {
-      warnings.push(
-        `${id} 독창적 비유(analogy)가 포함되어 있으나 출처(sourceNote)가 명시되지 않았습니다.`
+    // 규칙 5: 화면에 표시되는 출처 표기는 외부 링크(http로 시작하는 주소)가 있는 것만 허용
+    if (concept.sourceNote) {
+      errors.push(
+        `❌ ${id} [내부 작업 정보 금지] 내부 작업용 출처 표기(sourceNote: "${concept.sourceNote}")는 허용되지 않습니다. 출처는 sources 필드의 클릭 가능한 외부 공식 문서 URL이어야 합니다.`
       );
     }
 
@@ -172,15 +172,14 @@ function checkConceptQuality(): QualityReport {
         }
         if (!src.url || src.url.trim() === '' || !src.url.startsWith('http')) {
           errors.push(
-            `${id} 참고 출처 ${i + 1}번째 항목("${src.label}"): 사용자가 실제로 클릭해서 열어볼 수 있는 외부 URL이 누락되었거나 유효하지 않습니다. (URL 필수)`
+            `${id} 참고 출처 ${i + 1}번째 항목("${src.label}"): 사용자가 실제로 클릭해서 열어볼 수 있는 외부 URL이 누락되었거나 유효하지 않습니다. (http/https 외부 링크 필수)`
           );
         }
         if (
-          !src.url &&
           /(보고서|[0-9]+장|[0-9]+\.[0-9]+|섹션)/.test(src.label)
         ) {
           errors.push(
-            `${id} 참고 출처 "${src.label}": 내부 보고서/섹션 자기참조는 참고문헌 목록에 넣을 수 없습니다. (본문 괄호 인용 필요)`
+            `${id} 참고 출처 "${src.label}": 내부 보고서/섹션 자기참조는 참고문헌 목록에 넣을 수 없습니다.`
           );
         }
       });
@@ -199,8 +198,21 @@ function checkConceptQuality(): QualityReport {
       });
     }
 
-    // 규칙 10: 특정 개인 프로젝트 및 특정 업종 금지어 전수 검증 (일반화 품질 규칙)
+    // 규칙 10: 내부 작업용 정보 및 특정 개인 프로젝트/업종 금지어 전수 검증
+    const INTERNAL_WORK_TERMS = [
+      '통합보고서',
+      '두번째 보고서',
+      '보고서',
+      '인용 및 통합',
+      '01_',
+      '02_',
+      '03_',
+      '노트',
+      '정리본',
+    ];
+
     const FORBIDDEN_TERMS = [
+      ...INTERNAL_WORK_TERMS,
       // 프로젝트 이름
       'GitFind',
       'smartstore-item-finder',
@@ -235,8 +247,12 @@ function checkConceptQuality(): QualityReport {
       if (!text) return;
       for (const term of FORBIDDEN_TERMS) {
         if (text.includes(term)) {
+          const isInternalWork = INTERNAL_WORK_TERMS.includes(term);
+          const category = isInternalWork
+            ? '내부 작업용 정보 위반'
+            : '특정 프로젝트/업종 표현 위반';
           errors.push(
-            `❌ ${id} [금지어 위반] ${location}에 금지된 특정 프로젝트/업종 표현 '${term}'이(가) 포함되어 있습니다.`
+            `❌ ${id} [${category}] ${location}에 금지 문자열 '${term}'이(가) 포함되어 있습니다.`
           );
         }
       }
@@ -248,6 +264,8 @@ function checkConceptQuality(): QualityReport {
     checkTextForForbidden(concept.cardSummary, '카드 요약(cardSummary)');
     checkTextForForbidden(concept.oneLineSummary, '한줄 요약(oneLineSummary)');
     checkTextForForbidden(concept.analogy, '비유(analogy)');
+    checkTextForForbidden(concept.comparisonNote, '비교표 참고(comparisonNote)');
+    checkTextForForbidden(concept.sourceNote, '출처(sourceNote)');
     concept.comparisonTable?.forEach((row, i) => {
       checkTextForForbidden(row.label, `비교표 ${i + 1}행 라벨`);
       checkTextForForbidden(row.left, `비교표 ${i + 1}행 좌측`);
@@ -256,6 +274,7 @@ function checkConceptQuality(): QualityReport {
     });
     concept.codeExamples?.forEach((ex, i) => {
       checkTextForForbidden(ex.label, `코드 예제 ${i + 1} 라벨`);
+      checkTextForForbidden(ex.version, `코드 예제 ${i + 1} 버전`);
       checkTextForForbidden(
         ex.sourceProject,
         `코드 예제 ${i + 1} 출처 프로젝트(sourceProject)`
@@ -272,6 +291,7 @@ function checkConceptQuality(): QualityReport {
     });
     concept.sources?.forEach((src, i) => {
       checkTextForForbidden(src.label, `참고 출처 ${i + 1}번째 라벨`);
+      checkTextForForbidden(src.url, `참고 출처 ${i + 1}번째 URL`);
     });
   }
 

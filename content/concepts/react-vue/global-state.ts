@@ -27,8 +27,6 @@ export const globalState: ConceptPage = {
   ],
   analogy:
     'Pinia는 거실에 걸린 공용 화이트보드와 같아서 누구나 메모를 적거나 지우면 그 방에 있는 가족 모두에게 즉시 보입니다. 반면 Zustand는 은행의 개인 금고 시스템과 같아서, 컴포넌트 바깥 독립된 금고(클로저)에 값을 보관하고 각 컴포넌트가 자신이 필요한 통장 내역(Selector)만 선택적으로 확인합니다.',
-  sourceNote:
-    '01_통합보고서 3장 및 02_두번째 보고서 4장 "2026년 상태 관리 생태계" 인용 및 통합',
   diagramId: 'global-state-diagram',
   comparisonTable: [
     {
