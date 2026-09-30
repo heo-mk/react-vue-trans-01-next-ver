@@ -1,4 +1,5 @@
 import { Pitfall } from '@/content/schema';
+import { FormattedContentRenderer } from './FormattedContentRenderer';
 
 interface PitfallCalloutProps {
   pitfalls: Pitfall[];
@@ -36,9 +37,9 @@ export function PitfallCallout({ pitfalls }: PitfallCalloutProps) {
               <span className="shrink-0 rounded-md border border-[var(--diagram-ok-border)] bg-[var(--diagram-ok-bg)] px-2 py-0.5 font-mono text-xs font-bold text-[var(--diagram-ok-text)]">
                 A
               </span>
-              <p className="text-sm leading-relaxed text-[var(--text-secondary)]">
-                {pitfall.answer}
-              </p>
+              <div className="flex-1">
+                <FormattedContentRenderer content={pitfall.answer} />
+              </div>
             </div>
           </div>
         ))}

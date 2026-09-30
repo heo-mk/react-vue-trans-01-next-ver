@@ -21,8 +21,19 @@ export const reactivityState: ConceptPage = {
     '가상 DOM',
     'React.memo',
   ],
-  analogy:
-    'Vue는 CCTV가 방 안을 계속 지켜보다가 무언가 움직이면 자동으로 반응하는 것과 같고, React는 누군가 초인종을 눌러야만 손님이 왔다는 사실을 아는 집주인과 같습니다.',
+  analogy: {
+    listType: 'bullet',
+    items: [
+      {
+        term: 'Vue',
+        desc: 'CCTV가 방 안을 계속 지켜보다가 무언가 움직이면 자동으로 반응하는 것과 같습니다.',
+      },
+      {
+        term: 'React',
+        desc: '누군가 초인종을 눌러야만 손님이 왔다는 사실을 아는 집주인과 같습니다.',
+      },
+    ],
+  },
   comparisonTable: [
     {
       label: '근본 철학',
@@ -141,20 +152,61 @@ export const useItemStore = defineStore('item', () => {
     {
       question:
         'React의 useState는 왜 Vue의 data()처럼 자동으로 반응하지 않나요? React가 기술적으로 뒤떨어진 건가요?',
-      answer:
-        '기술 수준의 문제가 아니라 설계 철학의 문제입니다. Vue는 Proxy로 자동 추적하는 대신, 어떤 값이 어디서 쓰이는지 내부적으로 계속 계산하고 추적하는 런타임 비용을 집니다. 반면 React는 그 비용 대신, 상태 변경 시점을 개발자가 명시하게 하여 데이터 흐름과 렌더링 시점을 예측하기 쉽게 만드는 쪽을 택했습니다. 두 방식 모두 정당한 트레이드오프이며 우열의 문제가 아닙니다.',
+      answer: {
+        lead: '기술 수준의 문제가 아니라 설계 철학의 문제입니다.',
+        listType: 'bullet',
+        items: [
+          {
+            term: 'Vue',
+            desc: 'Proxy로 자동 추적하는 대신, 어떤 값이 어디서 쓰이는지 내부적으로 계속 계산하고 추적하는 런타임 비용을 집니다.',
+          },
+          {
+            term: 'React',
+            desc: '그 비용 대신, 상태 변경 시점을 개발자가 명시하게 하여 데이터 흐름과 렌더링 시점을 예측하기 쉽게 만드는 쪽을 택했습니다.',
+          },
+        ],
+        closing: '두 방식 모두 정당한 트레이드오프이며 우열의 문제가 아닙니다.',
+      },
     },
     {
       question:
         'React에서 컴포넌트가 다시 그려지는(Re-rendering) 경우는 언제 발생하나요?',
-      answer:
-        '크게 세 가지입니다. 첫째, useState의 setter 함수가 호출되어 상태가 변경될 때. 둘째, 부모 컴포넌트가 리렌더링될 때(자식은 props가 안 바뀌어도 React.memo가 없으면 기본적으로 함께 다시 그려집니다). 셋째, 구독 중인 Context 값이 바뀔 때입니다.',
+      answer: {
+        lead: '크게 세 가지입니다.',
+        listType: 'ordered',
+        items: [
+          {
+            term: '상태 변경',
+            desc: 'useState의 setter 함수가 호출되어 상태가 변경될 때 발생합니다.',
+          },
+          {
+            term: '부모 리렌더링',
+            desc: '부모 컴포넌트가 리렌더링될 때 발생합니다 (자식은 props가 안 바뀌어도 React.memo가 없으면 기본적으로 함께 다시 그려집니다).',
+          },
+          {
+            term: 'Context 구독',
+            desc: '구독 중인 Context 값이 바뀔 때 발생합니다.',
+          },
+        ],
+      },
     },
     {
       question:
         'Vue에서 ref로 선언한 상태를 count = count + 1 처럼 직접 재할당하면 왜 반응성이 끊어지나요?',
-      answer:
-        'ref()는 원시값을 Proxy 객체({ value: T })로 감싸서 반환합니다. count에 직접 값을 재할당하면 Proxy 래퍼 자체가 일반 숫자로 덮어씌워져 Vue의 반응성 추적 체계에서 완전히 이탈합니다. 스크립트에서는 반드시 count.value로 내부 프로퍼티를 조작해야 반응성 트래킹이 정상 동작합니다.',
+      answer: {
+        lead: 'ref()는 원시값을 Proxy 객체({ value: T })로 감싸서 반환합니다.',
+        listType: 'ordered',
+        items: [
+          {
+            term: '추적 체계 이탈',
+            desc: 'count에 직접 값을 재할당하면 Proxy 래퍼 자체가 일반 숫자로 덮어씌워져 Vue의 반응성 추적 체계에서 완전히 이탈합니다.',
+          },
+          {
+            term: '정상 동작 방법',
+            desc: '스크립트에서는 반드시 count.value로 내부 프로퍼티를 조작해야 반응성 트래킹이 정상 동작합니다.',
+          },
+        ],
+      },
     },
   ],
   sources: [

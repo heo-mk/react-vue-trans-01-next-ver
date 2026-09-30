@@ -24,8 +24,19 @@ export const renderingModes: ConceptPage = {
     'useFetch',
     'useAsyncData',
   ],
-  analogy:
-    'Next.js RSC는 완제품 로봇 사이에 사용자가 누를 버튼(클라이언트 컴포넌트)만 콕 집어 끼워 넣는 정밀 조립 라인이고, Nuxt 3는 전 세계 모든 콘센트 규격(Node, Cloudflare, Vercel)에 자동으로 맞춰지는 만능 여행용 변환 어댑터(Nitro)를 장착한 여행 키트입니다.',
+  analogy: {
+    listType: 'bullet',
+    items: [
+      {
+        term: 'Next.js RSC',
+        desc: '완제품 로봇 사이에 사용자가 누를 버튼(클라이언트 컴포넌트)만 콕 집어 끼워 넣는 정밀 조립 라인입니다.',
+      },
+      {
+        term: 'Nuxt 3',
+        desc: '전 세계 모든 콘센트 규격(Node, Cloudflare, Vercel)에 자동으로 맞춰지는 만능 여행용 변환 어댑터(Nitro)를 장착한 여행 키트입니다.',
+      },
+    ],
+  },
   comparisonTable: [
     {
       label: '기본 렌더링 모델',
@@ -134,14 +145,44 @@ const submit = async () => {
     {
       question:
         "Next.js App Router에서 컴포넌트 상단에 'use client'를 선언하면, 이 컴포넌트는 서버에서 전혀 실행되지 않고 브라우저에서만 렌더링되나요?",
-      answer:
-        '흔히 하는 대표적인 착각입니다. \'use client\'는 "클라이언트 전용 렌더링(CSR)"을 뜻하는 것이 아니라, "클라이언트 번들에 포함되어 브라우저 API와 리액트 훅(useState, useEffect)을 사용할 수 있는 경계(Boundary)"를 지정하는 것입니다. 초기 페이지 요청 시 \'use client\' 컴포넌트 역시 서버에서 HTML로 사전 렌더링(SSR)된 후 브라우저로 전송되어 하이드레이션됩니다. 따라서 window나 localStorage 같은 브라우저 전용 객체에 렌더 본문에서 직접 접근하면 서버에서 ReferenceError가 발생합니다.',
+      answer: {
+        lead: "흔히 하는 대표적인 착각입니다. 'use client'는 클라이언트 전용 렌더링(CSR)을 뜻하는 것이 아닙니다.",
+        listType: 'ordered',
+        items: [
+          {
+            term: '경계(Boundary) 지정',
+            desc: '클라이언트 번들에 포함되어 브라우저 API와 리액트 훅(useState, useEffect)을 사용할 수 있는 경계를 지정하는 것입니다.',
+          },
+          {
+            term: '서버 사전 렌더링(SSR)',
+            desc: "초기 페이지 요청 시 'use client' 컴포넌트 역시 서버에서 HTML로 사전 렌더링된 후 브라우저로 전송되어 하이드레이션됩니다.",
+          },
+          {
+            term: '브라우저 전용 객체 주의',
+            desc: '따라서 window나 localStorage 같은 브라우저 전용 객체에 렌더 본문에서 직접 접근하면 서버에서 ReferenceError가 발생합니다.',
+          },
+        ],
+      },
     },
     {
       question:
         'Nuxt 3에서 useAsyncData나 useFetch 없이 일반 axios/fetch를 컴포넌트 본문에서 직접 호출하면 어떤 문제가 생기나요?',
-      answer:
-        '서버에서 초기 HTML을 렌더링할 때 한 번 호출되고, 브라우저가 HTML을 받아 Hydration을 수행할 때 클라이언트에서 또 한 번 호출되는 "이중 네트워크 요청(Double Fetching)" 현상이 발생합니다. 또한 서버 응답과 클라이언트 재요청 시점의 데이터가 미세하게 다를 경우 상태 불일치(Hydration Mismatch) 경고가 발생합니다. Nuxt의 useFetch는 서버 응답을 페이로드에 직렬화하여 클라이언트가 그대로 재사용하므로 중복 요청과 불일치를 완벽히 방지합니다.',
+      answer: {
+        lead: '서버와 브라우저에서 같은 요청이 실행되어 두 가지 문제가 생깁니다.',
+        listType: 'ordered',
+        items: [
+          {
+            term: '이중 네트워크 요청(Double Fetching)',
+            desc: '서버에서 초기 HTML을 렌더링할 때 한 번, 브라우저가 Hydration할 때 또 한 번 호출됩니다.',
+          },
+          {
+            term: '상태 불일치(Hydration Mismatch)',
+            desc: '서버 응답과 클라이언트 재요청 시점의 데이터가 미세하게 다르면 경고가 발생합니다.',
+          },
+        ],
+        closing:
+          'Nuxt의 useFetch는 서버 응답을 페이로드에 직렬화하여 클라이언트가 그대로 재사용하므로 중복 요청과 불일치를 완벽히 방지합니다.',
+      },
     },
   ],
   sources: [

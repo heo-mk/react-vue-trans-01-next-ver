@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { allConcepts } from '../content/index';
+import { getContentPlainText } from '../content/schema';
 
 interface QualityReport {
   passed: boolean;
@@ -156,6 +157,22 @@ function checkConceptQuality(): QualityReport {
           errors.push(
             `${id} 함정 문답 ${i + 1}에 빈 질문 또는 답변이 있습니다.`
           );
+        } else {
+          // 신규 규칙 A: 목록이 없는 답변이 200자를 넘으면 경고
+          if (typeof pf.answer === 'string') {
+            if (pf.answer.length > 200) {
+              warnings.push(
+                `${id} 함정 문답 ${i + 1}: 목록이 없는 산문 답변이 200자를 초과합니다 (${pf.answer.length}자). 가독성을 위해 목록 분리를 권장합니다.`
+              );
+            }
+          } else {
+            // 신규 규칙 B: 목록 항목이 6개를 넘으면 경고
+            if (pf.answer.items && pf.answer.items.length > 6) {
+              warnings.push(
+                `${id} 함정 문답 ${i + 1}: 목록 항목이 6개를 초과합니다 (${pf.answer.items.length}개). 인지 부담 완화를 위해 2~5개 항목을 권장합니다.`
+              );
+            }
+          }
         }
       });
     }
@@ -263,7 +280,7 @@ function checkConceptQuality(): QualityReport {
     checkTextForForbidden(concept.cardSubtitle, '카드 부제(cardSubtitle)');
     checkTextForForbidden(concept.cardSummary, '카드 요약(cardSummary)');
     checkTextForForbidden(concept.oneLineSummary, '한줄 요약(oneLineSummary)');
-    checkTextForForbidden(concept.analogy, '비유(analogy)');
+    checkTextForForbidden(getContentPlainText(concept.analogy), '비유(analogy)');
     checkTextForForbidden(concept.comparisonNote, '비교표 참고(comparisonNote)');
     checkTextForForbidden(concept.sourceNote, '출처(sourceNote)');
     concept.comparisonTable?.forEach((row, i) => {
@@ -284,7 +301,7 @@ function checkConceptQuality(): QualityReport {
     });
     concept.pitfalls?.forEach((pf, i) => {
       checkTextForForbidden(pf.question, `함정 문답 ${i + 1} 질문`);
-      checkTextForForbidden(pf.answer, `함정 문답 ${i + 1} 답변`);
+      checkTextForForbidden(getContentPlainText(pf.answer), `함정 문답 ${i + 1} 답변`);
     });
     concept.keywords?.forEach((kw, i) => {
       checkTextForForbidden(kw, `키워드 ${i + 1}번째`);
@@ -319,7 +336,15 @@ function checkConceptQuality(): QualityReport {
             c.oneLineSummary.toLowerCase().includes(query) ||
             c.slug.toLowerCase().includes(query) ||
             (c.keywords &&
-              c.keywords.some((k) => k.toLowerCase().includes(query)))
+              c.keywords.some((k) => k.toLowerCase().includes(query))) ||
+            (c.analogy &&
+              getContentPlainText(c.analogy).toLowerCase().includes(query)) ||
+            (c.pitfalls &&
+              c.pitfalls.some(
+                (p) =>
+                  p.question.toLowerCase().includes(query) ||
+                  getContentPlainText(p.answer).toLowerCase().includes(query)
+              ))
         );
 
         if (matched.length === 0) {

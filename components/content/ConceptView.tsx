@@ -6,6 +6,7 @@ import { axisMetadata } from '@/content/index';
 import { ComparisonTable } from './ComparisonTable';
 import { CodeExample } from './CodeExample';
 import { PitfallCallout } from './PitfallCallout';
+import { FormattedContentRenderer } from './FormattedContentRenderer';
 import { DiagramSvg } from '@/components/diagram/DiagramSvg';
 import { useUiStore } from '@/store/useUiStore';
 import { useIsMounted } from '@/components/useIsMounted';
@@ -96,9 +97,9 @@ export function ConceptView({ concept }: ConceptViewProps) {
               <span>🎭</span>
               <span>직관적 비유</span>
             </div>
-            <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">
-              {concept.analogy}
-            </p>
+            <div className="mt-2">
+              <FormattedContentRenderer content={concept.analogy} />
+            </div>
           </div>
         )}
       </header>

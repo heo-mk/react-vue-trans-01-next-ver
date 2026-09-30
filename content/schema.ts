@@ -15,9 +15,36 @@ export interface CodeExample {
   sourceProject?: string; // 실전 예제일 경우 적용 도메인/시나리오 예시
 }
 
+export interface StructuredItem {
+  term?: string; // 굵게 강조할 핵심어 (선택)
+  desc: string; // 본문 설명
+}
+
+export interface StructuredContent {
+  lead?: string; // 결론 한 줄 또는 도입 문장
+  listType: 'ordered' | 'bullet'; // 'ordered' -> 1), 2), 3) / 'bullet' -> •
+  items: StructuredItem[]; // 목록 항목들 (2~5개 권장)
+  closing?: string; // 마무리 한 줄
+}
+
+export type FormattedContent = string | StructuredContent;
+
+export function getContentPlainText(content: FormattedContent | undefined): string {
+  if (!content) return '';
+  if (typeof content === 'string') return content;
+  const parts: string[] = [];
+  if (content.lead) parts.push(content.lead);
+  for (const item of content.items) {
+    if (item.term) parts.push(item.term);
+    if (item.desc) parts.push(item.desc);
+  }
+  if (content.closing) parts.push(content.closing);
+  return parts.join(' ');
+}
+
 export interface Pitfall {
   question: string; // 면접/학습 함정 질문
-  answer: string; // 함정 없는 답변
+  answer: FormattedContent; // 함정 없는 답변 (문자열 또는 구조화 목록)
 }
 
 export interface ConceptPage {
@@ -29,7 +56,7 @@ export interface ConceptPage {
   cardSummary: string; // 카드 그리드용 전용 요약문 (45자 이내, 한 문장)
   oneLineSummary: string; // 파인만 테크닉 — 어린아이도 이해할 요약
   keywords: string[]; // 검색 및 색인용 키워드 목록
-  analogy?: string; // 비유 (출처가 있으면 sourceNote에 명시)
+  analogy?: FormattedContent; // 비유 (출처가 있으면 sourceNote에 명시)
   comparisonNote?: string; // 비교표 상단 참고 문구
   comparisonTable: ComparisonRow[];
   codeExamples: CodeExample[];

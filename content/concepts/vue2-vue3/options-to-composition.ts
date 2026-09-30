@@ -22,8 +22,19 @@ export const optionsToComposition: ConceptPage = {
     'ref',
     'toRefs',
   ],
-  analogy:
-    'Vue2는 집사가 미리 정해진 방에만 CCTV를 달아두어 나중에 새로 생긴 방(새 속성)은 보지 못해 $set이 필요했던 방식이고, Vue3는 건물 전체 출입구에 경비원(Proxy)을 세워 어떤 방이든 나중에 생겨도 전부 감지하는 방식입니다.',
+  analogy: {
+    listType: 'bullet',
+    items: [
+      {
+        term: 'Vue 2',
+        desc: '집사가 미리 정해진 방에만 CCTV를 달아두어 나중에 새로 생긴 방(새 속성)은 보지 못해 $set이 필요했던 방식입니다.',
+      },
+      {
+        term: 'Vue 3',
+        desc: '건물 전체 출입구에 경비원(Proxy)을 세워 어떤 방이든 나중에 생겨도 전부 감지하는 방식입니다.',
+      },
+    ],
+  },
   comparisonTable: [
     {
       label: '반응성 엔진',
@@ -161,14 +172,46 @@ const { page, nextPage } = useTablePagination((newPage) => {
     {
       question:
         'Vue2에서는 왜 객체에 새 속성을 추가하거나 배열 인덱스로 값을 바꿀 때 화면이 갱신되지 않았나요?',
-      answer:
-        'Vue2는 Object.defineProperty()를 사용해 컴포넌트 초기화 시점에 이미 존재하는 속성들에 대해서만 getter/setter를 구성했습니다. 초기화 이후에 추가된 새 속성이나 배열 인덱스(arr[0] = val)는 감시자가 달리지 않았기 때문에 변경을 감지하지 못했습니다. 이를 위해 Vue.set()이나 this.$set()이라는 특수 API를 강제해야 했습니다. Vue3는 객체 자체를 감싸는 Proxy를 도입하여 이 문제를 완전히 해결했습니다.',
+      answer: {
+        lead: 'Vue2의 반응성 엔진인 `Object.defineProperty()`의 동작 방식 때문입니다.',
+        listType: 'ordered',
+        items: [
+          {
+            term: '초기 속성만 감시',
+            desc: '컴포넌트 초기화 시점에 이미 존재하는 속성들에 대해서만 getter/setter를 구성하므로, 초기화 이후 추가된 새 속성이나 배열 인덱스(arr[0] = val)는 감시자가 달리지 않아 변경을 감지하지 못했습니다.',
+          },
+          {
+            term: 'Vue2 특수 API ($set)',
+            desc: '이 한계를 극복하기 위해 Vue.set()이나 this.$set()이라는 특수 API를 강제해야 했습니다.',
+          },
+          {
+            term: 'Vue3 Proxy 도입',
+            desc: 'Vue3는 객체 자체를 감싸는 Proxy를 도입하여 이 문제를 완전히 해결했습니다.',
+          },
+        ],
+      },
     },
     {
       question:
         'Vue3에서 reactive()로 감싼 객체를 const { count } = state 로 구조분해하면 반응성이 끊어지는 이유는 무엇인가요?',
-      answer:
-        'reactive()는 JavaScript의 Proxy 객체를 반환합니다. 구조분해 할당을 수행하면 Proxy 래퍼와의 연결이 끊어지고 원시값(Primitive Value)만 별도 변수로 복사됩니다. 복사된 변수는 더 이상 Proxy의 get/set 트래킹을 거치지 않으므로 값이 바뀌어도 화면이 갱신되지 않습니다. 반응성을 유지하면서 구조분해를 하려면 반드시 toRefs(state) 유틸리티를 사용해야 합니다.',
+      answer: {
+        lead: 'reactive()는 JavaScript의 Proxy 객체를 반환하기 때문입니다.',
+        listType: 'ordered',
+        items: [
+          {
+            term: 'Proxy 통로 단절',
+            desc: '구조분해 할당을 수행하면 Proxy 래퍼와의 연결이 끊어지고 원시값(Primitive Value)만 별도 변수로 복사됩니다.',
+          },
+          {
+            term: '트래킹 이탈',
+            desc: '복사된 변수는 더 이상 Proxy의 get/set 트래킹을 거치지 않으므로 값이 바뀌어도 화면이 갱신되지 않습니다.',
+          },
+          {
+            term: 'toRefs 유틸리티 해결책',
+            desc: '반응성을 유지하면서 구조분해를 하려면 반드시 toRefs(state) 유틸리티를 사용해야 합니다.',
+          },
+        ],
+      },
     },
   ],
   sources: [

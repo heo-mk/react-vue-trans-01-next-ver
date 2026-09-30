@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { allConcepts } from '@/content/index';
+import { getContentPlainText } from '@/content/schema';
 import { ThemeToggle } from '@/components/ThemeToggle';
 
 export function Navbar() {
@@ -23,7 +24,15 @@ export function Navbar() {
           c.oneLineSummary.toLowerCase().includes(query) ||
           c.slug.toLowerCase().includes(query) ||
           (c.keywords &&
-            c.keywords.some((k) => k.toLowerCase().includes(query)))
+            c.keywords.some((k) => k.toLowerCase().includes(query))) ||
+          (c.analogy &&
+            getContentPlainText(c.analogy).toLowerCase().includes(query)) ||
+          (c.pitfalls &&
+            c.pitfalls.some(
+              (p) =>
+                p.question.toLowerCase().includes(query) ||
+                getContentPlainText(p.answer).toLowerCase().includes(query)
+            ))
       )
     : [];
 
