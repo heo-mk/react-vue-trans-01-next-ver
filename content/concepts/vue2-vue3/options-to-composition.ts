@@ -182,8 +182,5 @@ const { page, nextPage } = useTablePagination((newPage) => {
       label: 'Vue 3 공식 문서 - Composition API FAQ',
       url: 'https://vuejs.org/guide/extras/composition-api-faq.html',
     },
-    {
-      label: '02_두번째 보고서 1.1 & 2.1 (Mixin에서 Composable로)',
-    },
   ],
 };

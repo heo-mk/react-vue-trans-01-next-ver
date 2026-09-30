@@ -152,32 +152,32 @@ export function ConceptView({ concept }: ConceptViewProps) {
       </section>
 
       {/* 5. 공식 출처 */}
-      {concept.sources && concept.sources.length > 0 && (
-        <footer className="mt-16 border-t border-[var(--border-subtle)] pt-8">
-          <h3 className="text-xs font-bold tracking-wider text-[var(--text-secondary)] uppercase">
-            참고 공식 문서 및 출처
-          </h3>
-          <ul className="mt-3 space-y-1.5 text-xs text-[var(--text-secondary)]">
-            {concept.sources.map((src, i) => (
-              <li key={i} className="flex items-center gap-1.5">
-                <span>🔗</span>
-                {src.url ? (
-                  <a
-                    href={src.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline transition-colors hover:text-[var(--text-primary)]"
-                  >
-                    {src.label}
-                  </a>
-                ) : (
-                  <span>{src.label}</span>
-                )}
-              </li>
-            ))}
-          </ul>
-        </footer>
-      )}
+      {concept.sources &&
+        concept.sources.filter((src) => src.url && src.url.startsWith('http'))
+          .length > 0 && (
+          <footer className="mt-16 border-t border-[var(--border-subtle)] pt-8">
+            <h3 className="text-xs font-bold tracking-wider text-[var(--text-secondary)] uppercase">
+              참고 공식 문서 및 출처
+            </h3>
+            <ul className="mt-3 space-y-1.5 text-xs text-[var(--text-secondary)]">
+              {concept.sources
+                .filter((src) => src.url && src.url.startsWith('http'))
+                .map((src, i) => (
+                  <li key={i} className="flex items-center gap-1.5">
+                    <span>🔗</span>
+                    <a
+                      href={src.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline transition-colors hover:text-[var(--text-primary)]"
+                    >
+                      {src.label}
+                    </a>
+                  </li>
+                ))}
+            </ul>
+          </footer>
+        )}
     </article>
   );
 }

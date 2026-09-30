@@ -167,8 +167,5 @@ export const useRepoStore = defineStore('repo', () => {
       label: 'Vue 3 공식 문서 - Reactivity Fundamentals',
       url: 'https://vuejs.org/guide/essentials/reactivity-fundamentals.html',
     },
-    {
-      label: '01_통합보고서 및 실무 낙관적 업데이트 아키텍처 정리',
-    },
   ],
 };

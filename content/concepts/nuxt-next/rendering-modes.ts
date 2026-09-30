@@ -154,8 +154,5 @@ const submit = async () => {
       label: 'Nuxt 3 공식 문서 - Rendering Modes & Nitro',
       url: 'https://nuxt.com/docs/guide/concepts/rendering',
     },
-    {
-      label: '02_두번째 보고서 7장 "Nuxt3 ↔ Next.js 전환 가이드"',
-    },
   ],
 };

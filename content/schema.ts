@@ -35,6 +35,6 @@ export interface ConceptPage {
   codeExamples: CodeExample[];
   diagramId?: string; // /scripts/build-diagrams.ts가 생성하는 svg id
   pitfalls: Pitfall[];
-  sources: { label: string; url?: string }[];
+  sources: { label: string; url: string }[]; // 클릭 가능한 외부 공식 문서 URL 필수
   sourceNote?: string; // 인용 표현을 그대로 가져온 경우 출처 명시 (3-6 규칙)
 }

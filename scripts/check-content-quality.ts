@@ -160,9 +160,30 @@ function checkConceptQuality(): QualityReport {
       });
     }
 
-    // 규칙 7: 출처 목록
+    // 규칙 7: 공식 문서 및 출처 목록 (클릭 가능한 외부 URL 필수, 내부 자기참조 금지)
     if (!concept.sources || concept.sources.length === 0) {
       warnings.push(`${id} 참고 출처(sources) 목록이 비어 있습니다.`);
+    } else {
+      concept.sources.forEach((src, i) => {
+        if (!src.label || src.label.trim() === '') {
+          errors.push(
+            `${id} 참고 출처 ${i + 1}번째 항목의 라벨(label)이 비어 있습니다.`
+          );
+        }
+        if (!src.url || src.url.trim() === '' || !src.url.startsWith('http')) {
+          errors.push(
+            `${id} 참고 출처 ${i + 1}번째 항목("${src.label}"): 사용자가 실제로 클릭해서 열어볼 수 있는 외부 URL이 누락되었거나 유효하지 않습니다. (URL 필수)`
+          );
+        }
+        if (
+          !src.url &&
+          /(보고서|[0-9]+장|[0-9]+\.[0-9]+|섹션)/.test(src.label)
+        ) {
+          errors.push(
+            `${id} 참고 출처 "${src.label}": 내부 보고서/섹션 자기참조는 참고문헌 목록에 넣을 수 없습니다. (본문 괄호 인용 필요)`
+          );
+        }
+      });
     }
 
     // 규칙 8: 검색 키워드(keywords) 1개 이상 등록 여부
