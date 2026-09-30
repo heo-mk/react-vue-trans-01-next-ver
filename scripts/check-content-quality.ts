@@ -56,6 +56,26 @@ function checkConceptQuality(): QualityReport {
       }
     }
 
+    // 규칙 1-2-1: 카드 부제(cardSubtitle) 28자 이내 및 말줄임 문자("...", "…") 금지 검증 (영문/기호 시각적 너비 고려)
+    if (concept.cardSubtitle) {
+      if (
+        concept.cardSubtitle.includes('...') ||
+        concept.cardSubtitle.includes('…')
+      ) {
+        errors.push(
+          `${id} 카드 부제(cardSubtitle: "${concept.cardSubtitle}")에 말줄임표가 포함되어 있습니다.`
+        );
+      }
+      const visualLength = concept.cardSubtitle
+        .split('')
+        .reduce((acc, char) => acc + (char.charCodeAt(0) > 127 ? 1 : 0.6), 0);
+      if (concept.cardSubtitle.length > 35 || visualLength > 28) {
+        errors.push(
+          `${id} 카드 부제(cardSubtitle: "${concept.cardSubtitle}")은 28자 이내여야 합니다. (현재 ${concept.cardSubtitle.length}자, 시각적 ${Math.round(visualLength)}자)`
+        );
+      }
+    }
+
     // 규칙 1-3: 카드 요약(cardSummary) 필수, 45자 이내, 한 문장 검증
     if (!concept.cardSummary || concept.cardSummary.trim().length === 0) {
       errors.push(`${id} 카드 요약(cardSummary)이 비어 있습니다.`);

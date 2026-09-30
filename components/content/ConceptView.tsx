@@ -9,6 +9,7 @@ import { PitfallCallout } from './PitfallCallout';
 import { DiagramSvg } from '@/components/diagram/DiagramSvg';
 import { useUiStore } from '@/store/useUiStore';
 import { useIsMounted } from '@/components/useIsMounted';
+import { FormattedTitle } from '@/components/FormattedTitle';
 
 interface ConceptViewProps {
   concept: ConceptPage;
@@ -41,9 +42,16 @@ export function ConceptView({ concept }: ConceptViewProps) {
       {/* 헤더 & 액션 바 */}
       <header className="border-b border-[var(--border-subtle)] pb-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-          <h1 className="text-2xl font-extrabold tracking-tight text-[var(--text-primary)] sm:text-3xl lg:text-4xl">
-            {concept.title}
-          </h1>
+          <div className="flex-1">
+            <h1 className="text-2xl font-extrabold tracking-tight text-[var(--text-primary)] sm:text-3xl lg:text-4xl [word-break:keep-all]">
+              <FormattedTitle text={concept.cardTitle || concept.title} />
+            </h1>
+            {concept.cardSubtitle && (
+              <p className="mt-2 text-sm font-medium text-[var(--text-secondary)] sm:text-base [word-break:keep-all]">
+                <FormattedTitle text={concept.cardSubtitle} />
+              </p>
+            )}
+          </div>
 
           {/* 읽음 및 즐겨찾기 인터랙션 */}
           <div className="flex shrink-0 items-center gap-2">

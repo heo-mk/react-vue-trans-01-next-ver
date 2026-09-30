@@ -83,14 +83,14 @@ export function Navbar() {
                       >
                         <div className="flex items-center justify-between text-xs">
                           <span className="font-semibold text-[var(--text-primary)]">
-                            {c.title}
+                            {c.cardTitle || c.title}
                           </span>
                           <span className="rounded bg-[var(--border-subtle)] px-1.5 py-0.5 text-[10px] text-[var(--text-secondary)]">
                             {c.axis}
                           </span>
                         </div>
                         <span className="line-clamp-1 text-[11px] text-[var(--text-secondary)]">
-                          {c.oneLineSummary}
+                          {c.cardSubtitle ? `${c.cardSubtitle} · ${c.oneLineSummary}` : c.oneLineSummary}
                         </span>
                       </button>
                     </li>

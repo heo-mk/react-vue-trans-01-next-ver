@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { allConcepts, axisMetadata } from '@/content/index';
 import { DiagramSvg } from '@/components/diagram/DiagramSvg';
 import { ProgressDashboard } from '@/components/ProgressDashboard';
+import { FormattedTitle } from '@/components/FormattedTitle';
 
 export default function Home() {
   const axes = Object.keys(axisMetadata) as (keyof typeof axisMetadata)[];
@@ -69,7 +70,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-3 md:grid-rows-[auto_1fr]">
             {axes.map((axis) => {
               const meta = axisMetadata[axis];
               const concepts = allConcepts.filter((c) => c.axis === axis);
@@ -77,9 +78,9 @@ export default function Home() {
               return (
                 <div
                   key={axis}
-                  className="flex flex-col justify-between rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] p-6 shadow-xs transition-all hover:border-emerald-500/40 hover:shadow-md"
+                  className="flex flex-col rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] p-6 shadow-xs transition-all hover:border-emerald-500/40 hover:shadow-md md:grid md:grid-rows-subgrid md:row-span-2 md:gap-y-0"
                 >
-                  <div>
+                  <div className="pb-6">
                     <div className="mb-3 flex items-center justify-between">
                       <span className="rounded-md bg-emerald-500/10 px-2.5 py-0.5 text-xs font-bold text-emerald-600 dark:text-emerald-400">
                         {meta.badge}
@@ -99,7 +100,7 @@ export default function Home() {
                     </p>
                   </div>
 
-                  <div className="mt-6 border-t border-[var(--border-subtle)] pt-4">
+                  <div className="border-t border-[var(--border-subtle)] pt-4 flex flex-col justify-start">
                     <span className="mb-2 block text-[11px] font-semibold tracking-wider text-[var(--text-secondary)] uppercase">
                       학습 가능한 개념
                     </span>
@@ -108,12 +109,21 @@ export default function Home() {
                         <li key={concept.slug}>
                           <Link
                             href={`/${axis}/${concept.slug}`}
-                            className="group flex items-center justify-between rounded-lg p-2 text-xs font-semibold text-[var(--text-primary)] transition-colors hover:bg-[var(--bg-primary)]"
+                            className="group flex items-center justify-between rounded-lg p-2 transition-colors hover:bg-[var(--bg-primary)] text-left"
                           >
-                            <span className="line-clamp-1 transition-colors group-hover:text-emerald-500">
-                              {concept.title}
-                            </span>
-                            <span className="text-[var(--text-secondary)] transition-transform group-hover:translate-x-0.5">
+                            <div className="flex flex-col text-left pr-2">
+                              <span className="text-xs font-bold text-[var(--text-primary)] transition-colors group-hover:text-emerald-500 [word-break:keep-all]">
+                                <FormattedTitle
+                                  text={concept.cardTitle || concept.title}
+                                />
+                              </span>
+                              {concept.cardSubtitle && (
+                                <span className="mt-0.5 text-[11px] font-normal text-[var(--text-secondary)] [word-break:keep-all]">
+                                  <FormattedTitle text={concept.cardSubtitle} />
+                                </span>
+                              )}
+                            </div>
+                            <span className="shrink-0 text-xs text-[var(--text-secondary)] transition-transform group-hover:translate-x-0.5">
                               →
                             </span>
                           </Link>
