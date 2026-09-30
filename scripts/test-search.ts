@@ -39,7 +39,16 @@ const testQueries = [
 ];
 
 console.log('=== 검색 기능 테스트 ===');
+let failedCount = 0;
 for (const q of testQueries) {
   const results = searchConcepts(q);
   console.log(`- '${q}' 검색: ${results.length}건 매칭 -> [${results.map((r) => r.slug).join(', ')}]`);
+  if (results.length === 0) {
+    failedCount++;
+  }
+}
+
+if (failedCount > 0) {
+  console.error(`❌ ${failedCount}개의 테스트 쿼리에서 검색 결과가 0건입니다.`);
+  process.exit(1);
 }

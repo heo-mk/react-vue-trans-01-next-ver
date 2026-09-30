@@ -18,15 +18,17 @@ function CodeBlock({
   code: string;
   badge?: string;
 }) {
-  const [copied, setCopied] = useState(false);
+  const [copyStatus, setCopyStatus] = useState<'idle' | 'copied' | 'error'>('idle');
 
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(code);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error('Failed to copy', err);
+      setCopyStatus('copied');
+      setTimeout(() => setCopyStatus('idle'), 2000);
+    } catch {
+      // 클립보드 API 권한 거부 또는 비보안 컨텍스트 등의 실패 상태를 UI에 표시
+      setCopyStatus('error');
+      setTimeout(() => setCopyStatus('idle'), 2500);
     }
   };
 
@@ -46,10 +48,26 @@ function CodeBlock({
         <button
           onClick={handleCopy}
           type="button"
-          className="cursor-pointer rounded border border-[var(--border-subtle)] px-2.5 py-1 text-xs font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-secondary)] hover:text-[var(--text-primary)]"
-          aria-label="코드 복사"
+          className={`cursor-pointer rounded border px-2.5 py-1 text-xs font-medium transition-colors ${
+            copyStatus === 'copied'
+              ? 'border-emerald-500/40 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400'
+              : copyStatus === 'error'
+                ? 'border-rose-500/40 bg-rose-500/10 text-rose-600 dark:text-rose-400'
+                : 'border-[var(--border-subtle)] text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] hover:text-[var(--text-primary)]'
+          }`}
+          aria-label={
+            copyStatus === 'copied'
+              ? '코드 복사 완료'
+              : copyStatus === 'error'
+                ? '코드 복사 실패'
+                : '코드 복사'
+          }
         >
-          {copied ? '✓ 복사됨' : '복사'}
+          {copyStatus === 'copied'
+            ? '✓ 복사됨'
+            : copyStatus === 'error'
+              ? '✕ 복사 실패'
+              : '복사'}
         </button>
       </div>
       <div className="overflow-x-auto p-4 font-mono text-xs leading-relaxed text-[var(--text-primary)]">
