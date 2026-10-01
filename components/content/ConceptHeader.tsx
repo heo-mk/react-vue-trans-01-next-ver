@@ -1,6 +1,5 @@
 'use client';
 
-import { useRef } from 'react';
 import Link from 'next/link';
 import { ConceptPage } from '@/content/schema';
 import { axisMetadata } from '@/content/index';
@@ -22,8 +21,6 @@ export function ConceptHeader({ concept }: ConceptHeaderProps) {
   const isRead = isMounted ? readConcepts.includes(concept.slug) : false;
   const isFav = isMounted ? favorites.includes(concept.slug) : false;
 
-  const headerRef = useRef<HTMLElement>(null);
-
   const rawTitle = concept.cardTitle || concept.title;
   // 괄호 포함 제목은 괄호 앞부분만 추출 (모바일 슬림 헤더용)
   const cleanTitle = rawTitle.split(/[(（]/)[0].trim();
@@ -33,8 +30,7 @@ export function ConceptHeader({ concept }: ConceptHeaderProps) {
 
   return (
     <header
-      ref={headerRef}
-      className="sticky top-[var(--header-height,64px)] z-30 w-full border-b border-[var(--border-subtle)] bg-[var(--bg-primary)]"
+      className="sticky top-[var(--header-height,64px)] z-30 w-full border-b border-[var(--border-subtle)] bg-[var(--bg-primary)] isolate [contain:paint] [backface-visibility:hidden] [-webkit-backface-visibility:hidden]"
     >
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         {/* ========================================================= */}

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { allConcepts } from '@/content/index';
@@ -36,25 +36,6 @@ export function Navbar() {
       )
     : [];
 
-  const navRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const updateHeight = () => {
-      if (navRef.current) {
-        const height = Math.round(navRef.current.getBoundingClientRect().height);
-        if (height > 0) {
-          const current = getComputedStyle(document.documentElement).getPropertyValue('--header-height').trim();
-          if (current !== `${height}px`) {
-            document.documentElement.style.setProperty('--header-height', `${height}px`);
-          }
-        }
-      }
-    };
-    updateHeight();
-    window.addEventListener('resize', updateHeight, { passive: true });
-    return () => window.removeEventListener('resize', updateHeight);
-  }, []);
-
   const handleSelect = (axis: string, slug: string) => {
     setSearchQuery('');
     setIsFocused(false);
@@ -63,8 +44,7 @@ export function Navbar() {
 
   return (
     <header
-      ref={navRef}
-      className="sticky top-0 left-0 right-0 z-50 h-16 w-full border-b border-[var(--border-subtle)] bg-[var(--bg-primary)]"
+      className="sticky top-0 left-0 right-0 z-50 h-16 w-full border-b border-[var(--border-subtle)] bg-[var(--bg-primary)] isolate [contain:paint] [backface-visibility:hidden] [-webkit-backface-visibility:hidden]"
     >
       <div className="mx-auto flex h-full max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
         {/* 로고 */}
