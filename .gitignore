@@ -39,11 +39,11 @@ next-env.d.ts
 
 # private docs / raw reports
 content-source/
+docs/
 
-# markdown files (keep README.md and docs/ markdown)
+# markdown files (keep README.md)
 *.md
 !README.md
-!docs/**
 
 # temporary scratch
 scratch/
