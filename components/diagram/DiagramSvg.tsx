@@ -153,7 +153,7 @@ export function DiagramSvg({
             role="dialog"
             aria-modal="true"
             aria-label={`${accessibleLabel} 확대 보기`}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 p-3 backdrop-blur-xs sm:p-6 animate-in fade-in duration-200"
+            className="fixed inset-0 z-60 flex items-center justify-center bg-black/75 p-3 backdrop-blur-xs sm:p-6 animate-in fade-in duration-200"
             onClick={(e) => {
               // 창 바깥 영역 탭/클릭 시 닫기
               if (e.target === e.currentTarget) {

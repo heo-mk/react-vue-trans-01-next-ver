@@ -8,6 +8,11 @@
   --text-secondary: #475569;
   --border-subtle: #e2e8f0;
 
+  /* Layout tokens */
+  --header-height: 64px;
+  --sticky-header-compact-height: 72px;
+  --sticky-header-expanded-height: 140px;
+
   /* Diagram tokens - Light */
   --diagram-vue-bg: #ecfdf5;
   --diagram-vue-border: #10b981;

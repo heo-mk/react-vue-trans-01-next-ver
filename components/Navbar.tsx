@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { allConcepts } from '@/content/index';
@@ -36,6 +36,25 @@ export function Navbar() {
       )
     : [];
 
+  const navRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const updateHeight = () => {
+      if (navRef.current) {
+        const height = Math.round(navRef.current.getBoundingClientRect().height);
+        if (height > 0) {
+          const current = getComputedStyle(document.documentElement).getPropertyValue('--header-height').trim();
+          if (current !== `${height}px`) {
+            document.documentElement.style.setProperty('--header-height', `${height}px`);
+          }
+        }
+      }
+    };
+    updateHeight();
+    window.addEventListener('resize', updateHeight, { passive: true });
+    return () => window.removeEventListener('resize', updateHeight);
+  }, []);
+
   const handleSelect = (axis: string, slug: string) => {
     setSearchQuery('');
     setIsFocused(false);
@@ -43,8 +62,11 @@ export function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--border-subtle)] bg-[var(--bg-primary)]/80 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3.5">
+    <header
+      ref={navRef}
+      className="sticky top-0 left-0 right-0 z-50 h-16 w-full border-b border-[var(--border-subtle)] bg-[var(--bg-primary)]"
+    >
+      <div className="mx-auto flex h-full max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
         {/* 로고 */}
         <Link href="/" className="flex shrink-0 items-center gap-2.5">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/10 font-mono text-base font-bold text-emerald-600 dark:text-emerald-400">

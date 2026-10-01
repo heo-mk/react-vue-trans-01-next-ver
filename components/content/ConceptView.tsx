@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { ConceptPage } from '@/content/schema';
 import { axisMetadata } from '@/content/index';
 import { ComparisonTable } from './ComparisonTable';
@@ -8,9 +7,7 @@ import { CodeExample } from './CodeExample';
 import { PitfallCallout } from './PitfallCallout';
 import { FormattedContentRenderer } from './FormattedContentRenderer';
 import { DiagramSvg } from '@/components/diagram/DiagramSvg';
-import { useUiStore } from '@/store/useUiStore';
-import { useIsMounted } from '@/components/useIsMounted';
-import { FormattedTitle } from '@/components/FormattedTitle';
+import { ConceptHeader } from './ConceptHeader';
 
 interface ConceptViewProps {
   concept: ConceptPage;
@@ -18,69 +15,16 @@ interface ConceptViewProps {
 
 export function ConceptView({ concept }: ConceptViewProps) {
   const meta = axisMetadata[concept.axis];
-  const { readConcepts, toggleReadConcept, favorites, toggleFavorite } =
-    useUiStore();
-  const isMounted = useIsMounted();
-
-  const isRead = isMounted ? readConcepts.includes(concept.slug) : false;
-  const isFav = isMounted ? favorites.includes(concept.slug) : false;
 
   return (
-    <article className="mx-auto max-w-5xl px-6 py-10">
-      {/* 상단 브레드크럼 및 뒤로가기 */}
-      <nav className="mb-6 flex items-center justify-between">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
-        >
-          ← 전체 가이드 홈으로
-        </Link>
-        <span className="rounded-full border border-[var(--border-subtle)] bg-[var(--bg-secondary)] px-3 py-1 text-xs font-semibold text-[var(--text-secondary)]">
-          {meta.badge} · {meta.title}
-        </span>
-      </nav>
+    <div className="relative min-h-full">
+      {/* 화면 전체 폭 불투명 배경을 가진 반응형 Sticky 제목 영역 */}
+      <ConceptHeader concept={concept} />
 
-      {/* 헤더 & 액션 바 */}
-      <header className="border-b border-[var(--border-subtle)] pb-8">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-          <div className="flex-1">
-            <h1 className="text-2xl font-extrabold tracking-tight text-[var(--text-primary)] sm:text-3xl lg:text-4xl [word-break:keep-all]">
-              <FormattedTitle text={concept.cardTitle || concept.title} />
-            </h1>
-            {concept.cardSubtitle && (
-              <p className="mt-2 text-sm font-medium text-[var(--text-secondary)] sm:text-base [word-break:keep-all]">
-                <FormattedTitle text={concept.cardSubtitle} />
-              </p>
-            )}
-          </div>
-
-          {/* 읽음 및 북마크 인터랙션 */}
-          <div className="flex flex-wrap items-center gap-2 shrink-0">
-            <button
-              onClick={() => toggleReadConcept(concept.slug)}
-              type="button"
-              className={`inline-flex cursor-pointer items-center justify-center gap-1.5 whitespace-nowrap rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors ${isRead
-                  ? 'bg-emerald-500 text-white shadow-xs'
-                  : 'border border-[var(--border-subtle)] bg-[var(--bg-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-primary)] hover:text-[var(--text-primary)]'
-                }`}
-            >
-              {isRead ? '✓ 완료 취소' : '○ 학습 완료로 표시'}
-            </button>
-            <button
-              onClick={() => toggleFavorite(concept.slug)}
-              type="button"
-              className={`inline-flex cursor-pointer items-center justify-center gap-1.5 whitespace-nowrap rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors ${isFav
-                  ? 'bg-amber-500 text-white shadow-xs'
-                  : 'border border-[var(--border-subtle)] bg-[var(--bg-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-primary)] hover:text-[var(--text-primary)]'
-                }`}
-            >
-              {isFav ? '★ 북마크 해제' : '☆ 북마크에 추가'}
-            </button>
-          </div>
-        </div>
-
+      {/* 본문 콘텐츠 영역 */}
+      <article className="mx-auto max-w-5xl px-6 py-8">
         {/* 파인만 테크닉 핵심 한줄 요약 */}
-        <div className="mt-6 rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-5 dark:bg-emerald-950/20">
+        <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-5 dark:bg-emerald-950/20">
           <div className="flex items-center gap-2 text-xs font-bold tracking-wider text-emerald-600 uppercase dark:text-emerald-400">
             <span>💡</span> 파인만 핵심 요약
           </div>
@@ -101,7 +45,6 @@ export function ConceptView({ concept }: ConceptViewProps) {
             </div>
           </div>
         )}
-      </header>
 
       {/* 1. 구조도 (다이어그램) */}
       {concept.diagramId && (
@@ -172,6 +115,7 @@ export function ConceptView({ concept }: ConceptViewProps) {
             </ul>
           </footer>
         )}
-    </article>
+      </article>
+    </div>
   );
 }
