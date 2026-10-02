@@ -42,27 +42,38 @@ export const reactivityState: ConceptPage = {
     },
     {
       label: '반응성 메커니즘',
-      left: '불변성(Immutability) 기반. 상태 변경 시 컴포넌트 함수 전체를 재실행하여 가상 DOM Diffing 수행',
-      right:
-        '가변성(Mutability) 기반. Proxy(reactive)와 getter/setter(ref)로 변경을 추적하고, 컴파일 단계에서 표시한 변경 가능 부분 위주로 갱신',
+      left: {
+        items: [
+          '불변성(Immutability) 기반.',
+          '상태 변경 시 컴포넌트 함수 전체를 재실행하여 가상 DOM Diffing 수행',
+        ],
+      },
+      right: {
+        items: [
+          '가변성(Mutability) 기반.',
+          'Proxy(reactive)와 getter/setter(ref)로 변경을 추적하고, 컴파일 단계에서 표시한 변경 가능 부분 위주로 갱신',
+        ],
+      },
     },
     {
       label: '값 접근 및 수정',
       left: 'getter/setter 분리 (`const [count, setCount] = useState(0)`)',
-      right:
-        '단일 ref 래퍼 (`const count = ref(0)`). 스크립트에서는 `.value`, 템플릿에서는 최상위 ref가 자동 언래핑',
+      right: {
+        items: [
+          '단일 ref 래퍼 (`const count = ref(0)`).',
+          '스크립트에서는 `.value`, 템플릿에서는 최상위 ref가 자동 언래핑',
+        ],
+      },
     },
     {
       label: '자식 컴포넌트 갱신',
       left: '부모가 리렌더링되면 props 변경 여부와 무관하게 모든 자식이 기본적으로 함께 다시 그려짐 (건너뛰려면 React.memo를 쓰고, React Compiler가 자동으로 처리해주기도 함)',
-      right:
-        'props가 실제로 바뀐 자식 컴포넌트만 갱신됨',
+      right: 'props가 실제로 바뀐 자식 컴포넌트만 갱신됨',
     },
     {
       label: '객체/배열 조작',
       left: '항상 새로운 참조 객체를 복사해서 반환해야 함 (`setList([...list, newItem])`)',
-      right:
-        '기존 배열/객체에 직접 push나 속성 할당 허용 (`list.value.push(newItem)`)',
+      right: '기존 배열/객체에 직접 push나 속성 할당 허용 (`list.value.push(newItem)`)',
     },
   ],
   codeExamples: [

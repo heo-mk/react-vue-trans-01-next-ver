@@ -32,20 +32,38 @@ export const serverState: ConceptPage = {
   comparisonTable: [
     {
       label: '서버 상태 vs 클라이언트 상태',
-      common:
-        '서버 상태는 비동기적 소유권이 외부에 있는 데이터로 캐싱, 백그라운드 재검증(Refetch), 중복 요청 제거, 에러/로딩 상태 기계 관리가 필수적입니다. 반면 클라이언트 상태(모달 열림, 다크모드, 폼 입력 등)는 프론트엔드 앱이 온전히 소유한 동기적 UI 데이터로 캐싱 만료 개념이 없습니다.',
+      common: {
+        items: [
+          '서버 상태는 비동기적 소유권이 외부에 있는 데이터로 캐싱, 백그라운드 재검증(Refetch), 중복 요청 제거, 에러/로딩 상태 기계 관리가 필수적입니다.',
+          '반면 클라이언트 상태(모달 열림, 다크모드, 폼 입력 등)는 프론트엔드 앱이 온전히 소유한 동기적 UI 데이터로 캐싱 만료 개념이 없습니다.',
+        ],
+      },
     },
     {
       label: 'React vs Vue 표준 도구 생태계',
-      left: 'React 생태계: 널리 쓰이는 TanStack Query(v5)를 사용하여 `useQuery`, `useMutation`으로 서버 상태를 전담 분리.',
-      right:
-        'Vue 생태계: 공식 Vue 어댑터인 `@tanstack/vue-query`를 사용. Nuxt 3 환경에서는 내장된 `useFetch` / `useAsyncData`로 서버 데이터를 가져오는 방법도 있음.',
+      left: {
+        lead: 'React 생태계',
+        items: [
+          '널리 쓰이는 TanStack Query(v5)를 사용하여 `useQuery`, `useMutation`으로 서버 상태를 전담 분리.',
+        ],
+      },
+      right: {
+        lead: 'Vue 생태계',
+        items: [
+          '공식 Vue 어댑터인 `@tanstack/vue-query`를 사용.',
+          'Nuxt 3 환경에서는 내장된 `useFetch` / `useAsyncData`로 서버 데이터를 가져오는 방법도 있음.',
+        ],
+      },
     },
     {
       label: '쿼리 키가 바뀔 때 재조회',
       left: '렌더링 때 queryKey에 넘긴 값이 바뀌면 새 키의 쿼리를 조회합니다.',
-      right:
-        'queryKey 안의 ref·getter를 자동으로 추적해, 값이 바뀌면 다시 조회합니다. 단, ref에서 .value로 값을 꺼내 넣으면 추적이 끊깁니다.',
+      right: {
+        items: [
+          'queryKey 안의 ref·getter를 자동으로 추적해, 값이 바뀌면 다시 조회합니다.',
+          '단, ref에서 .value로 값을 꺼내 넣으면 추적이 끊깁니다.',
+        ],
+      },
     },
     {
       label: '캐시 생명주기 제어 (staleTime vs gcTime)',
@@ -54,13 +72,21 @@ export const serverState: ConceptPage = {
     },
     {
       label: '데이터 갱신 트리거 (invalidateQueries)',
-      common:
-        '모든 데이터를 강제로 즉시 재호출하는 것이 아니라, 해당 캐시를 "오래됨(Stale)"으로 마킹한 뒤 현재 화면에 마운트된 활성 쿼리만 선별 리패치합니다. 화면에 보이지 않는 비활성 쿼리는 나중에 화면에 다시 진입할 때 백그라운드에서 신선한 데이터를 자동으로 동기화합니다.',
+      common: {
+        items: [
+          '모든 데이터를 강제로 즉시 재호출하는 것이 아니라, 해당 캐시를 "오래됨(Stale)"으로 마킹한 뒤 현재 화면에 마운트된 활성 쿼리만 선별 리패치합니다.',
+          '화면에 보이지 않는 비활성 쿼리는 나중에 화면에 다시 진입할 때 백그라운드에서 신선한 데이터를 자동으로 동기화합니다.',
+        ],
+      },
     },
     {
       label: '단일 진실 원천(SSOT)과 피해야 할 방식',
-      common:
-        '비동기 서버 데이터를 Zustand, Redux, Pinia 같은 전역 스토어에 복사해 넣는 방식은 캐시 불일치와 중복 상태가 생기기 쉬워 권장되지 않습니다. 비동기 데이터는 TanStack Query 캐시 자체를 단일 진실 공급원으로 삼고, 전역 스토어에는 순수 UI 제어 플래그만 격리해 두는 것이 좋습니다.',
+      common: {
+        items: [
+          '비동기 서버 데이터를 Zustand, Redux, Pinia 같은 전역 스토어에 복사해 넣는 방식은 캐시 불일치와 중복 상태가 생기기 쉬워 권장되지 않습니다.',
+          '비동기 데이터는 TanStack Query 캐시 자체를 단일 진실 공급원으로 삼고, 전역 스토어에는 순수 UI 제어 플래그만 격리해 두는 것이 좋습니다.',
+        ],
+      },
     },
   ],
   codeExamples: [

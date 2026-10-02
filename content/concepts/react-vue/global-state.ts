@@ -41,34 +41,85 @@ export const globalState: ConceptPage = {
   diagramId: 'global-state-diagram',
   comparisonTable: [
     {
-      label: 'Zustand ↔ Pinia (현대 표준)',
-      left: 'Zustand: 컴포넌트 트리 외부 클로저에 상태 저장. `useSyncExternalStore` 기반 선택적 구독(Selector)으로 필요한 상태 변경 시에만 리렌더링.',
-      right:
-        'Pinia: Vue 3 반응형 시스템(Proxy) 기반 단일 스토어. Action이 state를 직접 수정하며, 구조분해 시 반응성 유지를 위해 `storeToRefs()` 필요.',
+      label: 'Zustand ↔ Pinia',
+      left: {
+        lead: 'Zustand',
+        items: [
+          '컴포넌트 트리 외부 클로저에 상태 저장.',
+          '`useSyncExternalStore` 기반 선택적 구독(Selector)으로 필요한 상태 변경 시에만 리렌더링.',
+        ],
+      },
+      right: {
+        lead: 'Pinia',
+        items: [
+          'Vue 3 반응형 시스템(Proxy) 기반 단일 스토어.',
+          'Action이 state를 직접 수정하며, 구조분해 시 반응성 유지를 위해 `storeToRefs()` 필요.',
+        ],
+      },
     },
     {
       label: 'Redux (RTK) ↔ Vuex (Flux 레거시)',
-      left: 'Redux Toolkit: Action 객체 디스패치 → Reducer를 거치는 엄격한 단방향 흐름. Immer 내장으로 불변성 관리를 추상화하나 보일러플레이트 잔존.',
-      right:
-        'Vuex: 상태 변경은 Mutation(commit)으로만 가능하고, 비동기 작업은 Action(dispatch)이 맡아 Mutation을 호출하는 구조. Vue 3에서는 Pinia로 공식 대체되어 유지보수 상태.',
+      left: {
+        lead: 'Redux Toolkit',
+        items: [
+          'Action 객체 디스패치 → Reducer를 거치는 엄격한 단방향 흐름.',
+          'Immer 내장으로 불변성 관리를 추상화하나 보일러플레이트 잔존.',
+        ],
+      },
+      right: {
+        lead: 'Vuex',
+        items: [
+          '상태 변경은 Mutation(commit)으로만 가능하고, 비동기 작업은 Action(dispatch)이 맡아 Mutation을 호출하는 구조.',
+          'Vue 3에서는 Pinia로 공식 대체되어 유지보수 상태.',
+        ],
+      },
     },
     {
       label: 'Context API ↔ Provide/Inject (의존성 주입)',
-      left: 'React Context: "상태 주입/전파 도구"이지 상태 관리 라이브러리가 아님. Context 값이 바뀌면 그 Context를 읽는(useContext) 컴포넌트가 모두 다시 렌더링됨. (memo로 감싸도 새 값은 전달됨)',
-      right:
-        'Vue Provide/Inject: 컴포넌트 계층 간 의존성 주입 도구. 기본적으로는 반응형이 아니며, ref나 reactive를 주입해야 값이 바뀔 때 주입받은 쪽에도 반영됨.',
+      left: {
+        lead: 'React Context',
+        items: [
+          '"상태 주입/전파 도구"이지 상태 관리 라이브러리가 아님.',
+          'Context 값이 바뀌면 그 Context를 읽는(useContext) 컴포넌트가 모두 다시 렌더링됨. (memo로 감싸도 새 값은 전달됨)',
+        ],
+      },
+      right: {
+        lead: 'Vue Provide/Inject',
+        items: [
+          '컴포넌트 계층 간 의존성 주입 도구.',
+          '기본적으로는 반응형이 아니며, ref나 reactive를 주입해야 값이 바뀔 때 주입받은 쪽에도 반영됨.',
+        ],
+      },
     },
     {
       label: '스토어 위치 및 라이프사이클',
-      left: 'React 컴포넌트 트리 외부(모듈 스코프 클로저). 화면의 모든 컴포넌트가 언마운트되어도 메모리에 스토어 상태 유지.',
-      right:
-        'Vue 인스턴스/앱 컨텍스트에 바인딩. 플랫(Flat)한 독립 스토어 구조이며 어디서든 호출 가능.',
+      left: {
+        items: [
+          'React 컴포넌트 트리 외부(모듈 스코프 클로저).',
+          '화면의 모든 컴포넌트가 언마운트되어도 메모리에 스토어 상태 유지.',
+        ],
+      },
+      right: {
+        items: [
+          'Vue 인스턴스/앱 컨텍스트에 바인딩.',
+          '플랫(Flat)한 독립 스토어 구조이며 어디서든 호출 가능.',
+        ],
+      },
     },
     {
       label: '도구 선택 기준 (언제 무엇을 쓰는가)',
-      left: '단순 테마·로케일은 Context API로 충분. 빈번한 UI 업데이트와 미세 렌더링 최적화는 Zustand, 대규모 팀의 엄격한 규약은 Redux Toolkit.',
-      right:
-        'Vue 3 신규 프로젝트의 클라이언트 전역 상태는 Pinia가 공식 권장 라이브러리. 단순 부모-자손 깊은 전달만 필요할 때는 Provide/Inject 활용.',
+      left: {
+        items: [
+          '단순 테마·로케일은 Context API로 충분.',
+          '빈번한 UI 업데이트와 미세 렌더링 최적화는 Zustand, 대규모 팀의 엄격한 규약은 Redux Toolkit.',
+        ],
+      },
+      right: {
+        items: [
+          'Vue 3 신규 프로젝트의 클라이언트 전역 상태는 Pinia가 공식 권장 라이브러리.',
+          '단순 부모-자손 깊은 전달만 필요할 때는 Provide/Inject 활용.',
+        ],
+      },
     },
   ],
   codeExamples: [

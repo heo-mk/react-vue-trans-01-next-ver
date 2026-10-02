@@ -1,5 +1,5 @@
 import { allConcepts } from '../content/index';
-import { getContentPlainText } from '../content/schema';
+import { getContentPlainText, getComparisonCellPlainText } from '../content/schema';
 
 function searchConcepts(query: string) {
   const q = query.trim().toLowerCase();
@@ -19,6 +19,14 @@ function searchConcepts(query: string) {
           (p) =>
             p.question.toLowerCase().includes(q) ||
             getContentPlainText(p.answer).toLowerCase().includes(q)
+        )) ||
+      (c.comparisonTable &&
+        c.comparisonTable.some(
+          (row) =>
+            row.label.toLowerCase().includes(q) ||
+            getComparisonCellPlainText(row.left).toLowerCase().includes(q) ||
+            getComparisonCellPlainText(row.right).toLowerCase().includes(q) ||
+            getComparisonCellPlainText(row.common).toLowerCase().includes(q)
         ))
   );
 }

@@ -1,10 +1,61 @@
-import { ComparisonRow } from '@/content/schema';
+import { ComparisonRow, ComparisonCellContent } from '@/content/schema';
 
 interface ComparisonTableProps {
   rows: ComparisonRow[];
   leftTitle: string;
   rightTitle: string;
   note?: string;
+}
+
+function renderInlineCode(text: string) {
+  if (!text.includes('`')) return text;
+  const parts = text.split(/(`[^`]+`)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith('`') && part.endsWith('`')) {
+      const codeText = part.slice(1, -1);
+      return (
+        <code
+          key={i}
+          className="rounded border border-[var(--border-subtle)] bg-[var(--bg-secondary)] px-1 py-0.5 font-mono text-[0.85em] font-medium text-[var(--text-primary)] [overflow-wrap:anywhere]"
+        >
+          {codeText}
+        </code>
+      );
+    }
+    return part;
+  });
+}
+
+function CellContentRenderer({ content }: { content: ComparisonCellContent }) {
+  if (typeof content === 'string') {
+    return <span>{renderInlineCode(content)}</span>;
+  }
+
+  const { lead, items } = content;
+
+  return (
+    <div className="space-y-1.5">
+      {lead && (
+        <div className="font-bold text-[var(--text-primary)]">
+          {renderInlineCode(lead)}
+        </div>
+      )}
+      {items && items.length > 0 && (
+        <ol className="comparison-list space-y-1.5">
+          {items.map((item, idx) => (
+            <li
+              key={idx}
+              className="comparison-item text-sm leading-relaxed text-[var(--text-secondary)]"
+            >
+              <span className="comparison-item-content">
+                {renderInlineCode(item)}
+              </span>
+            </li>
+          ))}
+        </ol>
+      )}
+    </div>
+  );
 }
 
 export function ComparisonTable({
@@ -27,10 +78,10 @@ export function ComparisonTable({
         </div>
       )}
       <div className="card-scroll-area overflow-x-auto pb-1.5">
-        <table className="w-full min-w-[640px] border-collapse text-left text-sm">
+        <table className="comparison-table w-full min-w-[640px] border-collapse text-left text-sm">
           <thead>
             <tr className="border-b border-[var(--border-subtle)] bg-[var(--bg-secondary)]/50 text-xs font-semibold tracking-wider text-[var(--text-secondary)] uppercase">
-              <th className="w-1/4 border-r border-[var(--border-subtle)] px-6 py-3.5">
+              <th className="w-1/4 min-w-[9em] border-r border-[var(--border-subtle)] px-6 py-3.5">
                 비교 항목
               </th>
               <th className="w-[37.5%] border-r border-[var(--border-subtle)] px-6 py-3.5">
@@ -53,7 +104,7 @@ export function ComparisonTable({
                 key={index}
                 className="transition-colors hover:bg-[var(--bg-secondary)]/40"
               >
-                <td className="border-r border-[var(--border-subtle)] bg-[var(--bg-secondary)]/20 px-6 py-4 font-semibold text-[var(--text-primary)]">
+                <td className="min-w-[9em] border-r border-[var(--border-subtle)] bg-[var(--bg-secondary)]/20 px-6 py-4 font-semibold text-[var(--text-primary)]">
                   {row.label}
                 </td>
                 {row.common ? (
@@ -65,16 +116,18 @@ export function ComparisonTable({
                       <span className="inline-flex shrink-0 items-center rounded-md border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
                         {leftTitle} · {rightTitle} 공통
                       </span>
-                      <span>{row.common}</span>
+                      <div className="flex-1">
+                        <CellContentRenderer content={row.common} />
+                      </div>
                     </div>
                   </td>
                 ) : (
                   <>
                     <td className="border-r border-[var(--border-subtle)] px-6 py-4 leading-relaxed text-[var(--text-secondary)]">
-                      {row.left}
+                      {row.left && <CellContentRenderer content={row.left} />}
                     </td>
                     <td className="px-6 py-4 leading-relaxed text-[var(--text-secondary)]">
-                      {row.right}
+                      {row.right && <CellContentRenderer content={row.right} />}
                     </td>
                   </>
                 )}

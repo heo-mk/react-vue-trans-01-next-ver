@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { allConcepts } from '@/content/index';
-import { getContentPlainText } from '@/content/schema';
+import { getContentPlainText, getComparisonCellPlainText } from '@/content/schema';
 import { ThemeToggle } from '@/components/ThemeToggle';
 
 export function Navbar() {
@@ -32,6 +32,14 @@ export function Navbar() {
               (p) =>
                 p.question.toLowerCase().includes(query) ||
                 getContentPlainText(p.answer).toLowerCase().includes(query)
+            )) ||
+          (c.comparisonTable &&
+            c.comparisonTable.some(
+              (row) =>
+                row.label.toLowerCase().includes(query) ||
+                getComparisonCellPlainText(row.left).toLowerCase().includes(query) ||
+                getComparisonCellPlainText(row.right).toLowerCase().includes(query) ||
+                getComparisonCellPlainText(row.common).toLowerCase().includes(query)
             ))
       )
     : [];

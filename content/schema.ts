@@ -1,11 +1,23 @@
 export type Axis = 'react-vue' | 'vue2-vue3' | 'nuxt-next';
 
+export type ComparisonCellContent = string | { lead?: string; items: string[] };
+
 export interface ComparisonRow {
   label: string;
-  left?: string; // React 또는 Vue2 또는 Nuxt3
-  right?: string; // Vue 또는 Vue3 또는 Next
-  common?: string; // React·Vue 공통 내용 (colspan=2)
+  left?: ComparisonCellContent; // React 또는 Vue2 또는 Nuxt3
+  right?: ComparisonCellContent; // Vue 또는 Vue3 또는 Next
+  common?: ComparisonCellContent; // React·Vue 공통 내용 (colspan=2)
 }
+
+export function getComparisonCellPlainText(cell: ComparisonCellContent | undefined): string {
+  if (!cell) return '';
+  if (typeof cell === 'string') return cell;
+  const parts: string[] = [];
+  if (cell.lead) parts.push(cell.lead);
+  if (cell.items && cell.items.length > 0) parts.push(...cell.items);
+  return parts.join(' ');
+}
+
 
 export interface CodeExample {
   label: string; // '기초 예제' | '실전 예제'

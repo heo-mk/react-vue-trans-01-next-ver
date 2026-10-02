@@ -1,5 +1,5 @@
 import { allConcepts } from '../content/index';
-import { getContentPlainText } from '../content/schema';
+import { getContentPlainText, getComparisonCellPlainText } from '../content/schema';
 
 const ASSERTIVE_WORDS = ['완벽히', '완벽하게', '전혀', '반드시', '무조건'];
 
@@ -23,9 +23,9 @@ for (const c of allConcepts) {
     check(getContentPlainText(p.answer), `pitfall[${i + 1}].answer`);
   });
   c.comparisonTable.forEach((row, i) => {
-    if (row.left) check(row.left, `table[${i + 1}].left`);
-    if (row.right) check(row.right, `table[${i + 1}].right`);
-    if (row.common) check(row.common, `table[${i + 1}].common`);
+    if (row.left) check(getComparisonCellPlainText(row.left), `table[${i + 1}].left`);
+    if (row.right) check(getComparisonCellPlainText(row.right), `table[${i + 1}].right`);
+    if (row.common) check(getComparisonCellPlainText(row.common), `table[${i + 1}].common`);
   });
 }
 

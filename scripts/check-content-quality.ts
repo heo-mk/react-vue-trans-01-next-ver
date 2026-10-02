@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { allConcepts } from '../content/index';
-import { getContentPlainText } from '../content/schema';
+import { getContentPlainText, getComparisonCellPlainText } from '../content/schema';
 
 interface QualityReport {
   passed: boolean;
@@ -285,9 +285,9 @@ function checkConceptQuality(): QualityReport {
     checkTextForForbidden(concept.sourceNote, '출처(sourceNote)');
     concept.comparisonTable?.forEach((row, i) => {
       checkTextForForbidden(row.label, `비교표 ${i + 1}행 라벨`);
-      checkTextForForbidden(row.left, `비교표 ${i + 1}행 좌측`);
-      checkTextForForbidden(row.right, `비교표 ${i + 1}행 우측`);
-      checkTextForForbidden(row.common, `비교표 ${i + 1}행 공통`);
+      checkTextForForbidden(getComparisonCellPlainText(row.left), `비교표 ${i + 1}행 좌측`);
+      checkTextForForbidden(getComparisonCellPlainText(row.right), `비교표 ${i + 1}행 우측`);
+      checkTextForForbidden(getComparisonCellPlainText(row.common), `비교표 ${i + 1}행 공통`);
     });
     concept.codeExamples?.forEach((ex, i) => {
       checkTextForForbidden(ex.label, `코드 예제 ${i + 1} 라벨`);
@@ -426,9 +426,9 @@ function checkConceptQuality(): QualityReport {
     checkHype(concept.sourceNote, '출처(sourceNote)');
     concept.comparisonTable?.forEach((row, i) => {
       checkHype(row.label, `비교표 ${i + 1}행 라벨`);
-      checkHype(row.left, `비교표 ${i + 1}행 좌측`);
-      checkHype(row.right, `비교표 ${i + 1}행 우측`);
-      checkHype(row.common, `비교표 ${i + 1}행 공통`);
+      checkHype(getComparisonCellPlainText(row.left), `비교표 ${i + 1}행 좌측`);
+      checkHype(getComparisonCellPlainText(row.right), `비교표 ${i + 1}행 우측`);
+      checkHype(getComparisonCellPlainText(row.common), `비교표 ${i + 1}행 공통`);
     });
     concept.codeExamples?.forEach((ex, i) => {
       checkHype(ex.label, `코드 예제 ${i + 1} 라벨`);
