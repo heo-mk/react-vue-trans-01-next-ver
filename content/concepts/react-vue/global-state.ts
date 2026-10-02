@@ -125,7 +125,7 @@ export const globalState: ConceptPage = {
   codeExamples: [
     {
       label: '기초 예제',
-      version: 'React 18+ (Zustand 5.x) vs Vue 3.4+ (Pinia 2.x)',
+      version: 'React 18+ (Zustand 5.x) vs Vue 3.4+ (Pinia 3.x)',
       leftCode: `// [React] Zustand 5.x — 클로저 기반 스토어와 Selector 구독
 import { create } from 'zustand';
 
@@ -149,7 +149,7 @@ export function BearCounter() {
 
   return <button onClick={increase}>Bears: {bears}</button>;
 }`,
-      rightCode: `<!-- [Vue] Vue 3.4+ (Pinia 2.x) — 반응형 스토어와 직접 액션 호출 -->
+      rightCode: `<!-- [Vue] Vue 3.4+ (Pinia 3.x) — 반응형 스토어와 직접 액션 호출 -->
 <script setup lang="ts">
 import { defineStore, storeToRefs } from 'pinia';
 
@@ -181,10 +181,38 @@ const { increasePopulation } = store;
     Bears: {{ bears }} (Double: {{ doubleBears }})
   </button>
 </template>`,
+      highlights: [
+        { side: 'left', id: 1, match: 'create<BearState>()' },
+        { side: 'left', id: 2, match: '=> ({ bears: state.bears + 1 })' },
+        { side: 'left', id: 3, match: 'const bears = useBearStore' },
+        { side: 'right', id: 1, match: "defineStore('bear'" },
+        { side: 'right', id: 2, match: 'this.bears++' },
+        { side: 'right', id: 3, match: 'storeToRefs(store)' },
+      ],
+      keyPoints: [
+        {
+          id: 1,
+          title: '스토어 만들기',
+          left: 'Provider 없이 create()로 만들고 어디서든 호출',
+          right: 'defineStore()에 state·getters·actions를 한곳에 정의',
+        },
+        {
+          id: 2,
+          title: '상태 바꾸기',
+          left: 'set() 안에서 바뀔 값을 돌려줘서 갱신',
+          right: 'action에서 this.bears++로 직접 수정 (mutation 없음)',
+        },
+        {
+          id: 3,
+          title: '값 꺼내 쓰기',
+          left: 'selector로 필요한 값(bears)만 골라 구독',
+          right: '구조분해할 때는 storeToRefs로 반응성 유지',
+        },
+      ],
     },
     {
       label: '기초 예제',
-      version: 'React 18+ (Redux Toolkit 2.x) vs Vue 2.7+ / Vue 3 (Vuex 4.x 레거시)',
+      version: 'React 18+ (Redux Toolkit 2.x) vs Vue 3 (Vuex 4.x 레거시)',
       leftCode: `// [React] Redux Toolkit 2.x — createSlice와 액션 자동 생성
 import { createSlice, configureStore, PayloadAction } from '@reduxjs/toolkit';
 import { useSelector, useDispatch } from 'react-redux';
@@ -242,11 +270,32 @@ export const legacyStore = createStore({
 
 // 컴포넌트 사용: store.dispatch('incrementAsync') 또는 store.commit('INCREMENT')
 // (Pinia에서는 이러한 mutation 계층이 완전히 제거되었습니다)`,
+      highlights: [
+        { side: 'left', id: 1, match: 'increment: (state) => {' },
+        { side: 'left', id: 2, match: 'const count = useSelector' },
+        { side: 'left', id: 2, match: 'dispatch(counterSlice.actions.increment())' },
+        { side: 'right', id: 1, match: 'INCREMENT(state) {' },
+        { side: 'right', id: 2, match: '// 컴포넌트 사용: store.dispatch' },
+      ],
+      keyPoints: [
+        {
+          id: 1,
+          title: '상태 수정 방식',
+          left: 'reducers에서 state.value += 1로 작성 (Immer가 불변 처리)',
+          right: 'mutations에서 state.count++로 수정',
+        },
+        {
+          id: 2,
+          title: '컴포넌트 연결',
+          left: 'useSelector로 읽고 dispatch로 action 실행',
+          right: 'store.dispatch 또는 store.commit 직접 호출',
+        },
+      ],
     },
     {
       label: '실전 예제',
       version:
-        'React 18+ (Zustand 4.x + persist) vs Vue 3.4+ (Pinia 2.x + pinia-plugin-persistedstate)',
+        'React 18+ (Zustand 5.x + persist) vs Vue 3.4+ (Pinia 2.x + pinia-plugin-persistedstate)',
       sourceProject: '목록 및 필터 관리 화면',
       leftCode: `// [React] 관심 항목 관리 (favoriteStore.ts)
 // 서버 상태와 완전히 분리하여 클라이언트 고유의 '관심 목록'만 Zustand persist로 관리
@@ -332,6 +381,26 @@ export const useFavoriteStore = defineStore(
   }
 );
 </script>`,
+      highlights: [
+        { side: 'left', id: 1, match: '(set, get) => ({' },
+        { side: 'left', id: 2, match: 'favorites: [...state.favorites, item]' },
+        { side: 'right', id: 1, match: 'persist: true, // pinia-plugin-persistedstate' },
+        { side: 'right', id: 2, match: 'favorites.value.push(item);' },
+      ],
+      keyPoints: [
+        {
+          id: 1,
+          title: '영속화 설정',
+          left: 'persist 미들웨어로 함수 전체를 감싸서 name 지정',
+          right: '스토어 정의에 { persist: true } 옵션 추가',
+        },
+        {
+          id: 2,
+          title: '배열 추가 방식',
+          left: '[...state.favorites, item] 새 배열로 불변성 유지',
+          right: 'favorites.value.push(item) 직접 추가',
+        },
+      ],
     },
     {
       label: '실전 예제',
@@ -392,6 +461,26 @@ export const useProgressStore = defineStore('progress', {
   },
   persist: true, // pinia-plugin-persistedstate는 state만 저장하고 getter는 자동 배제
 });`,
+      highlights: [
+        { side: 'left', id: 1, match: 'export function useCalculationResult() {' },
+        { side: 'left', id: 2, match: 'return useMemo(() => {' },
+        { side: 'right', id: 1, match: 'getters: {' },
+        { side: 'right', id: 2, match: 'calculationResults(state) {' },
+      ],
+      keyPoints: [
+        {
+          id: 1,
+          title: '파생 상태 위치',
+          left: '별도 훅(useCalculationResult)으로 분리',
+          right: '스토어 내부 getters에 바로 정의',
+        },
+        {
+          id: 2,
+          title: '의존성 명시',
+          left: 'useMemo 두 번째 인자에 [currentStep, inputValues] 명시',
+          right: '의존성 배열 없이 getter에서 state를 읽음',
+        },
+      ],
     },
   ],
   pitfalls: [

@@ -141,6 +141,93 @@ function checkConceptQuality(): QualityReport {
       });
     }
 
+    // 규칙 4-2: 코드 하이라이트(highlights) 및 핵심 차이(keyPoints) 정합성 검증
+    concept.codeExamples?.forEach((ex, i) => {
+      if (ex.highlights || ex.keyPoints) {
+        const highlights = ex.highlights || [];
+        const keyPoints = ex.keyPoints || [];
+
+        if (highlights.length === 0 && keyPoints.length > 0) {
+          errors.push(
+            `${id} 코드 예제 ${i + 1} (${ex.label}): keyPoints가 정의되었으나 highlights가 없습니다.`
+          );
+        }
+        if (keyPoints.length === 0 && highlights.length > 0) {
+          errors.push(
+            `${id} 코드 예제 ${i + 1} (${ex.label}): highlights가 정의되었으나 keyPoints가 없습니다.`
+          );
+        }
+
+        // id는 1부터 연속
+        const kpIds = keyPoints.map((kp) => kp.id).sort((a, b) => a - b);
+        for (let k = 0; k < kpIds.length; k++) {
+          if (kpIds[k] !== k + 1) {
+            errors.push(
+              `${id} 코드 예제 ${i + 1} (${ex.label}): keyPoints의 id는 1부터 연속이어야 합니다. (기대: ${k + 1}, 실제: ${kpIds[k]})`
+            );
+            break;
+          }
+        }
+
+        const kpIdSet = new Set(keyPoints.map((kp) => kp.id));
+        const hlIdSet = new Set(highlights.map((h) => h.id));
+
+        // highlights의 모든 id는 keyPoints에 있어야 함
+        highlights.forEach((h) => {
+          if (!kpIdSet.has(h.id)) {
+            errors.push(
+              `${id} 코드 예제 ${i + 1} (${ex.label}): highlight의 id ${h.id}가 keyPoints에 존재하지 않습니다.`
+            );
+          }
+        });
+
+        // keyPoints의 모든 id는 highlights에 최소 한 번 쓰여야 함
+        keyPoints.forEach((kp) => {
+          if (!hlIdSet.has(kp.id)) {
+            errors.push(
+              `${id} 코드 예제 ${i + 1} (${ex.label}): keyPoint id ${kp.id}('${kp.title}')가 highlights에 한 번도 사용되지 않았습니다.`
+            );
+          }
+        });
+
+        // match는 해당 쪽 코드에서 정확히 한 줄에만 포함되어야 함 (0줄 또는 2줄 이상이면 오류)
+        highlights.forEach((h) => {
+          const targetCode = h.side === 'left' ? ex.leftCode : ex.rightCode;
+          const lines = targetCode.split('\n');
+          const matchedLines = lines.filter((line) => line.includes(h.match));
+
+          if (matchedLines.length === 0) {
+            errors.push(
+              `${id} 코드 예제 ${i + 1} (${ex.label}): ${h.side}측 match "${h.match}"에 일치하는 줄이 없습니다 (0줄 일치 오류).`
+            );
+          } else if (matchedLines.length > 1) {
+            errors.push(
+              `${id} 코드 예제 ${i + 1} (${ex.label}): ${h.side}측 match "${h.match}"에 일치하는 줄이 ${matchedLines.length}줄입니다 (정확히 1줄이어야 함).`
+            );
+          }
+        });
+
+        // title은 12자 이내, left와 right 설명은 각각 50자 이내가 아니면 경고
+        keyPoints.forEach((kp) => {
+          if (kp.title.length > 12) {
+            warnings.push(
+              `${id} 코드 예제 ${i + 1} (${ex.label}): keyPoint title "${kp.title}"은 12자 이내여야 합니다 (현재 ${kp.title.length}자).`
+            );
+          }
+          if (kp.left.length > 50) {
+            warnings.push(
+              `${id} 코드 예제 ${i + 1} (${ex.label}): keyPoint id ${kp.id} left 설명은 50자 이내여야 합니다 (현재 ${kp.left.length}자).`
+            );
+          }
+          if (kp.right.length > 50) {
+            warnings.push(
+              `${id} 코드 예제 ${i + 1} (${ex.label}): keyPoint id ${kp.id} right 설명은 50자 이내여야 합니다 (현재 ${kp.right.length}자).`
+            );
+          }
+        });
+      }
+    });
+
     // 규칙 5: 화면에 표시되는 출처 표기는 외부 링크(http로 시작하는 주소)가 있는 것만 허용
     if (concept.sourceNote) {
       errors.push(
@@ -298,6 +385,11 @@ function checkConceptQuality(): QualityReport {
       );
       checkTextForForbidden(ex.leftCode, `코드 예제 ${i + 1} 좌측 코드`);
       checkTextForForbidden(ex.rightCode, `코드 예제 ${i + 1} 우측 코드`);
+      ex.keyPoints?.forEach((kp) => {
+        checkTextForForbidden(kp.title, `코드 예제 ${i + 1} 핵심차이 title`);
+        checkTextForForbidden(kp.left, `코드 예제 ${i + 1} 핵심차이 left`);
+        checkTextForForbidden(kp.right, `코드 예제 ${i + 1} 핵심차이 right`);
+      });
     });
     concept.pitfalls?.forEach((pf, i) => {
       checkTextForForbidden(pf.question, `함정 문답 ${i + 1} 질문`);
@@ -433,6 +525,11 @@ function checkConceptQuality(): QualityReport {
     concept.codeExamples?.forEach((ex, i) => {
       checkHype(ex.label, `코드 예제 ${i + 1} 라벨`);
       checkHype(ex.sourceProject, `코드 예제 ${i + 1} 출처 프로젝트(sourceProject)`);
+      ex.keyPoints?.forEach((kp) => {
+        checkHype(kp.title, `코드 예제 ${i + 1} 핵심차이 title`);
+        checkHype(kp.left, `코드 예제 ${i + 1} 핵심차이 left`);
+        checkHype(kp.right, `코드 예제 ${i + 1} 핵심차이 right`);
+      });
     });
     concept.pitfalls?.forEach((pf, i) => {
       checkHype(pf.question, `함정/FAQ ${i + 1} 질문`);

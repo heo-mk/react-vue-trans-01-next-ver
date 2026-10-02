@@ -147,6 +147,26 @@ const { data, isLoading, isError, error } = useQuery<User>({
   <div v-else-if="isError">조회 실패: {{ error?.message }}</div>
   <div v-else>사용자 이름: {{ data?.name }}</div>
 </template>`,
+      highlights: [
+        { side: 'left', id: 1, match: "queryKey: ['user', userId]," },
+        { side: 'left', id: 2, match: 'if (isLoading) return <div>사서가 책을 찾아오는 중...</div>;' },
+        { side: 'right', id: 1, match: "queryKey: () => ['user', props.userId]," },
+        { side: 'right', id: 2, match: '<div v-if="isLoading">사서가 책을 찾아오는 중...</div>' },
+      ],
+      keyPoints: [
+        {
+          id: 1,
+          title: '쿼리 키 지정',
+          left: "queryKey: ['user', userId] 배열 직접 전달",
+          right: "getter 함수 () => ['user', props.userId] 전달",
+        },
+        {
+          id: 2,
+          title: '로딩 조건부 UI',
+          left: 'if (isLoading) 조기 반환(early return)',
+          right: '<div v-if="isLoading"> 템플릿 디렉티브 사용',
+        },
+      ],
     },
     {
       label: '기초 예제',
@@ -213,6 +233,26 @@ export function useUpdateTodo() {
     },
   });
 }`,
+      highlights: [
+        { side: 'left', id: 1, match: "import { useMutation, useQueryClient } from '@tanstack/react-query';" },
+        { side: 'left', id: 2, match: "queryClient.setQueryData(['todos'], (old: any[] = []) => [...old, newTodo]);" },
+        { side: 'right', id: 1, match: "import { useMutation, useQueryClient } from '@tanstack/vue-query';" },
+        { side: 'right', id: 2, match: "queryClient.setQueryData(['todos'], (old: any[] = []) => [...old, newTodo]);" },
+      ],
+      keyPoints: [
+        {
+          id: 1,
+          title: '라이브러리 패키지',
+          left: '@tanstack/react-query에서 훅 임포트',
+          right: '@tanstack/vue-query에서 컴포저블 임포트',
+        },
+        {
+          id: 2,
+          title: '공통: 선반영',
+          left: 'setQueryData로 todos 캐시를 먼저 갱신',
+          right: '같은 방식으로 setQueryData 사용',
+        },
+      ],
     },
     {
       label: '실전 예제',
@@ -273,6 +313,26 @@ export function useToggleFavoriteMutation(favoriteStore: ReturnType<typeof useFa
     },
   });
 }`,
+      highlights: [
+        { side: 'left', id: 1, match: 'export function useToggleFavoriteMutation(favorites: Item[], setFavorites:' },
+        { side: 'left', id: 2, match: 'setFavorites(next);' },
+        { side: 'right', id: 1, match: 'export function useToggleFavoriteMutation(favoriteStore: ReturnType<typeof useFavoriteStore>) {' },
+        { side: 'right', id: 2, match: 'favoriteStore.toggle(item);' },
+      ],
+      keyPoints: [
+        {
+          id: 1,
+          title: '상태 주입 형태',
+          left: 'favorites 배열과 setFavorites 세터 함수 주입',
+          right: 'favoriteStore 인스턴스 자체를 주입',
+        },
+        {
+          id: 2,
+          title: '선반영 변경 호출',
+          left: 'setFavorites(next)로 계산한 새 값을 전달',
+          right: 'favoriteStore.toggle(item) 메서드 직접 호출',
+        },
+      ],
     },
     {
       label: '실전 예제',
@@ -316,6 +376,26 @@ export function useSearchInfinite(query: Ref<string>) {
     },
   });
 }`,
+      highlights: [
+        { side: 'left', id: 1, match: 'export function useSearchInfinite(query: string) {' },
+        { side: 'left', id: 2, match: "queryKey: ['items', 'search', query]," },
+        { side: 'right', id: 1, match: 'export function useSearchInfinite(query: Ref<string>) {' },
+        { side: 'right', id: 2, match: "queryKey: () => ['items', 'search', query.value]," },
+      ],
+      keyPoints: [
+        {
+          id: 1,
+          title: '매개변수 타입',
+          left: 'query: string 원시 문자열',
+          right: 'query: Ref<string> 반응형 ref 객체',
+        },
+        {
+          id: 2,
+          title: '반응형 쿼리 키',
+          left: "정적 배열 ['items', 'search', query]",
+          right: "함수 형태 () => ['items', 'search', query.value]",
+        },
+      ],
     },
     {
       label: '실전 예제',
@@ -354,6 +434,26 @@ function handleSearch(keyword: string) {
   }
 }
 </script>`,
+      highlights: [
+        { side: 'left', id: 1, match: 'const searchResultRef = useRef<{ refetch: () => void }>(null);' },
+        { side: 'left', id: 2, match: 'searchResultRef.current?.refetch();' },
+        { side: 'right', id: 1, match: 'const resultRef = ref<{ refetch: () => void } | null>(null);' },
+        { side: 'right', id: 2, match: 'resultRef.value?.refetch();' },
+      ],
+      keyPoints: [
+        {
+          id: 1,
+          title: '인스턴스 참조',
+          left: 'useRef<{ refetch: () => void }>(null) 선언',
+          right: 'ref<{ refetch: () => void } | null>(null) 선언',
+        },
+        {
+          id: 2,
+          title: '재조회 호출',
+          left: 'searchResultRef.current?.refetch() 호출',
+          right: 'resultRef.value?.refetch() 호출',
+        },
+      ],
     },
     {
       label: '실전 예제',
@@ -382,6 +482,26 @@ export function usePolicyQuery(keyword: Ref<string>) {
     gcTime: 1000 * 60 * 60 * 2,
   });
 }`,
+      highlights: [
+        { side: 'left', id: 1, match: 'export function usePolicyQuery(keyword: string) {' },
+        { side: 'left', id: 2, match: 'enabled: keyword.length > 0,' },
+        { side: 'right', id: 1, match: 'export function usePolicyQuery(keyword: Ref<string>) {' },
+        { side: 'right', id: 2, match: 'enabled: () => keyword.value.length > 0,' },
+      ],
+      keyPoints: [
+        {
+          id: 1,
+          title: '인자 형태',
+          left: 'keyword: string 일반 문자열 전달',
+          right: 'keyword: Ref<string> 반응형 ref 전달',
+        },
+        {
+          id: 2,
+          title: '활성화 조건',
+          left: 'enabled: keyword.length > 0 불리언 값',
+          right: 'enabled: () => keyword.value.length > 0 getter 함수',
+        },
+      ],
     },
   ],
   pitfalls: [

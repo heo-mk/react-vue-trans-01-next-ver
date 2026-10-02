@@ -19,12 +19,27 @@ export function getComparisonCellPlainText(cell: ComparisonCellContent | undefin
 }
 
 
+export interface CodeHighlight {
+  side: 'left' | 'right';
+  match: string;
+  id: number;
+}
+
+export interface KeyPoint {
+  id: number;
+  title: string;
+  left: string;
+  right: string;
+}
+
 export interface CodeExample {
   label: string; // '기초 예제' | '실전 예제'
   version: string; // 'React 18+', 'Vue 3.4+' 등 — 4-6 규칙 강제
   leftCode: string; // Before / React / Vue2
   rightCode: string; // After / Vue / Vue3
   sourceProject?: string; // 실전 예제일 경우 적용 도메인/시나리오 예시
+  highlights?: CodeHighlight[];
+  keyPoints?: KeyPoint[];
 }
 
 export interface StructuredItem {

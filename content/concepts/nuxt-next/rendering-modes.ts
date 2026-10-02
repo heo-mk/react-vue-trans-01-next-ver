@@ -108,6 +108,26 @@ const { data: posts, status } = await useFetch('/api/posts', {
     <div v-else-if="status === 'pending'">불러오는 중...</div>
   </main>
 </template>`,
+      highlights: [
+        { side: 'left', id: 1, match: 'export default async function PostsPage() {' },
+        { side: 'left', id: 2, match: 'const posts = await db.post.findMany({ take: 5 });' },
+        { side: 'right', id: 1, match: '<script setup lang="ts">' },
+        { side: 'right', id: 2, match: "await useFetch('/api/posts'" },
+      ],
+      keyPoints: [
+        {
+          id: 1,
+          title: '컴포넌트 선언',
+          left: 'async function 컴포넌트로 직접 선언',
+          right: '<script setup lang="ts"> 스크립트 블록 사용',
+        },
+        {
+          id: 2,
+          title: '데이터 페칭',
+          left: '컴포넌트 본문에서 await db.post.findMany() 직접 실행',
+          right: "await useFetch('/api/posts')로 내부 API 호출",
+        },
+      ],
     },
     {
       label: '실전 예제',
@@ -138,6 +158,26 @@ const submit = async () => {
   await $fetch('/api/posts', { method: 'POST', body: { title: title.value } });
   await refreshNuxtData('posts'); // 특정 키의 데이터를 다시 가져옴
 };`,
+      highlights: [
+        { side: 'left', id: 1, match: "'use server';" },
+        { side: 'left', id: 2, match: "revalidatePath('/posts');" },
+        { side: 'right', id: 1, match: 'export default defineEventHandler(async (event) => {' },
+        { side: 'right', id: 2, match: "await refreshNuxtData('posts');" },
+      ],
+      keyPoints: [
+        {
+          id: 1,
+          title: '서버 핸들러',
+          left: "'use server' 지시어와 FormData 매개변수 사용",
+          right: 'defineEventHandler와 readBody(event) 사용',
+        },
+        {
+          id: 2,
+          title: '데이터 갱신',
+          left: "revalidatePath('/posts')로 해당 경로 캐시 무효화",
+          right: "refreshNuxtData('posts')로 특정 키 데이터를 다시 가져옴",
+        },
+      ],
     },
   ],
   diagramId: 'rendering-modes-diagram',

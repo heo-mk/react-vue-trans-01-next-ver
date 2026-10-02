@@ -114,6 +114,34 @@ watchEffect(() => {
     {{ count }}
   </button>
 </template>`,
+      highlights: [
+        { side: 'left', id: 1, match: 'const [count, setCount] = useState(0);' },
+        { side: 'left', id: 2, match: '}, [count]);' },
+        { side: 'left', id: 3, match: 'setCount((prev) => prev + 1)' },
+        { side: 'right', id: 1, match: 'const count = ref(0);' },
+        { side: 'right', id: 2, match: 'watchEffect(() => {' },
+        { side: 'right', id: 3, match: '<button @click="count++">' },
+      ],
+      keyPoints: [
+        {
+          id: 1,
+          title: '상태 선언',
+          left: '값(count)과 setter(setCount)가 한 쌍으로 분리',
+          right: 'ref(0) 하나로 값을 선언',
+        },
+        {
+          id: 2,
+          title: '부수효과 감시',
+          left: 'useEffect 의존성 배열에 [count] 수동 전달',
+          right: 'watchEffect 안에서 읽은 count를 자동 추적',
+        },
+        {
+          id: 3,
+          title: '값 갱신',
+          left: 'setCount((prev) => prev + 1) 호출',
+          right: '@click="count++" 직접 증가',
+        },
+      ],
     },
     {
       label: '실전 예제',
@@ -156,6 +184,34 @@ export const useItemStore = defineStore('item', () => {
   };
   return { items, toggleWithRollback };
 });`,
+      highlights: [
+        { side: 'left', id: 1, match: 'const previousItems = [...items];' },
+        { side: 'left', id: 2, match: 'toggleItem(item);' },
+        { side: 'left', id: 3, match: 'setItems(context.previousItems);' },
+        { side: 'right', id: 1, match: 'const rollback = [...items.value];' },
+        { side: 'right', id: 2, match: 'else items.value.push(item);' },
+        { side: 'right', id: 3, match: 'items.value = rollback;' },
+      ],
+      keyPoints: [
+        {
+          id: 1,
+          title: '스냅샷 저장',
+          left: 'onMutate에서 [...items] 배열 복사 후 반환',
+          right: 'toggleWithRollback에서 [...items.value] 저장',
+        },
+        {
+          id: 2,
+          title: '화면 선반영',
+          left: 'toggleItem(item) 별도 함수 호출',
+          right: 'items.value.splice 또는 push로 직접 조작',
+        },
+        {
+          id: 3,
+          title: '롤백 복원',
+          left: 'onError 콜백에서 context.previousItems로 복원',
+          right: 'catch 블록에서 items.value = rollback 복원',
+        },
+      ],
     },
   ],
   diagramId: 'reactivity-diagram',

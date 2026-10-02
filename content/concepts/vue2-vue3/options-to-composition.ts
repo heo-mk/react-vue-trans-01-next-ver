@@ -111,6 +111,26 @@ const addAgeProperty = () => {
     <button @click="addAgeProperty">새 속성 추가</button>
   </div>
 </template>`,
+      highlights: [
+        { side: 'left', id: 1, match: "this.$set(this.user, 'age', 20);" },
+        { side: 'left', id: 2, match: 'age 속성이 선언 시점에 없음' },
+        { side: 'right', id: 1, match: 'user.age = 20;' },
+        { side: 'right', id: 2, match: "({ name: '철수' });" },
+      ],
+      keyPoints: [
+        {
+          id: 1,
+          title: '새 속성 추가',
+          left: 'this.$set(...)을 써야 화면이 갱신됨',
+          right: 'user.age = 20처럼 직접 대입해도 감지됨',
+        },
+        {
+          id: 2,
+          title: '감시 방식',
+          left: '선언 시점에 있는 속성만 감시',
+          right: 'reactive()가 객체를 Proxy로 감싸서 감시',
+        },
+      ],
     },
     {
       label: '실전 예제',
@@ -165,6 +185,26 @@ import { useTablePagination } from '@/composables/useTablePagination';
 const { page, nextPage } = useTablePagination((newPage) => {
   loadData(newPage);
 });`,
+      highlights: [
+        { side: 'left', id: 1, match: 'this.fetchData();' },
+        { side: 'left', id: 2, match: 'mixins: [tablePagination, userFilterMixin],' },
+        { side: 'right', id: 1, match: 'useTablePagination(onFetch' },
+        { side: 'right', id: 2, match: 'const { page, nextPage } = useTablePagination' },
+      ],
+      keyPoints: [
+        {
+          id: 1,
+          title: '필요한 의존성',
+          left: '컴포넌트에 fetchData가 있을 것이라 암묵적으로 가정',
+          right: 'onFetch를 인자로 받아 의존성이 겉으로 드러남',
+        },
+        {
+          id: 2,
+          title: '이름 충돌',
+          left: '두 믹스인에 같은 변수명이 있으면 덮어씌워짐',
+          right: '반환값을 구조분해로 직접 받아 출처가 보임',
+        },
+      ],
     },
   ],
   diagramId: 'composition-migration-diagram',
