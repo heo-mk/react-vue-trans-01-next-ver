@@ -368,6 +368,81 @@ function checkConceptQuality(): QualityReport {
     );
   }
 
+  // 규칙 10: 근거 없는 규모·수준 과장 표현 경고 (실패 처리는 하지 않음)
+  // 대상: "엔터프라이즈", "실무", "완벽", "압도적", "최고", "차세대"
+  // 제외: "필수", "대규모", "강력" (기술 설명에서 쓰이는 경우가 있어 제외)
+  const HYPE_SCALE_TERMS = [
+    '엔터프라이즈',
+    '실무',
+    '완벽',
+    '압도적',
+    '최고',
+    '차세대',
+  ];
+
+  // 10-1. 홈 화면 및 메타데이터 문구 검사
+  const homeFiles = [
+    { name: 'app/page.tsx', path: path.resolve(__dirname, '../app/page.tsx') },
+    { name: 'content/index.ts', path: path.resolve(__dirname, '../content/index.ts') },
+  ];
+
+  for (const file of homeFiles) {
+    if (fs.existsSync(file.path)) {
+      const content = fs.readFileSync(file.path, 'utf-8');
+      const strippedContent = content
+        .replace(/\/\*[\s\S]*?\*\//g, '')
+        .replace(/\/\/.*/g, '');
+      for (const term of HYPE_SCALE_TERMS) {
+        if (strippedContent.includes(term)) {
+          warnings.push(
+            `⚠️ [과장·규모 표현 경고] ${file.name}에 '${term}' 단어가 포함되어 있습니다. 근거 있는 표현인지 검토하세요.`
+          );
+        }
+      }
+    }
+  }
+
+  // 10-2. 개념 파일 및 데이터 검사
+  for (const concept of allConcepts) {
+    const id = `[${concept.axis}/${concept.slug}]`;
+    const checkHype = (text: string | undefined, loc: string) => {
+      if (!text) return;
+      for (const term of HYPE_SCALE_TERMS) {
+        if (text.includes(term)) {
+          warnings.push(
+            `⚠️ ${id} [과장·규모 표현 경고] ${loc}에 '${term}' 단어가 사용되었습니다. (근거 없는 규모/수준 수식어 지양)`
+          );
+        }
+      }
+    };
+
+    checkHype(concept.title, '제목(title)');
+    checkHype(concept.cardTitle, '카드 제목(cardTitle)');
+    checkHype(concept.cardSubtitle, '카드 부제(cardSubtitle)');
+    checkHype(concept.cardSummary, '카드 요약(cardSummary)');
+    checkHype(concept.oneLineSummary, '한줄 요약(oneLineSummary)');
+    checkHype(getContentPlainText(concept.analogy), '비유(analogy)');
+    checkHype(concept.comparisonNote, '비교표 참고(comparisonNote)');
+    checkHype(concept.sourceNote, '출처(sourceNote)');
+    concept.comparisonTable?.forEach((row, i) => {
+      checkHype(row.label, `비교표 ${i + 1}행 라벨`);
+      checkHype(row.left, `비교표 ${i + 1}행 좌측`);
+      checkHype(row.right, `비교표 ${i + 1}행 우측`);
+      checkHype(row.common, `비교표 ${i + 1}행 공통`);
+    });
+    concept.codeExamples?.forEach((ex, i) => {
+      checkHype(ex.label, `코드 예제 ${i + 1} 라벨`);
+      checkHype(ex.sourceProject, `코드 예제 ${i + 1} 출처 프로젝트(sourceProject)`);
+    });
+    concept.pitfalls?.forEach((pf, i) => {
+      checkHype(pf.question, `함정/FAQ ${i + 1} 질문`);
+      checkHype(getContentPlainText(pf.answer), `함정/FAQ ${i + 1} 답변`);
+    });
+    concept.keywords?.forEach((kw, i) => {
+      checkHype(kw, `키워드 ${i + 1}번째`);
+    });
+  }
+
   const passed = errors.length === 0;
 
   console.log('\n=============================================');

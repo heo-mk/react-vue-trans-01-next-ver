@@ -50,13 +50,13 @@ export const globalState: ConceptPage = {
       label: 'Redux (RTK) ↔ Vuex (Flux 레거시)',
       left: 'Redux Toolkit: Action 객체 디스패치 → Reducer를 거치는 엄격한 단방향 흐름. Immer 내장으로 불변성 관리를 추상화하나 보일러플레이트 잔존.',
       right:
-        'Vuex: Dispatch(Action) → Commit(Mutation) → State의 복잡한 3단계 파이프라인 강제. Vue 3에서는 Pinia로 공식 대체되어 유지보수 상태.',
+        'Vuex: 상태 변경은 Mutation(commit)으로만 가능하고, 비동기 작업은 Action(dispatch)이 맡아 Mutation을 호출하는 구조. Vue 3에서는 Pinia로 공식 대체되어 유지보수 상태.',
     },
     {
       label: 'Context API ↔ Provide/Inject (의존성 주입)',
-      left: 'React Context: "상태 주입/전파 도구"이지 상태 관리 라이브러리가 아님. Context 값이 바뀌면 이를 구독하는 하위 트리가 전부 재렌더링됨.',
+      left: 'React Context: "상태 주입/전파 도구"이지 상태 관리 라이브러리가 아님. Context 값이 바뀌면 그 Context를 읽는(useContext) 컴포넌트가 모두 다시 렌더링됨. (memo로 감싸도 새 값은 전달됨)',
       right:
-        'Vue Provide/Inject: 컴포넌트 계층 간 의존성 주입 도구. 반응형 객체(ref, reactive)를 주입하면 필요한 템플릿 슬롯만 정밀 갱신됨.',
+        'Vue Provide/Inject: 컴포넌트 계층 간 의존성 주입 도구. 기본적으로는 반응형이 아니며, ref나 reactive를 주입해야 값이 바뀔 때 주입받은 쪽에도 반영됨.',
     },
     {
       label: '스토어 위치 및 라이프사이클',
@@ -68,7 +68,7 @@ export const globalState: ConceptPage = {
       label: '도구 선택 기준 (언제 무엇을 쓰는가)',
       left: '단순 테마·로케일은 Context API로 충분. 빈번한 UI 업데이트와 미세 렌더링 최적화는 Zustand, 대규모 팀의 엄격한 규약은 Redux Toolkit.',
       right:
-        'Vue 3 신규 프로젝트의 클라이언트 전역 상태는 무조건 Pinia가 표준. 단순 부모-자손 깊은 전달만 필요할 때는 Provide/Inject 활용.',
+        'Vue 3 신규 프로젝트의 클라이언트 전역 상태는 Pinia가 공식 권장 라이브러리. 단순 부모-자손 깊은 전달만 필요할 때는 Provide/Inject 활용.',
     },
   ],
   codeExamples: [
@@ -120,7 +120,7 @@ export const useBearStore = defineStore('bear', {
 
 // 2. 컴포넌트에서 사용
 const store = useBearStore();
-// 구조분해 시 반응성을 잃지 않으려면 반드시 storeToRefs 사용!
+// 구조분해 시 반응성을 잃지 않으려면 storeToRefs 사용!
 const { bears, doubleBears } = storeToRefs(store);
 const { increasePopulation } = store;
 </script>
@@ -165,7 +165,7 @@ export function Counter() {
     </button>
   );
 }`,
-      rightCode: `// [Vue] Vuex 4.x 레거시 — dispatch -> commit -> mutation 파이프라인
+      rightCode: `// [Vue] Vuex 4.x 레거시 — 상태 변경은 mutation(commit)으로, 비동기 처리는 action(dispatch)으로 분리
 import { createStore } from 'vuex';
 
 export const legacyStore = createStore({
@@ -353,11 +353,11 @@ export const useProgressStore = defineStore('progress', {
         items: [
           {
             term: 'Context API 한계',
-            desc: 'Context의 Provider value가 변경되면 이를 구독하는 하위의 모든 컴포넌트가 불필요하게 리렌더링될 수 있다는 한계가 있습니다.',
+            desc: 'Context의 Provider value가 변경되면 그 Context를 읽는(useContext) 컴포넌트가 모두 다시 렌더링되므로, 값의 일부만 필요한 컴포넌트도 함께 렌더링될 수 있다는 한계가 있습니다.',
           },
           {
             term: 'Zustand 장점',
-            desc: '컴포넌트 트리 외부의 클로저에 상태를 두고, Selector를 통해 실제로 사용하는 속성이 변경되었을 때만 정밀하게 리렌더링하므로 고빈도 UI 업데이트에서도 렌더링 낭비가 전혀 없습니다.',
+            desc: '컴포넌트 트리 외부의 클로저에 상태를 두고, Selector를 통해 실제로 사용하는 속성이 변경되었을 때만 리렌더링하도록 할 수 있어, 고빈도 UI 업데이트에서도 불필요한 렌더링을 줄일 수 있습니다.',
           },
         ],
       },
@@ -416,7 +416,7 @@ export const useProgressStore = defineStore('progress', {
           },
           {
             term: '상태 찢어짐(Tearing) 방지',
-            desc: 'React 18의 동시성 렌더링 환경에서 발생할 수 있는 상태 찢어짐 현상은 React의 공식 프리미티브인 `useSyncExternalStore`를 통해 완벽히 방지됩니다.',
+            desc: 'React 18의 동시성 렌더링 환경에서 발생할 수 있는 상태 찢어짐 현상은 React의 공식 프리미티브인 `useSyncExternalStore`를 통해 방지됩니다.',
           },
         ],
       },
@@ -434,7 +434,7 @@ export const useProgressStore = defineStore('progress', {
           },
           {
             term: 'storeToRefs 해결책',
-            desc: '이를 방지하려면 Pinia가 공식 제공하는 `storeToRefs(store)` 헬퍼 함수를 사용하여 각 속성을 `ref` 포장 상자로 감싸서 추출해야 합니다.',
+            desc: '이를 방지하려면 Pinia가 공식 제공하는 `storeToRefs(store)` 헬퍼 함수를 사용하여 각 속성을 `ref` 포장 상자로 감싸서 추출하면 됩니다.',
           },
         ],
       },
@@ -461,7 +461,7 @@ export const useProgressStore = defineStore('progress', {
       question:
         'Redux Toolkit(RTK)의 리듀서 안에서는 `state.value += 1`처럼 직접 상태를 수정해도 정말 괜찮나요?',
       answer: {
-        lead: '네, 완벽히 안전합니다.',
+        lead: '네, 안전합니다.',
         listType: 'ordered',
         items: [
           {
@@ -470,7 +470,7 @@ export const useProgressStore = defineStore('progress', {
           },
           {
             term: '불변 복사본 자동 생성',
-            desc: '개발자가 가변(Mutating) 코드처럼 작성하더라도, Immer의 Proxy 트랩이 변경 사항을 추적하여 내부적으로는 완벽하게 불변성이 보장된 새로운 불변 상태 복사본을 생성해 반환합니다.',
+            desc: '개발자가 가변(Mutating) 코드처럼 작성하더라도, Immer의 Proxy 트랩이 변경 사항을 추적하여 내부적으로는 불변성이 지켜진 새로운 상태 복사본을 생성해 반환합니다.',
           },
         ],
       },

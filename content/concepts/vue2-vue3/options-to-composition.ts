@@ -56,9 +56,9 @@ export const optionsToComposition: ConceptPage = {
     },
     {
       label: 'TypeScript 지원',
-      left: 'this 컨텍스트 추론 한계로 인해 추가적인 데코레이터 및 복잡한 타입 정의 필요',
+      left: 'this 컨텍스트 기반이라 타입 추론이 어렵고, 복잡한 타입 처리가 필요',
       right:
-        '순수 변수와 함수 스코프이므로 별도 설정 없이 완벽한 타입 추론 및 자동완성',
+        '순수 변수와 함수 스코프이므로 별도 설정 없이 타입 추론과 자동완성을 그대로 사용',
     },
   ],
   codeExamples: [
@@ -97,7 +97,7 @@ interface User {
   age?: number;
 }
 
-const user = reactive<User>({ name: '철수' });
+const user: User = reactive({ name: '철수' });
 
 const addAgeProperty = () => {
   // Vue3 Proxy는 새로운 속성 추가도 즉각 감지 ($set 불필요)
@@ -186,7 +186,7 @@ const { page, nextPage } = useTablePagination((newPage) => {
           },
           {
             term: 'Vue3 Proxy 도입',
-            desc: 'Vue3는 객체 자체를 감싸는 Proxy를 도입하여 이 문제를 완전히 해결했습니다.',
+            desc: 'Vue3는 객체 자체를 감싸는 Proxy를 도입하여 새 속성 추가 같은 감지 한계를 해소했습니다.',
           },
         ],
       },
@@ -200,7 +200,7 @@ const { page, nextPage } = useTablePagination((newPage) => {
         items: [
           {
             term: 'Proxy 통로 단절',
-            desc: '구조분해 할당을 수행하면 Proxy 래퍼와의 연결이 끊어지고 원시값(Primitive Value)만 별도 변수로 복사됩니다.',
+            desc: '구조분해 할당으로 원시값(Primitive Value) 속성을 꺼내면 Proxy 래퍼와의 연결이 끊어지고 값만 별도 변수로 복사됩니다.',
           },
           {
             term: '트래킹 이탈',
@@ -208,7 +208,7 @@ const { page, nextPage } = useTablePagination((newPage) => {
           },
           {
             term: 'toRefs 유틸리티 해결책',
-            desc: '반응성을 유지하면서 구조분해를 하려면 반드시 toRefs(state) 유틸리티를 사용해야 합니다.',
+            desc: '반응성을 유지하면서 구조분해를 하려면 toRefs(state) 유틸리티를 사용하면 됩니다.',
           },
         ],
       },

@@ -37,9 +37,9 @@ export const serverState: ConceptPage = {
     },
     {
       label: 'React vs Vue 표준 도구 생태계',
-      left: 'React 생태계: 사실상 표준인 TanStack Query(v5)를 사용하여 `useQuery`, `useMutation`으로 서버 상태를 전담 분리.',
+      left: 'React 생태계: 널리 쓰이는 TanStack Query(v5)를 사용하여 `useQuery`, `useMutation`으로 서버 상태를 전담 분리.',
       right:
-        'Vue 생태계: 공식 이식작인 `@tanstack/vue-query`가 정착. Nuxt 3 환경에서는 내장된 `useFetch` / `useAsyncData`를 적극 병용.',
+        'Vue 생태계: 공식 Vue 어댑터인 `@tanstack/vue-query`를 사용. Nuxt 3 환경에서는 내장된 `useFetch` / `useAsyncData`로 서버 데이터를 가져오는 방법도 있음.',
     },
     {
       label: '쿼리 키가 바뀔 때 재조회',
@@ -58,9 +58,9 @@ export const serverState: ConceptPage = {
         '모든 데이터를 강제로 즉시 재호출하는 것이 아니라, 해당 캐시를 "오래됨(Stale)"으로 마킹한 뒤 현재 화면에 마운트된 활성 쿼리만 선별 리패치합니다. 화면에 보이지 않는 비활성 쿼리는 나중에 화면에 다시 진입할 때 백그라운드에서 신선한 데이터를 자동으로 동기화합니다.',
     },
     {
-      label: '단일 진실 원천(SSOT)과 안티패턴',
+      label: '단일 진실 원천(SSOT)과 피해야 할 방식',
       common:
-        '비동기 서버 데이터를 Zustand, Redux, Pinia 같은 전역 스토어에 복사해 넣는 행위는 캐시 불일치와 중복 상태를 양산하는 대표적 반(反)패턴입니다. 비동기 데이터는 TanStack Query 캐시 자체를 단일 진실 공급원으로 삼고, 전역 스토어에는 순수 UI 제어 플래그만 격리 유지해야 합니다.',
+        '비동기 서버 데이터를 Zustand, Redux, Pinia 같은 전역 스토어에 복사해 넣는 방식은 캐시 불일치와 중복 상태가 생기기 쉬워 권장되지 않습니다. 비동기 데이터는 TanStack Query 캐시 자체를 단일 진실 공급원으로 삼고, 전역 스토어에는 순수 UI 제어 플래그만 격리해 두는 것이 좋습니다.',
     },
   ],
   codeExamples: [
@@ -282,7 +282,7 @@ export function useSearchInfinite(query: Ref<string>) {
     initialPageParam: 1,
     getNextPageParam: (lastPage, allPages) => {
       const fetchedCount = allPages.reduce((sum, p) => sum + p.items.length, 0);
-      // TanStack 코어 로직이 동일하므로 프레임워크와 무관하게 완전히 동일하게 동작
+      // 캐싱과 상태 관리는 같은 TanStack 코어를 쓰므로 동일하게 동작 (queryKey의 반응형 처리 등 어댑터 차이는 있음)
       if (lastPage.items.length < 10 || fetchedCount >= lastPage.total_count) {
         return undefined;
       }
@@ -303,7 +303,7 @@ export function SearchSection() {
 
   const handleSearch = (keyword: string) => {
     if (keyword === lastKeyword) {
-      // queryKey가 같으면 React Query는 기본적으로 재요청하지 않으므로 직접 refetch 호출
+      // queryKey가 바뀌지 않으면 렌더링만으로는 재요청하지 않으므로 직접 refetch 호출
       searchResultRef.current?.refetch();
     } else {
       setLastKeyword(keyword);
@@ -321,7 +321,7 @@ const resultRef = ref<{ refetch: () => void } | null>(null);
 
 function handleSearch(keyword: string) {
   if (keyword === lastKeyword.value) {
-    // Vue Query 역시 코어 캐싱 철학이 동일하여 동일 키워드는 기본 재요청 안 됨
+    // Vue Query도 queryKey가 바뀌지 않으면 재요청하지 않음
     resultRef.value?.refetch();
   } else {
     lastKeyword.value = keyword;
@@ -386,7 +386,7 @@ export function usePolicyQuery(keyword: Ref<string>) {
         items: [
           {
             term: '즉각적인 피드백 가치',
-            desc: '북마크나 좋아요처럼 실패 확률이 낮고 롤백 비용이 적은 인터랙션에서는 즉각적인 피드백의 가치가 큽니다(단, 금융 결제처럼 실패 비용이 큰 작업에는 절대 금기).',
+            desc: '북마크나 좋아요처럼 실패 확률이 낮고 롤백 비용이 적은 인터랙션에서는 즉각적인 피드백의 가치가 큽니다(단, 금융 결제처럼 실패 비용이 큰 작업에는 낙관적 업데이트 적용을 신중히 판단해야 합니다).',
           },
           {
             term: '연속 클릭 시 스냅샷 문제',
@@ -394,7 +394,7 @@ export function usePolicyQuery(keyword: Ref<string>) {
           },
           {
             term: '충돌 방지 고도화',
-            desc: '현업이나 복잡한 환경에서는 `mutationKey`를 통한 쿼리 직렬화나 낙관적 상태에 임시 ID/버전 번호를 부여하여 충돌을 방지하는 방향으로 고도화할 수 있습니다.',
+            desc: '현업이나 복잡한 환경에서는 같은 `scope.id`를 지정해 뮤테이션을 순서대로 실행하거나, 낙관적 상태에 임시 ID/버전 번호를 부여하여 충돌을 방지하는 방향으로 고도화할 수 있습니다.',
           },
         ],
       },
@@ -459,8 +459,8 @@ export function usePolicyQuery(keyword: Ref<string>) {
             desc: '1시간은 불필요한 서버 트래픽을 차단하면서도, 당일 변경된 내용을 적절히 반영할 수 있는 실용적인 타협점입니다.',
           },
           {
-            term: '조건부 캐시 무효화 대안',
-            desc: '더 정밀하게 다룬다면 서버 응답의 최종 수정일(Last-Modified) 헤더를 활용한 조건부 캐시 무효화가 좋은 대안입니다.',
+            term: '조건부 요청 대안',
+            desc: '더 정밀하게 다룬다면 서버 응답의 최종 수정일(Last-Modified) 헤더를 활용한 조건부 요청으로 변경 여부만 확인하는 방법도 있습니다.',
           },
         ],
       },
@@ -478,7 +478,7 @@ export function usePolicyQuery(keyword: Ref<string>) {
           },
           {
             term: '핵심 시나리오 표현',
-            desc: '"서버 상태"라는 단어는 기술적 제약이 아니라 라이브러리가 가장 빛을 발하는 핵심 활용 시나리오를 지칭하는 표현입니다.',
+            desc: '"서버 상태"라는 단어는 기술적 제약이 아니라 라이브러리가 효과를 발휘하는 핵심 활용 시나리오를 지칭하는 표현입니다.',
           },
         ],
       },
@@ -492,7 +492,7 @@ export function usePolicyQuery(keyword: Ref<string>) {
         items: [
           {
             term: 'staleTime',
-            desc: '캐시된 데이터가 여전히 신선하여 원천(서버·비동기 출처)에 재요청하지 않아도 되는 유효기간입니다. 기본값 0초는 화면에 캐시 데이터를 즉시 보여주되 항상 백그라운드에서 조용히 재검증(Stale-While-Revalidate)하여 최신성을 보장한다는 기본 철학을 반영합니다.',
+            desc: '캐시된 데이터가 여전히 신선하여 원천(서버·비동기 출처)에 재요청하지 않아도 되는 유효기간입니다. 기본값 0초는 캐시 데이터를 즉시 보여주되, 이를 오래된 데이터로 간주해 새 화면이 마운트되는 등의 시점에 백그라운드에서 다시 확인한다는 기본 철학을 반영합니다.',
           },
           {
             term: 'gcTime (구 cacheTime)',
@@ -525,18 +525,18 @@ export function usePolicyQuery(keyword: Ref<string>) {
     },
     {
       question:
-        'API로 받아온 서버 데이터를 Zustand나 Pinia 같은 전역 스토어에 다시 복사해서 저장하는 것은 왜 안티패턴인가요?',
+        'API로 받아온 서버 데이터를 Zustand나 Pinia 같은 전역 스토어에 다시 복사해서 저장하는 것은 왜 권장되지 않는 방식인가요?',
       answer: {
         lead: '단일 진실 원천(Single Source of Truth) 원칙이 깨지기 때문입니다.',
         listType: 'bullet',
         items: [
           {
             term: '전역 스토어 복제 시 문제',
-            desc: '비동기 서버 데이터를 클라이언트 전역 스토어에 복제하면, TanStack Query가 수행하는 자동 캐시 갱신, 백그라운드 리패칭, 낙관적 업데이트의 결과가 전역 스토어에는 반영되지 않아 화면 간 데이터 불일치가 발생합니다.',
+            desc: '비동기 서버 데이터를 클라이언트 전역 스토어에 복제하면, TanStack Query가 수행하는 자동 캐시 갱신, 백그라운드 리패칭, 낙관적 업데이트의 결과가 전역 스토어에는 반영되지 않아 화면 간 데이터 불일치가 발생할 수 있습니다.',
           },
           {
             term: '올바른 역할 분리',
-            desc: '비동기 데이터는 TanStack Query 캐시 자체를 단일 원천으로 바라보고, Zustand/Pinia에는 모달 상태나 선택된 필터 같은 순수 UI 상태만 보관해야 합니다.',
+            desc: '비동기 데이터는 TanStack Query 캐시 자체를 단일 원천으로 바라보고, Zustand/Pinia에는 모달 상태나 선택된 필터 같은 순수 UI 상태만 보관하는 것이 좋습니다.',
           },
         ],
       },

@@ -38,25 +38,25 @@ export const reactivityState: ConceptPage = {
     {
       label: '근본 철학',
       left: '알림(Notification) 방식 — 개발자가 setter 함수로 명시적 통보',
-      right: '감시(Observation) 방식 — Proxy가 값의 변화를 스스로 감지',
+      right: '감시(Observation) 방식 — Vue가 값의 변화를 스스로 감지',
     },
     {
       label: '반응성 메커니즘',
       left: '불변성(Immutability) 기반. 상태 변경 시 컴포넌트 함수 전체를 재실행하여 가상 DOM Diffing 수행',
       right:
-        '가변성(Mutability) 기반. Getter/Setter 트래킹을 통해 변경된 DOM 노드만 정밀 타겟팅 갱신',
+        '가변성(Mutability) 기반. Proxy(reactive)와 getter/setter(ref)로 변경을 추적하고, 컴파일 단계에서 표시한 변경 가능 부분 위주로 갱신',
     },
     {
       label: '값 접근 및 수정',
       left: 'getter/setter 분리 (`const [count, setCount] = useState(0)`)',
       right:
-        '단일 ref 래퍼 (`const count = ref(0)`). 스크립트에서는 `.value`, 템플릿에서는 자동 언래핑',
+        '단일 ref 래퍼 (`const count = ref(0)`). 스크립트에서는 `.value`, 템플릿에서는 최상위 ref가 자동 언래핑',
     },
     {
       label: '자식 컴포넌트 갱신',
-      left: '부모가 리렌더링되면 props 변경 여부와 무관하게 모든 자식이 기본적으로 함께 다시 그려짐 (React.memo 필요)',
+      left: '부모가 리렌더링되면 props 변경 여부와 무관하게 모든 자식이 기본적으로 함께 다시 그려짐 (건너뛰려면 React.memo를 쓰고, React Compiler가 자동으로 처리해주기도 함)',
       right:
-        '실제로 변경된 props를 전달받은 자식 컴포넌트만 정밀하게 갱신됨 (컴파일러 최적화)',
+        'props가 실제로 바뀐 자식 컴포넌트만 갱신됨',
     },
     {
       label: '객체/배열 조작',
@@ -92,7 +92,7 @@ import { ref, watchEffect } from 'vue';
 
 const count = ref(0);
 
-// Proxy가 참조된 count.value를 자동으로 감시하여 실행
+// ref가 읽힌 count.value를 자동으로 추적하여 실행
 watchEffect(() => {
   document.title = \`클릭: \${count.value}\`;
 });
@@ -131,7 +131,7 @@ export const useItemStore = defineStore('item', () => {
   const toggleWithRollback = async (item: Item) => {
     // 롤백을 위해 현재 상태 스냅샷 저장
     const rollback = [...items.value];
-    // 프록시 배열 직접 조작 (즉시 반응)
+    // 프록시 배열 직접 조작 (복사 없이도 반응)
     const idx = items.value.findIndex((b) => b.id === item.id);
     if (idx >= 0) items.value.splice(idx, 1);
     else items.value.push(item);
@@ -181,11 +181,11 @@ export const useItemStore = defineStore('item', () => {
           },
           {
             term: '부모 리렌더링',
-            desc: '부모 컴포넌트가 리렌더링될 때 발생합니다 (자식은 props가 안 바뀌어도 React.memo가 없으면 기본적으로 함께 다시 그려집니다).',
+            desc: '부모 컴포넌트가 리렌더링될 때 발생합니다 (자식은 props가 안 바뀌어도 기본적으로 함께 다시 그려집니다. React.memo로 건너뛸 수 있고, React Compiler가 자동으로 처리해주기도 합니다).',
           },
           {
             term: 'Context 구독',
-            desc: '구독 중인 Context 값이 바뀔 때 발생합니다.',
+            desc: '읽고 있는 Context 값이 바뀔 때 발생합니다.',
           },
         ],
       },
@@ -194,12 +194,12 @@ export const useItemStore = defineStore('item', () => {
       question:
         'Vue에서 ref로 선언한 상태를 count = count + 1 처럼 직접 재할당하면 왜 반응성이 끊어지나요?',
       answer: {
-        lead: 'ref()는 원시값을 Proxy 객체({ value: T })로 감싸서 반환합니다.',
+        lead: 'ref()는 값을 { value: T } 형태의 ref 객체로 감싸서 반환합니다.',
         listType: 'ordered',
         items: [
           {
             term: '추적 체계 이탈',
-            desc: 'count에 직접 값을 재할당하면 Proxy 래퍼 자체가 일반 숫자로 덮어씌워져 Vue의 반응성 추적 체계에서 완전히 이탈합니다.',
+            desc: 'count에 직접 값을 재할당하면 ref 객체 자체가 일반 숫자로 덮어씌워져 Vue의 반응성 추적에서 벗어납니다.',
           },
           {
             term: '정상 동작 방법',

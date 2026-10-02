@@ -13,7 +13,7 @@ export default function Home() {
         {/* 히어로 섹션 */}
         <section className="mb-8 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
-            <span>✨</span> 실무 중심 프레임워크 상호 전환 가이드
+            <span>✨</span> 프레임워크 상호 전환 가이드
           </div>
           <h1 className="mt-5 text-3xl font-extrabold tracking-tight sm:text-5xl">
             하나의 개념, 두 가지 시각
