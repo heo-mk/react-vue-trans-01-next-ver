@@ -70,10 +70,12 @@ function CodeBlock({
               : '복사'}
         </button>
       </div>
-      <div className="overflow-x-auto p-4 font-mono text-xs leading-relaxed text-[var(--text-primary)]">
-        <pre>
-          <code>{code}</code>
-        </pre>
+      <div className="flex flex-1 flex-col p-4 pb-2.5">
+        <div className="card-scroll-area overflow-x-auto pb-1.5 font-mono text-xs leading-relaxed text-[var(--text-primary)]">
+          <pre>
+            <code>{code}</code>
+          </pre>
+        </div>
       </div>
     </div>
   );

@@ -71,7 +71,7 @@ export function ConceptView({ concept }: ConceptViewProps) {
         <h2 className="text-xl font-bold tracking-tight text-[var(--text-primary)]">
           코드 레벨 직접 비교
         </h2>
-        <div className="mt-4 divide-y divide-[var(--border-subtle)]">
+        <div className="mt-4 space-y-12">
           {concept.codeExamples.map((example, index) => (
             <CodeExample
               key={index}

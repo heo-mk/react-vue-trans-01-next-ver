@@ -25,3 +25,45 @@ body {
     background-color 0.2s ease,
     color 0.2s ease;
 }
+
+/* 전역 스크롤바 스타일 통일 (Thin & 테마 토큰 연동) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-subtle) transparent;
+}
+
+/* WebKit 브라우저용 커스텀 스크롤바 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* 둥근 모서리에 충돌하는 네이티브 화살표 버튼 제거 */
+::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* 둥근 카드 내부 가로 스크롤 영역 공통 규칙 */
+.card-scroll-area {
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-subtle) transparent;
+  border: 0;
+  border-radius: 0;
+}
+

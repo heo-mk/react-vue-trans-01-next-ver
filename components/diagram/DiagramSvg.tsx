@@ -263,7 +263,7 @@ export function DiagramSvg({
           <>
             {/* 세로 버전: overflow-x-auto + min-width auto → SVG가 자체 max-width를 유지, 넓으면 가로 스크롤 */}
             <div
-              className="block sm:hidden w-full overflow-x-auto [&_svg]:h-auto [&_svg]:w-auto [&_svg]:max-w-none"
+              className="card-scroll-area block sm:hidden w-full overflow-x-auto [&_svg]:h-auto [&_svg]:w-auto [&_svg]:max-w-none"
               dangerouslySetInnerHTML={{ __html: verticalSvg }}
             />
             {/* 2. 가로 버전 (화면 폭 640px 이상에서만 표시) */}
@@ -274,7 +274,7 @@ export function DiagramSvg({
           </>
         ) : (
           <div
-            className="flex w-full justify-center overflow-x-auto [&_svg]:h-auto [&_svg]:max-w-full"
+            className="card-scroll-area flex w-full justify-center overflow-x-auto [&_svg]:h-auto [&_svg]:max-w-full"
             dangerouslySetInnerHTML={{ __html: defaultSvg }}
           />
         )}

@@ -26,7 +26,7 @@ export function ComparisonTable({
           <p className="leading-relaxed">{note}</p>
         </div>
       )}
-      <div className="overflow-x-auto">
+      <div className="card-scroll-area overflow-x-auto pb-1.5">
         <table className="w-full min-w-[640px] border-collapse text-left text-sm">
           <thead>
             <tr className="border-b border-[var(--border-subtle)] bg-[var(--bg-secondary)]/50 text-xs font-semibold tracking-wider text-[var(--text-secondary)] uppercase">
