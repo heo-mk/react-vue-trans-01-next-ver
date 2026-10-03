@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "pnpm run build:diagrams && next dev",
     "build:diagrams": "tsx scripts/build-diagrams.ts",
-    "build": "pnpm run build:diagrams && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "check:content": "tsx scripts/check-content-quality.ts",
