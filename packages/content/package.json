@@ -1,0 +1,19 @@
+{
+  "name": "@repo/content",
+  "version": "0.1.0",
+  "private": true,
+  "exports": {
+    ".": "./index.ts",
+    "./schema": "./schema.ts"
+  },
+  "scripts": {
+    "check": "tsx scripts/check-content-quality.ts",
+    "test:search": "tsx scripts/test-search.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "tsx": "^4.23.15",
+    "typescript": "^5"
+  }
+}

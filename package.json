@@ -1,35 +1,26 @@
 {
-  "name": "react-vue-trans",
-  "version": "0.1.0",
+  "name": "react-vue-trans-root",
   "private": true,
   "scripts": {
-    "dev": "pnpm run build:diagrams && next dev",
-    "build:diagrams": "tsx scripts/build-diagrams.ts",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint",
-    "check:content": "tsx scripts/check-content-quality.ts",
+    "dev": "pnpm --filter web dev",
+    "build": "pnpm --filter web build",
+    "build:full": "pnpm --filter web build:full",
+    "build:diagrams": "pnpm --filter web build:diagrams",
+    "lint": "pnpm --filter web lint",
+    "check:content": "pnpm --filter @repo/content check",
     "format": "prettier --write ."
   },
-  "dependencies": {
-    "next": "16.3.5",
-    "react": "19.2.8",
-    "react-dom": "19.2.8",
-    "zustand": "^5.0.15"
-  },
   "devDependencies": {
-    "@mermaid-js/mermaid-cli": "^11.17.0",
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.3.5",
-    "mermaid": "^11.17.2",
     "prettier": "^3.9.8",
-    "prettier-plugin-tailwindcss": "^0.8.1",
-    "tailwindcss": "^4",
-    "tsx": "^4.23.15",
-    "typescript": "^5"
+    "prettier-plugin-tailwindcss": "^0.8.1"
+  },
+  "pnpm": {
+    "packageExtensions": {
+      "eslint-config-next": {
+        "peerDependencies": {
+          "next": "*"
+        }
+      }
+    }
   }
 }
