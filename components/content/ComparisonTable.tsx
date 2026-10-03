@@ -77,7 +77,59 @@ export function ComparisonTable({
           <p className="leading-relaxed">{note}</p>
         </div>
       )}
-      <div className="card-scroll-area overflow-x-auto pb-1.5">
+      {/* 모바일 카드형 뷰 (640px 이하) */}
+      <div className="space-y-3.5 p-4 sm:hidden">
+        {rows.map((row, index) => (
+          <div
+            key={index}
+            className="rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-secondary)]/30 p-4"
+          >
+            {/* 비교 항목 제목 */}
+            <div className="mb-3 border-b border-[var(--border-subtle)] pb-2 text-sm font-bold text-[var(--text-primary)]">
+              {row.label}
+            </div>
+
+            {row.common ? (
+              <div className="space-y-1.5">
+                <span className="inline-flex shrink-0 items-center rounded-md border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+                  {leftTitle} · {rightTitle} 공통
+                </span>
+                <div className="text-sm leading-relaxed text-[var(--text-secondary)]">
+                  <CellContentRenderer content={row.common} />
+                </div>
+              </div>
+            ) : (
+              <div className="space-y-3">
+                {row.left && (
+                  <div className="space-y-1">
+                    <div className="flex items-center gap-1.5 text-xs font-bold text-[var(--text-primary)]">
+                      <span className="h-2 w-2 rounded-full bg-[var(--diagram-react-border)]" />
+                      <span>{leftTitle}</span>
+                    </div>
+                    <div className="pl-3.5 text-sm leading-relaxed text-[var(--text-secondary)]">
+                      <CellContentRenderer content={row.left} />
+                    </div>
+                  </div>
+                )}
+                {row.right && (
+                  <div className="space-y-1">
+                    <div className="flex items-center gap-1.5 text-xs font-bold text-[var(--text-primary)]">
+                      <span className="h-2 w-2 rounded-full bg-[var(--diagram-vue-border)]" />
+                      <span>{rightTitle}</span>
+                    </div>
+                    <div className="pl-3.5 text-sm leading-relaxed text-[var(--text-secondary)]">
+                      <CellContentRenderer content={row.right} />
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* 데스크톱 테이블 뷰 (641px 이상) */}
+      <div className="card-scroll-area hidden overflow-x-auto pb-1.5 sm:block">
         <table className="comparison-table w-full min-w-[640px] border-collapse text-left text-sm">
           <thead>
             <tr className="border-b border-[var(--border-subtle)] bg-[var(--bg-secondary)]/50 text-xs font-semibold tracking-wider text-[var(--text-secondary)] uppercase">
