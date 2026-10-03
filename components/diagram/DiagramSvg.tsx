@@ -20,8 +20,18 @@ export function DiagramSvg({
   ariaLabel,
 }: DiagramSvgProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [scale, setScale] = useState(1);
+  const [baseSize, setBaseSize] = useState<{ width: number; height: number } | null>(null);
+
+  const scaleRef = useRef(scale);
+  useEffect(() => {
+    scaleRef.current = scale;
+  }, [scale]);
+
   const triggerRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const contentWrapperRef = useRef<HTMLDivElement>(null);
   const accessibleLabel = ariaLabel || title || '실행 모델 구조도';
 
   // 가로(데스크톱) 버전 & 세로(모바일) 버전 SVG
@@ -36,6 +46,8 @@ export function DiagramSvg({
 
   const closeModal = useCallback(() => {
     setIsOpen(false);
+    setScale(1);
+    setBaseSize(null);
     // 모달 닫힌 후 원래 트리거로 포커스 복원
     setTimeout(() => {
       triggerRef.current?.focus();
@@ -69,22 +81,9 @@ export function DiagramSvg({
     };
   }, [isOpen, closeModal]);
 
-  // 줌 상태 관리
-  const [scale, setScale] = useState(1);
-  const scaleRef = useRef(scale);
-  scaleRef.current = scale;
-
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const contentWrapperRef = useRef<HTMLDivElement>(null);
-  const [baseSize, setBaseSize] = useState<{ width: number; height: number } | null>(null);
-
-  // 모달 열림/닫힘 시 초기화 및 스크롤 맨 위로 리셋
+  // 모달 열림 시 초기화 및 스크롤 맨 위로 리셋
   useEffect(() => {
-    if (!isOpen) {
-      setScale(1);
-      setBaseSize(null);
-      return;
-    }
+    if (!isOpen) return;
 
     // 모달 열릴 때 스크롤 위치 (0, 0) 보장
     if (scrollContainerRef.current) {
@@ -128,20 +127,17 @@ export function DiagramSvg({
   }, [isOpen]);
 
   // 줌 변경 함수
-  const handleZoomChange = useCallback(
-    (newScale: number) => {
-      const clamped = Math.min(Math.max(Number(newScale.toFixed(2)), 1), 3);
-      if (!baseSize && contentWrapperRef.current) {
-        const w = contentWrapperRef.current.offsetWidth;
-        const h = contentWrapperRef.current.offsetHeight;
-        if (w > 0 && h > 0) {
-          setBaseSize({ width: w, height: h });
-        }
+  const handleZoomChange = (newScale: number) => {
+    const clamped = Math.min(Math.max(Number(newScale.toFixed(2)), 1), 3);
+    if (!baseSize && contentWrapperRef.current) {
+      const w = contentWrapperRef.current.offsetWidth;
+      const h = contentWrapperRef.current.offsetHeight;
+      if (w > 0 && h > 0) {
+        setBaseSize({ width: w, height: h });
       }
-      setScale(clamped);
-    },
-    [baseSize]
-  );
+    }
+    setScale(clamped);
+  };
 
   // 모바일 2손가락 핀치 줌 제스처 지원 (한 손가락 스크롤과 상호 간섭 없음)
   const touchStartDistRef = useRef<number | null>(null);
@@ -237,7 +233,7 @@ export function DiagramSvg({
         aria-haspopup="dialog"
         aria-expanded={isOpen}
         aria-label={`${title || '구조도'} 크게 보기 (클릭 또는 Enter 키)`}
-        className="group relative flex w-full cursor-zoom-in justify-center overflow-x-hidden rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] p-4 sm:p-6 shadow-xs transition-all duration-200 hover:border-sky-500/40 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
+        className="group relative flex w-full cursor-zoom-in justify-center overflow-x-hidden rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] p-4 pt-12 sm:p-6 shadow-xs transition-all duration-200 hover:border-sky-500/40 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
       >
         {/* 상단 안내 힌트 배지 */}
         <div className="absolute top-3 right-3 z-10 flex items-center gap-1.5 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-primary)]/90 px-2.5 py-1 text-xs font-medium text-[var(--text-secondary)] shadow-sm backdrop-blur-xs transition-all duration-200 group-hover:border-sky-500/40 group-hover:text-sky-600 dark:group-hover:text-sky-400 group-hover:scale-105 pointer-events-none">

@@ -189,11 +189,6 @@ export function CodeExample({
   const hasHighlights = (example.highlights?.length ?? 0) > 0;
   const hasKeyPoints = (example.keyPoints?.length ?? 0) > 0;
 
-  // 예제 탭/콘텐츠 전환 시 활성 선택 상태 초기화
-  useEffect(() => {
-    setActiveId(null);
-  }, [example]);
-
   // Esc 키를 누르면 선택 해제
   useEffect(() => {
     if (activeId === null) return;

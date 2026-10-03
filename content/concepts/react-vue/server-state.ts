@@ -67,8 +67,12 @@ export const serverState: ConceptPage = {
     },
     {
       label: '캐시 생명주기 제어 (staleTime vs gcTime)',
-      common:
-        'staleTime(기본값: 0초)은 캐시 데이터가 "신선한 상태"로 유지되어 재요청 없이 바로 재사용되는 유효기간이며, gcTime(구 cacheTime, 기본값: 5분)은 화면에서 컴포넌트가 언마운트되어 구독자가 0명이 된 후 메모리에서 폐기되기 전까지 보관되는 유예기간입니다.',
+      common: {
+        items: [
+          'staleTime(기본값: 0초)은 캐시 데이터가 "신선한 상태"로 유지되어 재요청 없이 바로 재사용되는 유효기간입니다.',
+          'gcTime(구 cacheTime, 기본값: 5분)은 화면에서 컴포넌트가 언마운트되어 구독자가 0명이 된 후 메모리에서 폐기되기 전까지 보관되는 유예기간입니다.',
+        ],
+      },
     },
     {
       label: '데이터 갱신 트리거 (invalidateQueries)',

@@ -74,7 +74,7 @@ export function ConceptView({ concept }: ConceptViewProps) {
         <div className="mt-4 space-y-12">
           {concept.codeExamples.map((example, index) => (
             <CodeExample
-              key={index}
+              key={`${concept.slug}-${index}`}
               example={example}
               leftTitle={meta.leftFramework}
               rightTitle={meta.rightFramework}

@@ -295,7 +295,7 @@ export const legacyStore = createStore({
     {
       label: '실전 예제',
       version:
-        'React 18+ (Zustand 5.x + persist) vs Vue 3.4+ (Pinia 2.x + pinia-plugin-persistedstate)',
+        'React 18+ (Zustand 5.x + persist) vs Vue 3.4+ (Pinia 3.x + pinia-plugin-persistedstate)',
       sourceProject: '목록 및 필터 관리 화면',
       leftCode: `// [React] 관심 항목 관리 (favoriteStore.ts)
 // 서버 상태와 완전히 분리하여 클라이언트 고유의 '관심 목록'만 Zustand persist로 관리

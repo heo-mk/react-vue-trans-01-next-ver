@@ -4,7 +4,7 @@ import { useState, Fragment } from 'react';
 import Link from 'next/link';
 import { useUiStore } from '@/store/useUiStore';
 import { useIsMounted } from '@/components/useIsMounted';
-import { allConcepts } from '@/content/index';
+import { allConcepts, axisMetadata } from '@/content/index';
 
 function formatCardSummary(summary: string) {
   if (!summary.includes(',')) {
@@ -114,8 +114,8 @@ export function ProgressDashboard() {
                 >
                   <div>
                     <div className="flex items-center justify-between text-xs">
-                      <span className="rounded bg-[var(--border-subtle)] px-2 py-0.5 font-mono text-[10px] text-[var(--text-secondary)]">
-                        {c.axis}
+                      <span className="rounded bg-[var(--border-subtle)] px-2 py-0.5 text-[10px] font-medium text-[var(--text-secondary)]">
+                        {axisMetadata[c.axis]?.title || c.axis}
                       </span>
                       <div className="flex items-center gap-1.5 text-xs">
                         {isRead && (

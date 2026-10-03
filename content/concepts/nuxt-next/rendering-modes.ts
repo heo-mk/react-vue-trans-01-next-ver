@@ -3,12 +3,12 @@ import { ConceptPage } from '../../schema';
 export const renderingModes: ConceptPage = {
   slug: 'rendering-modes',
   axis: 'nuxt-next',
-  title: '풀스택 메타 프레임워크 아키텍처 (Next.js vs Nuxt 3)',
-  cardTitle: '풀스택 메타 프레임워크',
+  title: '렌더링 방식과 서버 기능 (Next.js vs Nuxt 3)',
+  cardTitle: '렌더링 방식과 서버 기능',
   cardSubtitle: 'Next.js vs Nuxt 3',
   cardSummary: 'Next.js는 서버·브라우저 부품을 나누고, Nuxt 3는 Nitro를 씁니다.',
   oneLineSummary:
-    'Next.js는 컴포넌트 단위로 서버와 브라우저 부품을 세밀하게 분리하고, Nuxt 3는 자체 Nitro 엔진과 직관적인 설정(routeRules)으로 어디서든 유연하게 동작하는 풀스택 환경을 제공합니다.',
+    'Next.js는 컴포넌트 단위로 서버와 브라우저 부품을 세밀하게 분리하고, Nuxt 3는 자체 Nitro 엔진과 직관적인 설정(routeRules)으로 여러 배포 환경에 맞춰 동작하는 풀스택 환경을 제공합니다.',
   keywords: [
     'Next.js',
     'Nuxt 3',
@@ -33,7 +33,7 @@ export const renderingModes: ConceptPage = {
       },
       {
         term: 'Nuxt 3',
-        desc: '전 세계 모든 콘센트 규격(Node, Cloudflare, Vercel)에 자동으로 맞춰지는 만능 여행용 변환 어댑터(Nitro)를 장착한 여행 키트입니다.',
+        desc: '여러 나라의 콘센트 규격(Node, Cloudflare, Vercel 등)에 맞춰 설정(preset)만 바꿔 끼우는 변환 어댑터(Nitro)를 장착한 여행 키트입니다.',
       },
     ],
   },

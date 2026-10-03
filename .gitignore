@@ -47,3 +47,9 @@ docs/
 
 # temporary scratch
 scratch/
+
+# QA screenshots
+qa-screenshots/
+
+# generated inspection reports
+scripts/text-fields-report.json
