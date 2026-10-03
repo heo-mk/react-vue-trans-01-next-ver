@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback, useId, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import manifest from '@/content/diagrams-manifest.json';
 
@@ -10,6 +10,19 @@ interface DiagramSvgProps {
   className?: string;
   title?: string;
   ariaLabel?: string;
+}
+
+/**
+ * SVG 내부의 모든 ID, url(#...), filter, #id 선택자를 고유 네임스페이스로 격리
+ */
+function scopeSvgIds(svgString: string, namespace: string): string {
+  if (!svgString) return svgString;
+  const rootIdMatch = svgString.match(/<svg[^>]*\bid="([^"]+)"/);
+  if (!rootIdMatch) return svgString;
+  const baseId = rootIdMatch[1];
+  const newBaseId = `${baseId}-${namespace}`;
+  const regex = new RegExp(baseId.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
+  return svgString.replace(regex, newBaseId);
 }
 
 export function DiagramSvg({
@@ -22,6 +35,9 @@ export function DiagramSvg({
   const [isOpen, setIsOpen] = useState(false);
   const [scale, setScale] = useState(1);
   const [baseSize, setBaseSize] = useState<{ width: number; height: number } | null>(null);
+
+  const rawId = useId();
+  const cleanUid = rawId.replace(/[^a-zA-Z0-9_-]/g, '');
 
   const scaleRef = useRef(scale);
   useEffect(() => {
@@ -38,6 +54,26 @@ export function DiagramSvg({
   const horizontalSvg = (manifest as Record<string, string>)[diagramId];
   const resolvedVerticalId = verticalDiagramId || `${diagramId}-vertical`;
   const verticalSvg = (manifest as Record<string, string>)[resolvedVerticalId];
+
+  // 인스턴스 및 뷰 모드별(인라인 가로/세로, 모달 가로/세로) 완전한 ID 격리
+  const scopedHorizontal = useMemo(
+    () => (horizontalSvg ? scopeSvgIds(horizontalSvg, `h_${cleanUid}`) : ''),
+    [horizontalSvg, cleanUid]
+  );
+  const scopedVertical = useMemo(
+    () => (verticalSvg ? scopeSvgIds(verticalSvg, `v_${cleanUid}`) : ''),
+    [verticalSvg, cleanUid]
+  );
+  const scopedModalHorizontal = useMemo(
+    () => (horizontalSvg ? scopeSvgIds(horizontalSvg, `modal_h_${cleanUid}`) : ''),
+    [horizontalSvg, cleanUid]
+  );
+  const scopedModalVertical = useMemo(
+    () => (verticalSvg ? scopeSvgIds(verticalSvg, `modal_v_${cleanUid}`) : ''),
+    [verticalSvg, cleanUid]
+  );
+  const scopedDefault = scopedHorizontal || scopedVertical;
+  const scopedModalDefault = scopedModalHorizontal || scopedModalVertical;
 
   // 확대 모달 열기/닫기
   const openModal = useCallback(() => {
@@ -255,23 +291,23 @@ export function DiagramSvg({
         </div>
 
         {/* 1. 세로 버전 (화면 폭 640px 미만에서만 표시) */}
-        {verticalSvg ? (
+        {scopedVertical ? (
           <>
             {/* 세로 버전: overflow-x-auto + min-width auto → SVG가 자체 max-width를 유지, 넓으면 가로 스크롤 */}
             <div
               className="card-scroll-area block sm:hidden w-full overflow-x-auto [&_svg]:h-auto [&_svg]:w-auto [&_svg]:max-w-none"
-              dangerouslySetInnerHTML={{ __html: verticalSvg }}
+              dangerouslySetInnerHTML={{ __html: scopedVertical }}
             />
             {/* 2. 가로 버전 (화면 폭 640px 이상에서만 표시) */}
             <div
               className="hidden sm:flex w-full justify-center [&_svg]:h-auto [&_svg]:max-w-full"
-              dangerouslySetInnerHTML={{ __html: horizontalSvg || verticalSvg }}
+              dangerouslySetInnerHTML={{ __html: scopedHorizontal || scopedVertical }}
             />
           </>
         ) : (
           <div
             className="card-scroll-area flex w-full justify-center overflow-x-auto [&_svg]:h-auto [&_svg]:max-w-full"
-            dangerouslySetInnerHTML={{ __html: defaultSvg }}
+            dangerouslySetInnerHTML={{ __html: scopedDefault }}
           />
         )}
       </div>
@@ -421,25 +457,25 @@ export function DiagramSvg({
                         transformOrigin: '0 0',
                       }}
                     >
-                      {verticalSvg ? (
+                      {scopedModalVertical ? (
                         <>
                           {/* 모바일 화면에서는 세로 버전 표시 */}
                           <div
                             className="block sm:hidden w-full [&_svg]:h-auto [&_svg]:w-auto [&_svg]:max-w-none"
-                            dangerouslySetInnerHTML={{ __html: verticalSvg }}
+                            dangerouslySetInnerHTML={{ __html: scopedModalVertical }}
                           />
                           {/* 데스크톱 화면에서는 가로 버전 표시 */}
                           <div
                             className="hidden sm:flex w-full justify-center [&_svg]:h-auto [&_svg]:w-full [&_svg]:max-w-5xl"
                             dangerouslySetInnerHTML={{
-                              __html: horizontalSvg || verticalSvg,
+                              __html: scopedModalHorizontal || scopedModalVertical,
                             }}
                           />
                         </>
                       ) : (
                         <div
                           className="flex w-full justify-center [&_svg]:h-auto [&_svg]:max-w-5xl"
-                          dangerouslySetInnerHTML={{ __html: defaultSvg }}
+                          dangerouslySetInnerHTML={{ __html: scopedModalDefault }}
                         />
                       )}
                     </div>
