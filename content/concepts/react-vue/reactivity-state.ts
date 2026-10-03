@@ -149,19 +149,28 @@ watchEffect(() => {
       sourceProject: '아이템 목록 대시보드',
       leftCode: `// [React] 불변성을 활용한 낙관적 업데이트(Optimistic Update) & 스냅샷 롤백
 // hooks/useItemMutations.ts
-onMutate: async (item) => {
-  // 이전 상태 스냅샷 복사 (불변성 보장)
-  const previousItems = [...items];
-  // 낙관적 UI 즉각 업데이트
-  toggleItem(item);
-  return { previousItems };
-},
-onError: (_error, _item, context) => {
-  // 에러 발생 시 백업 스냅샷으로 롤백
-  if (context) {
-    setItems(context.previousItems);
-  }
-};`,
+export function useToggleItemMutation() {
+  const items = useItemStore((s) => s.items);
+  const toggleItem = useItemStore((s) => s.toggleItem);
+  const setItems = useItemStore((s) => s.setItems);
+
+  return useMutation({
+    mutationFn: (item: Item) => api.toggleItem(item.id),
+    onMutate: async (item) => {
+      // 이전 상태 스냅샷 복사 (불변성 보장)
+      const previousItems = [...items];
+      // 낙관적 UI 즉각 업데이트
+      toggleItem(item);
+      return { previousItems };
+    },
+    onError: (_error, _item, context) => {
+      // 에러 발생 시 백업 스냅샷으로 롤백
+      if (context) {
+        setItems(context.previousItems);
+      }
+    },
+  });
+}`,
       rightCode: `// [Vue] 동일 로직의 Vue/Pinia 구현 패턴
 // stores/useItemStore.ts
 export const useItemStore = defineStore('item', () => {

@@ -132,14 +132,12 @@ import { create } from 'zustand';
 interface BearState {
   bears: number;
   increasePopulation: () => void;
-  removeAllBears: () => void;
 }
 
 // 1. 스토어 생성 (Provider 래퍼 없이 어디서든 호출 가능)
 export const useBearStore = create<BearState>()((set) => ({
   bears: 0,
   increasePopulation: () => set((state) => ({ bears: state.bears + 1 })),
-  removeAllBears: () => set({ bears: 0 }),
 }));
 
 // 2. 컴포넌트에서 필요한 조각(Selector)만 골라서 구독
@@ -149,37 +147,34 @@ export function BearCounter() {
 
   return <button onClick={increase}>Bears: {bears}</button>;
 }`,
-      rightCode: `<!-- [Vue] Vue 3.4+ (Pinia 3.x) — 반응형 스토어와 직접 액션 호출 -->
-<script setup lang="ts">
-import { defineStore, storeToRefs } from 'pinia';
+      rightCode: `// [Vue] Vue 3.4+ (Pinia 3.x) — 반응형 스토어와 직접 액션 호출
+// stores/bear.ts
+import { defineStore } from 'pinia';
 
 // 1. 스토어 정의 (Setup 스토어 또는 Options 스토어 지원)
 export const useBearStore = defineStore('bear', {
   state: () => ({ bears: 0 }),
-  getters: {
-    doubleBears: (state) => state.bears * 2,
-  },
   actions: {
     increasePopulation() {
       this.bears++; // mutation 없이 action에서 직접 상태 수정
     },
-    removeAllBears() {
-      this.bears = 0;
-    },
   },
 });
+
+<!-- BearCounter.vue -->
+<script setup lang="ts">
+import { storeToRefs } from 'pinia';
+import { useBearStore } from '@/stores/bear';
 
 // 2. 컴포넌트에서 사용
 const store = useBearStore();
 // 구조분해 시 반응성을 잃지 않으려면 storeToRefs 사용!
-const { bears, doubleBears } = storeToRefs(store);
+const { bears } = storeToRefs(store);
 const { increasePopulation } = store;
 </script>
 
 <template>
-  <button @click="increasePopulation">
-    Bears: {{ bears }} (Double: {{ doubleBears }})
-  </button>
+  <button @click="increasePopulation">Bears: {{ bears }}</button>
 </template>`,
       highlights: [
         { side: 'left', id: 1, match: 'create<BearState>()' },
@@ -194,7 +189,7 @@ const { increasePopulation } = store;
           id: 1,
           title: '스토어 만들기',
           left: 'Provider 없이 create()로 만들고 어디서든 호출',
-          right: 'defineStore()에 state·getters·actions를 한곳에 정의',
+          right: 'defineStore()에 state·actions를 한곳에 정의',
         },
         {
           id: 2,
@@ -379,10 +374,10 @@ export const useFavoriteStore = defineStore(
   {
     persist: true, // pinia-plugin-persistedstate 플러그인으로 로컬스토리지 자동 연동
   }
-);
-</script>`,
+);`,
       highlights: [
-        { side: 'left', id: 1, match: '(set, get) => ({' },
+        { side: 'left', id: 1, match: 'persist(' },
+        { side: 'left', id: 1, match: "name: 'item-favorites-storage'" },
         { side: 'left', id: 2, match: 'favorites: [...state.favorites, item]' },
         { side: 'right', id: 1, match: 'persist: true, // pinia-plugin-persistedstate' },
         { side: 'right', id: 2, match: 'favorites.value.push(item);' },

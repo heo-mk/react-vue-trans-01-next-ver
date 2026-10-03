@@ -345,6 +345,8 @@ export function useToggleFavoriteMutation(favoriteStore: ReturnType<typeof useFa
       sourceProject: '무한 스크롤 목록 화면',
       leftCode: `// [React] 검색 무한 스크롤 방어 로직 (useSearchInfinite.ts)
 // 외부 API의 total_count 부정확성에 대비한 무한 스크롤 이중 종료 방어 조건
+import { useInfiniteQuery } from '@tanstack/react-query';
+
 export function useSearchInfinite(query: string) {
   return useInfiniteQuery({
     queryKey: ['items', 'search', query],
@@ -364,6 +366,7 @@ export function useSearchInfinite(query: string) {
 }`,
       rightCode: `// [Vue] Vue 3.4+ Vue Query — 동일한 getNextPageParam 방어 로직 공유
 import { useInfiniteQuery } from '@tanstack/vue-query';
+import type { Ref } from 'vue';
 
 export function useSearchInfinite(query: Ref<string>) {
   return useInfiniteQuery({
@@ -372,7 +375,9 @@ export function useSearchInfinite(query: Ref<string>) {
     initialPageParam: 1,
     getNextPageParam: (lastPage, allPages) => {
       const fetchedCount = allPages.reduce((sum, p) => sum + p.items.length, 0);
-      // 캐싱과 상태 관리는 같은 TanStack 코어를 쓰므로 동일하게 동작 (queryKey의 반응형 처리 등 어댑터 차이는 있음)
+      // 이중 방어 조건:
+      // 1. 이번 페이지 결과가 페이지 사이즈(10개) 미만이면 마지막 페이지
+      // 2. 누적 수신 개수가 API의 total_count 이상이면 종료
       if (lastPage.items.length < 10 || fetchedCount >= lastPage.total_count) {
         return undefined;
       }
@@ -465,6 +470,8 @@ function handleSearch(keyword: string) {
       sourceProject: '자주 바뀌지 않는 정책·약관 조회 화면',
       leftCode: `// [React] 정책·약관 쿼리 캐시 정책 (policyQueries.ts)
 // 변경 주기가 길고 안정적인 정책 데이터의 특성을 고려한 1시간 staleTime 정책
+import { useQuery } from '@tanstack/react-query';
+
 export function usePolicyQuery(keyword: string) {
   return useQuery({
     queryKey: ['policies', keyword],
@@ -476,6 +483,7 @@ export function usePolicyQuery(keyword: string) {
 }`,
       rightCode: `// [Vue] Vue 3.4+ Vue Query — 동일한 도메인 기반 staleTime 적용
 import { useQuery } from '@tanstack/vue-query';
+import type { Ref } from 'vue';
 
 export function usePolicyQuery(keyword: Ref<string>) {
   return useQuery({

@@ -171,12 +171,7 @@ export function useTablePagination(onFetch: (page: number) => void) {
     onFetch(page.value);
   };
 
-  return {
-    page: readonly(page),
-    limit,
-    total,
-    nextPage
-  };
+  return { page: readonly(page), limit, total, nextPage };
 }
 
 // Component.vue (<script setup>)
