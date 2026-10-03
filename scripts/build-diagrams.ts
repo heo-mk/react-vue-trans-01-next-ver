@@ -202,7 +202,7 @@ function validateBuiltDiagrams(
   srcDir: string
 ) {
   const allIdsAcrossSvgs = new Map<string, string>();
-  let validationErrors: string[] = [];
+  const validationErrors: string[] = [];
 
   for (const [diagramId, svg] of Object.entries(manifest)) {
     // 1. ID 추출 (data-id 등 제외하고 순수 id="..." 속성만 추출) 및 전역 중복 검사
