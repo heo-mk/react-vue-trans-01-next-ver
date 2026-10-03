@@ -8,6 +8,8 @@
     "build:diagrams": "pnpm --filter web build:diagrams",
     "lint": "pnpm --filter web lint",
     "check:content": "pnpm --filter @repo/content check",
+    "dev:api": "pnpm --filter api dev",
+    "smoke:api": "pnpm --filter api smoke",
     "format": "prettier --write ."
   },
   "devDependencies": {
