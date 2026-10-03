@@ -174,7 +174,9 @@ const { increasePopulation } = store;
 </script>
 
 <template>
-  <button @click="increasePopulation">Bears: {{ bears }}</button>
+  <button @click="increasePopulation">
+    Bears: {{ bears }}
+  </button>
 </template>`,
       highlights: [
         { side: 'left', id: 1, match: 'create<BearState>()' },

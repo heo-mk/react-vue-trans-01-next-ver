@@ -413,6 +413,7 @@ export function useSearchInfinite(query: Ref<string>) {
       leftCode: `// [React] 동일 키워드 재검색 캐시 우회 (SearchSection.tsx)
 // 동일 키워드 재검색 시 queryKey 캐시 우회 및 refetch 강제 트리거
 export function SearchSection() {
+  // SearchResult 컴포넌트에 ref={searchResultRef}로 연결되어 있다고 가정
   const searchResultRef = useRef<{ refetch: () => void }>(null);
   const [lastKeyword, setLastKeyword] = useState('');
 
@@ -432,6 +433,7 @@ export function SearchSection() {
 import { ref } from 'vue';
 
 const lastKeyword = ref('');
+// SearchResult 컴포넌트에 ref="resultRef"로 연결되어 있다고 가정
 const resultRef = ref<{ refetch: () => void } | null>(null);
 
 function handleSearch(keyword: string) {
