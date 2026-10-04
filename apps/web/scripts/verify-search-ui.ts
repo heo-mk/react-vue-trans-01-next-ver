@@ -3,8 +3,8 @@ import os from 'node:os';
 import fs from 'node:fs';
 import net from 'node:net';
 import { spawn, execSync, ChildProcess } from 'node:child_process';
-import { allConcepts } from '@repo/content';
-import { searchConcepts } from '@repo/content/search';
+import { allConcepts } from 'api/content';
+import { searchConcepts } from 'api/content/search';
 
 const puppeteerPath = require.resolve('puppeteer', {
   paths: [require.resolve('@mermaid-js/mermaid-cli')],

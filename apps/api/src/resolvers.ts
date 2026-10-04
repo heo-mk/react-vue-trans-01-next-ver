@@ -4,7 +4,7 @@ import {
   getAllConcepts,
   getConcept,
   getConceptsByAxis,
-} from '@repo/content';
+} from './content';
 import type { Axis as ContentAxis, ConceptPage } from '@repo/content/schema';
 import {
   mapFormattedContent,

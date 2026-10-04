@@ -1,6 +1,6 @@
 import { searchConceptCards, SearchError } from '../lib/graphql/searchClient';
-import { allConcepts } from '@repo/content';
-import { searchConcepts } from '@repo/content/search';
+import { allConcepts } from 'api/content';
+import { searchConcepts } from 'api/content/search';
 
 async function main() {
   console.log('🔍 [verify-search-client] 검색 클라이언트 종합 검증 시작...\n');

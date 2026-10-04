@@ -1,5 +1,5 @@
 import assert from 'node:assert';
-import { allConcepts, axisMetadata, getConcept } from '@repo/content';
+import { allConcepts, axisMetadata, getConcept } from 'api/content';
 import { graphqlRequest } from '../lib/graphql/client';
 import {
   AXES_QUERY,

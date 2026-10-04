@@ -2,11 +2,17 @@
   "name": "api",
   "version": "0.1.0",
   "private": true,
+  "exports": {
+    "./content": "./src/content/index.ts",
+    "./content/search": "./src/content/search.ts"
+  },
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "start": "tsx src/index.ts",
     "typecheck": "tsc --noEmit",
-    "smoke": "tsx scripts/smoke.ts"
+    "smoke": "tsx scripts/smoke.ts",
+    "check:content": "tsx scripts/check-content-quality.ts",
+    "test:search": "tsx scripts/test-search.ts"
   },
   "dependencies": {
     "@apollo/server": "^5.5.1",

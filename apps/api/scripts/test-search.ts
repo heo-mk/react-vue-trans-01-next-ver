@@ -1,5 +1,5 @@
-import { allConcepts } from '../index';
-import { searchConcepts } from '../search';
+import { allConcepts } from '../src/content';
+import { searchConcepts } from '../src/content/search';
 
 
 const testQueries = [

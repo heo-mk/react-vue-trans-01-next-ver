@@ -11,6 +11,23 @@ const eslintConfig = defineConfig([
     },
   },
   {
+    files: ['app/**', 'components/**', 'lib/**', 'store/**'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['api', 'api/*'],
+              message:
+                '화면 코드는 apps/api 를 import 하지 않는다. 데이터는 GraphQL 로 받는다.',
+            },
+          ],
+        },
+      ],
+    },
+  },
+  {
     files: ['scripts/**', '*.config.*', '*.mjs'],
     rules: {
       'no-console': 'off',

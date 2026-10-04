@@ -1,4 +1,4 @@
-import { Axis, ConceptPage } from './schema';
+import { Axis, ConceptPage } from '@repo/content/schema';
 import { reactivityState } from './concepts/react-vue/reactivity-state';
 import { globalState } from './concepts/react-vue/global-state';
 import { serverState } from './concepts/react-vue/server-state';

@@ -1,4 +1,4 @@
-import { ConceptPage } from '../../schema';
+import { ConceptPage } from '@repo/content/schema';
 
 export const renderingModes: ConceptPage = {
   slug: 'rendering-modes',

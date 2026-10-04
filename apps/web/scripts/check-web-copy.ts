@@ -1,9 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 
-// TODO(stage-4): 이후 단계에서 @repo/content 데이터/검색 이전 시 이 import 경로가 apps/api 등으로 변경될 예정
-import { allConcepts } from '@repo/content';
-import { searchConcepts } from '@repo/content/search';
+import { allConcepts } from 'api/content';
+import { searchConcepts } from 'api/content/search';
 
 interface QualityReport {
   passed: boolean;

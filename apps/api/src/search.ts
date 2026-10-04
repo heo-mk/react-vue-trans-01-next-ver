@@ -1,5 +1,5 @@
-import { allConcepts } from '@repo/content';
-import { searchConcepts as sharedSearchConcepts } from '@repo/content/search';
+import { allConcepts } from './content';
+import { searchConcepts as sharedSearchConcepts } from './content/search';
 import type { ConceptPage } from '@repo/content/schema';
 
 export function searchConcepts(searchQuery: string): ConceptPage[] {

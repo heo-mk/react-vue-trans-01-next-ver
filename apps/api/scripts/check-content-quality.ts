@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
-import { allConcepts } from '../index';
-import { getContentPlainText, getComparisonCellPlainText } from '../schema';
+import { allConcepts } from '../src/content';
+import { getContentPlainText, getComparisonCellPlainText } from '@repo/content/schema';
 
 interface QualityReport {
   passed: boolean;
@@ -416,9 +416,9 @@ function checkConceptQuality(): QualityReport {
     '차세대',
   ];
 
-  // 10-1. 메타데이터 문구 검사 (packages/content/index.ts)
+  // 10-1. 메타데이터 문구 검사 (apps/api/src/content/index.ts)
   const metaFiles = [
-    { name: 'packages/content/index.ts', path: path.resolve(__dirname, '../index.ts') },
+    { name: 'apps/api/src/content/index.ts', path: path.resolve(__dirname, '../src/content/index.ts') },
   ];
 
   for (const file of metaFiles) {
