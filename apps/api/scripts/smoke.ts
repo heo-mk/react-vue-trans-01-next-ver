@@ -1,4 +1,5 @@
 import { createApolloServer } from '../src/index';
+import { allConcepts } from '@repo/content';
 
 async function runSmokeTests() {
   console.log('🚀 [Smoke Test] Apollo Server 메모리 인스턴스 검증 시작...\n');
@@ -225,18 +226,21 @@ async function runSmokeTests() {
     if (sampleCellItems) console.log(`     [예시 ComparisonCellItems]: items=${sampleCellItems.items.length}개 (lead: ${sampleCellItems.lead ?? 'none'})`);
 
     if (!foundFormattedPlainText || !foundFormattedStructured || !foundCellPlainText || !foundCellItems) {
-      console.warn(`   ⚠️ 주의: 일부 형태가 데이터셋에 존재하지 않을 수 있습니다.`);
+      console.error(
+        `❌ 4. 필수 union 모양 중 누락된 형태가 있습니다: FormattedContent(PlainText: ${foundFormattedPlainText}, Structured: ${foundFormattedStructured}), ComparisonCell(PlainText: ${foundCellPlainText}, Items: ${foundCellItems})`
+      );
+      failed = true;
     }
   } catch (err: any) {
     console.error('❌ 4. union 검증 실패:', err.message);
     failed = true;
   }
 
-  // 5. 값이 없는 필드가 null로 내려오고 오류가 없는 것
+  // 5. 값이 없는 필드가 null로 내려오고 오류가 없는 것 (전체 개념 전수 대조)
   try {
-    const nullData: any = await query(`
-      query {
-        concept(axis: REACT_VUE, slug: "server-state") {
+    const allConceptsData: any = await query(`
+      query GetAllConceptsForNullCheck {
+        concepts {
           slug
           cardSubtitle
           analogy {
@@ -248,8 +252,65 @@ async function runSmokeTests() {
         }
       }
     `);
-    const c = nullData.concept;
-    console.log(`✓ 5. Nullable 필드 검증: cardSubtitle=${c.cardSubtitle}, comparisonNote=${c.comparisonNote}, diagramId=${c.diagramId}, sourceNote=${c.sourceNote}`);
+
+    const checkFields = ['cardSubtitle', 'analogy', 'comparisonNote', 'diagramId', 'sourceNote'] as const;
+    const stats: Record<string, { nullCount: number; valueCount: number }> = {};
+    for (const f of checkFields) {
+      stats[f] = { nullCount: 0, valueCount: 0 };
+    }
+
+    for (const c of allConceptsData.concepts) {
+      const raw = allConcepts.find((x) => x.slug === c.slug);
+      if (!raw) {
+        console.error(`❌ 5. 원본 데이터에서 slug '${c.slug}'를 찾을 수 없습니다.`);
+        failed = true;
+        continue;
+      }
+
+      for (const field of checkFields) {
+        const rawValue = (raw as any)[field];
+        const resValue = c[field];
+
+        if (rawValue === undefined) {
+          if (resValue !== null) {
+            console.error(`❌ 5. [${c.slug}.${field}] 원본이 undefined인데 GraphQL 응답이 null이 아닙니다: ${JSON.stringify(resValue)}`);
+            failed = true;
+          } else {
+            stats[field].nullCount++;
+          }
+        } else {
+          if (field === 'analogy') {
+            if (resValue === null || !resValue.__typename) {
+              console.error(`❌ 5. [${c.slug}.analogy] 원본이 존재하는데 GraphQL 응답이 null이거나 __typename이 없습니다.`);
+              failed = true;
+            } else {
+              stats[field].valueCount++;
+            }
+          } else {
+            if (resValue === null) {
+              console.error(`❌ 5. [${c.slug}.${field}] 원본이 존재하는데 GraphQL 응답이 null입니다.`);
+              failed = true;
+            } else {
+              stats[field].valueCount++;
+            }
+          }
+        }
+      }
+    }
+
+    console.log(`✓ 5. Nullable 필드 검증 결과:`);
+    for (const field of checkFields) {
+      const { nullCount, valueCount } = stats[field];
+      if (nullCount > 0 && valueCount > 0) {
+        console.log(`   ✓ '${field}': null인 경우(${nullCount}건)와 값이 있는 경우(${valueCount}건) 모두 확인 완료`);
+      } else if (nullCount > 0 && valueCount === 0) {
+        console.log(`   ℹ️ '${field}': null인 경우만 확인됨 (${nullCount}건, 전체 데이터셋에 값 없음)`);
+      } else if (nullCount === 0 && valueCount > 0) {
+        console.log(`   ℹ️ '${field}': 값이 있는 경우만 확인됨 (${valueCount}건, 전체 데이터셋에 null 없음)`);
+      } else {
+        console.warn(`   ⚠️ '${field}': 데이터 없음`);
+      }
+    }
   } catch (err: any) {
     console.error('❌ 5. Nullable 필드 검증 실패:', err.message);
     failed = true;
@@ -326,6 +387,35 @@ async function runSmokeTests() {
     }
   }
 
+  // 7-1. 검색 예외 상황 검증 (Navbar.tsx filteredConcepts 로직 기준)
+  console.log('✓ 7-1. 검색 예외 상황 검증 시작:');
+  const edgeCaseQueries = [
+    { name: '빈 문자열 ("")', query: '', expectedCount: 0, expectedSlugs: [] },
+    { name: '공백만 있는 문자열 ("   ")', query: '   ', expectedCount: 0, expectedSlugs: [] },
+    { name: '소문자 검색 ("zustand")', query: 'zustand', expectedCount: 2, expectedSlugs: ['global-state', 'server-state'] },
+    { name: '없는 단어 ("zzzzqq")', query: 'zzzzqq', expectedCount: 0, expectedSlugs: [] },
+    { name: '앞뒤 공백 ("  Zustand  ")', query: '  Zustand  ', expectedCount: 2, expectedSlugs: ['global-state', 'server-state'] },
+  ];
+
+  for (const item of edgeCaseQueries) {
+    try {
+      const searchRes: any = await query(`query SearchEdge($q: String!) { search(query: $q) { slug } }`, { q: item.query });
+      const slugs: string[] = searchRes.search.map((s: any) => s.slug);
+      const isCountMatch = slugs.length === item.expectedCount;
+      const isSlugMatch = JSON.stringify(slugs) === JSON.stringify(item.expectedSlugs);
+
+      if (isCountMatch && isSlugMatch) {
+        console.log(`   ✓ ${item.name} -> ${slugs.length}건 [${slugs.join(', ')}] 일치`);
+      } else {
+        console.error(`   ❌ ${item.name} 불일치: 기대 [${item.expectedSlugs.join(', ')}], 실제 [${slugs.join(', ')}]`);
+        failed = true;
+      }
+    } catch (err: any) {
+      console.error(`   ❌ ${item.name} 쿼리 실패:`, err.message);
+      failed = true;
+    }
+  }
+
   // 8. "카드용 필드만" 요청했을 때 요청하지 않은 필드가 없는 것
   try {
     const cardData: any = await query(`
@@ -359,7 +449,7 @@ async function runSmokeTests() {
     console.error('\n🚨 일부 Smoke 테스트가 실패했습니다.');
     process.exit(1);
   } else {
-    console.log('\n🎉 [Smoke Test 통과] 8개 검증 항목 모두 완벽히 통과했습니다!');
+    console.log('\n🎉 [Smoke Test 통과] 모든 검증 항목을 완벽히 통과했습니다!');
   }
 }
 
