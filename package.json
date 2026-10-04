@@ -13,6 +13,7 @@
     "smoke:api": "pnpm --filter api smoke",
     "verify:adapter": "pnpm --filter web verify:adapter",
     "verify:search-client": "pnpm --filter web verify:search-client",
+    "verify:search-ui": "pnpm --filter web verify:search-ui",
     "format": "prettier --write ."
   },
   "devDependencies": {

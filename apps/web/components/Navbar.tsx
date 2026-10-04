@@ -320,6 +320,7 @@ export function Navbar() {
         createPortal(
           <div
             ref={dropdownRef}
+            data-testid="search-dropdown"
             tabIndex={-1}
             onMouseDown={(e) => {
               // 버튼 클릭 시 입력창 blur로 박스가 먼저 닫히지 않도록 기본동작 방지
@@ -336,20 +337,29 @@ export function Navbar() {
             {/* aria-live 영역: 상태 문구 및 헤더 */}
             <div aria-live="polite">
               {status === 'loading' && (
-                <div className="py-6 text-center text-xs text-[var(--text-secondary)]">
+                <div
+                  data-testid="search-status"
+                  className="py-6 text-center text-xs text-[var(--text-secondary)]"
+                >
                   검색 중…
                 </div>
               )}
 
               {status === 'error' && (
-                <div className="py-4 text-center text-xs text-red-500 dark:text-red-400">
+                <div
+                  data-testid="search-status"
+                  className="py-4 text-center text-xs text-red-500 dark:text-red-400"
+                >
                   {errorMessage}
                 </div>
               )}
 
               {status === 'success' && results.length > 0 && (
                 <div>
-                  <div className="px-2.5 py-1.5 text-[11px] font-medium text-[var(--text-secondary)]">
+                  <div
+                    data-testid="search-heading"
+                    className="px-2.5 py-1.5 text-[11px] font-medium text-[var(--text-secondary)]"
+                  >
                     &apos;{submittedQuery}&apos; 검색 결과 {results.length}건
                   </div>
                   <ul className="space-y-1">
@@ -357,6 +367,7 @@ export function Navbar() {
                       <li key={c.slug}>
                         <button
                           type="button"
+                          data-testid="search-result-item"
                           onClick={() => handleSelect(c.axis, c.slug)}
                           className="flex w-full flex-col gap-0.5 rounded-lg p-2.5 text-left transition-colors hover:bg-[var(--bg-secondary)]"
                         >
@@ -382,12 +393,16 @@ export function Navbar() {
 
               {/* 결과 없음: Navbar 기존 문구 유지 */}
               {status === 'success' && results.length === 0 && (
-                <div className="py-4 text-center text-xs text-[var(--text-secondary)]">
+                <div
+                  data-testid="search-status"
+                  className="py-4 text-center text-xs text-[var(--text-secondary)]"
+                >
                   <div>일치하는 개념이 없습니다.</div>
                   <div className="mt-1.5 text-[11px] text-[var(--text-secondary)]/80">
                     추천 검색어:{' '}
                     <button
                       type="button"
+                      data-testid="search-recommend"
                       onClick={() => handleQuickKeyword('useState')}
                       className="text-emerald-600 hover:underline dark:text-emerald-400"
                     >
@@ -396,6 +411,7 @@ export function Navbar() {
                     {', '}
                     <button
                       type="button"
+                      data-testid="search-recommend"
                       onClick={() => handleQuickKeyword('ref')}
                       className="text-emerald-600 hover:underline dark:text-emerald-400"
                     >
@@ -404,6 +420,7 @@ export function Navbar() {
                     {', '}
                     <button
                       type="button"
+                      data-testid="search-recommend"
                       onClick={() => handleQuickKeyword('RSC')}
                       className="text-emerald-600 hover:underline dark:text-emerald-400"
                     >
@@ -420,6 +437,7 @@ export function Navbar() {
                     추천 검색어:{' '}
                     <button
                       type="button"
+                      data-testid="search-recommend"
                       onClick={() => handleQuickKeyword('useState')}
                       className="text-emerald-600 hover:underline dark:text-emerald-400"
                     >
@@ -428,6 +446,7 @@ export function Navbar() {
                     {', '}
                     <button
                       type="button"
+                      data-testid="search-recommend"
                       onClick={() => handleQuickKeyword('ref')}
                       className="text-emerald-600 hover:underline dark:text-emerald-400"
                     >
@@ -436,6 +455,7 @@ export function Navbar() {
                     {', '}
                     <button
                       type="button"
+                      data-testid="search-recommend"
                       onClick={() => handleQuickKeyword('RSC')}
                       className="text-emerald-600 hover:underline dark:text-emerald-400"
                     >
