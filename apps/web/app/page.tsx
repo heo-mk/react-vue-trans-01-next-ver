@@ -1,11 +1,14 @@
 import Link from 'next/link';
-import { allConcepts, axisMetadata } from '@repo/content';
+import type { Axis } from '@repo/content/schema';
+import { getAxisMetaMap, getConceptCards } from '@/lib/graphql/loaders';
 import { DiagramSvg } from '@/components/diagram/DiagramSvg';
 import { ProgressDashboard } from '@/components/ProgressDashboard';
 import { FormattedTitle } from '@/components/FormattedTitle';
 
-export default function Home() {
-  const axes = Object.keys(axisMetadata) as (keyof typeof axisMetadata)[];
+export default async function Home() {
+  const axisMetaMap = await getAxisMetaMap();
+  const allConcepts = await getConceptCards();
+  const axes: Axis[] = ['react-vue', 'vue2-vue3', 'nuxt-next'];
 
   return (
     <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] transition-colors duration-200">
@@ -54,7 +57,7 @@ export default function Home() {
         </section>
 
         {/* Phase 5: 학습 진도 & 북마크 대시보드 */}
-        <ProgressDashboard />
+        <ProgressDashboard concepts={allConcepts} axisMetaMap={axisMetaMap} />
 
         {/* 3대 전환 학습 축 목록 */}
         <section className="mb-16">
@@ -72,7 +75,7 @@ export default function Home() {
 
           <div className="grid gap-6 md:grid-cols-3 md:grid-rows-[auto_1fr]">
             {axes.map((axis) => {
-              const meta = axisMetadata[axis];
+              const meta = axisMetaMap[axis];
               const concepts = allConcepts.filter((c) => c.axis === axis);
 
               return (

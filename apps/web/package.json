@@ -5,11 +5,14 @@
   "scripts": {
     "dev": "pnpm run build:diagrams && next dev",
     "build:diagrams": "tsx scripts/build-diagrams.ts",
-    "build": "next build",
-    "build:full": "pnpm run build:diagrams && next build",
+    "build:next": "next build",
+    "build": "start-server-and-test \"pnpm --filter api start\" tcp:4000 \"pnpm run build:next\"",
+    "build:full": "pnpm run build:diagrams && pnpm run build",
     "start": "next start",
     "lint": "eslint",
-    "verify:adapter": "start-server-and-test \"pnpm --filter api start\" tcp:4000 \"tsx scripts/verify-adapter.ts\""
+    "verify:adapter": "start-server-and-test \"pnpm --filter api start\" tcp:4000 \"tsx scripts/verify-adapter.ts\"",
+    "snapshot:before": "start-server-and-test \"next start\" tcp:3000 \"tsx scripts/pages-snapshot.ts before\"",
+    "snapshot:after": "start-server-and-test \"next start\" tcp:3000 \"tsx scripts/pages-snapshot.ts after\""
   },
   "dependencies": {
     "@repo/content": "workspace:*",

@@ -4,7 +4,8 @@ import { useState, Fragment } from 'react';
 import Link from 'next/link';
 import { useUiStore } from '@/store/useUiStore';
 import { useIsMounted } from '@/components/useIsMounted';
-import { allConcepts, axisMetadata } from '@repo/content';
+import type { Axis } from '@repo/content/schema';
+import type { AxisMeta, ConceptCard } from '@/lib/graphql/loaders';
 
 function formatCardSummary(summary: string) {
   if (!summary.includes(',')) {
@@ -24,18 +25,26 @@ function formatCardSummary(summary: string) {
 
 type FilterType = 'all' | 'completed' | 'favorites';
 
-export function ProgressDashboard() {
+interface ProgressDashboardProps {
+  concepts: ConceptCard[];
+  axisMetaMap: Record<Axis, AxisMeta>;
+}
+
+export function ProgressDashboard({
+  concepts,
+  axisMetaMap,
+}: ProgressDashboardProps) {
   const { readConcepts, favorites } = useUiStore();
   const isMounted = useIsMounted();
   const [filter, setFilter] = useState<FilterType>('all');
 
-  const totalCount = allConcepts.length;
+  const totalCount = concepts.length;
   const completedCount = isMounted ? readConcepts.length : 0;
   const favoritesCount = isMounted ? favorites.length : 0;
   const percentage =
     totalCount > 0 ? Math.round((completedCount / totalCount) * 100) : 0;
 
-  const filteredConcepts = allConcepts.filter((c) => {
+  const filteredConcepts = concepts.filter((c) => {
     if (!isMounted) return filter === 'all';
     if (filter === 'completed') return readConcepts.includes(c.slug);
     if (filter === 'favorites') return favorites.includes(c.slug);
@@ -115,7 +124,7 @@ export function ProgressDashboard() {
                   <div>
                     <div className="flex items-center justify-between text-xs">
                       <span className="rounded bg-[var(--border-subtle)] px-2 py-0.5 text-[10px] font-medium text-[var(--text-secondary)]">
-                        {axisMetadata[c.axis]?.title || c.axis}
+                        {axisMetaMap[c.axis]?.title || c.axis}
                       </span>
                       <div className="flex items-center gap-1.5 text-xs">
                         {isRead && (

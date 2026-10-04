@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { ConceptPage } from '@repo/content/schema';
-import { axisMetadata } from '@repo/content';
+import type { ConceptPage } from '@repo/content/schema';
+import type { AxisMeta } from '@/lib/graphql/loaders';
 import { useUiStore } from '@/store/useUiStore';
 import { useIsMounted } from '@/components/useIsMounted';
 import { FormattedTitle } from '@/components/FormattedTitle';
@@ -10,10 +10,10 @@ import { Tooltip } from '@/components/Tooltip';
 
 interface ConceptHeaderProps {
   concept: ConceptPage;
+  meta: AxisMeta;
 }
 
-export function ConceptHeader({ concept }: ConceptHeaderProps) {
-  const meta = axisMetadata[concept.axis];
+export function ConceptHeader({ concept, meta }: ConceptHeaderProps) {
   const { readConcepts, toggleReadConcept, favorites, toggleFavorite } =
     useUiStore();
   const isMounted = useIsMounted();

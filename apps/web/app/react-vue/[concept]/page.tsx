@@ -1,10 +1,18 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import { getConcept, getConceptsByAxis } from '@repo/content';
+import {
+  getAxisMetaMap,
+  getConceptParams,
+  getConceptDetail,
+} from '@/lib/graphql/loaders';
 import { ConceptView } from '@/components/content/ConceptView';
 
+const AXIS = 'react-vue';
+
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
-  const concepts = getConceptsByAxis('react-vue');
+  const concepts = await getConceptParams(AXIS);
   return concepts.map((c) => ({
     concept: c.slug,
   }));
@@ -16,7 +24,7 @@ export async function generateMetadata({
   params: Promise<{ concept: string }>;
 }): Promise<Metadata> {
   const { concept: slug } = await params;
-  const concept = getConcept('react-vue', slug);
+  const concept = await getConceptDetail(AXIS, slug);
   if (!concept) return { title: '개념을 찾을 수 없습니다' };
 
   return {
@@ -31,11 +39,14 @@ export default async function ReactVueConceptPage({
   params: Promise<{ concept: string }>;
 }) {
   const { concept: slug } = await params;
-  const concept = getConcept('react-vue', slug);
+  const [concept, axisMetaMap] = await Promise.all([
+    getConceptDetail(AXIS, slug),
+    getAxisMetaMap(),
+  ]);
 
   if (!concept) {
     notFound();
   }
 
-  return <ConceptView concept={concept} />;
+  return <ConceptView concept={concept} meta={axisMetaMap[AXIS]} />;
 }

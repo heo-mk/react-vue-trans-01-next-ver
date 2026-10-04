@@ -1,7 +1,7 @@
 'use client';
 
-import { ConceptPage } from '@repo/content/schema';
-import { axisMetadata } from '@repo/content';
+import type { ConceptPage } from '@repo/content/schema';
+import type { AxisMeta } from '@/lib/graphql/loaders';
 import { ComparisonTable } from './ComparisonTable';
 import { CodeExample } from './CodeExample';
 import { PitfallCallout } from './PitfallCallout';
@@ -11,15 +11,14 @@ import { ConceptHeader } from './ConceptHeader';
 
 interface ConceptViewProps {
   concept: ConceptPage;
+  meta: AxisMeta;
 }
 
-export function ConceptView({ concept }: ConceptViewProps) {
-  const meta = axisMetadata[concept.axis];
-
+export function ConceptView({ concept, meta }: ConceptViewProps) {
   return (
     <div className="relative min-h-full">
       {/* 화면 전체 폭 불투명 배경을 가진 반응형 Sticky 제목 영역 */}
-      <ConceptHeader concept={concept} />
+      <ConceptHeader concept={concept} meta={meta} />
 
       {/* 본문 콘텐츠 영역 */}
       <article className="mx-auto max-w-5xl px-6 py-8">
