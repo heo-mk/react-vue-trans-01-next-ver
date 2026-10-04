@@ -8,7 +8,8 @@
     "build": "next build",
     "build:full": "pnpm run build:diagrams && next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "verify:adapter": "start-server-and-test \"pnpm --filter api start\" tcp:4000 \"tsx scripts/verify-adapter.ts\""
   },
   "dependencies": {
     "@repo/content": "workspace:*",
@@ -28,6 +29,7 @@
     "mermaid": "^11.17.2",
     "prettier": "^3.9.8",
     "prettier-plugin-tailwindcss": "^0.8.1",
+    "start-server-and-test": "3.0.12",
     "tailwindcss": "^4",
     "tsx": "^4.23.15",
     "typescript": "^5"

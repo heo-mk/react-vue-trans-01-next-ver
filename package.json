@@ -10,6 +10,7 @@
     "check:content": "pnpm --filter @repo/content check",
     "dev:api": "pnpm --filter api dev",
     "smoke:api": "pnpm --filter api smoke",
+    "verify:adapter": "pnpm --filter web verify:adapter",
     "format": "prettier --write ."
   },
   "devDependencies": {
