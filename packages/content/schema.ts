@@ -9,16 +9,6 @@ export interface ComparisonRow {
   common?: ComparisonCellContent; // React·Vue 공통 내용 (colspan=2)
 }
 
-export function getComparisonCellPlainText(cell: ComparisonCellContent | undefined): string {
-  if (!cell) return '';
-  if (typeof cell === 'string') return cell;
-  const parts: string[] = [];
-  if (cell.lead) parts.push(cell.lead);
-  if (cell.items && cell.items.length > 0) parts.push(...cell.items);
-  return parts.join(' ');
-}
-
-
 export interface CodeHighlight {
   side: 'left' | 'right';
   match: string;
@@ -55,19 +45,6 @@ export interface StructuredContent {
 }
 
 export type FormattedContent = string | StructuredContent;
-
-export function getContentPlainText(content: FormattedContent | undefined): string {
-  if (!content) return '';
-  if (typeof content === 'string') return content;
-  const parts: string[] = [];
-  if (content.lead) parts.push(content.lead);
-  for (const item of content.items) {
-    if (item.term) parts.push(item.term);
-    if (item.desc) parts.push(item.desc);
-  }
-  if (content.closing) parts.push(content.closing);
-  return parts.join(' ');
-}
 
 export interface Pitfall {
   question: string; // 면접/학습 함정 질문

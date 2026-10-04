@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { allConcepts } from '../src/content';
-import { getContentPlainText, getComparisonCellPlainText } from '@repo/content/schema';
+import { getContentPlainText, getComparisonCellPlainText } from '../src/content/plain-text';
 
 interface QualityReport {
   passed: boolean;

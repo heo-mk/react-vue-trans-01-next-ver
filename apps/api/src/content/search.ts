@@ -1,5 +1,5 @@
 import type { ConceptPage } from '@repo/content/schema';
-import { getContentPlainText, getComparisonCellPlainText } from '@repo/content/schema';
+import { getContentPlainText, getComparisonCellPlainText } from './plain-text';
 
 /**
  * 개념 목록에서 검색어를 포함하는 개념을 필터링하는 순수 함수.
