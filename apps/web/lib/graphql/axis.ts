@@ -1,4 +1,4 @@
-import type { Axis } from '@repo/content/schema';
+import type { Axis } from '@repo/schema';
 
 export type GraphQLAxis = 'REACT_VUE' | 'VUE2_VUE3' | 'NUXT_NEXT';
 

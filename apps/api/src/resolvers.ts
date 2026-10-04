@@ -5,7 +5,7 @@ import {
   getConcept,
   getConceptsByAxis,
 } from './content';
-import type { Axis as ContentAxis, ConceptPage } from '@repo/content/schema';
+import type { Axis as ContentAxis, ConceptPage } from '@repo/schema';
 import {
   mapFormattedContent,
   mapComparisonCellContent,

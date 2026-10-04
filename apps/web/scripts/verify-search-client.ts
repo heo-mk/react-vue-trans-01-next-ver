@@ -91,7 +91,7 @@ async function main() {
     failed = true;
   }
 
-  // 5. 12개 검색어 동등성 검증 (@repo/content/search의 searchConcepts와 비교)
+  // 5. 12개 검색어 동등성 검증 (api/content/search의 searchConcepts와 비교)
   const test12Queries = [
     '동기화 부담',
     '이중 네트워크',

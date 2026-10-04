@@ -1,16 +1,14 @@
 {
-  "name": "@repo/content",
+  "name": "@repo/schema",
   "version": "0.1.0",
   "private": true,
   "exports": {
-    "./schema": "./schema.ts"
+    ".": "./schema.ts"
   },
   "scripts": {
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "tsx": "^4.23.15",
     "typescript": "^5"
   }
 }

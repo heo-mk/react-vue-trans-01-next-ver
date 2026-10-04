@@ -1,7 +1,7 @@
 // 'use client' 파일에서 import하지 말 것 (서버 컴포넌트 전용)
 
 import { cache } from 'react';
-import type { Axis, ConceptPage } from '@repo/content/schema';
+import type { Axis, ConceptPage } from '@repo/schema';
 import { graphqlRequest } from './client';
 import {
   AXES_QUERY,

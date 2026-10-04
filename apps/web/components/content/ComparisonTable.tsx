@@ -1,4 +1,4 @@
-import type { ComparisonRow, ComparisonCellContent } from '@repo/content/schema';
+import type { ComparisonRow, ComparisonCellContent } from '@repo/schema';
 
 interface ComparisonTableProps {
   rows: ComparisonRow[];

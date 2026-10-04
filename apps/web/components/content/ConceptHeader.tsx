@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import type { ConceptPage } from '@repo/content/schema';
+import type { ConceptPage } from '@repo/schema';
 import type { AxisMeta } from '@/lib/graphql/loaders';
 import { useUiStore } from '@/store/useUiStore';
 import { useIsMounted } from '@/components/useIsMounted';

@@ -4,7 +4,7 @@ import { useState, Fragment } from 'react';
 import Link from 'next/link';
 import { useUiStore } from '@/store/useUiStore';
 import { useIsMounted } from '@/components/useIsMounted';
-import type { Axis } from '@repo/content/schema';
+import type { Axis } from '@repo/schema';
 import type { AxisMeta, ConceptCard } from '@/lib/graphql/loaders';
 
 function formatCardSummary(summary: string) {

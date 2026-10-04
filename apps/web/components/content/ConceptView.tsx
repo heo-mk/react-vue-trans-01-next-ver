@@ -1,6 +1,6 @@
 'use client';
 
-import type { ConceptPage } from '@repo/content/schema';
+import type { ConceptPage } from '@repo/schema';
 import type { AxisMeta } from '@/lib/graphql/loaders';
 import { ComparisonTable } from './ComparisonTable';
 import { CodeExample } from './CodeExample';

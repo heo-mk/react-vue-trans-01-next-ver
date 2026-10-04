@@ -7,7 +7,7 @@ import type {
   Pitfall,
   FormattedContent,
   StructuredContent,
-} from '@repo/content/schema';
+} from '@repo/schema';
 import { toContentAxis } from './axis';
 import type {
   GraphQLAxisInfo,

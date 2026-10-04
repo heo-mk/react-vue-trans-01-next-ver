@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import type { Axis } from '@repo/content/schema';
+import type { Axis } from '@repo/schema';
 import { getAxisMetaMap, getConceptCards } from '@/lib/graphql/loaders';
 import { DiagramSvg } from '@/components/diagram/DiagramSvg';
 import { ProgressDashboard } from '@/components/ProgressDashboard';

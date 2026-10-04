@@ -1,4 +1,4 @@
-import type { ConceptPage } from '@repo/content/schema';
+import type { ConceptPage } from '@repo/schema';
 import { getContentPlainText, getComparisonCellPlainText } from './plain-text';
 
 /**

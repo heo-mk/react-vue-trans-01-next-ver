@@ -18,7 +18,7 @@
     "check:web-copy": "tsx scripts/check-web-copy.ts"
   },
   "dependencies": {
-    "@repo/content": "workspace:*",
+    "@repo/schema": "workspace:*",
     "next": "16.3.5",
     "react": "19.2.8",
     "react-dom": "19.2.8",

@@ -1,4 +1,4 @@
-import type { ComparisonCellContent, FormattedContent } from '@repo/content/schema';
+import type { ComparisonCellContent, FormattedContent } from '@repo/schema';
 
 export function getComparisonCellPlainText(cell: ComparisonCellContent | undefined): string {
   if (!cell) return '';

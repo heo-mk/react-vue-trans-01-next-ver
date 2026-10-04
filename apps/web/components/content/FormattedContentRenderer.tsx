@@ -1,4 +1,4 @@
-import type { FormattedContent } from '@repo/content/schema';
+import type { FormattedContent } from '@repo/schema';
 
 interface FormattedContentRendererProps {
   content: FormattedContent;

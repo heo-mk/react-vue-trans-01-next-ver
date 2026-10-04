@@ -2,7 +2,7 @@ import type {
   Axis as ContentAxis,
   FormattedContent as ContentFormattedContent,
   ComparisonCellContent as ContentComparisonCellContent,
-} from '@repo/content/schema';
+} from '@repo/schema';
 
 export type GraphQLAxis = 'REACT_VUE' | 'VUE2_VUE3' | 'NUXT_NEXT';
 export type GraphQLSide = 'LEFT' | 'RIGHT';

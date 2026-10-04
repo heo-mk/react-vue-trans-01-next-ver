@@ -1,4 +1,4 @@
-import { ConceptPage } from '@repo/content/schema';
+import { ConceptPage } from '@repo/schema';
 
 export const serverState: ConceptPage = {
   slug: 'server-state',
