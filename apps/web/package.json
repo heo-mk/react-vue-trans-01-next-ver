@@ -14,7 +14,8 @@
     "verify:search-client": "start-server-and-test \"pnpm --filter api start\" tcp:4000 \"tsx scripts/verify-search-client.ts\"",
     "snapshot:before": "start-server-and-test \"next start\" tcp:3000 \"tsx scripts/pages-snapshot.ts before\"",
     "snapshot:after": "start-server-and-test \"next start\" tcp:3000 \"tsx scripts/pages-snapshot.ts after\"",
-    "verify:search-ui": "tsx scripts/verify-search-ui.ts"
+    "verify:search-ui": "tsx scripts/verify-search-ui.ts",
+    "check:web-copy": "tsx scripts/check-web-copy.ts"
   },
   "dependencies": {
     "@repo/content": "workspace:*",

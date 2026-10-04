@@ -2,7 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import { allConcepts } from '../index';
 import { getContentPlainText, getComparisonCellPlainText } from '../schema';
-import { searchConcepts } from '../search';
 
 interface QualityReport {
   passed: boolean;
@@ -405,43 +404,6 @@ function checkConceptQuality(): QualityReport {
     });
   }
 
-  // 규칙 9: Navbar placeholder에 쓰인 모든 예시 단어의 검색 결과 1건 이상 반환 검증
-  const navbarPath = path.resolve(__dirname, '../../../apps/web/components/Navbar.tsx');
-  if (fs.existsSync(navbarPath)) {
-    const navbarContent = fs.readFileSync(navbarPath, 'utf-8');
-    const placeholderMatch = navbarContent.match(
-      /placeholder="[^"]*\(예:\s*([^)]+)\)/
-    );
-    if (placeholderMatch && placeholderMatch[1]) {
-      const exampleWords = placeholderMatch[1]
-        .split(',')
-        .map((w) => w.trim())
-        .filter(Boolean);
-
-      for (const word of exampleWords) {
-        const matched = searchConcepts(allConcepts, word);
-
-        if (matched.length === 0) {
-          errors.push(
-            `❌ [placeholder 예시 단어 위반] Navbar 예시 단어 '${word}'의 검색 결과가 0건입니다.`
-          );
-        } else {
-          console.log(
-            `✓ [검색 예시 단어 확인] '${word}' -> ${matched.length}건 매칭 (${matched.map((m) => m.slug).join(', ')})`
-          );
-        }
-      }
-    } else {
-      warnings.push(
-        'Navbar.tsx에서 placeholder 예시 단어 패턴을 파싱할 수 없습니다.'
-      );
-    }
-  } else {
-    warnings.push(
-      'Navbar.tsx 파일을 찾을 수 없어 placeholder 예시 단어 검증을 건너뜁니다.'
-    );
-  }
-
   // 규칙 10: 근거 없는 규모·수준 과장 표현 경고 (실패 처리는 하지 않음)
   // 대상: "엔터프라이즈", "실무", "완벽", "압도적", "최고", "차세대"
   // 제외: "필수", "대규모", "강력" (기술 설명에서 쓰이는 경우가 있어 제외)
@@ -454,13 +416,12 @@ function checkConceptQuality(): QualityReport {
     '차세대',
   ];
 
-  // 10-1. 홈 화면 및 메타데이터 문구 검사
-  const homeFiles = [
-    { name: 'apps/web/app/page.tsx', path: path.resolve(__dirname, '../../../apps/web/app/page.tsx') },
+  // 10-1. 메타데이터 문구 검사 (packages/content/index.ts)
+  const metaFiles = [
     { name: 'packages/content/index.ts', path: path.resolve(__dirname, '../index.ts') },
   ];
 
-  for (const file of homeFiles) {
+  for (const file of metaFiles) {
     if (fs.existsSync(file.path)) {
       const content = fs.readFileSync(file.path, 'utf-8');
       const strippedContent = content

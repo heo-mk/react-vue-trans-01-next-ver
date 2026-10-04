@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { CodeExample as CodeExampleType, CodeHighlight } from '@repo/content/schema';
+import type { CodeExample as CodeExampleType, CodeHighlight } from '@repo/content/schema';
 
 interface CodeExampleProps {
   example: CodeExampleType;

@@ -1,4 +1,4 @@
-import { Pitfall } from '@repo/content/schema';
+import type { Pitfall } from '@repo/content/schema';
 import { FormattedContentRenderer } from './FormattedContentRenderer';
 
 interface PitfallCalloutProps {
