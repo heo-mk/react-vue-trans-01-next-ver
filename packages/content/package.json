@@ -4,7 +4,8 @@
   "private": true,
   "exports": {
     ".": "./index.ts",
-    "./schema": "./schema.ts"
+    "./schema": "./schema.ts",
+    "./search": "./search.ts"
   },
   "scripts": {
     "check": "tsx scripts/check-content-quality.ts",

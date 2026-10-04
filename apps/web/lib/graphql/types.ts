@@ -33,6 +33,11 @@ export interface GraphQLConceptCardsResponse {
   concepts: GraphQLConceptCard[];
 }
 
+export interface GraphQLSearchResponse {
+  search: GraphQLConceptCard[];
+}
+
+
 export interface GraphQLConceptParam {
   axis: GraphQLAxis;
   slug: string;

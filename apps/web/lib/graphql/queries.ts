@@ -131,3 +131,18 @@ export const CONCEPT_DETAIL_QUERY = /* GraphQL */ `
     }
   }
 `;
+
+export const SEARCH_QUERY = /* GraphQL */ `
+  query SearchQuery($q: String!) {
+    search(query: $q) {
+      axis
+      slug
+      title
+      cardTitle
+      cardSubtitle
+      cardSummary
+      oneLineSummary
+    }
+  }
+`;
+

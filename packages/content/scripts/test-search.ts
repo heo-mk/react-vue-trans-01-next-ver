@@ -1,35 +1,6 @@
 import { allConcepts } from '../index';
-import { getContentPlainText, getComparisonCellPlainText } from '../schema';
+import { searchConcepts } from '../search';
 
-function searchConcepts(query: string) {
-  const q = query.trim().toLowerCase();
-  if (!q) return [];
-  return allConcepts.filter(
-    (c) =>
-      c.title.toLowerCase().includes(q) ||
-      (c.cardTitle && c.cardTitle.toLowerCase().includes(q)) ||
-      (c.cardSubtitle && c.cardSubtitle.toLowerCase().includes(q)) ||
-      (c.cardSummary && c.cardSummary.toLowerCase().includes(q)) ||
-      c.oneLineSummary.toLowerCase().includes(q) ||
-      c.slug.toLowerCase().includes(q) ||
-      (c.keywords && c.keywords.some((k) => k.toLowerCase().includes(q))) ||
-      (c.analogy && getContentPlainText(c.analogy).toLowerCase().includes(q)) ||
-      (c.pitfalls &&
-        c.pitfalls.some(
-          (p) =>
-            p.question.toLowerCase().includes(q) ||
-            getContentPlainText(p.answer).toLowerCase().includes(q)
-        )) ||
-      (c.comparisonTable &&
-        c.comparisonTable.some(
-          (row) =>
-            row.label.toLowerCase().includes(q) ||
-            getComparisonCellPlainText(row.left).toLowerCase().includes(q) ||
-            getComparisonCellPlainText(row.right).toLowerCase().includes(q) ||
-            getComparisonCellPlainText(row.common).toLowerCase().includes(q)
-        ))
-  );
-}
 
 const testQueries = [
   '동기화 부담', // global-state pitfall item term
@@ -49,7 +20,7 @@ const testQueries = [
 console.log('=== 검색 기능 테스트 ===');
 let failedCount = 0;
 for (const q of testQueries) {
-  const results = searchConcepts(q);
+  const results = searchConcepts(allConcepts, q);
   console.log(`- '${q}' 검색: ${results.length}건 매칭 -> [${results.map((r) => r.slug).join(', ')}]`);
   if (results.length === 0) {
     failedCount++;

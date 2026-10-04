@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { allConcepts } from '../index';
 import { getContentPlainText, getComparisonCellPlainText } from '../schema';
+import { searchConcepts } from '../search';
 
 interface QualityReport {
   passed: boolean;
@@ -418,26 +419,7 @@ function checkConceptQuality(): QualityReport {
         .filter(Boolean);
 
       for (const word of exampleWords) {
-        const query = word.toLowerCase();
-        const matched = allConcepts.filter(
-          (c) =>
-            c.title.toLowerCase().includes(query) ||
-            (c.cardTitle && c.cardTitle.toLowerCase().includes(query)) ||
-            (c.cardSubtitle && c.cardSubtitle.toLowerCase().includes(query)) ||
-            (c.cardSummary && c.cardSummary.toLowerCase().includes(query)) ||
-            c.oneLineSummary.toLowerCase().includes(query) ||
-            c.slug.toLowerCase().includes(query) ||
-            (c.keywords &&
-              c.keywords.some((k) => k.toLowerCase().includes(query))) ||
-            (c.analogy &&
-              getContentPlainText(c.analogy).toLowerCase().includes(query)) ||
-            (c.pitfalls &&
-              c.pitfalls.some(
-                (p) =>
-                  p.question.toLowerCase().includes(query) ||
-                  getContentPlainText(p.answer).toLowerCase().includes(query)
-              ))
-        );
+        const matched = searchConcepts(allConcepts, word);
 
         if (matched.length === 0) {
           errors.push(

@@ -12,6 +12,7 @@
     "dev:all": "pnpm --filter api --filter web --parallel dev",
     "smoke:api": "pnpm --filter api smoke",
     "verify:adapter": "pnpm --filter web verify:adapter",
+    "verify:search-client": "pnpm --filter web verify:search-client",
     "format": "prettier --write ."
   },
   "devDependencies": {
