@@ -25,6 +25,7 @@ yarn-error.log*
 
 # env files
 .env*
+!.env.example
 
 # vercel
 .vercel/
@@ -53,3 +54,6 @@ qa-screenshots/
 
 # generated inspection reports
 scripts/text-fields-report.json
+apps/web/scripts/screenshots/
+apps/web/scripts/inspection-result.json
+

@@ -1,0 +1,14 @@
+{
+  "name": "@repo/schema",
+  "version": "0.1.0",
+  "private": true,
+  "exports": {
+    ".": "./schema.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5"
+  }
+}

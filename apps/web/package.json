@@ -1,0 +1,42 @@
+{
+  "name": "web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm run build:diagrams && next dev",
+    "build:diagrams": "tsx scripts/build-diagrams.ts",
+    "build:next": "next build",
+    "build": "start-server-and-test \"pnpm --filter api start\" tcp:4000 \"pnpm run build:next\"",
+    "build:full": "pnpm run build:diagrams && pnpm run build",
+    "start": "next start",
+    "lint": "eslint",
+    "verify:adapter": "start-server-and-test \"pnpm --filter api start\" tcp:4000 \"tsx scripts/verify-adapter.ts\"",
+    "verify:search-client": "start-server-and-test \"pnpm --filter api start\" tcp:4000 \"tsx scripts/verify-search-client.ts\"",
+    "verify:search-ui": "tsx scripts/verify-search-ui.ts",
+    "check:web-copy": "tsx scripts/check-web-copy.ts"
+  },
+  "dependencies": {
+    "@repo/schema": "workspace:*",
+    "next": "16.3.5",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "zustand": "^5.0.15"
+  },
+  "devDependencies": {
+    "api": "workspace:*",
+    "@mermaid-js/mermaid-cli": "^11.17.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.5",
+    "mermaid": "^11.17.2",
+    "prettier": "^3.9.8",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "start-server-and-test": "3.0.12",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.15",
+    "typescript": "^5"
+  }
+}
