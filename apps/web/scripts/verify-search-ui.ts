@@ -175,6 +175,56 @@ function getListeningPid(port: number): number | null {
   }
 }
 
+// ----- 키보드 이동 검사(S15~S22) 공용 도우미 -----
+const KB_INPUT = 'input[aria-label="개념 검색"]';
+const KB_ITEM = '[data-testid="search-result-item"]';
+const kbSleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+// 새 페이지를 열고 입력창에 포커스한다. query 가 있으면 입력 후 Enter 로 검색까지 마친다.
+async function openKeyboardPage(browser: any, query?: string) {
+  const page = await browser.newPage();
+  await page.setViewport({ width: 1280, height: 800 });
+  const tracker = attachNetworkTracker(page);
+  await page.goto('http://localhost:3000', { waitUntil: 'networkidle2' });
+  await page.waitForSelector(KB_INPUT);
+  await page.click(KB_INPUT);
+  if (query !== undefined) {
+    await page.type(KB_INPUT, query);
+    await page.keyboard.press('Enter');
+    await page.waitForSelector('[data-testid="search-dropdown"]', { timeout: 10000 });
+    // 결과 또는 0건 상태가 반영될 때까지 기다린다
+    await kbSleep(900);
+  }
+  return { page, tracker };
+}
+
+// 입력창의 ARIA 속성과 결과 항목의 활성 상태를 읽는다
+async function readKeyboardState(page: any) {
+  return page.evaluate((sel: string) => {
+    const input = document.querySelector(sel) as HTMLInputElement;
+    const items = Array.from(document.querySelectorAll('[data-testid="search-result-item"]'));
+    const ad = input.getAttribute('aria-activedescendant');
+    const selected: number[] = [];
+    for (let k = 0; k < items.length; k++) {
+      if (items[k].getAttribute('aria-selected') === 'true') selected.push(k);
+    }
+    return {
+      activeId: ad,
+      activeIndex: ad ? items.findIndex((i) => i.id === ad) : -1,
+      selected,
+      count: items.length,
+      open: !!document.querySelector('[data-testid="search-dropdown"]'),
+      value: input.value,
+      path: window.location.pathname,
+    };
+  }, KB_INPUT);
+}
+
+async function pressKey(page: any, key: string) {
+  await page.keyboard.press(key);
+  await kbSleep(120);
+}
+
 async function run() {
   console.log('=== Starting Navbar Search UI Verifications ===');
 
@@ -1147,6 +1197,413 @@ async function run() {
         },
         notes: `판정: ${status} (${classificationReason})`,
       });
+      await page.close();
+    }
+
+    // ========================================================
+    // 키보드 이동 시나리오 (S15~S22)
+    // ========================================================
+    console.log('\n--- Running Keyboard Navigation Scenarios (S15~S22) ---');
+
+    // S15. 방향키로 결과 항목 이동, 끝에서 처음으로 순환
+    {
+      const { page } = await openKeyboardPage(browser, 'ref');
+      const before = await readKeyboardState(page);
+      const down: number[] = [];
+      for (let k = 0; k < before.count + 1; k++) {
+        await pressKey(page, 'ArrowDown');
+        const s = await readKeyboardState(page);
+        down.push(s.activeIndex);
+        if (s.selected.length !== 1 || s.selected[0] !== s.activeIndex) down.push(-99);
+      }
+      // 처음(0)에서 ArrowUp 이면 마지막으로 돈다
+      await pressKey(page, 'ArrowUp');
+      const upWrap = await readKeyboardState(page);
+      const expectedDown = [];
+      for (let k = 0; k < before.count; k++) expectedDown.push(k);
+      expectedDown.push(0);
+      const passed =
+        before.count >= 2 &&
+        before.activeIndex === -1 &&
+        JSON.stringify(down) === JSON.stringify(expectedDown) &&
+        upWrap.activeIndex === before.count - 1;
+      recordResult({
+        id: 'S15',
+        name: '방향키로 결과 항목 이동 (끝에서 처음으로 순환)',
+        status: passed ? 'PASS' : 'FAIL',
+        measurement: { count: before.count, down, expectedDown, upWrapIndex: upWrap.activeIndex },
+        notes: `ArrowDown 순서: ${JSON.stringify(down)}, 처음에서 ArrowUp: ${upWrap.activeIndex}`,
+      });
+      if (!passed) await page.screenshot({ path: path.join(screenshotDir, 'S15_fail.png') });
+      await page.close();
+    }
+
+    // S16. 활성 항목에서 Enter 시 상세 이동, 검색 POST 증가 없음
+    {
+      const { page, tracker } = await openKeyboardPage(browser, 'ref');
+      const expectedList = searchConcepts(allConcepts, 'ref');
+      await pressKey(page, 'ArrowDown');
+      await pressKey(page, 'ArrowDown');
+      const active = await readKeyboardState(page);
+      const target = expectedList[1];
+      const expectedPath = target ? `/${target.axis}/${target.slug}` : '';
+      const postBefore = tracker.postCount;
+      await page.keyboard.press('Enter');
+      let navigated = true;
+      try {
+        await page.waitForFunction(() => window.location.pathname !== '/', { timeout: 10000 });
+      } catch {
+        navigated = false;
+      }
+      await kbSleep(800);
+      const after = await readKeyboardState(page);
+      const postAfter = tracker.postCount;
+      const passed =
+        active.activeIndex === 1 &&
+        navigated &&
+        after.path === expectedPath &&
+        postAfter === postBefore;
+      recordResult({
+        id: 'S16',
+        name: '활성 항목에서 Enter 시 상세 이동 (검색 POST 증가 없음)',
+        status: passed ? 'PASS' : 'FAIL',
+        measurement: { activeIndex: active.activeIndex, expectedPath, finalPath: after.path, postBefore, postAfter },
+        notes: `이동된 경로: ${after.path} (기대: ${expectedPath}), POST ${postBefore} -> ${postAfter}`,
+      });
+      if (!passed) await page.screenshot({ path: path.join(screenshotDir, 'S16_fail.png') });
+      await page.close();
+    }
+
+    // S17. 입력 내용을 바꾸면 활성 항목 해제
+    {
+      const { page } = await openKeyboardPage(browser, 'ref');
+      await pressKey(page, 'ArrowDown');
+      await pressKey(page, 'ArrowDown');
+      const active = await readKeyboardState(page);
+      await page.type(KB_INPUT, 'x');
+      await kbSleep(150);
+      const after = await readKeyboardState(page);
+      const passed =
+        active.activeIndex === 1 &&
+        after.value === 'refx' &&
+        after.activeId === null &&
+        after.selected.length === 0;
+      recordResult({
+        id: 'S17',
+        name: '입력 내용 변경 시 활성 항목 해제',
+        status: passed ? 'PASS' : 'FAIL',
+        measurement: { activeBefore: active.activeIndex, afterActiveId: after.activeId, afterSelected: after.selected, value: after.value },
+        notes: `변경 전 활성: ${active.activeIndex}, 변경 후 activedescendant: ${after.activeId}, aria-selected true: ${JSON.stringify(after.selected)}`,
+      });
+      if (!passed) await page.screenshot({ path: path.join(screenshotDir, 'S17_fail.png') });
+      await page.close();
+    }
+
+    // S18. Escape 로 닫은 뒤 방향키로 다시 열림
+    {
+      const { page, tracker } = await openKeyboardPage(browser, 'ref');
+      const postBefore = tracker.postCount;
+      await pressKey(page, 'Escape');
+      const closed = await readKeyboardState(page);
+      await pressKey(page, 'ArrowDown');
+      const reopened = await readKeyboardState(page);
+      const passed =
+        closed.open === false &&
+        reopened.open === true &&
+        reopened.activeIndex === 0 &&
+        tracker.postCount === postBefore;
+      recordResult({
+        id: 'S18',
+        name: 'Escape 로 닫은 뒤 방향키로 다시 열림',
+        status: passed ? 'PASS' : 'FAIL',
+        measurement: { openAfterEscape: closed.open, openAfterArrow: reopened.open, activeIndex: reopened.activeIndex, postBefore, postAfter: tracker.postCount },
+        notes: `Escape 후 열림: ${closed.open}, ArrowDown 후 열림: ${reopened.open}, 활성: ${reopened.activeIndex}`,
+      });
+      if (!passed) await page.screenshot({ path: path.join(screenshotDir, 'S18_fail.png') });
+      await page.close();
+    }
+
+    // S19. 선택 가능한 항목이 없으면 방향키는 아무것도 하지 않는다 (처음 / 결과 0건)
+    {
+      const cases: { label: string; query?: string }[] = [
+        { label: '처음(검색 전)' },
+        { label: '결과 0건', query: 'zzzqqqxxx' },
+      ];
+      const measured: any[] = [];
+      let passed = true;
+      for (const c of cases) {
+        const { page, tracker } = await openKeyboardPage(browser, c.query);
+        const before = await readKeyboardState(page);
+        const postBefore = tracker.postCount;
+        await pressKey(page, 'ArrowDown');
+        await pressKey(page, 'ArrowUp');
+        await pressKey(page, 'ArrowDown');
+        const after = await readKeyboardState(page);
+        const ok =
+          before.count === 0 &&
+          after.count === 0 &&
+          after.activeId === null &&
+          after.open === before.open &&
+          after.value === before.value &&
+          after.path === before.path &&
+          tracker.postCount === postBefore;
+        if (!ok) {
+          passed = false;
+          await page.screenshot({ path: path.join(screenshotDir, `S19_${c.query ? 'empty' : 'idle'}_fail.png`) });
+        }
+        measured.push({ label: c.label, ok, count: after.count, activeId: after.activeId, openBefore: before.open, openAfter: after.open });
+        await page.close();
+      }
+      recordResult({
+        id: 'S19',
+        name: '선택 가능한 항목이 없을 때(처음, 0건) 방향키 무동작',
+        status: passed ? 'PASS' : 'FAIL',
+        measurement: measured,
+        notes: measured.map((m) => `${m.label}: ${m.ok ? 'ok' : 'NG'} (열림 ${m.openBefore}->${m.openAfter}, activeId ${m.activeId})`).join(' / '),
+      });
+    }
+
+    // S20. 한글 조합 중 방향키 무시 (CDP imeSetComposition)
+    {
+      const { page } = await openKeyboardPage(browser, 'ref');
+      await page.evaluate(`
+        window.__kbEvents = [];
+        var input = document.querySelector('input[aria-label="개념 검색"]');
+        if (input) {
+          ['compositionstart', 'compositionend'].forEach(function(ev) {
+            input.addEventListener(ev, function() { window.__kbEvents.push({ type: ev }); });
+          });
+          input.addEventListener('keydown', function(e) {
+            window.__kbEvents.push({ type: 'keydown', key: e.key, keyCode: e.keyCode, isComposing: e.isComposing });
+          });
+        }
+      `);
+      const cdp = await page.createCDPSession();
+      let cdpError = '';
+      try {
+        await cdp.send('Input.imeSetComposition', { text: '상태', selectionStart: 2, selectionEnd: 2 });
+      } catch (e: any) {
+        cdpError = e.message;
+      }
+      await kbSleep(150);
+      const beforeKey = await readKeyboardState(page);
+      try {
+        await cdp.send('Input.dispatchKeyEvent', { type: 'rawKeyDown', key: 'ArrowDown', code: 'ArrowDown', windowsVirtualKeyCode: 40 });
+        await cdp.send('Input.dispatchKeyEvent', { type: 'keyUp', key: 'ArrowDown', code: 'ArrowDown', windowsVirtualKeyCode: 40 });
+      } catch (e: any) {
+        cdpError = cdpError || e.message;
+      }
+      await kbSleep(200);
+      const duringComposition = await readKeyboardState(page);
+      const events: any[] = await page.evaluate(() => (window as any).__kbEvents || []);
+      const compositionObserved = events.some(
+        (ev) => ev.type === 'compositionstart' || (ev.type === 'keydown' && ev.isComposing === true)
+      );
+
+      // 대조군: 조합을 확정한 뒤에는 같은 방향키가 동작해야 한다
+      let controlIndex = -2;
+      try {
+        await cdp.send('Input.insertText', { text: '상태' });
+        await kbSleep(300);
+        await pressKey(page, 'ArrowDown');
+        controlIndex = (await readKeyboardState(page)).activeIndex;
+      } catch (e: any) {
+        cdpError = cdpError || e.message;
+      }
+
+      let status: 'PASS' | 'WEAK' | 'FAIL';
+      let reason: string;
+      if (!compositionObserved) {
+        status = 'WEAK';
+        reason = '조합 이벤트(compositionstart/isComposing)를 관찰하지 못해 근거로 쓸 수 없음';
+      } else if (duringComposition.activeIndex !== -1) {
+        status = 'FAIL';
+        reason = `조합 중 방향키로 활성 항목이 ${duringComposition.activeIndex} 로 이동함`;
+      } else if (controlIndex !== 0) {
+        status = 'WEAK';
+        reason = `조합 중에는 무시됐으나 확정 후 대조 동작이 확인되지 않음 (활성 ${controlIndex})`;
+      } else {
+        status = 'PASS';
+        reason = '조합 중 방향키 무시, 확정 후 방향키 동작 확인';
+      }
+      recordResult({
+        id: 'S20',
+        name: '한글 조합 중 방향키 무시 (CDP imeSetComposition)',
+        status,
+        measurement: {
+          compositionObserved,
+          activeBeforeKey: beforeKey.activeIndex,
+          activeDuringComposition: duringComposition.activeIndex,
+          controlIndexAfterCommit: controlIndex,
+          cdpError,
+          eventsSample: events.slice(0, 10),
+        },
+        notes: `판정: ${status} (${reason})`,
+      });
+      if (status === 'FAIL') await page.screenshot({ path: path.join(screenshotDir, 'S20_fail.png') });
+      await page.close();
+    }
+
+    // S21. ARIA 속성이 상태에 맞게 붙는다
+    {
+      const readAria = (page: any) =>
+        page.evaluate((sel: string) => {
+          const input = document.querySelector(sel) as HTMLInputElement;
+          const controls = input.getAttribute('aria-controls');
+          const listboxes = Array.from(document.querySelectorAll('[role="listbox"]'));
+          const controlled = controls ? document.getElementById(controls) : null;
+          const options = Array.from(document.querySelectorAll('[role="option"]'));
+          const ad = input.getAttribute('aria-activedescendant');
+          const adEl = ad ? document.getElementById(ad) : null;
+          const selectedTrue: number[] = [];
+          for (let k = 0; k < options.length; k++) {
+            if (options[k].getAttribute('aria-selected') === 'true') selectedTrue.push(k);
+          }
+          return {
+            role: input.getAttribute('role'),
+            expanded: input.getAttribute('aria-expanded'),
+            controls,
+            activedescendant: ad,
+            listboxCount: listboxes.length,
+            controlsIsListbox: !!controlled && controlled.getAttribute('role') === 'listbox',
+            optionCount: options.length,
+            optionsInsideListbox: options.every((o) => !!o.closest('[role="listbox"]')),
+            optionsHaveId: options.every((o) => !!o.id),
+            activeIsOption: !!adEl && adEl.getAttribute('role') === 'option',
+            selectedTrue,
+          };
+        }, KB_INPUT);
+
+      const checks: Record<string, boolean> = {};
+      const states: Record<string, any> = {};
+
+      // (a) 검색 전
+      const idle = await openKeyboardPage(browser);
+      states.idle = await readAria(idle.page);
+      checks.idle =
+        states.idle.role === 'combobox' &&
+        states.idle.expanded === 'false' &&
+        states.idle.controls === null &&
+        states.idle.activedescendant === null &&
+        states.idle.listboxCount === 0;
+      await idle.page.close();
+
+      // (b) 결과 표시, (c) 방향키 활성, (d) Escape 로 닫음
+      const withResults = await openKeyboardPage(browser, 'ref');
+      states.results = await readAria(withResults.page);
+      checks.results =
+        states.results.role === 'combobox' &&
+        states.results.expanded === 'true' &&
+        !!states.results.controls &&
+        states.results.controlsIsListbox &&
+        states.results.listboxCount === 1 &&
+        states.results.optionCount >= 2 &&
+        states.results.optionsInsideListbox &&
+        states.results.optionsHaveId &&
+        states.results.activedescendant === null &&
+        states.results.selectedTrue.length === 0;
+      await pressKey(withResults.page, 'ArrowDown');
+      states.active = await readAria(withResults.page);
+      checks.active =
+        states.active.expanded === 'true' &&
+        !!states.active.activedescendant &&
+        states.active.activeIsOption &&
+        states.active.selectedTrue.length === 1;
+      await pressKey(withResults.page, 'Escape');
+      states.closed = await readAria(withResults.page);
+      checks.closed =
+        states.closed.expanded === 'false' &&
+        states.closed.controls === null &&
+        states.closed.activedescendant === null &&
+        states.closed.listboxCount === 0;
+      await withResults.page.close();
+
+      // (e) 결과 0건
+      const empty = await openKeyboardPage(browser, 'zzzqqqxxx');
+      states.empty = await readAria(empty.page);
+      checks.empty =
+        states.empty.expanded === 'false' &&
+        states.empty.controls === null &&
+        states.empty.activedescendant === null &&
+        states.empty.listboxCount === 0;
+      await empty.page.close();
+
+      const passed = Object.values(checks).every(Boolean);
+      recordResult({
+        id: 'S21',
+        name: 'ARIA 속성이 상태에 맞게 부여됨',
+        status: passed ? 'PASS' : 'FAIL',
+        measurement: { checks, states },
+        notes: `상태별 판정: ${JSON.stringify(checks)}`,
+      });
+    }
+
+    // S22. 결과 5건에서 활성 항목이 스크롤 영역 안으로 들어온다
+    {
+      const { page } = await openKeyboardPage(browser, 'ref');
+      const measureScroll = () =>
+        page.evaluate(() => {
+          const items = Array.from(document.querySelectorAll('[data-testid="search-result-item"]'));
+          const input = document.querySelector('input[aria-label="개념 검색"]') as HTMLInputElement;
+          const ad = input.getAttribute('aria-activedescendant');
+          const el = ad ? document.getElementById(ad) : null;
+          if (!el || items.length === 0) return null;
+          let box: HTMLElement | null = el.parentElement;
+          while (box && box !== document.body) {
+            const oy = getComputedStyle(box).overflowY;
+            if (oy === 'auto' || oy === 'scroll') break;
+            box = box.parentElement;
+          }
+          if (!box || box === document.body) return null;
+          const b = box.getBoundingClientRect();
+          const r = el.getBoundingClientRect();
+          return {
+            count: items.length,
+            scrollTop: box.scrollTop,
+            scrollHeight: box.scrollHeight,
+            clientHeight: box.clientHeight,
+            itemTop: r.top,
+            itemBottom: r.bottom,
+            boxTop: b.top,
+            boxBottom: b.bottom,
+            fullyVisible: r.top >= b.top - 1 && r.bottom <= b.bottom + 1,
+            inViewport: r.top >= 0 && r.bottom <= window.innerHeight,
+          };
+        });
+
+      await pressKey(page, 'ArrowUp'); // 활성 없음 -> 마지막 항목
+      await kbSleep(200);
+      const last = await measureScroll();
+      await pressKey(page, 'ArrowDown'); // 마지막 -> 처음으로 순환
+      await kbSleep(200);
+      const first = await measureScroll();
+
+      let status: 'PASS' | 'WEAK' | 'FAIL';
+      let reason: string;
+      if (!last || !first) {
+        status = 'FAIL';
+        reason = '활성 항목 또는 스크롤 컨테이너를 찾지 못함';
+      } else if (last.count !== 5) {
+        status = 'WEAK';
+        reason = `결과가 ${last.count}건이라 5건 조건과 다름`;
+      } else if (last.scrollHeight <= last.clientHeight) {
+        status = 'WEAK';
+        reason = `스크롤 영역이 넘치지 않음 (scrollHeight ${last.scrollHeight} <= clientHeight ${last.clientHeight}), 스크롤 동작 증거 없음`;
+      } else if (last.fullyVisible && last.inViewport && last.scrollTop > 0 && first.fullyVisible && first.inViewport) {
+        status = 'PASS';
+        reason = `마지막 항목 scrollTop ${last.scrollTop}, 처음으로 순환 후 scrollTop ${first.scrollTop}`;
+      } else {
+        status = 'FAIL';
+        reason = `마지막 항목 보임 ${last.fullyVisible}, scrollTop ${last.scrollTop}, 처음 항목 보임 ${first.fullyVisible}`;
+      }
+      recordResult({
+        id: 'S22',
+        name: '결과 5건에서 활성 항목이 화면 안으로 스크롤됨',
+        status,
+        measurement: { last, first },
+        notes: `판정: ${status} (${reason})`,
+      });
+      if (status !== 'PASS') await page.screenshot({ path: path.join(screenshotDir, 'S22_fail.png') });
       await page.close();
     }
 

@@ -5,6 +5,7 @@ import {
   useRef,
   useEffect,
   useLayoutEffect,
+  useId,
   type FormEvent,
   type KeyboardEvent,
   type FocusEvent,
@@ -26,6 +27,7 @@ export function Navbar() {
   const [status, setStatus] = useState<SearchStatus>('idle');
   const [errorMessage, setErrorMessage] = useState('');
   const [isOpen, setIsOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(-1);
   const [coords, setCoords] = useState<{
     top: number;
     left: number;
@@ -41,6 +43,22 @@ export function Navbar() {
 
   const isMounted = useIsMounted();
   const router = useRouter();
+  const listboxId = useId();
+
+  const hasSelectable = status === 'success' && results.length > 0;
+  const listboxVisible = isOpen && isMounted && !!coords && hasSelectable;
+  const activeOptionId =
+    listboxVisible && activeIndex >= 0 && activeIndex < results.length
+      ? `${listboxId}-option-${activeIndex}`
+      : undefined;
+
+  // 활성 항목이 스크롤 영역 밖이면 보이게 한다
+  useEffect(() => {
+    if (!activeOptionId) return;
+    document
+      .getElementById(activeOptionId)
+      ?.scrollIntoView({ block: 'nearest' });
+  }, [activeOptionId]);
 
   const updatePosition = () => {
     if (!containerRef.current) return;
@@ -131,6 +149,7 @@ export function Navbar() {
     setSubmittedQuery(trimmed);
     setStatus('loading');
     setErrorMessage('');
+    setActiveIndex(-1);
     setIsOpen(true);
 
     try {
@@ -170,6 +189,29 @@ export function Navbar() {
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Escape') {
       setIsOpen(false);
+      setActiveIndex(-1);
+      return;
+    }
+
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      if (
+        e.nativeEvent.isComposing ||
+        e.keyCode === 229 ||
+        isComposingRef.current
+      ) {
+        return;
+      }
+      if (!hasSelectable) return;
+      e.preventDefault();
+      const count = results.length;
+      if (e.key === 'ArrowDown') {
+        setActiveIndex(activeIndex < 0 ? 0 : (activeIndex + 1) % count);
+      } else {
+        setActiveIndex(
+          activeIndex < 0 ? count - 1 : (activeIndex - 1 + count) % count,
+        );
+      }
+      setIsOpen(true);
       return;
     }
 
@@ -180,6 +222,12 @@ export function Navbar() {
         isComposingRef.current
       ) {
         e.preventDefault();
+        return;
+      }
+      if (listboxVisible && activeIndex >= 0 && activeIndex < results.length) {
+        e.preventDefault();
+        const active = results[activeIndex];
+        handleSelect(active.axis, active.slug);
         return;
       }
     }
@@ -194,6 +242,7 @@ export function Navbar() {
     setSubmittedQuery('');
     setResults([]);
     setErrorMessage('');
+    setActiveIndex(-1);
     inputRef.current?.focus();
   };
 
@@ -206,6 +255,7 @@ export function Navbar() {
     setResults([]);
     setStatus('idle');
     setErrorMessage('');
+    setActiveIndex(-1);
     setIsOpen(false);
     router.push(`/${axis}/${slug}`);
   };
@@ -223,6 +273,7 @@ export function Navbar() {
       return;
     }
     setIsOpen(false);
+    setActiveIndex(-1);
   };
 
   const handleQuickKeyword = (keyword: string) => {
@@ -260,7 +311,10 @@ export function Navbar() {
               ref={inputRef}
               type="text"
               value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
+              onChange={(e) => {
+                setInputValue(e.target.value);
+                setActiveIndex(-1);
+              }}
               onFocus={handleFocus}
               onKeyDown={handleKeyDown}
               onCompositionStart={() => {
@@ -269,6 +323,11 @@ export function Navbar() {
               onCompositionEnd={() => {
                 isComposingRef.current = false;
               }}
+              role="combobox"
+              aria-autocomplete="list"
+              aria-expanded={listboxVisible}
+              aria-controls={listboxVisible ? listboxId : undefined}
+              aria-activedescendant={activeOptionId}
               placeholder="개념 검색 (예: useState, ref, RSC, Zustand)..."
               aria-label="개념 검색"
               className="w-full rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-secondary)] pl-3.5 pr-16 py-1.5 text-xs text-[var(--text-primary)] placeholder-[var(--text-secondary)] transition-colors focus:border-emerald-500 focus:outline-hidden"
@@ -362,15 +421,20 @@ export function Navbar() {
                   >
                     &apos;{submittedQuery}&apos; 검색 결과 {results.length}건
                   </div>
-                  <ul className="space-y-1">
-                    {results.map((c) => (
-                      <li key={c.slug}>
-                        <button
-                          type="button"
-                          data-testid="search-result-item"
-                          onClick={() => handleSelect(c.axis, c.slug)}
-                          className="flex w-full flex-col gap-0.5 rounded-lg p-2.5 text-left transition-colors hover:bg-[var(--bg-secondary)]"
-                        >
+                  <ul id={listboxId} role="listbox" aria-label="검색 결과" className="space-y-1">
+                    {results.map((c, i) => (
+                      <li
+                        key={c.slug}
+                        id={`${listboxId}-option-${i}`}
+                        role="option"
+                        aria-selected={i === activeIndex}
+                        tabIndex={-1}
+                        data-testid="search-result-item"
+                        onClick={() => handleSelect(c.axis, c.slug)}
+                        className={`flex w-full cursor-pointer flex-col gap-0.5 rounded-lg p-2.5 text-left transition-colors hover:bg-[var(--bg-secondary)] ${
+                          i === activeIndex ? 'bg-[var(--bg-secondary)]' : ''
+                        }`}
+                      >
                           <div className="flex items-center justify-between text-xs">
                             <span className="font-semibold text-[var(--text-primary)]">
                               {c.cardTitle || c.title}
@@ -384,7 +448,6 @@ export function Navbar() {
                               ? `${c.cardSubtitle} · ${c.oneLineSummary}`
                               : c.oneLineSummary}
                           </span>
-                        </button>
                       </li>
                     ))}
                   </ul>
