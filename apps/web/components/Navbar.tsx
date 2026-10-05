@@ -489,6 +489,15 @@ export function Navbar() {
                     >
                       RSC
                     </button>
+                    {', '}
+                    <button
+                      type="button"
+                      data-testid="search-recommend"
+                      onClick={() => handleQuickKeyword('Zustand')}
+                      className="text-emerald-600 hover:underline dark:text-emerald-400"
+                    >
+                      Zustand
+                    </button>
                   </div>
                 </div>
               )}
@@ -523,6 +532,15 @@ export function Navbar() {
                       className="text-emerald-600 hover:underline dark:text-emerald-400"
                     >
                       RSC
+                    </button>
+                    {', '}
+                    <button
+                      type="button"
+                      data-testid="search-recommend"
+                      onClick={() => handleQuickKeyword('Zustand')}
+                      className="text-emerald-600 hover:underline dark:text-emerald-400"
+                    >
+                      Zustand
                     </button>
                   </div>
                 </div>

@@ -451,7 +451,7 @@ async function run() {
       await page.click(inputSelector);
       await page.waitForSelector('[data-testid="search-dropdown"]', { timeout: 5000 });
 
-      // 추천 검색어 버튼 3개 및 가시성 검사
+      // 추천 검색어 버튼 4개 및 가시성 검사
       const recButtonsData = await page.evaluate(() => {
         const buttons = Array.from(document.querySelectorAll('[data-testid="search-recommend"]'));
         return buttons.map((b) => {
@@ -467,10 +467,11 @@ async function run() {
       const initialKeywords = recButtonsData.map((b: { text: string }) => b.text);
       const allVisible = recButtonsData.every((b: { visible: boolean }) => b.visible);
       const buttonsMatch =
-        initialKeywords.length === 3 &&
+        initialKeywords.length === 4 &&
         initialKeywords.includes('useState') &&
         initialKeywords.includes('ref') &&
-        initialKeywords.includes('RSC');
+        initialKeywords.includes('RSC') &&
+        initialKeywords.includes('Zustand');
 
       // 'ref' 클릭
       await page.evaluate(() => {
@@ -533,7 +534,7 @@ async function run() {
       await new Promise((r) => setTimeout(r, 600));
 
       const recCount = await page.$$eval('[data-testid="search-recommend"]', (nodes: any[]) => nodes.length);
-      const passed = tracker.postCount === 0 && recCount === 3;
+      const passed = tracker.postCount === 0 && recCount === 4;
 
       recordResult({
         id: 'S5',
