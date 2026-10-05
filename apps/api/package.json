@@ -7,8 +7,8 @@
     "./content/search": "./src/content/search.ts"
   },
   "scripts": {
-    "dev": "tsx watch src/index.ts",
-    "start": "tsx src/index.ts",
+    "dev": "tsx watch src/server.ts",
+    "start": "tsx src/server.ts",
     "typecheck": "tsc --noEmit",
     "smoke": "tsx scripts/smoke.ts",
     "check:content": "tsx scripts/check-content-quality.ts",
@@ -16,10 +16,15 @@
   },
   "dependencies": {
     "@apollo/server": "^5.5.1",
+    "@as-integrations/express5": "^1.1.2",
     "@repo/schema": "workspace:*",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
     "graphql": "^16.11.0"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
     "@types/node": "^20",
     "tsx": "^4.23.15",
     "typescript": "^5"
