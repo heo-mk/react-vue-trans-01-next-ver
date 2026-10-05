@@ -4,13 +4,13 @@ import {
   getAllConcepts,
   getConcept,
   getConceptsByAxis,
-} from './content';
+} from './content/index.js';
 import type { Axis as ContentAxis, ConceptPage } from '@repo/schema';
 import {
   mapFormattedContent,
   mapComparisonCellContent,
-} from './mapping';
-import { searchConcepts } from './search';
+} from './mapping.js';
+import { searchConcepts } from './search.js';
 
 export const resolvers = {
   Axis: {

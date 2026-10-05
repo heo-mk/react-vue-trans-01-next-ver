@@ -1,5 +1,5 @@
-import { createApolloServer } from '../src/index';
-import { allConcepts } from '../src/content';
+import { createApolloServer } from '../src/index.js';
+import { allConcepts } from '../src/content/index.js';
 
 async function runSmokeTests() {
   console.log('🚀 [Smoke Test] Apollo Server 메모리 인스턴스 검증 시작...\n');

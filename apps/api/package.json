@@ -2,6 +2,7 @@
   "name": "api",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "exports": {
     "./content": "./src/content/index.ts",
     "./content/search": "./src/content/search.ts"

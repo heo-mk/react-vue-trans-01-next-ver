@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
-import { allConcepts } from '../src/content';
-import { getContentPlainText, getComparisonCellPlainText } from '../src/content/plain-text';
+import { allConcepts } from '../src/content/index.js';
+import { getContentPlainText, getComparisonCellPlainText } from '../src/content/plain-text.js';
 
 interface QualityReport {
   passed: boolean;
@@ -418,7 +418,7 @@ function checkConceptQuality(): QualityReport {
 
   // 10-1. 메타데이터 문구 검사 (apps/api/src/content/index.ts)
   const metaFiles = [
-    { name: 'apps/api/src/content/index.ts', path: path.resolve(__dirname, '../src/content/index.ts') },
+    { name: 'apps/api/src/content/index.ts', path: path.resolve(import.meta.dirname, '../src/content/index.ts') },
   ];
 
   for (const file of metaFiles) {

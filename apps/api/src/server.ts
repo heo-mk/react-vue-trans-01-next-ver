@@ -3,7 +3,7 @@
 import cors from 'cors';
 import express from 'express';
 import { expressMiddleware } from '@as-integrations/express5';
-import { createApolloServer } from './index';
+import { createApolloServer } from './index.js';
 
 const PORT = Number(process.env.PORT ?? 4000);
 
