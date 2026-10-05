@@ -55,9 +55,18 @@ export function Navbar() {
   // 활성 항목이 스크롤 영역 밖이면 보이게 한다
   useEffect(() => {
     if (!activeOptionId) return;
-    document
-      .getElementById(activeOptionId)
-      ?.scrollIntoView({ block: 'nearest' });
+    const el = document.getElementById(activeOptionId);
+    if (!el) return;
+    // 첫 항목이면 맨 위로 올려 제목 줄이 가려지지 않게 한다
+    if (activeIndex === 0) {
+      const box = el.closest<HTMLElement>('.overflow-y-auto');
+      if (box) {
+        box.scrollTop = 0;
+        return;
+      }
+    }
+    el.scrollIntoView({ block: 'nearest' });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeOptionId]);
 
   const updatePosition = () => {

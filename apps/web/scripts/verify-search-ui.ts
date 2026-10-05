@@ -1558,8 +1558,11 @@ async function run() {
           if (!box || box === document.body) return null;
           const b = box.getBoundingClientRect();
           const r = el.getBoundingClientRect();
+          const headingEl = document.querySelector('[data-testid="search-heading"]');
+          const h = headingEl ? headingEl.getBoundingClientRect() : null;
           return {
             count: items.length,
+            headingVisible: !!h && h.top >= b.top - 1 && h.bottom <= b.bottom + 1 && h.top >= 0,
             scrollTop: box.scrollTop,
             scrollHeight: box.scrollHeight,
             clientHeight: box.clientHeight,
@@ -1590,12 +1593,12 @@ async function run() {
       } else if (last.scrollHeight <= last.clientHeight) {
         status = 'WEAK';
         reason = `스크롤 영역이 넘치지 않음 (scrollHeight ${last.scrollHeight} <= clientHeight ${last.clientHeight}), 스크롤 동작 증거 없음`;
-      } else if (last.fullyVisible && last.inViewport && last.scrollTop > 0 && first.fullyVisible && first.inViewport) {
+      } else if (last.fullyVisible && last.inViewport && last.scrollTop > 0 && first.fullyVisible && first.inViewport && first.scrollTop === 0 && first.headingVisible) {
         status = 'PASS';
-        reason = `마지막 항목 scrollTop ${last.scrollTop}, 처음으로 순환 후 scrollTop ${first.scrollTop}`;
+        reason = `마지막 항목 scrollTop ${last.scrollTop}, 처음으로 순환 후 scrollTop ${first.scrollTop}, 제목 줄 보임 ${first.headingVisible}`;
       } else {
         status = 'FAIL';
-        reason = `마지막 항목 보임 ${last.fullyVisible}, scrollTop ${last.scrollTop}, 처음 항목 보임 ${first.fullyVisible}`;
+        reason = `마지막 항목 보임 ${last.fullyVisible}, scrollTop ${last.scrollTop}, 처음 항목 보임 ${first.fullyVisible}, 처음 scrollTop ${first.scrollTop}, 제목 줄 보임 ${first.headingVisible}`;
       }
       recordResult({
         id: 'S22',
