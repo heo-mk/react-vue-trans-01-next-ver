@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { SEARCH_QUERY } from './queries';
 import type { GraphQLSearchResponse } from './types';
 import { toConceptCard, type ConceptCard } from './adapter';
@@ -41,12 +40,10 @@ export async function searchConceptCards(
     if (process.env.NODE_ENV !== 'production') {
       endpoint = 'http://localhost:4000/';
     } else {
-      console.error(
-        '[SearchClient] 환경변수 NEXT_PUBLIC_GRAPHQL_API_URL이 설정되지 않았습니다. 프로덕션 빌드 전에 이 환경변수를 반드시 지정해야 합니다.'
-      );
       throw new SearchError(
         'config',
-        '검색 서비스 설정 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.'
+        '검색 서비스 설정 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.',
+        new Error('NEXT_PUBLIC_GRAPHQL_API_URL is not set')
       );
     }
   }
@@ -68,7 +65,6 @@ export async function searchConceptCards(
     if (err instanceof Error && err.name === 'AbortError') {
       throw err;
     }
-    console.error(`[SearchClient] 네트워크 요청 실패 (${endpoint}):`, err);
     throw new SearchError(
       'network',
       '검색 서버에 연결할 수 없습니다. 네트워크 연결 상태를 확인해 주세요.',
@@ -77,9 +73,6 @@ export async function searchConceptCards(
   }
 
   if (!response.ok) {
-    console.error(
-      `[SearchClient] HTTP 오류 [${response.status} ${response.statusText}] (${endpoint})`
-    );
     throw new SearchError(
       'http',
       '검색 서버 응답에 문제가 발생했습니다. 잠시 후 다시 시도해 주세요.',
@@ -95,7 +88,6 @@ export async function searchConceptCards(
   try {
     result = await response.json();
   } catch (err: unknown) {
-    console.error(`[SearchClient] JSON 파싱 실패 (${endpoint}):`, err);
     throw new SearchError(
       'http',
       '검색 서버 응답을 처리할 수 없습니다.',
@@ -104,10 +96,6 @@ export async function searchConceptCards(
   }
 
   if (result.errors && result.errors.length > 0) {
-    console.error(
-      `[SearchClient] GraphQL 실행 오류 (${endpoint}):`,
-      result.errors
-    );
     throw new SearchError(
       'graphql',
       '검색 결과를 가져오는 중 오류가 발생했습니다.',
@@ -116,13 +104,10 @@ export async function searchConceptCards(
   }
 
   if (!result.data || !Array.isArray(result.data.search)) {
-    console.error(
-      `[SearchClient] GraphQL data.search 필드 누락 (${endpoint}):`,
-      result
-    );
     throw new SearchError(
       'graphql',
-      '검색 결과를 올바르게 수신하지 못했습니다.'
+      '검색 결과를 올바르게 수신하지 못했습니다.',
+      result
     );
   }
 

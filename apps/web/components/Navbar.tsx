@@ -176,8 +176,6 @@ export function Navbar() {
         return;
       }
 
-      // eslint-disable-next-line no-console
-      console.error('[Navbar Search Error]:', err);
       let message = '검색 중 알 수 없는 오류가 발생했습니다.';
       if (err instanceof SearchError) {
         message = err.message;
