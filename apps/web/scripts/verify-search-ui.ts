@@ -661,15 +661,6 @@ async function run() {
         await new Promise((r) => setTimeout(r, 300));
       }
 
-      console.log('       [S7 Debug]:', {
-        closedOnEscape,
-        valOnEscape,
-        reopenedOnClick,
-        closedOnOutsideClick,
-        tabCount,
-        heldOpen,
-      });
-
       const passed =
         closedOnEscape &&
         valOnEscape === 'Zustand' &&
@@ -1120,6 +1111,7 @@ async function run() {
 
       // CDP 세션 생성 및 IME 세팅
       let cdpSuccess = false;
+      let cdpError = '';
       const cdp = await page.createCDPSession();
       try {
         await cdp.send('Input.imeSetComposition', {
@@ -1129,7 +1121,7 @@ async function run() {
         });
         cdpSuccess = true;
       } catch (e: any) {
-        console.log('[S14] CDP imeSetComposition exception:', e.message);
+        cdpError = e.message;
       }
 
       const postDuringComposition = tracker.postCount;
@@ -1144,7 +1136,7 @@ async function run() {
         });
         await new Promise((r) => setTimeout(r, 400));
       } catch (e: any) {
-        console.log('[S14] CDP dispatchKeyEvent exception:', e.message);
+        cdpError = cdpError || e.message;
       }
 
       const postAfterCompEnter = tracker.postCount;
@@ -1156,7 +1148,7 @@ async function run() {
         await page.keyboard.press('Enter');
         await new Promise((r) => setTimeout(r, 1200));
       } catch (e: any) {
-        console.log('[S14] CDP insertText exception:', e.message);
+        cdpError = cdpError || e.message;
       }
 
       const postAfterCommitEnter = tracker.postCount;
@@ -1190,6 +1182,7 @@ async function run() {
         status,
         measurement: {
           cdpSuccess,
+          cdpError,
           compositionObserved,
           postDuringComposition,
           postAfterCompEnter,
