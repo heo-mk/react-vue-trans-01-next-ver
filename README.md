@@ -4,96 +4,56 @@
 
 **API** https://react-vue-trans-api.vercel.app/
 
-&nbsp;
-
-&nbsp;
-
-![서버 상태 관리 페이지](docs/images/01-hero.png)
-
-&nbsp;
-
-&nbsp;
-
-<table>
-  <tr>
-    <td><img src="docs/images/02-dark-diagram.png" alt="상태 관리 구조도 (다크 모드)" width="520"></td>
-    <td><img src="docs/images/03-mobile.png" alt="모바일 화면 (375px)" width="200"></td>
-  </tr>
-</table>
-
-&nbsp;
-
-&nbsp;
+<img width="1260" height="972" alt="01" src="https://github.com/user-attachments/assets/46b5866f-b846-4495-b146-ad6f2a685724" />
+<img width="1344" height="977" alt="02" src="https://github.com/user-attachments/assets/590d467d-298f-4a1d-99e4-120a69a6b6a2" />
+<img width="1265" height="641" alt="03" src="https://github.com/user-attachments/assets/6f30d0f3-1ff6-4b43-85a8-0bfeb34f8666" />
+<img width="1209" height="980" alt="04" src="https://github.com/user-attachments/assets/b5f140c0-099b-4cff-8c14-ddea42afe929" />
+<img width="1360" height="648" alt="04-1" src="https://github.com/user-attachments/assets/f825989d-be34-42ee-9fb7-958b78d23d78" />
+<img width="1223" height="919" alt="05" src="https://github.com/user-attachments/assets/b7d44da5-aca3-4122-b578-139a005c4727" />
+<img width="1207" height="980" alt="06" src="https://github.com/user-attachments/assets/99a66a28-efea-41dc-9a49-443028244f9b" />
+<img width="1158" height="962" alt="07" src="https://github.com/user-attachments/assets/92329d26-a768-4322-96de-8fb7be5fa666" />
+<img width="329" height="714" alt="08" src="https://github.com/user-attachments/assets/fa00ddee-6827-4b2c-86a9-582944dade4f" />
+<img width="387" height="848" alt="09" src="https://github.com/user-attachments/assets/cf7c6fff-9ae9-4589-a7ec-5ff519ac528c" />
+<img width="392" height="829" alt="10" src="https://github.com/user-attachments/assets/8261c3d4-a945-4c8b-b58e-4c88b15f6916" />
+<img width="693" height="435" alt="11" src="https://github.com/user-attachments/assets/18afba69-33f1-42e3-86de-01c65ac09faf" />
 
 ## 소개
 
-1\. React와 Vue의 차이를 개념 단위로 대조하는 학습 사이트
+1. React와 Vue의 차이를 개념 단위로 대조하는 학습 사이트
 
-&nbsp;
+2. 한쪽 프레임워크에 익숙한 개발자가 다른 쪽으로 넘어갈 때 생기는 개념 공백을 줄이는 것이 목표
 
-&nbsp;
-
-2\. 한쪽 프레임워크에 익숙한 개발자가 다른 쪽으로 넘어갈 때 생기는 개념 공백을 줄이는 것이 목표
-
-&nbsp;
-
-&nbsp;
-
-3\. 한 저장소 안에서 Next.js 프론트엔드와 GraphQL API를 폴더로 나눠 관리(pnpm 모노레포)하고 Vercel에 각각 배포
-
-&nbsp;
-
-&nbsp;
+3. 한 저장소 안에서 Next.js 프론트엔드와 GraphQL API를 폴더로 나눠 관리(pnpm 모노레포)하고 Vercel에 각각 배포
 
 ## 무엇을 다루나
 
-1\. 3개 전환 축에서 5개 개념을 정리
+1. 3개 전환 축에서 5개 개념을 정리
 
-| 전환 축 | 개념 수 |
-| --- | --- |
-| React ↔ Vue | 3 |
-| Vue 2 → Vue 3 | 1 |
-| Nuxt 3 ↔ Next.js | 1 |
+   | 전환 축 | 개념 수 |
+   | --- | --- |
+   | React ↔ Vue | 3 |
+   | Vue 2 → Vue 3 | 1 |
+   | Nuxt 3 ↔ Next.js | 1 |
 
-&nbsp;
+2. 개념 페이지 구성
 
-&nbsp;
+   - 핵심 요약과 직관적 비유
 
-2\. 개념 페이지 구성
+   - 구조 다이어그램 (다크/라이트 테마에 맞춰 색이 바뀌고, 모바일용 세로 버전이 따로 있음)
 
-- 핵심 요약과 직관적 비유
+   - 핵심 차이 비교표
 
-- 구조 다이어그램 (다크/라이트 테마에 맞춰 색이 바뀌고, 모바일용 세로 버전이 따로 있음)
+   - React/Vue 코드 대조
 
-- 핵심 차이 비교표
+   - 실전 함정 Q&A
 
-- React/Vue 코드 대조
+   - 공식 문서 출처
 
-- 실전 함정 Q&A
+3. 규모: 비교 항목 25개, 코드 대조 16세트, 함정 Q&A 23개, 공식 문서 출처 11건
 
-- 공식 문서 출처
+4. 내용 기준 버전: React 18+, Vue 3.4+, Nuxt 3, Next.js 15 이하
 
-&nbsp;
-
-&nbsp;
-
-3\. 규모: 비교 항목 25개, 코드 대조 16세트, 함정 Q&A 23개, 공식 문서 출처 11건
-
-&nbsp;
-
-&nbsp;
-
-4\. 내용 기준 버전: React 18+, Vue 3.4+, Nuxt 3, Next.js 15 이하
-
-&nbsp;
-
-&nbsp;
-
-5\. 부가 기능: 개념 검색(GraphQL), 학습 완료 표시·북마크·진도율(브라우저에 저장), 다크/라이트 테마, 모바일 대응
-
-&nbsp;
-
-&nbsp;
+5. 부가 기능: 개념 검색(GraphQL), 학습 완료 표시·북마크·진도율(브라우저에 저장), 다크/라이트 테마, 모바일 대응
 
 ## 기술 스택
 
@@ -104,10 +64,6 @@
 | 공유 타입 (`packages/schema`) | 타입 정의만 포함 |
 | 도구 | pnpm 워크스페이스, Mermaid CLI(다이어그램 생성), Puppeteer(브라우저 검증), ESLint |
 | 배포 | Vercel (web, api 두 프로젝트) |
-
-&nbsp;
-
-&nbsp;
 
 ## 저장소 구조
 
@@ -129,84 +85,40 @@ packages/
   schema/              공유 타입 (schema.ts)
 ```
 
-&nbsp;
-
-&nbsp;
-
 ### 의존 규칙
 
-1\. `web`과 `api`가 함께 쓰는 것은 `schema`의 타입(데이터 모양 정의)뿐 (`import type`으로 가져옴)
+1. `web`과 `api`가 함께 쓰는 것은 `schema`의 타입(데이터 모양 정의)뿐 (`import type`으로 가져옴)
 
-&nbsp;
+2. `web`의 화면 코드(`app/`, `components/`, `lib/`, `store/`)는 `api` 코드를 가져다 쓸 수 없음 (ESLint `no-restricted-imports` 규칙이 오류로 막음, `apps/web/eslint.config.mjs`)
 
-&nbsp;
+3. `api`와 `schema`는 `web`을 import하지 않음
 
-2\. `web`의 화면 코드(`app/`, `components/`, `lib/`, `store/`)는 `api` 코드를 가져다 쓸 수 없음 (ESLint `no-restricted-imports` 규칙이 오류로 막음, `apps/web/eslint.config.mjs`)
-
-&nbsp;
-
-&nbsp;
-
-3\. `api`와 `schema`는 `web`을 import하지 않음
-
-&nbsp;
-
-&nbsp;
-
-4\. 검증 스크립트의 기대값은 `api`의 원본 데이터에서 가져옴 (개념 문구를 고치는 곳이 한 곳이라 기대값이 어긋나지 않음)
-
-&nbsp;
-
-&nbsp;
+4. 검증 스크립트의 기대값은 `api`의 원본 데이터에서 가져옴 (개념 문구를 고치는 곳이 한 곳이라 기대값이 어긋나지 않음)
 
 ### 데이터 흐름
 
-1\. 빌드: `pnpm run build`가 `api`를 켜고 `next build`로 정적 페이지(미리 완성해 두는 페이지) 9개를 만든 뒤 `api`를 끔
+1. 빌드: `pnpm run build`가 `api`를 켜고 `next build`로 정적 페이지(미리 완성해 두는 페이지) 9개를 만든 뒤 `api`를 끔
 
-&nbsp;
+2. 실행: 만들어진 사이트는 `api` 없이 뜨고, 없는 주소는 바로 404(페이지 없음)
 
-&nbsp;
-
-2\. 실행: 만들어진 사이트는 `api` 없이 뜨고, 없는 주소는 바로 404(페이지 없음)
-
-&nbsp;
-
-&nbsp;
-
-3\. 검색: 브라우저가 `api`를 직접 호출
-
-&nbsp;
-
-&nbsp;
+3. 검색: 브라우저가 `api`를 직접 호출
 
 ## GraphQL
 
-1\. Query 필드는 4개
+1. Query 필드는 4개
 
-| 필드 | 용도 |
-| --- | --- |
-| `axes` | 전환 축 목록 |
-| `concepts(axis)` | 축별 개념 목록 |
-| `concept(axis, slug)` | 개념 상세 |
-| `search(query)` | 개념 검색 |
+   | 필드 | 용도 |
+   | --- | --- |
+   | `axes` | 전환 축 목록 |
+   | `concepts(axis)` | 축별 개념 목록 |
+   | `concept(axis, slug)` | 개념 상세 |
+   | `search(query)` | 개념 검색 |
 
-&nbsp;
+2. `axis` 값은 `REACT_VUE`, `VUE2_VUE3`, `NUXT_NEXT`
 
-&nbsp;
+3. web은 위 필드를 5개의 요청문(쿼리 문서)으로 호출: `AxesQuery`, `ConceptCardsQuery`, `ConceptParamsQuery`, `ConceptDetailQuery`, `SearchQuery`
 
-2\. `axis` 값은 `REACT_VUE`, `VUE2_VUE3`, `NUXT_NEXT`
-
-&nbsp;
-
-&nbsp;
-
-3\. web은 위 필드를 5개의 요청문(쿼리 문서)으로 호출: `AxesQuery`, `ConceptCardsQuery`, `ConceptParamsQuery`, `ConceptDetailQuery`, `SearchQuery`
-
-&nbsp;
-
-&nbsp;
-
-4\. 응답은 `lib/graphql/adapter.ts`에서 화면용 형태로 변환
+4. 응답은 `lib/graphql/adapter.ts`에서 화면용 형태로 변환
 
 ```graphql
 query Search($q: String!) {
@@ -214,61 +126,37 @@ query Search($q: String!) {
 }
 ```
 
-&nbsp;
-
-&nbsp;
-
 ## 시작하기
 
-1\. 사전 준비
+1. 사전 준비
 
-1\) pnpm 10.19.0 사용 (`package.json`의 `packageManager`로 지정)
+   1) pnpm 10.19.0 사용 (`package.json`의 `packageManager`로 지정)
 
-2\) Node.js는 `engines`를 지정하지 않았고, 개발은 22.x에서 진행
+   2) Node.js는 `engines`를 지정하지 않았고, 개발은 22.x에서 진행
 
-3\) 전역 pnpm이 11.x여도 저장소 안에서는 지정된 10.19.0이 실행되며, 이때 `The "pnpm" field in package.json is no longer read by pnpm` 경고가 한 줄 나올 수 있음
+   3) 전역 pnpm이 11.x여도 저장소 안에서는 지정된 10.19.0이 실행되며, 이때 `The "pnpm" field in package.json is no longer read by pnpm` 경고가 한 줄 나올 수 있음
 
-&nbsp;
+2. 설치
 
-&nbsp;
+   ```bash
+   pnpm install
+   ```
 
-2\. 설치
+3. 개발 서버 실행: `api`(4000)와 `web`(3000)을 함께 켜며, 다이어그램을 먼저 만들기 때문에 `web`이 뜨기까지 20초쯤 걸림. 끝나면 http://localhost:3000 에서 확인
 
-```bash
-pnpm install
-```
+   ```bash
+   pnpm run dev:all
+   ```
 
-&nbsp;
+4. 배포용 페이지 빌드: `api`를 자동으로 켜고 끈 뒤 정적 페이지를 생성
 
-&nbsp;
-
-3\. 개발 서버 실행: `api`(4000)와 `web`(3000)을 함께 켜며, 다이어그램을 먼저 만들기 때문에 `web`이 뜨기까지 20초쯤 걸림. 끝나면 http://localhost:3000 에서 확인
-
-```bash
-pnpm run dev:all
-```
-
-&nbsp;
-
-&nbsp;
-
-4\. 배포용 페이지 빌드: `api`를 자동으로 켜고 끈 뒤 정적 페이지를 생성
-
-```bash
-pnpm run build
-```
-
-&nbsp;
-
-&nbsp;
+   ```bash
+   pnpm run build
+   ```
 
 ## 환경변수
 
 예시 파일은 `apps/web/.env.example`에 있습니다.
-
-&nbsp;
-
-&nbsp;
 
 | 이름 | 위치 | 설명 |
 | --- | --- | --- |
@@ -276,17 +164,9 @@ pnpm run build
 | `NEXT_PUBLIC_GRAPHQL_API_URL` | web | 브라우저 검색이 호출할 주소. 빌드할 때 값이 코드 안에 고정되므로 값을 바꾸면 다시 배포해야 합니다. 개발 기본값은 `http://localhost:4000/` 이고, 배포용(production) 빌드에서 설정하지 않으면 `localhost`를 넣지 않고 설정 오류를 표시합니다 |
 | `CORS_ORIGINS` | api | 허용할 출처 목록(쉼표 구분, 끝에 슬래시 없이). 설정하지 않으면 모든 출처를 허용합니다 |
 
-&nbsp;
-
-&nbsp;
-
 ## 검증 명령
 
 별도 테스트 프레임워크 대신 검증 스크립트를 사용합니다. 모두 저장소 루트에서 실행합니다.
-
-&nbsp;
-
-&nbsp;
 
 | 명령 | 확인하는 것 |
 | --- | --- |
@@ -298,59 +178,27 @@ pnpm run build
 | `pnpm run verify:search-client` | 검색 요청 코드(`searchClient`) 검증: 검색 결과(slug, 축 이름), 요청 취소, 네트워크 오류 메시지, 설정 누락 시 오류 |
 | `pnpm run verify:search-ui` | 브라우저를 띄워 검색 화면을 자동 검사 (실행 전에 3000, 4000 포트가 비어 있어야 함) |
 
-&nbsp;
-
-&nbsp;
-
 `lint`, `smoke:api`, `test:search`, `verify:search-client`는 서버를 켜지 않은 상태에서 실행해 통과를 확인했습니다.
-
-&nbsp;
-
-&nbsp;
 
 ## 다이어그램 작업 규칙
 
-1\. `apps/web/content/diagrams/*.mmd`를 수정
+1. `apps/web/content/diagrams/*.mmd`를 수정
 
-&nbsp;
+2. `pnpm run build:diagrams` (또는 `pnpm run dev:all`)로 SVG를 다시 생성
 
-&nbsp;
+3. 바뀐 `apps/web/public/diagrams/*.svg`까지 **함께 커밋**
 
-2\. `pnpm run build:diagrams` (또는 `pnpm run dev:all`)로 SVG를 다시 생성
+4. 이유: 배포 서버(Vercel)에는 SVG 변환에 필요한 브라우저 라이브러리가 없어서, 배포 빌드는 변환하지 않고 저장소의 SVG를 그대로 사용
 
-&nbsp;
-
-&nbsp;
-
-3\. 바뀐 `apps/web/public/diagrams/*.svg`까지 **함께 커밋**
-
-&nbsp;
-
-&nbsp;
-
-4\. 이유: 배포 서버(Vercel)에는 SVG 변환에 필요한 브라우저 라이브러리가 없어서, 배포 빌드는 변환하지 않고 저장소의 SVG를 그대로 사용
-
-&nbsp;
-
-&nbsp;
-
-5\. 주의: SVG를 커밋하지 않으면 빌드는 오류 없이 통과하지만 배포 화면에는 옛 그림이 그대로 나옴
-
-&nbsp;
-
-&nbsp;
+5. 주의: SVG를 커밋하지 않으면 빌드는 오류 없이 통과하지만 배포 화면에는 옛 그림이 그대로 나옴
 
 ## 배포
 
-1\. `web`과 `api`를 별도 Vercel 프로젝트로 배포
+1. `web`과 `api`를 별도 Vercel 프로젝트로 배포
 
-| 프로젝트 | Root Directory (프로젝트 기준 폴더) | 비고 |
-| --- | --- | --- |
-| api | `apps/api` | `CORS_ORIGINS`에 web 주소 설정 |
-| web | `apps/web` | 빌드 명령 `build:next`, 환경변수 2개 설정 |
+   | 프로젝트 | Root Directory (프로젝트 기준 폴더) | 비고 |
+   | --- | --- | --- |
+   | api | `apps/api` | `CORS_ORIGINS`에 web 주소 설정 |
+   | web | `apps/web` | 빌드 명령 `build:next`, 환경변수 2개 설정 |
 
-&nbsp;
-
-&nbsp;
-
-2\. 배포 순서: web 빌드가 `api`를 호출해 페이지를 만들기 때문에 api 먼저 배포 → web 환경변수 설정 → `CORS_ORIGINS`로 허용 출처 제한
+2. 배포 순서: web 빌드가 `api`를 호출해 페이지를 만들기 때문에 api 먼저 배포 → web 환경변수 설정 → `CORS_ORIGINS`로 허용 출처 제한
